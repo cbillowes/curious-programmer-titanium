@@ -63,4 +63,4 @@ Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cl
 
 ## Resources
 
-* [Image: Pixers&reg; - 3d Periodic Table](https://pngio.com/images/png-a2159734.html)
+- [Image: Pixers&reg; - 3d Periodic Table](https://pngio.com/images/png-a2159734.html)
