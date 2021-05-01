@@ -1,0 +1,22 @@
+{
+  "name": "curious-programmer-titanium",
+  "version": "1.0.0",
+  "private": true,
+  "description": "curious-programmer-titanium",
+  "author": "Clarice Bouwer",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.4.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
