@@ -1,0 +1,46 @@
+{
+  "parser":"babel-eslint",
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": [
+    "react",
+    "prettier"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "camelcase": "warn",
+    "no-debugger": "warn",
+    "no-console": "warn",
+    "react/sort-prop-types": "warn",
+    "react/jsx-uses-react": "warn",
+    "react/jsx-uses-vars": "warn",
+    "react/default-props-match-prop-types": "warn",
+    "react/require-default-props": "warn",
+
+    "no-alert": "error",
+    "no-unused-vars": "error",
+    "react/no-typos": "error",
+    "react/no-danger": "error",
+    "react/destructuring-assignment": "error"
+  }
+}

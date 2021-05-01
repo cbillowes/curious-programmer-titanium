@@ -1,10 +1,18 @@
 {
   "plugins": [
     [
-      "babel-plugin-styled-components",
-      {
+      "babel-plugin-styled-components", {
         "ssr": false,
         "pure": true
+      }
+    ]
+  ],
+  "presets": [
+    [
+      "babel-preset-gatsby", {
+        "targets": {
+          "browsers": [">0.25%", "not dead"]
+        }
       }
     ]
   ]
