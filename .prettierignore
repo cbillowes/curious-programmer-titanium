@@ -1,0 +1,16 @@
+# all dot files
+**/.*
+
+# artifacts
+.cache
+public
+
+# dependencies
+node_modules
+
+# target specific files
+**/*.svg
+**/*.sh
+**/*.log
+package.json
+package-lock.json
