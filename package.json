@@ -7,6 +7,9 @@
   "keywords": [
     "gatsby"
   ],
+  "engines": {
+    "node": "14"
+  },
   "scripts": {
     "prettier": "npx prettier --check .",
     "lint": "npx eslint .",
