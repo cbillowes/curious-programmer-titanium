@@ -1,11 +1,14 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://curiousprogrammer.dev">
+    <img alt="Curious Programmer" src="./cp-ti-banner.jpg" width="500" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Curious Programmer
 </h1>
+<h2 align="center">
+  Titanium
+</h2>
 
 ## 🚀 Quick start
 
@@ -52,3 +55,7 @@
 Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+
+## Resources
+
+* [Image: Pixers&reg; - 3d Periodic Table](https://pngio.com/images/png-a2159734.html)
