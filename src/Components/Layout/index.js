@@ -4,15 +4,17 @@ import styled from "styled-components"
 import Helmet from "react-helmet"
 import Navigation from "../Navigation"
 import Footer from "../Footer"
-import GlobalStyles, { MAX_WIDTH } from "../GlobalStyles"
-
-const Gap = styled.div`
-  padding-top: 92px;
-`
+import GlobalStyles, { MAX_WIDTH, getBase } from "../GlobalStyles"
 
 const Header = styled.div`
   padding: 3rem;
   padding-bottom: 0;
+`
+
+const Wrapper = styled.div`
+  background-color: ${(props) => getBase(props, "standard")};
+  padding-top: 92px;
+  padding-bottom: 3rem;
 `
 
 const Page = styled.main`
@@ -34,9 +36,10 @@ const Layout = ({ header, children }) => {
         />
       </Helmet>
       <Navigation theme={theme} />
-      <Gap />
-      <Header header={header}>{header}</Header>
-      <Page>{children}</Page>
+      <Wrapper theme={theme}>
+        <Header header={header}>{header}</Header>
+        <Page>{children}</Page>
+      </Wrapper>
       <Footer
         theme={theme}
         switcher={

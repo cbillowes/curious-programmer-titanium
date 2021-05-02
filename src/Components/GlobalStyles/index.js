@@ -36,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
     max-width: 100%;
     margin: 0;
     text-shadow: 1px 1px 1px ${(props) => getShadow(props, "standard")};
-    background-color: ${(props) => getBase(props, "standard")};
+    background-color: ${(props) => getBase(props, "accent")};
     color: ${(props) => getText(props, "standard")};
   }
 
