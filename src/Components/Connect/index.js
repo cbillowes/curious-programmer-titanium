@@ -41,7 +41,7 @@ const Container = styled.ul`
   justify-content: center;
 
   li {
-    padding: 1.5rem 0.75rem;
+    padding: 1.5rem 1rem;
     display: inline-block;
   }
 

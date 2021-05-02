@@ -44,11 +44,10 @@ const Container = styled.nav`
   right: 0;
   bottom: 0;
   top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
-  padding-right: 4rem;
   background-color: ${(props) => getBase(props, "menu")};
 
-  ul,
-  li {
+  ul.menu-items,
+  .menu-items li {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -66,7 +65,7 @@ const Link = styled(Anchor)`
 
 const Menu = ({ isOpen, theme, switcher }) => (
   <Container isOpen={isOpen} theme={theme}>
-    <ul>
+    <ul className="menu-items">
       {items.map((item, i) => (
         <li key={i}>
           <Link to={item.to} title={item.title}>
