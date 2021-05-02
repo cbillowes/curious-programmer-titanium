@@ -4,7 +4,9 @@ import styled from "styled-components"
 import Helmet from "react-helmet"
 import Navigation from "../Navigation"
 import Footer from "../Footer"
-import GlobalStyles, { MAX_WIDTH, getBase } from "../GlobalStyles"
+import { MdBrightness2 } from "@react-icons/all-files/md/MdBrightness2"
+import { MdWbSunny } from "@react-icons/all-files/md/MdWbSunny"
+import GlobalStyles, { MAX_WIDTH, getBase, getText } from "../GlobalStyles"
 
 const Header = styled.div`
   padding: 3rem;
@@ -20,6 +22,27 @@ const Wrapper = styled.div`
 const Page = styled.main`
   max-width: ${MAX_WIDTH}px;
   margin: 0 auto;
+`
+
+const Switcher = styled.button`
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 1.25rem;
+  color: ${(props) => getText(props, "accent")};
+
+  &:hover {
+    color: ${(props) => getBase(props, "primary")};
+  }
+`
+
+const DarkThemeIcon = styled(MdBrightness2)`
+  display: ${(props) => (props.visible ? "inline-block" : "none")};
+`
+
+const LightThemeIcon = styled(MdWbSunny)`
+  display: ${(props) => (props.visible ? "inline-block" : "none")};
 `
 
 const Layout = ({ header, children }) => {
@@ -43,11 +66,13 @@ const Layout = ({ header, children }) => {
       <Footer
         theme={theme}
         switcher={
-          <button
+          <Switcher
+            theme={theme}
             onClick={() => toggleTheme(theme === "light" ? "dark" : "light")}
           >
-            Toggle Theme
-          </button>
+            <LightThemeIcon visible={theme === "dark"} />
+            <DarkThemeIcon visible={theme === "light"} />
+          </Switcher>
         }
       />
     </Fragment>

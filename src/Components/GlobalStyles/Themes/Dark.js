@@ -7,9 +7,9 @@ export default {
   },
   accent: {
     base: "#131618",
-    alternate: "#000000",
+    alternate: "#131618",
     shadow: "#131618",
-    text: "#181c1f",
+    text: "#f0f0f0",
   },
   primary: {
     base: "#0b7acf",
@@ -28,11 +28,5 @@ export default {
     alternate: "#f6f6a4",
     shadow: "#f6f83c",
     text: "#181c1f",
-  },
-  neutral: {
-    base: "",
-    alternate: "#000000",
-    shadow: "",
-    text: "",
   },
 }

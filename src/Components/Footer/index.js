@@ -2,13 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Anchor from "../Anchor"
-import {
-  MAX_WIDTH,
-  getBase,
-  getText,
-  getShadow,
-  getAlternate,
-} from "../GlobalStyles"
+import { MAX_WIDTH, getBase, getText, getShadow } from "../GlobalStyles"
 
 const Container = styled.footer`
   padding: 2rem;
@@ -37,19 +31,26 @@ const Copyright = styled.span`
 const Legal = styled.p`
   font-size: 0.8rem;
   margin: 0;
-  margin-left: -1rem;
+  margin-left: -0.5rem;
+
+  button {
+    vertical-align: middle;
+    margin-top: 2px;
+    margin-right: 1rem;
+  }
 
   a {
+    display: inline-block;
     padding: 0.25rem 1rem;
     margin: 0;
     margin-right: 1rem;
     font-weight: 800;
     background-color: transparent;
-    color: ${(props) => getText(props, "primary")};
-    text-shadow: 1px 1px 1px ${(props) => getText(props, "standard")};
+    color: ${(props) => getText(props, "accent")};
+    text-shadow: 1px 1px 1px ${(props) => getShadow(props, "accent")};
 
     &:hover {
-      background-color: ${(props) => getAlternate(props, "standard")};
+      color: ${(props) => getBase(props, "primary")};
       transition: background ease-in 0.25s;
     }
   }
