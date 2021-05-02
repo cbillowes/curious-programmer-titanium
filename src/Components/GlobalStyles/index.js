@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
-import LightTheme from "./Themes/Light"
-import DarkTheme from "./Themes/Dark"
+import LightTheme from "../Themes/Light"
+import DarkTheme from "../Themes/Dark"
 
 /*
   PRIMARY COLORS:
