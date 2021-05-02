@@ -45,7 +45,7 @@ const Container = styled.ul`
     display: inline-block;
   }
 
-  .switcher div {
+  .switcher button {
     color: ${(props) => getBase(props, "connect")};
     font-size: 1.5rem;
     margin-top: -2px;

@@ -5,7 +5,8 @@ import { MdBrightness2 } from "@react-icons/all-files/md/MdBrightness2"
 import { MdWbSunny } from "@react-icons/all-files/md/MdWbSunny"
 import { getBase, getText } from "../GlobalStyles"
 
-const Container = styled.div`
+const Container = styled.button`
+  display: inline-block;
   border: 0;
   outline: 0;
   cursor: pointer;

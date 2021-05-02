@@ -35,7 +35,7 @@ const Legal = styled.p`
 
   button {
     vertical-align: middle;
-    margin-top: 2px;
+    margin-top: 1px;
     margin-right: 1rem;
   }
 
