@@ -3,10 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Anchor from "../Anchor"
 import Hamburger from "../Hamburger"
-import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
-import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
-import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
-import { IoIosMail } from "@react-icons/all-files/io/IoIosMail"
+import Connect from "../Connect"
 import {
   SPACE_BETWEEN_HEADER_AND_PAGE,
   getBase,
@@ -57,17 +54,6 @@ const Menu = styled.nav`
     display: block;
     border-radius: 0;
     width: 100%;
-  }
-`
-
-const Connect = styled.ul`
-  display: flex;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-
-  li {
-    padding: 1.5rem 0.75rem;
   }
 `
 
@@ -126,24 +112,7 @@ const Navigation = ({ theme, switcher }) => {
             </Anchor>
           </li>
         </ul>
-        <Connect theme={theme}>
-          <li>{switcher}</li>
-          <li>
-            <FaGithub />
-          </li>
-
-          <li>
-            <FaTwitter />
-          </li>
-
-          <li>
-            <FaLinkedin />
-          </li>
-
-          <li>
-            <IoIosMail />
-          </li>
-        </Connect>
+        <Connect theme={theme} switcher={switcher} />
       </Menu>
     </Fragment>
   )
