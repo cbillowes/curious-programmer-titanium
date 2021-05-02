@@ -11,7 +11,7 @@ const Container = styled.div`
   cursor: pointer;
   background-color: transparent;
   font-size: 1.25rem;
-  color: ${(props) => getText(props, "accent")};
+  color: ${(props) => getText(props, "footer")};
 
   &:hover {
     color: ${(props) => getBase(props, "primary")};

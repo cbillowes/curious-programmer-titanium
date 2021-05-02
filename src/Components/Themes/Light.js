@@ -5,12 +5,6 @@ export default {
     shadow: "#acacac",
     text: "#181c1f",
   },
-  accent: {
-    base: "#e8e8e8",
-    alternate: "#ffffff",
-    shadow: "#ffffff",
-    text: "#404040",
-  },
   primary: {
     base: "#0b7acf",
     alternate: "#085BA7",
