@@ -1,13 +1,24 @@
-import React, { useState } from "react"
+import React, { Fragment, useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { getBase, getAlternate, getText, getShadow } from "../GlobalStyles"
+import Anchor from "../Anchor"
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
+import { IoIosMail } from "@react-icons/all-files/io/IoIosMail"
+import {
+  SPACE_BETWEEN_HEADER_AND_PAGE,
+  getBase,
+  getAlternate,
+  getText,
+  getShadow,
+} from "../GlobalStyles"
 
 const BURGER_WIDTH = 40
 const BURGER_HEIGHT = 24
 const BAR_HEIGHT = 4
 
-const Bar = styled.nav`
+const Bar = styled.div`
   padding: 1rem 2rem;
   position: fixed;
   top: 0;
@@ -164,35 +175,140 @@ const Burger = styled.button`
   }
 `
 
+const Menu = styled.nav`
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
+  padding-right: 3.5rem;
+  background-color: black;
+
+  &.active {
+    display: block;
+  }
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    padding: 1rem 2rem;
+    display: block;
+    border-radius: 0;
+    width: 100%;
+  }
+`
+
+const Connect = styled.ul`
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+
+  li {
+    padding: 1.5rem 0.75rem;
+  }
+`
+
 const burgerState = (isMenuOpen) => (isMenuOpen ? "is-active" : "")
 
-const Navigation = ({ theme }) => {
+const Navigation = ({ theme, switcher }) => {
   const [isMenuOpen, toggleMenu] = useState(false)
 
   return (
-    <Bar theme={theme}>
-      <Logo theme={theme}>
-        <span>{`{ :curious `}</span>
-        <strong>{` "programmer" `}</strong>
-        <span>{`}`}</span>
-      </Logo>
-      <Burger
-        aria-label="Menu"
-        onClick={() => toggleMenu(!isMenuOpen)}
-        theme={theme}
-      >
-        <div className={`hamburger hamburger--spin ${burgerState(isMenuOpen)}`}>
-          <div className="hamburger-box">
-            <div className="hamburger-inner"></div>
+    <Fragment>
+      <Bar theme={theme}>
+        <Logo theme={theme}>
+          <span>{`{ :curious `}</span>
+          <strong>{` "programmer" `}</strong>
+          <span>{`}`}</span>
+        </Logo>
+        <Burger
+          aria-label="Menu"
+          onClick={() => toggleMenu(!isMenuOpen)}
+          theme={theme}
+        >
+          <div
+            className={`hamburger hamburger--spin ${burgerState(isMenuOpen)}`}
+          >
+            <div className="hamburger-box">
+              <div className="hamburger-inner"></div>
+            </div>
           </div>
-        </div>
-      </Burger>
-    </Bar>
+        </Burger>
+      </Bar>
+      <Menu theme={theme}>
+        <ul>
+          <li>
+            <Anchor
+              to="/"
+              title="A view of all my pinned posts and a few of my latest ones"
+            >
+              Home
+            </Anchor>
+          </li>
+          <li>
+            <Anchor to="/blog" title="A full list of all my articles">
+              Blog
+            </Anchor>
+          </li>
+          <li>
+            <Anchor to="/about" title="More about who I am">
+              About
+            </Anchor>
+          </li>
+          <li>
+            <Anchor
+              to="/tags"
+              title="The tags that are associated to my blog posts"
+            >
+              Tags
+            </Anchor>
+          </li>
+          <li>
+            <Anchor to="/credits" title="What I used to make this site">
+              Credits &amp; Resources
+            </Anchor>
+          </li>
+          <li>
+            <Anchor
+              to="/privacy"
+              title="What I do with your personal information"
+            >
+              Privacy Policy
+            </Anchor>
+          </li>
+        </ul>
+        <Connect theme={theme}>
+          <li>{switcher}</li>
+          <li>
+            <FaGithub />
+          </li>
+
+          <li>
+            <FaTwitter />
+          </li>
+
+          <li>
+            <FaLinkedin />
+          </li>
+
+          <li>
+            <IoIosMail />
+          </li>
+        </Connect>
+      </Menu>
+    </Fragment>
   )
 }
 
 export default Navigation
 
 Navigation.propTypes = {
+  switcher: PropTypes.node.isRequired,
   theme: PropTypes.string.isRequired,
 }

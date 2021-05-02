@@ -28,6 +28,8 @@ import DarkTheme from "./Themes/Dark"
 
 export const MAX_WIDTH = 840
 
+export const SPACE_BETWEEN_HEADER_AND_PAGE = 92
+
 const GlobalStyles = createGlobalStyle`
   html, body {
     font-family: Raleway, Helvetica, Arial, sans-serif;

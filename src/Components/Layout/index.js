@@ -4,9 +4,12 @@ import styled from "styled-components"
 import Helmet from "react-helmet"
 import Navigation from "../Navigation"
 import Footer from "../Footer"
-import { MdBrightness2 } from "@react-icons/all-files/md/MdBrightness2"
-import { MdWbSunny } from "@react-icons/all-files/md/MdWbSunny"
-import GlobalStyles, { MAX_WIDTH, getBase, getText } from "../GlobalStyles"
+import ThemeSwitcher from "../ThemeSwitcher"
+import GlobalStyles, {
+  SPACE_BETWEEN_HEADER_AND_PAGE,
+  MAX_WIDTH,
+  getBase,
+} from "../GlobalStyles"
 
 const Header = styled.div`
   padding: 3rem;
@@ -15,34 +18,13 @@ const Header = styled.div`
 
 const Wrapper = styled.div`
   background-color: ${(props) => getBase(props, "standard")};
-  padding-top: 92px;
+  padding-top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
   padding-bottom: 3rem;
 `
 
 const Page = styled.main`
   max-width: ${MAX_WIDTH}px;
   margin: 0 auto;
-`
-
-const Switcher = styled.button`
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-  background-color: transparent;
-  font-size: 1.25rem;
-  color: ${(props) => getText(props, "accent")};
-
-  &:hover {
-    color: ${(props) => getBase(props, "primary")};
-  }
-`
-
-const DarkThemeIcon = styled(MdBrightness2)`
-  display: ${(props) => (props.visible ? "inline-block" : "none")};
-`
-
-const LightThemeIcon = styled(MdWbSunny)`
-  display: ${(props) => (props.visible ? "inline-block" : "none")};
 `
 
 const Layout = ({ header, children }) => {
@@ -58,22 +40,17 @@ const Layout = ({ header, children }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <Navigation theme={theme} />
+      <Navigation
+        theme={theme}
+        switcher={<ThemeSwitcher theme={theme} toggle={toggleTheme} />}
+      />
       <Wrapper theme={theme}>
         <Header header={header}>{header}</Header>
         <Page>{children}</Page>
       </Wrapper>
       <Footer
         theme={theme}
-        switcher={
-          <Switcher
-            theme={theme}
-            onClick={() => toggleTheme(theme === "light" ? "dark" : "light")}
-          >
-            <LightThemeIcon visible={theme === "dark"} />
-            <DarkThemeIcon visible={theme === "light"} />
-          </Switcher>
-        }
+        switcher={<ThemeSwitcher theme={theme} toggle={toggleTheme} />}
       />
     </Fragment>
   )
