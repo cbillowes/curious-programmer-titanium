@@ -6,9 +6,9 @@ import { MAX_WIDTH, getBase, getText, getShadow } from "../GlobalStyles"
 
 const Container = styled.footer`
   padding: 2rem;
-  background-color: ${(props) => getBase(props, "accent")};
-  color: ${(props) => getText(props, "accent")};
-  text-shadow: 1px 1px 1px ${(props) => getShadow(props, "accent")};
+  background-color: ${(props) => getBase(props, "footer")};
+  color: ${(props) => getText(props, "footer")};
+  text-shadow: 1px 1px 1px ${(props) => getShadow(props, "footer")};
 
   section {
     line-height: 1.75rem;
@@ -46,8 +46,8 @@ const Legal = styled.p`
     margin-right: 1rem;
     font-weight: 800;
     background-color: transparent;
-    color: ${(props) => getText(props, "accent")};
-    text-shadow: 1px 1px 1px ${(props) => getShadow(props, "accent")};
+    color: ${(props) => getText(props, "footer")};
+    text-shadow: 1px 1px 1px ${(props) => getShadow(props, "footer")};
 
     &:hover {
       color: ${(props) => getBase(props, "primary")};

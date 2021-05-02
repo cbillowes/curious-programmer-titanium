@@ -43,4 +43,11 @@ export default {
     base: "#cccccc",
     alternate: "#0b7acf",
   },
+
+  footer: {
+    base: "#e8e8e8",
+    alternate: "#ffffff",
+    shadow: "#ffffff",
+    text: "#404040",
+  },
 }
