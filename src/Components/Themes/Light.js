@@ -29,4 +29,10 @@ export default {
     shadow: "#f6f83c",
     text: "#181c1f",
   },
+  navigation: {
+    base: "#0b7acf",
+    alternate: "#085BA7",
+    shadow: "#181c1f",
+    text: "#f0f0f0",
+  },
 }

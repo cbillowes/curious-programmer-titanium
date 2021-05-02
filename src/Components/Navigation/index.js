@@ -11,15 +11,15 @@ const Bar = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  background-color: ${(props) => getAlternate(props, "primary")};
-  border-bottom: solid 10px ${(props) => getBase(props, "primary")};
+  background-color: ${(props) => getAlternate(props, "navigation")};
+  border-bottom: solid 10px ${(props) => getBase(props, "navigation")};
 `
 
 const Logo = styled.div`
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 1.75rem;
-  color: ${(props) => getText(props, "primary")};
-  text-shadow: 1px 1px 1px ${(props) => getShadow(props, "primary")};
+  color: ${(props) => getText(props, "navigation")};
+  text-shadow: 1px 1px 1px ${(props) => getShadow(props, "navigation")};
 `
 
 const Navigation = ({ theme, switcher }) => {
