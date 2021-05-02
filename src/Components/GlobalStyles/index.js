@@ -20,6 +20,7 @@ import DarkTheme from "./Themes/Dark"
 /*
   FONTS:
 
+  Open+Sans:wght@300;700
   Courier+Prime
   Raleway:ital,wght@0,300;0,600;1,300
   Zilla+Slab:wght@700
