@@ -29,10 +29,18 @@ export default {
     shadow: "#f6f83c",
     text: "#181c1f",
   },
+
+  // Components
+
   navigation: {
     base: "#0b7acf",
     alternate: "#085BA7",
     shadow: "#181c1f",
     text: "#f0f0f0",
+  },
+
+  connect: {
+    base: "#cccccc",
+    alternate: "#0b7acf",
   },
 }

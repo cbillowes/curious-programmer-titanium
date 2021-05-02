@@ -5,6 +5,7 @@ import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { IoIosMail } from "@react-icons/all-files/io/IoIosMail"
+import { getAlternate, getBase } from "../GlobalStyles"
 import Anchor from "../Anchor"
 
 const items = [
@@ -45,14 +46,25 @@ const Container = styled.ul`
   }
 `
 
+const Link = styled(Anchor)`
+  background-color: transparent;
+  padding: 0.25rem;
+  color: ${(props) => getBase(props, "connect")};
+
+  &:hover {
+    background-color: transparent;
+    color: ${(props) => getAlternate(props, "connect")};
+  }
+`
+
 const Connect = ({ theme, switcher }) => (
   <Container theme={theme}>
     <li>{switcher}</li>
     {items.map((item, i) => (
       <li key={i}>
-        <Anchor to={item.to} title={item.title}>
+        <Link to={item.to} title={item.title} theme={theme}>
           {item.anchor}
-        </Anchor>
+        </Link>
       </li>
     ))}
   </Container>
