@@ -172,9 +172,9 @@ const Navigation = ({ theme }) => {
   return (
     <Bar theme={theme}>
       <Logo theme={theme}>
-        <strong>{`{ `}</strong>
-        <span>:curious</span>
-        <strong>{` programmer }`}</strong>
+        <span>{`{ :curious `}</span>
+        <strong>{` "programmer" `}</strong>
+        <span>{`}`}</span>
       </Logo>
       <Burger
         aria-label="Menu"

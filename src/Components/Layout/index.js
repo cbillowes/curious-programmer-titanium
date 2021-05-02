@@ -29,7 +29,7 @@ const Layout = ({ header, children }) => {
       <Helmet>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="//fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Courier+Prime&family=Raleway:ital,wght@0,300;0,600;1,300&family=Zilla+Slab:wght@700&display=swap"
+          href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Courier+Prime&family=Raleway:ital,wght@0,300;0,600;1,300&family=Zilla+Slab:wght@700&display=swap"
           rel="stylesheet"
         />
       </Helmet>
