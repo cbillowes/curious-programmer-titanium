@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Anchor from "../Anchor"
 import Connect from "../Connect"
-import { SPACE_BETWEEN_HEADER_AND_PAGE } from "../GlobalStyles"
+import { SPACE_BETWEEN_HEADER_AND_PAGE, getBase } from "../GlobalStyles"
 
 const items = [
   {
@@ -44,22 +44,24 @@ const Container = styled.nav`
   right: 0;
   bottom: 0;
   top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
-  padding-right: 3.5rem;
-  background-color: black;
+  padding-right: 4rem;
+  background-color: ${(props) => getBase(props, "menu")};
 
   ul,
   li {
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-
-  .menu-item {
-    padding: 1rem 2rem;
-    display: block;
-    border-radius: 0;
     width: 100%;
   }
+`
+
+const Link = styled(Anchor)`
+  margin: 0;
+  padding: 1rem 2rem;
+  display: block;
+  border-radius: 0;
+  width: 100%;
 `
 
 const Menu = ({ isOpen, theme, switcher }) => (
@@ -67,9 +69,9 @@ const Menu = ({ isOpen, theme, switcher }) => (
     <ul>
       {items.map((item, i) => (
         <li key={i}>
-          <Anchor className="menu-item" to={item.to} title={item.title}>
+          <Link to={item.to} title={item.title}>
             {item.anchor}
-          </Anchor>
+          </Link>
         </li>
       ))}
     </ul>

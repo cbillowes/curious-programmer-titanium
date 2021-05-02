@@ -44,22 +44,36 @@ const Container = styled.ul`
     padding: 1.5rem 0.75rem;
     display: inline-block;
   }
+
+  .switcher div {
+    color: ${(props) => getBase(props, "connect")};
+    font-size: 1.5rem;
+    margin-top: -2px;
+
+    &:hover {
+      background-color: transparent;
+      color: ${(props) => getAlternate(props, "connect")};
+      opacity: 0.5;
+    }
+  }
 `
 
 const Link = styled(Anchor)`
   background-color: transparent;
-  padding: 0.25rem;
+  padding: 0;
   color: ${(props) => getBase(props, "connect")};
+  font-size: 1.25rem;
 
   &:hover {
     background-color: transparent;
     color: ${(props) => getAlternate(props, "connect")};
+    opacity: 0.5;
   }
 `
 
 const Connect = ({ theme, switcher }) => (
   <Container theme={theme}>
-    <li>{switcher}</li>
+    <li className="switcher">{switcher}</li>
     {items.map((item, i) => (
       <li key={i}>
         <Link to={item.to} title={item.title} theme={theme}>

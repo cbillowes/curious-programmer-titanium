@@ -41,7 +41,7 @@ export default {
 
   connect: {
     base: "#cccccc",
-    alternate: "#0b7acf",
+    alternate: "#181c1f",
   },
 
   footer: {
@@ -49,5 +49,9 @@ export default {
     alternate: "#131618",
     shadow: "#131618",
     text: "#f0f0f0",
+  },
+
+  menu: {
+    base: "#085BA7",
   },
 }
