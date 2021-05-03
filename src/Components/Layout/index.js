@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Helmet from "react-helmet"
 import Navigation from "../Navigation"
 import Footer from "../Footer"
+import Head from "../Head"
 import ThemeSwitcher from "../ThemeSwitcher"
 import GlobalStyles, {
   SPACE_BETWEEN_HEADER_AND_PAGE,
@@ -27,19 +27,19 @@ const Page = styled.main`
   margin: 0 auto;
 `
 
-const Layout = ({ header, children }) => {
+const Layout = ({ metadata, title, description, image, header, children }) => {
   const [theme, toggleTheme] = useState("light")
 
   return (
     <Fragment>
+      <Head
+        {...metadata}
+        title={title}
+        description={description}
+        image={image}
+      />
+
       <GlobalStyles theme={theme} />
-      <Helmet>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Courier+Prime&family=Raleway:ital,wght@0,300;0,600;1,300&family=Zilla+Slab:wght@700&display=swap"
-          rel="stylesheet"
-        />
-      </Helmet>
       <Navigation
         theme={theme}
         switcher={<ThemeSwitcher theme={theme} toggle={toggleTheme} />}
@@ -64,5 +64,22 @@ Layout.defaultProps = {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  description: PropTypes.string.isRequired,
   header: PropTypes.node,
+  image: PropTypes.string.isRequired,
+  metadata: PropTypes.shape({
+    themeColor: PropTypes.object.isRequired,
+    siteTitle: PropTypes.object.isRequired,
+    keywords: PropTypes.object.isRequired,
+    siteKeywords: PropTypes.object.isRequired,
+    author: PropTypes.object.isRequired,
+    siteTitleShort: PropTypes.object.isRequired,
+    siteDescription: PropTypes.object.isRequired,
+    siteUrl: PropTypes.object.isRequired,
+    route: PropTypes.object.isRequired,
+    social: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    canonical: PropTypes.object.isRequired,
+  }).isRequired,
+  title: PropTypes.string.isRequired,
 }

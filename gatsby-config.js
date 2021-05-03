@@ -1,4 +1,7 @@
+const metadata = require("./site-metadata")
+
 module.exports = {
+  siteMetadata: metadata,
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
