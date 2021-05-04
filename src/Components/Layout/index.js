@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react"
+import { useCookies } from "react-cookie"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Navigation from "../Navigation"
@@ -28,7 +29,8 @@ const Page = styled.main`
 `
 
 const Layout = ({ metadata, title, description, image, header, children }) => {
-  const [theme, toggleTheme] = useState("light")
+  const [cookie] = useCookies(["theme"])
+  const [theme, toggleTheme] = useState(cookie.theme || "light")
 
   return (
     <Fragment>

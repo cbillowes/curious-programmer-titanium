@@ -1,4 +1,5 @@
 import React from "react"
+import { useCookies } from "react-cookie"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { MdBrightness2 } from "@react-icons/all-files/md/MdBrightness2"
@@ -27,15 +28,23 @@ const LightThemeIcon = styled(MdWbSunny)`
   display: ${(props) => (props.visible ? "inline-block" : "none")};
 `
 
-const ThemeSwitcher = ({ theme, toggle }) => (
-  <Container
-    theme={theme}
-    onClick={() => toggle(theme === "light" ? "dark" : "light")}
-  >
-    <LightThemeIcon visible={theme === "dark"} />
-    <DarkThemeIcon visible={theme === "light"} />
-  </Container>
-)
+const ThemeSwitcher = ({ theme, toggle }) => {
+  // eslint-disable-next-line no-unused-vars
+  const [cookie, setCookie] = useCookies(["theme"])
+
+  const switcheroo = () => {
+    const newTheme = theme === "light" ? "dark" : "light"
+    toggle(newTheme)
+    setCookie("theme", newTheme, { path: "/" })
+  }
+
+  return (
+    <Container theme={theme} onClick={switcheroo}>
+      <LightThemeIcon visible={theme === "dark"} />
+      <DarkThemeIcon visible={theme === "light"} />
+    </Container>
+  )
+}
 
 export default ThemeSwitcher
 
