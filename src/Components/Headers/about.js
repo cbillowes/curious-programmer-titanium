@@ -60,26 +60,28 @@ const Greetings = styled.div`
     text-shadow: 1px 1px 2px #000000;
   }
 
-  div {
+  .emojis {
     font-size: 4rem;
     margin-top: 10%;
   }
 `
 
 const Contact = styled.div`
-  position: absolute;
-  right: 5rem;
-  bottom: 10rem;
-  max-width: 550px;
-  padding-left: 3rem;
-  font-size: 2.5rem;
+  margin-top: 4rem;
+  text-align: right;
 
   a {
+    font-size: 2rem;
+    padding: 1rem;
     background-color: transparent;
     color: #ffffff99;
 
     &:hover {
       color: #00000099;
+    }
+
+    &:last-child {
+      padding-right: 0;
     }
   }
 `
@@ -87,10 +89,10 @@ const Contact = styled.div`
 const Header = () => (
   <Wrapper>
     <Container>
-      <StaticImage src="../images/profile.jpg" />
+      <StaticImage src="./profile.jpg" alt="Clarice Bouwer" />
       <Overlay />
       <Greetings>
-        <h1>Hello World!</h1>
+        <h1>{`< Hello World />`}</h1>
         <p>
           <span>
             My name is <strong>Clarice Bouwer</strong>, a Senior Software
@@ -103,42 +105,48 @@ const Header = () => (
             I work at <strong>Cloudsure</strong> in Mauritius. I&rsquo;m loving
             it!
           </span>{" "}
-          <div>🇿🇦 🇲🇺 🏝️</div>
-        </p>
+          <div className="emojis">
+            🇿🇦 🇲🇺 🏝️{" "}
+            <StaticImage src="./cloudsure.png" alt="Cloudsure" width={55} />
+          </div>
+        </p>{" "}
+        <Contact>
+          <Anchor
+            to="https://github.com/cbillowes"
+            title="Check out my code on GitHub"
+          >
+            <FaGithub />
+          </Anchor>
+
+          <Anchor
+            to="https://twitter.com/cbillowes"
+            title="Follow me on Twitter"
+          >
+            <FaTwitter />
+          </Anchor>
+
+          <Anchor
+            to="https://www.linkedin.com/in/cbouwer/"
+            title="Squizz through my resume on LinkedIn"
+          >
+            <FaLinkedin />
+          </Anchor>
+
+          <Anchor
+            to="https://stackoverflow.com/users/849986/clarice-bouwer"
+            title="Look at my profile on StackOverflow"
+          >
+            <FaStackOverflow />
+          </Anchor>
+
+          <Anchor
+            to="https://clarice.bouwer.dev"
+            title="Check out my portfolio website"
+          >
+            <CgWebsite />
+          </Anchor>
+        </Contact>
       </Greetings>
-      <Contact>
-        <Anchor
-          to="https://github.com/cbillowes"
-          title="Check out my code on GitHub"
-        >
-          <FaGithub />
-        </Anchor>
-
-        <Anchor to="https://twitter.com/cbillowes" title="Follow me on Twitter">
-          <FaTwitter />
-        </Anchor>
-
-        <Anchor
-          to="https://www.linkedin.com/in/cbouwer/"
-          title="Squizz through my resume on LinkedIn"
-        >
-          <FaLinkedin />
-        </Anchor>
-
-        <Anchor
-          to="https://stackoverflow.com/users/849986/clarice-bouwer"
-          title="Look at my profile on StackOverflow"
-        >
-          <FaStackOverflow />
-        </Anchor>
-
-        <Anchor
-          to="https://clarice.bouwer.dev"
-          title="Check out my portfolio website"
-        >
-          <CgWebsite />
-        </Anchor>
-      </Contact>
     </Container>
   </Wrapper>
 )
