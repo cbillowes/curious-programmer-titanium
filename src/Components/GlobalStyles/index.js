@@ -104,7 +104,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1.25rem;
   }
 
-  p, blockquote, code, pre {
+  p, blockquote, code, pre, li {
     line-height: 2.5rem;
   }
 
@@ -117,6 +117,14 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding-left: 1.5rem;
     border-left: solid 0.5rem ${(props) => getAlternate(props, "primary")};
+  }
+
+  ul, ol {
+    padding-left: 1rem;
+
+    li {
+      padding-left: 1rem;
+    }
   }
 `
 

@@ -6,6 +6,7 @@ import Menu from "../Menu"
 import { getBase, getAlternate, getText, getShadow } from "../GlobalStyles"
 
 const Bar = styled.div`
+  z-index: 9999;
   padding: 1rem 2rem;
   position: fixed;
   top: 0;

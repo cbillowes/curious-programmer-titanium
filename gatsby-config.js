@@ -1,8 +1,11 @@
-const metadata = require("./site-metadata")
+const siteMetadata = require("./site-metadata")
 
 module.exports = {
-  siteMetadata: metadata,
+  siteMetadata,
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

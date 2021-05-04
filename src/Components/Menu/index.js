@@ -45,6 +45,7 @@ const Container = styled.nav`
   bottom: 0;
   top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
   background-color: ${(props) => getBase(props, "menu")};
+  z-index: 2;
 
   ul.menu-items,
   .menu-items li {

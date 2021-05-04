@@ -12,7 +12,6 @@ import GlobalStyles, {
 } from "../GlobalStyles"
 
 const Header = styled.div`
-  padding: 3rem;
   padding-bottom: 0;
 `
 
@@ -24,6 +23,7 @@ const Wrapper = styled.div`
 
 const Page = styled.main`
   max-width: ${MAX_WIDTH}px;
+  padding: 3rem;
   margin: 0 auto;
 `
 
