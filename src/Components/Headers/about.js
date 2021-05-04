@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
@@ -86,8 +87,8 @@ const Contact = styled.div`
   }
 `
 
-const Header = () => (
-  <Wrapper>
+const Header = ({ theme }) => (
+  <Wrapper theme={theme}>
     <Container>
       <StaticImage src="./profile.jpg" alt="Clarice Bouwer" />
       <Overlay />
@@ -152,3 +153,7 @@ const Header = () => (
 )
 
 export default Header
+
+Header.propTypes = {
+  theme: PropTypes.string.isRequired,
+}

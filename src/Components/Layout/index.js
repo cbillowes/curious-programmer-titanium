@@ -1,5 +1,4 @@
-import React, { Fragment, useState } from "react"
-import { useCookies } from "react-cookie"
+import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Navigation from "../Navigation"
@@ -28,10 +27,16 @@ const Page = styled.main`
   margin: 0 auto;
 `
 
-const Layout = ({ metadata, title, description, image, header, children }) => {
-  const [cookie] = useCookies(["theme"])
-  const [theme, toggleTheme] = useState(cookie.theme || "light")
-
+const Layout = ({
+  metadata,
+  title,
+  description,
+  image,
+  header,
+  children,
+  theme,
+  toggleTheme,
+}) => {
   return (
     <Fragment>
       <Head
@@ -47,7 +52,7 @@ const Layout = ({ metadata, title, description, image, header, children }) => {
         switcher={<ThemeSwitcher theme={theme} toggle={toggleTheme} />}
       />
       <Wrapper theme={theme}>
-        <Header header={header}>{header}</Header>
+        <Header>{header}</Header>
         <Page>{children}</Page>
       </Wrapper>
       <Footer
@@ -84,4 +89,6 @@ Layout.propTypes = {
     canonical: PropTypes.object.isRequired,
   }).isRequired,
   title: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired,
+  toggleTheme: PropTypes.func.isRequired,
 }

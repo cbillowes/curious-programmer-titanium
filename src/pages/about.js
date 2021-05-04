@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { CookiesProvider, useCookies } from "react-cookie"
 import styled from "styled-components"
 import Layout from "../Components/Layout"
@@ -35,11 +35,15 @@ const Block = styled.div`
 const AboutPage = () => {
   // eslint-disable-next-line no-unused-vars
   const [cookie] = useCookies(["theme"])
-  const theme = cookie.theme || "dark"
+  const [theme, toggleTheme] = useState(cookie.theme || "light")
 
   return (
     <CookiesProvider>
-      <Layout theme={theme} header={<Header theme={theme} />}>
+      <Layout
+        toggleTheme={toggleTheme}
+        theme={theme}
+        header={<Header theme={theme} />}
+      >
         <Block>
           <h2>People centric.</h2>
           <Image width={400} position="right">
