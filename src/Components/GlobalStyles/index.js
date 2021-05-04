@@ -120,10 +120,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ul, ol {
-    padding-left: 1rem;
+    padding-left: 0.25rem;
 
     li {
-      padding-left: 1rem;
+      padding-left: 0.25rem;
     }
   }
 `
