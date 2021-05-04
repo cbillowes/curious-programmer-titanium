@@ -40,12 +40,13 @@ const items = [
 
 const Container = styled.nav`
   display: ${(props) => (props.isOpen ? "block" : "none")};
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
   background-color: ${(props) => getBase(props, "menu")};
-  z-index: 2;
+  z-index: 9998;
+  overflow: auto;
 
   ul.menu-items,
   .menu-items li {
