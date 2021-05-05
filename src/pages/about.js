@@ -1,9 +1,9 @@
 import React from "react"
-import { CookiesProvider } from "react-cookie"
+import { CookiesProvider, useCookies } from "react-cookie"
 import styled from "styled-components"
 import {
-  switchTheme,
-  getPersistedTheme,
+  THEME_COOKIE_NAME,
+  getToggledTheme,
   getShadow,
   Things,
 } from "../Components/Themes"
@@ -47,8 +47,8 @@ const Block = styled.div`
 `
 
 const AboutPage = () => {
-  const theme = getPersistedTheme()
-  const toggleTheme = (theme) => switchTheme(theme)
+  const [cookie, setCookie] = useCookies([THEME_COOKIE_NAME])
+  const theme = cookie.theme
 
   return (
     <CookiesProvider>
@@ -60,7 +60,8 @@ const AboutPage = () => {
           url: "https://clarice.bouwer.dev",
         }}
         image="about/profile.jpg"
-        toggleTheme={toggleTheme}
+        toggleTheme={(theme) => getToggledTheme(theme)}
+        themeCookieSetter={setCookie}
         theme={theme}
         header={<Header theme={theme} />}
       >

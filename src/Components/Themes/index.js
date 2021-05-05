@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components"
-import { useCookies } from "react-cookie"
 import Light from "./Light"
 import Dark from "./Dark"
 
@@ -139,8 +138,6 @@ export const Styles = createGlobalStyle`
   standard | primary | secondary | tertiary | neutral
 */
 
-const THEME_COOKIE_NAME = "theme"
-
 const Themes = {
   default: Dark,
   dark: Dark,
@@ -174,18 +171,9 @@ export const getText = (theme, thing) => getColor(theme, thing, "text")
 
 export const getIcon = (theme, icon) => getTheme(theme)["icon"][icon]
 
-export const switchTheme = (theme) => (theme === "dark" ? "light" : "dark")
+export const getToggledTheme = (theme) => (theme === "dark" ? "light" : "dark")
 
-export const getPersistedTheme = () => {
-  const [cookie] = useCookies([THEME_COOKIE_NAME])
-  return cookie.theme
-}
-
-export const persistTheme = (themeName) => {
-  // eslint-disable-next-line no-unused-vars
-  const [existingTheme, setCookie] = useCookies([THEME_COOKIE_NAME])
-  setCookie(THEME_COOKIE_NAME, themeName, { path: "/" })
-}
+export const THEME_COOKIE_NAME = "theme"
 
 export const Icons = {
   THEME: "theme",

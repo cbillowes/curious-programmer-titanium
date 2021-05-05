@@ -2,9 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import {
+  THEME_COOKIE_NAME,
   Things,
-  switchTheme,
-  persistTheme,
   getBase,
   getText,
   getIcon,
@@ -25,15 +24,17 @@ const Container = styled.button`
   }
 `
 
-const ThemeSwitcher = ({ theme, toggle }) => {
-  const switcheroo = () => {
-    const newTheme = switchTheme(theme)
-    toggle(newTheme)
-    persistTheme(newTheme)
-  }
+const switcheroo = (toggle, theme, setCookie) => {
+  const toggledTheme = toggle(theme)
+  setCookie(THEME_COOKIE_NAME, toggledTheme, { path: "/" })
+}
 
+const ThemeSwitcher = ({ theme, setCookie, toggle }) => {
   return (
-    <Container theme={theme} onClick={switcheroo}>
+    <Container
+      theme={theme}
+      onClick={() => switcheroo(toggle, theme, setCookie)}
+    >
       {getIcon(theme, Icons.THEME)}
     </Container>
   )
@@ -42,6 +43,7 @@ const ThemeSwitcher = ({ theme, toggle }) => {
 export default ThemeSwitcher
 
 ThemeSwitcher.propTypes = {
+  setCookie: PropTypes.func.isRequired,
   theme: PropTypes.string.isRequired,
   toggle: PropTypes.func.isRequired,
 }

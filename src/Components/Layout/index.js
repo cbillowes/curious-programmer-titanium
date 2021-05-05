@@ -36,6 +36,7 @@ const Layout = ({
   header,
   children,
   theme,
+  themeCookieSetter,
   toggleTheme,
 }) => {
   return (
@@ -44,7 +45,13 @@ const Layout = ({
       <Styles theme={theme} />
       <Navigation
         theme={theme}
-        switcher={<ThemeSwitcher theme={theme} toggle={toggleTheme} />}
+        switcher={
+          <ThemeSwitcher
+            theme={theme}
+            toggle={toggleTheme}
+            setCookie={themeCookieSetter}
+          />
+        }
       />
       <Wrapper theme={theme}>
         <Header>{header}</Header>
@@ -52,7 +59,13 @@ const Layout = ({
       </Wrapper>
       <Footer
         theme={theme}
-        switcher={<ThemeSwitcher theme={theme} toggle={toggleTheme} />}
+        switcher={
+          <ThemeSwitcher
+            theme={theme}
+            toggle={toggleTheme}
+            setCookie={themeCookieSetter}
+          />
+        }
       />
     </Fragment>
   )
@@ -71,5 +84,6 @@ Layout.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string.isRequired,
   theme: PropTypes.string.isRequired,
+  themeCookieSetter: PropTypes.func.isRequired,
   toggleTheme: PropTypes.func.isRequired,
 }
