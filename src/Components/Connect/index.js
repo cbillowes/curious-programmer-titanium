@@ -5,7 +5,7 @@ import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { IoIosMail } from "@react-icons/all-files/io/IoIosMail"
-import { getAlternate, getBase } from "../GlobalStyles"
+import { Things, getAlternate, getBase } from "../Themes"
 import Anchor from "../Anchor"
 
 const items = [
@@ -46,13 +46,13 @@ const Container = styled.ul`
   }
 
   .switcher button {
-    color: ${(props) => getBase(props, "connect")};
+    color: ${(props) => getBase(props.theme, Things.CONNECT)};
     font-size: 1.5rem;
     margin-top: -2px;
 
     &:hover {
       background-color: transparent;
-      color: ${(props) => getAlternate(props, "connect")};
+      color: ${(props) => getAlternate(props.theme, Things.CONNECT)};
       opacity: 0.5;
     }
   }
@@ -61,19 +61,19 @@ const Container = styled.ul`
 const Link = styled(Anchor)`
   background-color: transparent;
   padding: 0;
-  color: ${(props) => getBase(props, "connect")};
+  color: ${(props) => getBase(props.theme, Things.CONNECT)};
   font-size: 1.25rem;
 
   &:hover {
     background-color: transparent;
-    color: ${(props) => getAlternate(props, "connect")};
+    color: ${(props) => getAlternate(props.theme, Things.CONNECT)};
     opacity: 0.5;
   }
 `
 
-const Connect = ({ theme, switcher }) => (
+const Connect = ({ theme, themeSwitcheroo }) => (
   <Container theme={theme}>
-    <li className="switcher">{switcher}</li>
+    <li className="switcher">{themeSwitcheroo}</li>
     {items.map((item, i) => (
       <li key={i}>
         <Link to={item.to} title={item.title} theme={theme}>
@@ -87,6 +87,6 @@ const Connect = ({ theme, switcher }) => (
 export default Connect
 
 Connect.propTypes = {
-  switcher: PropTypes.node.isRequired,
+  themeSwitcheroo: PropTypes.node.isRequired,
   theme: PropTypes.string.isRequired,
 }

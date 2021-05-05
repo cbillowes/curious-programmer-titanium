@@ -1,3 +1,6 @@
+import React from "react"
+import { MdBrightness2 } from "@react-icons/all-files/md/MdBrightness2"
+
 export default {
   standard: {
     base: "#181c1f",
@@ -25,6 +28,9 @@ export default {
   },
 
   // Components
+  icon: {
+    theme: <MdBrightness2 />,
+  },
 
   navigation: {
     base: "#0b7acf",
@@ -43,6 +49,10 @@ export default {
     alternate: "#131618",
     shadow: "#131618",
     text: "#f0f0f0",
+  },
+
+  card: {
+    shadow: "rgba(100, 100, 111, 0.2)",
   },
 
   menu: {

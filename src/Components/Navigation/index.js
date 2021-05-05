@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Hamburger from "../Hamburger"
 import Menu from "../Menu"
-import { getBase, getAlternate, getText, getShadow } from "../GlobalStyles"
+import { Things, getBase, getAlternate, getText, getShadow } from "../Themes"
 
 const Bar = styled.div`
   z-index: 9999;
@@ -12,15 +12,17 @@ const Bar = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  background-color: ${(props) => getAlternate(props, "navigation")};
-  border-bottom: solid 10px ${(props) => getBase(props, "navigation")};
+  background-color: ${(props) => getAlternate(props.theme, Things.NAVIGATION)};
+  border-bottom: solid 10px
+    ${(props) => getBase(props.theme, Things.NAVIGATION)};
 `
 
 const Logo = styled.div`
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 1.75rem;
-  color: ${(props) => getText(props, "navigation")};
-  text-shadow: 1px 1px 1px ${(props) => getShadow(props, "navigation")};
+  color: ${(props) => getText(props.theme, Things.NAVIGATION)};
+  text-shadow: 1px 1px 1px
+    ${(props) => getShadow(props.theme, Things.NAVIGATION)};
 `
 
 const Navigation = ({ theme, switcher }) => {

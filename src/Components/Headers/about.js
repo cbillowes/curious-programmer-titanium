@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  min-height: 1000px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `
 
@@ -64,6 +65,7 @@ const Greetings = styled.div`
   .emojis {
     font-size: 4rem;
     margin-top: 10%;
+    text-align: right;
   }
 `
 
@@ -106,11 +108,11 @@ const Header = ({ theme }) => (
             I work at <strong>Cloudsure</strong> in Mauritius. I&rsquo;m loving
             it!
           </span>{" "}
-          <div className="emojis">
-            🇿🇦 🇲🇺 🏝️{" "}
-            <StaticImage src="./cloudsure.png" alt="Cloudsure" width={55} />
-          </div>
         </p>{" "}
+        <div className="emojis">
+          🇿🇦 🇲🇺 🏝️{" "}
+          <StaticImage src="./cloudsure.png" alt="Cloudsure" width={55} />
+        </div>
         <Contact>
           <Anchor
             to="https://github.com/cbillowes"

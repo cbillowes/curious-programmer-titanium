@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Anchor from "../Anchor"
 import Connect from "../Connect"
-import { SPACE_BETWEEN_HEADER_AND_PAGE, getBase } from "../GlobalStyles"
+import { SPACE_BETWEEN_HEADER_AND_PAGE, Things, getBase } from "../Themes"
 
 const items = [
   {
@@ -44,7 +44,7 @@ const Container = styled.nav`
   right: 0;
   bottom: 0;
   top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
-  background-color: ${(props) => getBase(props, "menu")};
+  background-color: ${(props) => getBase(props.theme, Things.MENU)};
   z-index: 9998;
   overflow: auto;
 

@@ -5,18 +5,20 @@ import Navigation from "../Navigation"
 import Footer from "../Footer"
 import Head from "../Head"
 import ThemeSwitcher from "../ThemeSwitcher"
-import GlobalStyles, {
+import {
   SPACE_BETWEEN_HEADER_AND_PAGE,
   MAX_WIDTH,
+  Styles,
+  Things,
   getBase,
-} from "../GlobalStyles"
+} from "../Themes"
 
 const Header = styled.div`
   padding-bottom: 0;
 `
 
 const Wrapper = styled.div`
-  background-color: ${(props) => getBase(props, "standard")};
+  background-color: ${(props) => getBase(props.theme, Things.STANDARD)};
   padding-top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
   padding-bottom: 3rem;
 `
@@ -28,7 +30,6 @@ const Page = styled.main`
 `
 
 const Layout = ({
-  metadata,
   title,
   description,
   image,
@@ -39,14 +40,8 @@ const Layout = ({
 }) => {
   return (
     <Fragment>
-      <Head
-        {...metadata}
-        title={title}
-        description={description}
-        image={image}
-      />
-
-      <GlobalStyles theme={theme} />
+      <Head title={title} description={description} image={image} />
+      <Styles theme={theme} />
       <Navigation
         theme={theme}
         switcher={<ThemeSwitcher theme={theme} toggle={toggleTheme} />}
@@ -74,20 +69,6 @@ Layout.propTypes = {
   description: PropTypes.string.isRequired,
   header: PropTypes.node,
   image: PropTypes.string.isRequired,
-  metadata: PropTypes.shape({
-    themeColor: PropTypes.object.isRequired,
-    siteTitle: PropTypes.object.isRequired,
-    keywords: PropTypes.object.isRequired,
-    siteKeywords: PropTypes.object.isRequired,
-    author: PropTypes.object.isRequired,
-    siteTitleShort: PropTypes.object.isRequired,
-    siteDescription: PropTypes.object.isRequired,
-    siteUrl: PropTypes.object.isRequired,
-    route: PropTypes.object.isRequired,
-    social: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    canonical: PropTypes.object.isRequired,
-  }).isRequired,
   title: PropTypes.string.isRequired,
   theme: PropTypes.string.isRequired,
   toggleTheme: PropTypes.func.isRequired,

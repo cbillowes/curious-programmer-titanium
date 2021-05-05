@@ -1,10 +1,15 @@
 import React from "react"
-import { useCookies } from "react-cookie"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { MdBrightness2 } from "@react-icons/all-files/md/MdBrightness2"
-import { MdWbSunny } from "@react-icons/all-files/md/MdWbSunny"
-import { getBase, getText } from "../GlobalStyles"
+import {
+  Things,
+  switchTheme,
+  persistTheme,
+  getBase,
+  getText,
+  getIcon,
+  Icons,
+} from "../Themes"
 
 const Container = styled.button`
   display: inline-block;
@@ -13,35 +18,23 @@ const Container = styled.button`
   cursor: pointer;
   background-color: transparent;
   font-size: 1.25rem;
-  color: ${(props) => getText(props, "footer")};
+  color: ${(props) => getText(props.theme, Things.FOOTER)};
 
   &:hover {
-    color: ${(props) => getBase(props, "primary")};
+    color: ${(props) => getBase(props.theme, Things.PRIMARY)};
   }
 `
 
-const DarkThemeIcon = styled(MdBrightness2)`
-  display: ${(props) => (props.visible ? "inline-block" : "none")};
-`
-
-const LightThemeIcon = styled(MdWbSunny)`
-  display: ${(props) => (props.visible ? "inline-block" : "none")};
-`
-
 const ThemeSwitcher = ({ theme, toggle }) => {
-  // eslint-disable-next-line no-unused-vars
-  const [cookie, setCookie] = useCookies(["theme"])
-
   const switcheroo = () => {
-    const newTheme = theme === "light" ? "dark" : "light"
+    const newTheme = switchTheme(theme)
     toggle(newTheme)
-    setCookie("theme", newTheme, { path: "/" })
+    persistTheme(newTheme)
   }
 
   return (
     <Container theme={theme} onClick={switcheroo}>
-      <LightThemeIcon visible={theme === "dark"} />
-      <DarkThemeIcon visible={theme === "light"} />
+      {getIcon(theme, Icons.THEME)}
     </Container>
   )
 }

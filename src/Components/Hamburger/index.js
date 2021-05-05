@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { getText } from "../GlobalStyles"
+import { Things, getText } from "../Themes"
 
 const BURGER_WIDTH = 40
 const BURGER_HEIGHT = 24
@@ -37,7 +37,7 @@ const Container = styled.button`
     .hamburger-inner,
     .hamburger-inner::before,
     .hamburger-inner::after {
-      background-color: ${(props) => getText(props, "primary")};
+      background-color: ${(props) => getText(props.theme, Things.PRIMARY)};
       opacity: 1;
     }
   }
@@ -47,7 +47,7 @@ const Container = styled.button`
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner::before,
   .hamburger.is-active .hamburger-inner::after {
-    background-color: ${(props) => getText(props, "primary")};
+    background-color: ${(props) => getText(props.theme, Things.PRIMARY)};
   }
 
   .hamburger-box {
@@ -65,7 +65,7 @@ const Container = styled.button`
   .hamburger-inner,
   .hamburger-inner::before,
   .hamburger-inner::after {
-    background-color: ${(props) => getText(props, "primary")};
+    background-color: ${(props) => getText(props.theme, Things.PRIMARY)};
     width: ${BURGER_WIDTH}px;
     height: ${BAR_HEIGHT}px;
     border-radius: 4px;

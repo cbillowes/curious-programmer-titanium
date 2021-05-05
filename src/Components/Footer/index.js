@@ -2,13 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Anchor from "../Anchor"
-import { MAX_WIDTH, getBase, getText, getShadow } from "../GlobalStyles"
+import { MAX_WIDTH, Things, getBase, getText, getShadow } from "../Themes"
 
 const Container = styled.footer`
   padding: 2rem;
-  background-color: ${(props) => getBase(props, "footer")};
-  color: ${(props) => getText(props, "footer")};
-  text-shadow: 1px 1px 1px ${(props) => getShadow(props, "footer")};
+  background-color: ${(props) => getBase(props.theme, Things.FOOTER)};
+  color: ${(props) => getText(props.theme, Things.FOOTER)};
+  text-shadow: 1px 1px 1px ${(props) => getShadow(props.theme, Things.FOOTER)};
 
   section {
     line-height: 1.75rem;
@@ -46,11 +46,11 @@ const Legal = styled.p`
     margin-right: 1rem;
     font-weight: 800;
     background-color: transparent;
-    color: ${(props) => getText(props, "footer")};
-    text-shadow: 1px 1px 1px ${(props) => getShadow(props, "footer")};
+    color: ${(props) => getText(props.theme, Things.FOOTER)};
+    text-shadow: 1px 1px 1px ${(props) => getShadow(props.theme, Things.FOOTER)};
 
     &:hover {
-      color: ${(props) => getBase(props, "primary")};
+      color: ${(props) => getBase(props.theme, Things.PRIMARY)};
       transition: background ease-in 0.25s;
     }
   }

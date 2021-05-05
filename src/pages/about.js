@@ -1,20 +1,26 @@
-import React, { useState } from "react"
-import { CookiesProvider, useCookies } from "react-cookie"
+import React from "react"
+import { CookiesProvider } from "react-cookie"
 import styled from "styled-components"
+import {
+  switchTheme,
+  getPersistedTheme,
+  getShadow,
+  Things,
+} from "../Components/Themes"
 import Layout from "../Components/Layout"
 import Header from "../Components/Headers/about"
 import { StaticImage } from "gatsby-plugin-image"
 import Anchor from "../Components/Anchor"
 
 const Image = styled.div`
-  width: ${(props) => props.width}px;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  float: ${(props) => props.position || "left"};
   margin: 1rem;
   margin-right: ${(props) => (props.position === "left" ? "1.5rem" : "0")};
   margin-left: ${(props) => (props.position === "right" ? "1rem" : "0")};
+  width: ${(props) => props.width}px;
+  float: ${(props) => props.position || "left"};
+  box-shadow: ${(props) => getShadow(props.theme, Things.CARD)} 0px 7px 29px 0px;
 
   p {
     font-size: 80%;
@@ -25,18 +31,24 @@ const Image = styled.div`
   img {
     border-radius: 10px;
   }
+
+  @media screen and (max-width: 840px) {
+    &,
+    & img {
+      width: 100%;
+      float: none;
+      margin: 0;
+    }
+  }
 `
 
 const Block = styled.div`
   clear: both;
-  margin-left: -3rem;
-  margin-right: -3rem;
 `
 
 const AboutPage = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [cookie] = useCookies(["theme"])
-  const [theme, toggleTheme] = useState(cookie.theme || "light")
+  const theme = getPersistedTheme()
+  const toggleTheme = (theme) => switchTheme(theme)
 
   return (
     <CookiesProvider>
@@ -50,7 +62,7 @@ const AboutPage = () => {
       >
         <Block>
           <h2>People centric.</h2>
-          <Image width={400} position="right">
+          <Image width={400} position="right" theme={theme}>
             <StaticImage
               src="../images/about/legos.jpg"
               alt="People holding lego men"
@@ -93,7 +105,7 @@ const AboutPage = () => {
         </Block>
         <Block>
           <h2>Attributes.</h2>
-          <Image width={400} position="left">
+          <Image width={400} position="left" theme={theme}>
             <StaticImage
               src="../images/about/coffee-begin.jpg"
               alt="Coffee cup with the word Begin on it"
@@ -125,7 +137,7 @@ const AboutPage = () => {
         </Block>
         <Block>
           <h2>Core values.</h2>
-          <Image width={400} position="right">
+          <Image width={400} position="right" theme={theme}>
             <StaticImage
               src="../images/about/screen-with-code.jpg"
               alt="A screen with some code on it"

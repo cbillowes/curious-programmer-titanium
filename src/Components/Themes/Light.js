@@ -1,3 +1,6 @@
+import React from "react"
+import { MdWbSunny } from "@react-icons/all-files/md/MdWbSunny"
+
 export default {
   standard: {
     base: "#f0f0f0",
@@ -25,6 +28,9 @@ export default {
   },
 
   // Components
+  icon: {
+    theme: <MdWbSunny />,
+  },
 
   navigation: {
     base: "#0b7acf",
@@ -43,6 +49,10 @@ export default {
     alternate: "#ffffff",
     shadow: "#ffffff",
     text: "#404040",
+  },
+
+  card: {
+    shadow: "rgba(100, 100, 111, 0.2)",
   },
 
   menu: {
