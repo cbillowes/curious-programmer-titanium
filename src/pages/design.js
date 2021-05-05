@@ -4,6 +4,7 @@ import Layout from "../Components/Layout"
 const DesignPage = () => {
   return (
     <Layout
+      title="Design"
       header={
         <div>
           <h1>Jujubes powder cotton candy cake</h1>

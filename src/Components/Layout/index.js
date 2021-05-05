@@ -66,9 +66,9 @@ Layout.defaultProps = {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   header: PropTypes.node,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   title: PropTypes.string.isRequired,
   theme: PropTypes.string.isRequired,
   toggleTheme: PropTypes.func.isRequired,

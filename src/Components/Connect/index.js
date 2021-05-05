@@ -71,9 +71,9 @@ const Link = styled(Anchor)`
   }
 `
 
-const Connect = ({ theme, themeSwitcheroo }) => (
+const Connect = ({ theme, switcher }) => (
   <Container theme={theme}>
-    <li className="switcher">{themeSwitcheroo}</li>
+    <li className="switcher">{switcher}</li>
     {items.map((item, i) => (
       <li key={i}>
         <Link to={item.to} title={item.title} theme={theme}>
@@ -87,6 +87,6 @@ const Connect = ({ theme, themeSwitcheroo }) => (
 export default Connect
 
 Connect.propTypes = {
-  themeSwitcheroo: PropTypes.node.isRequired,
+  switcher: PropTypes.node.isRequired,
   theme: PropTypes.string.isRequired,
 }

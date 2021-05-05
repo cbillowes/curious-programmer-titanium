@@ -12,10 +12,12 @@ import { Helmet } from "react-helmet"
 
 const Head = ({
   author,
+  brand,
   description,
   image,
   keywords,
-  metadata,
+  lang,
+  siteTitle,
   social,
   title,
   type,
@@ -24,7 +26,7 @@ const Head = ({
   <React.Fragment>
     <Helmet
       htmlAttributes={{
-        lang: metadata.lang,
+        lang,
       }}
     >
       <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
@@ -42,19 +44,17 @@ const Head = ({
       />
     </Helmet>
 
-    <Title page={title} site={metadata.title} />
+    <Title page={title} site={siteTitle} />
 
     <Description
-      keywords={keywords || metadata.keywords}
-      author={
-        (author && author.name) || (metadata.author && metadata.author.name)
-      }
-      description={description || metadata.description}
+      keywords={keywords}
+      author={author && author.name}
+      description={description}
     />
 
     <Font />
 
-    <Icons themeColor={metadata.brand} />
+    <Icons themeColor={brand} />
 
     <Social
       url={url}
@@ -65,12 +65,11 @@ const Head = ({
     <Schema
       type={type}
       url={url}
-      name={title || metadata.title}
-      description={description || metadata.description}
+      name={title}
+      description={description}
       author={{
-        name:
-          (author && author.name) || (metadata.author && metadata.author.name),
-        url: (author && author.url) || (metadata.author && metadata.author.url),
+        name: author && author.name,
+        url: author && author.url,
       }}
       image={image || (social && social.image)}
     />
@@ -82,35 +81,26 @@ const author = PropTypes.shape({
   url: PropTypes.string.isRequired,
 })
 
-const metadataSocial = PropTypes.shape({
-  twitter: PropTypes.string.isRequired,
-})
-
-const metadata = PropTypes.shape({
-  author: author.isRequired,
-  brand: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  keywords: PropTypes.string.isRequired,
-  lang: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  social: metadataSocial.isRequired,
-})
-
 const social = PropTypes.shape({
   image: PropTypes.string.isRequired,
   twitter: PropTypes.string.isRequired,
 })
 
+Head.defaultProps = {
+  type: "WebSite",
+}
+
 Head.propTypes = {
   author: author.isRequired,
+  brand: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   keywords: PropTypes.string.isRequired,
-  metadata: metadata.isRequired,
+  lang: PropTypes.string.isRequired,
+  siteTitle: PropTypes.string.isRequired,
   social: social.isRequired,
   title: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   url: PropTypes.string.isRequired,
 }
 
@@ -142,8 +132,9 @@ const HeadWithQuery = (props) => (
       <Location>
         {({ location }) => (
           <Head
+            {...data.site.siteMetadata}
             {...props}
-            metadata={data.site.siteMetadata}
+            siteTitle={data.site.siteMetadata.title}
             location={location}
           />
         )}

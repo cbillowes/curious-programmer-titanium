@@ -172,7 +172,7 @@ export const getShadow = (theme, thing) => getColor(theme, thing, "shadow")
 
 export const getText = (theme, thing) => getColor(theme, thing, "text")
 
-export const getIcon = (theme, icon) => getTheme(theme)[icon]
+export const getIcon = (theme, icon) => getTheme(theme)["icon"][icon]
 
 export const switchTheme = (theme) => (theme === "dark" ? "light" : "dark")
 
