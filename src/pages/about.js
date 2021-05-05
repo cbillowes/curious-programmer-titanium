@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Layout from "../Components/Layout"
 import Header from "../Components/Headers/about"
 import { StaticImage } from "gatsby-plugin-image"
+import Anchor from "../Components/Anchor"
 
 const Image = styled.div`
   width: ${(props) => props.width}px;
@@ -40,6 +41,9 @@ const AboutPage = () => {
   return (
     <CookiesProvider>
       <Layout
+        title="About"
+        description="My name is Clarice Bouwer and I love writing software."
+        image="about/profile.jpg"
         toggleTheme={toggleTheme}
         theme={theme}
         header={<Header theme={theme} />}
@@ -47,16 +51,25 @@ const AboutPage = () => {
         <Block>
           <h2>People centric.</h2>
           <Image width={400} position="right">
-            <StaticImage src="../images/about/legos.jpg" />
+            <StaticImage
+              src="../images/about/legos.jpg"
+              alt="People holding lego men"
+            />
             <p>
               Photo by{" "}
-              <a href="https://unsplash.com/@vladhilitanu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+              <Anchor
+                to="https://unsplash.com/@vladhilitanu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                title="Vlad Hilitanu"
+              >
                 Vlad Hilitanu
-              </a>{" "}
+              </Anchor>{" "}
               on{" "}
-              <a href="https://unsplash.com/s/photos/gather?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+              <Anchor
+                to="https://unsplash.com/s/photos/gather?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                title="Unsplash"
+              >
                 Unsplash
-              </a>
+              </Anchor>
             </p>
           </Image>
           <p>
@@ -81,16 +94,25 @@ const AboutPage = () => {
         <Block>
           <h2>Attributes.</h2>
           <Image width={400} position="left">
-            <StaticImage src="../images/about/coffee-begin.jpg" alt="Begin" />
+            <StaticImage
+              src="../images/about/coffee-begin.jpg"
+              alt="Coffee cup with the word Begin on it"
+            />
             <p>
               Photo by{" "}
-              <a href="https://unsplash.com/@dsmacinnes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+              <Anchor
+                to="https://unsplash.com/@dsmacinnes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                title="Danielle MacInnes"
+              >
                 Danielle MacInnes
-              </a>{" "}
+              </Anchor>{" "}
               on{" "}
-              <a href="https://unsplash.com/s/photos/creative?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+              <Anchor
+                to="https://unsplash.com/s/photos/creative?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                title="Unsplash"
+              >
                 Unsplash
-              </a>
+              </Anchor>
             </p>
           </Image>
           <ul>
@@ -104,16 +126,25 @@ const AboutPage = () => {
         <Block>
           <h2>Core values.</h2>
           <Image width={400} position="right">
-            <StaticImage src="../images/about/screen-with-code.jpg" />
+            <StaticImage
+              src="../images/about/screen-with-code.jpg"
+              alt="A screen with some code on it"
+            />
             <p>
               Photo by{" "}
-              <a href="https://unsplash.com/@karlp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+              <Anchor
+                to="https://unsplash.com/@karlp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                title="Karl Pawlowicz"
+              >
                 Karl Pawlowicz
-              </a>{" "}
+              </Anchor>{" "}
               on{" "}
-              <a href="https://unsplash.com/s/photos/software?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+              <Anchor
+                to="https://unsplash.com/s/photos/software?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                title="Unsplash"
+              >
                 Unsplash
-              </a>
+              </Anchor>
             </p>
           </Image>
           <p>
