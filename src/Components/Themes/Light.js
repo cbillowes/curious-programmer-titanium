@@ -32,6 +32,13 @@ export default {
     theme: <MdWbSunny />,
   },
 
+  hero: {
+    base: "#000000",
+    alternate: "blue",
+    shadow: "#303030",
+    text: "#ffffff",
+  },
+
   navigation: {
     base: "#0b7acf",
     alternate: "#085BA7",
@@ -52,7 +59,8 @@ export default {
   },
 
   card: {
-    shadow: "rgba(100, 100, 111, 0.2)",
+    base: "#f5f5f5",
+    shadow: "#c1c1c1",
   },
 
   menu: {

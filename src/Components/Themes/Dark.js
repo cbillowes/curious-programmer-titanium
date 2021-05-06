@@ -32,6 +32,13 @@ export default {
     theme: <MdBrightness2 />,
   },
 
+  hero: {
+    base: "#000000",
+    alternate: "blue",
+    shadow: "#303030",
+    text: "#ffffff",
+  },
+
   navigation: {
     base: "#0b7acf",
     alternate: "#085BA7",
@@ -40,7 +47,7 @@ export default {
   },
 
   connect: {
-    base: "#cccccc",
+    base: "#ffffff",
     alternate: "#181c1f",
   },
 
@@ -52,7 +59,8 @@ export default {
   },
 
   card: {
-    shadow: "rgba(100, 100, 111, 0.2)",
+    base: "#111416",
+    shadow: "#0a0b0c",
   },
 
   menu: {

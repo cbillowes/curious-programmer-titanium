@@ -2,6 +2,35 @@ import { createGlobalStyle } from "styled-components"
 import Light from "./Light"
 import Dark from "./Dark"
 
+export const MAX_WIDTH = 840 // remove - replaced by max_reading_pane_width
+export const SPACE_BETWEEN_HEADER_AND_PAGE = 92 //add px to it (conv to str)
+export const PADDING_BETWEEN_BODY_AND_WINDOW = "0 2rem"
+export const MAX_SECTION_WIDTH = "1024px"
+export const MAX_READING_PANE_WIDTH = "1024px"
+
+const screen = (size) => `screen and (max-width: ${size})`
+
+export const size = {
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "2560px",
+}
+
+export const device = {
+  mobileS: screen(size.mobileS),
+  mobileM: screen(size.mobileM),
+  mobileL: screen(size.mobileL),
+  tablet: screen(size.tablet),
+  laptop: screen(size.laptop),
+  laptopL: screen(size.laptopL),
+  desktop: screen(size.desktop),
+  desktopL: screen(size.desktop),
+}
+
 /*
   PRIMARY COLORS:
 
@@ -25,10 +54,6 @@ import Dark from "./Dark"
   Raleway:ital,wght@0,300;0,600;1,300
   Zilla+Slab:wght@700
 */
-
-export const MAX_WIDTH = 840
-
-export const SPACE_BETWEEN_HEADER_AND_PAGE = 92
 
 export const Styles = createGlobalStyle`
   html, body {
@@ -185,6 +210,7 @@ export const Things = {
   SECONDARY: "secondary",
   TERTIARY: "tertiary",
 
+  HERO: "hero",
   NAVIGATION: "navigation",
   CARD: "card",
   CONNECT: "connect",
