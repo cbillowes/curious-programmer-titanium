@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import { device, getBase, getShadow, getText, Things } from "../../Themes"
-import Contact from "../contact"
+import Contact from "../Contact"
 
 const Container = styled.div`
   background-color: ${(props) => getBase(props.theme, Things.HERO)};

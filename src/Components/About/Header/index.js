@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Hero from "./Hero"
-import Slogan from "./Slogan"
-import Featured from "./Featured"
-import Content from "./Content"
-import { Top as BreakFeatured, Bottom as BreakSomething } from "./Separator"
-import { getBase, Things } from "../Themes"
+import Hero from "../Hero"
+import Slogan from "../Slogan"
+import Featured from "../Featured"
+import Content from "../Content"
+import { Top as BreakFeatured, Bottom as BreakSomething } from "../Separator"
+import { getBase, Things } from "../../Themes"
 
 const Container = styled.div`
   background-color: ${(props) => getBase(props.theme, Things.STANDARD)};

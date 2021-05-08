@@ -6,8 +6,8 @@ import { FaStackOverflow } from "@react-icons/all-files/fa/FaStackOverflow"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { CgWebsite } from "@react-icons/all-files/cg/CgWebsite"
-import Anchor from "../Anchor"
-import { getBase, Things, device } from "../Themes"
+import Anchor from "../../Anchor"
+import { getBase, Things, device } from "../../Themes"
 
 const Container = styled.div`
   margin-top: 4rem;
