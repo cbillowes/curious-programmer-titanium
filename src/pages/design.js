@@ -1,5 +1,5 @@
 import * as React from "react"
-import Layout from "../Components/Layout"
+import Layout from "../components/Layout"
 
 const DesignPage = () => {
   return (

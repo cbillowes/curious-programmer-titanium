@@ -216,4 +216,6 @@ export const Things = {
   CONNECT: "connect",
   FOOTER: "footer",
   MENU: "menu",
+  ABOUT: "about",
+  CARD_ABOUT: "aboutCard",
 }

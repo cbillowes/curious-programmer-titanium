@@ -59,11 +59,23 @@ export default {
   },
 
   card: {
-    base: "#f5f5f5",
+    base: "#efefef",
+    alternate: "#f5f5f5",
     shadow: "#c1c1c1",
+    text: "#181c1f",
   },
 
   menu: {
     base: "#085BA7",
+  },
+
+  about: {
+    base: "#43b4e3",
+    shadow: "#505050",
+    text: "#000000",
+  },
+
+  aboutCard: {
+    shadow: "#085BA7",
   },
 }

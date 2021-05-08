@@ -1,8 +1,9 @@
 import React from "react"
 import { CookiesProvider, useCookies } from "react-cookie"
-import { THEME_COOKIE_NAME, getToggledTheme } from "../Components/Themes"
-import Layout from "../Components/Layout"
-import Header from "../Components/Headers/about"
+import { THEME_COOKIE_NAME, getToggledTheme } from "../components/Themes"
+import Layout from "../components/Layout"
+import Header from "../components/About/header"
+import profile from "../components/About/profile.jpg"
 
 const AboutPage = () => {
   const [cookie, setCookie] = useCookies([THEME_COOKIE_NAME])
@@ -17,7 +18,7 @@ const AboutPage = () => {
           name: "Clarice Bouwer",
           url: "https://clarice.bouwer.dev",
         }}
-        image="about/profile.jpg"
+        image={profile}
         toggleTheme={(theme) => getToggledTheme(theme)}
         themeCookieSetter={setCookie}
         theme={theme}
