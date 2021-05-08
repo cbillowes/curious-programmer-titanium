@@ -2,56 +2,59 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Anchor from "../Anchor"
-import { MAX_WIDTH, Things, getBase, getText, getShadow } from "../Themes"
+import {
+  Things,
+  getBase,
+  getText,
+  getShadow,
+  MAX_SECTION_WIDTH,
+} from "../Themes"
 
 const Container = styled.footer`
   padding: 2rem;
   background-color: ${(props) => getBase(props.theme, Things.FOOTER)};
   color: ${(props) => getText(props.theme, Things.FOOTER)};
   text-shadow: 1px 1px 1px ${(props) => getShadow(props.theme, Things.FOOTER)};
+  font-size: 0.85rem;
 
   section {
     line-height: 1.75rem;
-    max-width: ${MAX_WIDTH}px;
+    max-width: ${MAX_SECTION_WIDTH}px;
     margin: 0 auto;
   }
 `
 
-const Slogan = styled.strong``
+const Copyright = styled.div``
 
-const Copyright = styled.span`
-  font-size: 1rem;
-  margin: 0;
-
-  a {
-    font-size: 0.8rem;
-  }
+const Slogan = styled.span`
+  font-weight: bold;
 `
 
-const Legal = styled.p`
-  font-size: 0.8rem;
-  margin: 0;
-  margin-left: -0.5rem;
+const Credits = styled.span``
+
+const Links = styled.div`
+  display: flex;
+  align-items: bottom;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
 
   button {
-    vertical-align: middle;
-    margin-top: 1px;
-    margin-right: 1rem;
+    padding-left: 0;
   }
 
   a {
     display: inline-block;
-    padding: 0.25rem 1rem;
-    margin: 0;
-    margin-right: 1rem;
-    font-weight: 800;
+    margin-top: -4px;
+    padding-top: 0;
+    padding-bottom: 0;
     background-color: transparent;
     color: ${(props) => getText(props.theme, Things.FOOTER)};
     text-shadow: 1px 1px 1px ${(props) => getShadow(props.theme, Things.FOOTER)};
 
     &:hover {
-      color: ${(props) => getBase(props.theme, Things.PRIMARY)};
-      transition: background ease-in 0.25s;
+      color: ${(props) => getBase(props.theme, Things.PRIMARY)} !important;
+      text-shadow: 1px 1px 1px
+        ${(props) => getText(props.theme, Things.PRIMARY)};
     }
   }
 `
@@ -59,18 +62,21 @@ const Legal = styled.p`
 const Footer = ({ theme, switcher }) => (
   <Container theme={theme}>
     <section>
-      <Slogan>A curious place for a curious mind.</Slogan>{" "}
       <Copyright>
-        Copyright &copy; {new Date().getFullYear()}. Built with{" "}
-        <Anchor to="https://www.gatsbyjs.org/" title="Gatsby">
-          Gatsby
-        </Anchor>{" "}
-        and other
-        <Anchor to="/credits" title="Credits">
-          cool stuff
-        </Anchor>
+        Copyright &copy; {new Date().getFullYear()}. Curious Programmer.{" "}
+        <Slogan>A curious place for a curious mind.</Slogan>{" "}
+        <Credits>
+          Built with{" "}
+          <Anchor to="https://www.gatsbyjs.org/" title="Gatsby">
+            Gatsby
+          </Anchor>{" "}
+          and other{" "}
+          <Anchor to="/credits" title="Credits">
+            cool stuff
+          </Anchor>
+        </Credits>
       </Copyright>
-      <Legal theme={theme}>
+      <Links theme={theme}>
         {switcher}
         <Anchor to="/about`" title="About Clarice Bouwer">
           About me
@@ -87,7 +93,7 @@ const Footer = ({ theme, switcher }) => (
         <Anchor to="https://www.flaticon.com" title="Icons from Flaticon">
           Icons
         </Anchor>
-      </Legal>
+      </Links>
     </section>
   </Container>
 )
