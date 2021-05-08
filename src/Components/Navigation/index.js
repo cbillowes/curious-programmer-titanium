@@ -1,11 +1,11 @@
-import React, { Fragment, useState } from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Hamburger from "../Hamburger"
 import Menu from "../Menu"
 import { Things, getBase, getAlternate, getText, getShadow } from "../Themes"
 
-const Bar = styled.div`
+const Container = styled.nav`
   z-index: 9999;
   padding: 1rem 2rem;
   position: fixed;
@@ -16,6 +16,8 @@ const Bar = styled.div`
   border-bottom: solid 10px
     ${(props) => getBase(props.theme, Things.NAVIGATION)};
 `
+
+const Bar = styled.div``
 
 const Logo = styled.div`
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -29,7 +31,7 @@ const Navigation = ({ theme, switcher }) => {
   const [isMenuOpen, toggleMenu] = useState(false)
 
   return (
-    <Fragment>
+    <Container>
       <Bar theme={theme}>
         <Logo theme={theme}>
           <span>{`{ :curious `}</span>
@@ -39,7 +41,7 @@ const Navigation = ({ theme, switcher }) => {
         <Hamburger theme={theme} isOpen={isMenuOpen} toggle={toggleMenu} />
       </Bar>
       <Menu isOpen={isMenuOpen} theme={theme} switcher={switcher} />
-    </Fragment>
+    </Container>
   )
 }
 
