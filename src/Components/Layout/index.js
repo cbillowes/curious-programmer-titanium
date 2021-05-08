@@ -20,12 +20,10 @@ const Header = styled.div`
 const Wrapper = styled.div`
   background-color: ${(props) => getBase(props.theme, Things.STANDARD)};
   padding-top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
-  padding-bottom: 3rem;
 `
 
 const Page = styled.main`
   max-width: ${MAX_WIDTH}px;
-  padding: 3rem;
   margin: 0 auto;
 `
 
@@ -78,7 +76,7 @@ Layout.defaultProps = {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   description: PropTypes.string,
   header: PropTypes.node,
   image: PropTypes.string,
