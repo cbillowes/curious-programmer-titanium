@@ -4,30 +4,23 @@ import { Helmet } from "react-helmet"
 
 const getResource = (url, resource) => `${url}${resource || "/"}`
 
-const getImageResource = (url, imagePath) => {
-  const generic = "social-generic.png"
-  const resource = imagePath && require(`../../images/${imagePath || generic}`)
-  return getResource(url, resource)
-}
-
 const Social = ({ pageType, title, imagePath, url, route, twitter }) => {
   const canonical = getResource(url, route)
-  const image = getImageResource(url, imagePath)
 
   return (
     <Helmet>
       <link rel="canonical" href={canonical} />
-      <meta name="image" content={image} />
+      <meta name="image" content={imagePath} />
 
       <meta property="og:title" content={title} />
       <meta property="og:type" content={pageType || "website"} />
       <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={imagePath} />
       <meta property="og:image:width" content="800" />
       <meta property="og:image:height" content="600" />
 
       <meta name="twitter:url" content={canonical} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={imagePath} />
       <meta name="twitter:image:width" content="800" />
       <meta name="twitter:image:height" content="600" />
       <meta name="twitter:card" content="summary_large_image" />
