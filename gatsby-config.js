@@ -1,4 +1,4 @@
-const siteMetadata = require("./site-metadata")
+const siteMetadata = require("./gatsby-site")
 
 module.exports = {
   siteMetadata,
