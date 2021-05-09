@@ -11,7 +11,6 @@ module.exports = {
     url: "https://clarice.bouwer.dev",
   },
   social: {
-    image: "/share.jpg",
     twitter: "cbillowes",
   },
 }

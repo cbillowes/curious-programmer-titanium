@@ -31,7 +31,7 @@ const Head = ({
     >
       <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
       <meta content="yes" name="apple-mobile-web-app-capable" />
-      <link rel="manifest" href="/manifest.json" />
+      <link rel="manifest" href={`${url}/manifest.json`} />
 
       <meta
         content="width=device-width,initial-scale=1.0,user-scalable=yes"
@@ -121,7 +121,6 @@ const HeadWithQuery = (props) => (
             title
             url
             social {
-              image
               twitter
             }
           }
