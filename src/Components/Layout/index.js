@@ -29,8 +29,10 @@ const Page = styled.main`
 `
 
 const Layout = ({
+  crawl,
   title,
   description,
+  keywords,
   image,
   header,
   maxWidth,
@@ -41,7 +43,13 @@ const Layout = ({
 }) => {
   return (
     <Fragment>
-      <Head title={title} description={description} image={image} />
+      <Head
+        title={title}
+        description={description}
+        keywords={keywords}
+        image={image}
+        crawl={crawl}
+      />
       <Styles theme={theme} />
       <Navigation
         theme={theme}
@@ -75,17 +83,21 @@ export default Layout
 
 Layout.defaultProps = {
   children: <Fragment />,
+  crawl: false,
   description: "",
   header: <Fragment />,
   image: "",
+  keywords: "",
   maxWidth: MAX_SECTION_WIDTH,
 }
 
 Layout.propTypes = {
   children: PropTypes.node,
+  crawl: PropTypes.bool,
   description: PropTypes.string,
   header: PropTypes.node,
   image: PropTypes.string,
+  keywords: PropTypes.string,
   maxWidth: PropTypes.string,
   title: PropTypes.string.isRequired,
   theme: PropTypes.string.isRequired,

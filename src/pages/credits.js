@@ -1,15 +1,21 @@
 import React from "react"
 import Layout from "../components/Layout"
+import { MAX_READING_PANE_WIDTH } from "../components/Themes"
 
 const DesignPage = () => {
   return (
     <Layout
-      title="Design"
+      title="Credits"
+      description={`A curated list of libraries, frameworks, services, plugins,
+            tools and stuff that make my blog cool.`}
+      keywords=""
+      crawl={true}
       header={
         <div>
-          <h1>Jujubes powder cotton candy cake</h1>
+          <h1>Credits and some really cool things!</h1>
         </div>
       }
+      maxWidth={MAX_READING_PANE_WIDTH}
     >
       <p>
         Topping caramels candy canes chupa chups donut sweet roll icing carrot

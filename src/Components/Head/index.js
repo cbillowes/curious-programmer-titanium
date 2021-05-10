@@ -10,6 +10,14 @@ import { StaticQuery, graphql } from "gatsby"
 import { Location } from "@reach/router"
 import { Helmet } from "react-helmet"
 
+const removeWhitespace = (text) => {
+  return text
+    .trim()
+    .split(" ")
+    .filter((word) => word)
+    .join(" ")
+}
+
 const Head = ({
   author,
   brand,
@@ -22,6 +30,7 @@ const Head = ({
   title,
   type,
   url,
+  crawl,
 }) => (
   <React.Fragment>
     <Helmet
@@ -42,6 +51,12 @@ const Head = ({
         content="black-translucent"
         name="apple-mobile-web-app-status-bar-style"
       />
+
+      {crawl ? (
+        <meta name="robots" content="index" />
+      ) : (
+        <meta name="robots" content="noindex" />
+      )}
     </Helmet>
 
     <Title page={title} site={siteTitle} />
@@ -49,7 +64,7 @@ const Head = ({
     <Description
       keywords={keywords}
       author={author && author.name}
-      description={description}
+      description={removeWhitespace(description)}
     />
 
     <Font />
@@ -66,7 +81,7 @@ const Head = ({
       type={type}
       url={url}
       name={title}
-      description={description}
+      description={removeWhitespace(description)}
       author={{
         name: author && author.name,
         url: author && author.url,
@@ -87,12 +102,14 @@ const social = PropTypes.shape({
 })
 
 Head.defaultProps = {
+  crawl: false,
   type: "WebSite",
 }
 
 Head.propTypes = {
   author: author.isRequired,
   brand: PropTypes.string.isRequired,
+  crawl: PropTypes.bool,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   keywords: PropTypes.string.isRequired,

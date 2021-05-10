@@ -10,7 +10,7 @@ const Schema = ({ type, url, name, description, author, image }) => (
         "@type": type || "WebSite",
         url,
         name,
-        description: description,
+        description,
         author: {
           "@type": "Person",
           name: author.name,
