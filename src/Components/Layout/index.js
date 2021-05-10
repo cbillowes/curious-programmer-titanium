@@ -6,11 +6,11 @@ import Footer from "../Footer"
 import Head from "../Head"
 import ThemeSwitcher from "../ThemeSwitcher"
 import {
-  SPACE_BETWEEN_HEADER_AND_PAGE,
-  MAX_WIDTH,
   Styles,
   Things,
   getBase,
+  MAX_SECTION_WIDTH,
+  SPACE_BETWEEN_HEADER_AND_PAGE,
 } from "../Themes"
 
 const Header = styled.div`
@@ -23,8 +23,9 @@ const Wrapper = styled.div`
 `
 
 const Page = styled.main`
-  max-width: ${MAX_WIDTH}px;
+  max-width: ${(props) => props.maxWidth};
   margin: 0 auto;
+  padding: 0 3rem;
 `
 
 const Layout = ({
@@ -32,6 +33,7 @@ const Layout = ({
   description,
   image,
   header,
+  maxWidth,
   children,
   theme,
   themeCookieSetter,
@@ -53,7 +55,7 @@ const Layout = ({
       />
       <Wrapper theme={theme}>
         <Header>{header}</Header>
-        <Page>{children}</Page>
+        <Page maxWidth={maxWidth}>{children}</Page>
       </Wrapper>
       <Footer
         theme={theme}
@@ -72,7 +74,11 @@ const Layout = ({
 export default Layout
 
 Layout.defaultProps = {
+  children: <Fragment />,
+  description: "",
   header: <Fragment />,
+  image: "",
+  maxWidth: MAX_SECTION_WIDTH,
 }
 
 Layout.propTypes = {
@@ -80,6 +86,7 @@ Layout.propTypes = {
   description: PropTypes.string,
   header: PropTypes.node,
   image: PropTypes.string,
+  maxWidth: PropTypes.string,
   title: PropTypes.string.isRequired,
   theme: PropTypes.string.isRequired,
   themeCookieSetter: PropTypes.func.isRequired,

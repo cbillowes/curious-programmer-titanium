@@ -7,6 +7,7 @@ export const SPACE_BETWEEN_HEADER_AND_PAGE = 92 //add px to it (conv to str)
 export const PADDING_BETWEEN_BODY_AND_WINDOW = "0 2rem"
 export const MAX_NAV_WIDTH = "1440px"
 export const MAX_FOOTER_WIDTH = "1440px"
+export const MAX_SECTION_WIDTH = "1440px"
 export const MAX_READING_PANE_WIDTH = "1024px"
 
 const screen = (size) => `screen and (max-width: ${size})`
