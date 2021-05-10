@@ -1,9 +1,0 @@
-@import "../styles/breakpoints.scss";
-
-.page {
-  padding-top: 9rem;
-
-  @include small-screen() {
-    padding-top: 5rem;
-  }
-}
