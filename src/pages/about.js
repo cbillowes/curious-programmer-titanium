@@ -1,9 +1,9 @@
 import React from "react"
 import { CookiesProvider, useCookies } from "react-cookie"
-import { THEME_COOKIE_NAME, getToggledTheme } from "../../components/Themes"
-import Layout from "../../components/Layout"
-import Header from "../../components/About/Header"
-import profile from "../../components/About/profile.jpg"
+import { THEME_COOKIE_NAME, getToggledTheme } from "../components/Themes"
+import Layout from "../components/Layout"
+import Header from "../components/About/Header"
+import profile from "../components/About/profile.jpg"
 
 const AboutPage = () => {
   const [cookie, setCookie] = useCookies([THEME_COOKIE_NAME])
