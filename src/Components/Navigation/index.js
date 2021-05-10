@@ -3,7 +3,14 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Hamburger from "../Hamburger"
 import Menu from "../Menu"
-import { Things, getBase, getAlternate, getText, getShadow } from "../Themes"
+import {
+  Things,
+  getBase,
+  getAlternate,
+  getText,
+  getShadow,
+  MAX_NAV_WIDTH,
+} from "../Themes"
 
 const Container = styled.nav`
   z-index: 9999;
@@ -17,7 +24,11 @@ const Container = styled.nav`
     ${(props) => getBase(props.theme, Things.NAVIGATION)};
 `
 
-const Bar = styled.div``
+const Bar = styled.div`
+  max-width: ${MAX_NAV_WIDTH};
+  margin: 0 auto;
+  position: relative;
+`
 
 const Logo = styled.div`
   font-family: "Open Sans", Helvetica, Arial, sans-serif;

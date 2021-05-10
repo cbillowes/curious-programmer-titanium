@@ -30,8 +30,15 @@ const Container = styled.button`
   margin: 0;
   overflow: visible;
   position: absolute;
-  top: 0.5rem;
-  right: 5rem;
+  top: 0;
+  right: 0;
+
+  .hamburger {
+    position: absolute;
+    top: 65%;
+    left: 0;
+    transform: translateY(-50%);
+  }
 
   .hamburger:hover {
     .hamburger-inner,
