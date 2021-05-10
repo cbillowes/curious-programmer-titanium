@@ -7,7 +7,7 @@ import {
   getBase,
   getText,
   getShadow,
-  MAX_SECTION_WIDTH,
+  MAX_FOOTER_WIDTH,
 } from "../Themes"
 
 const Container = styled.footer`
@@ -19,7 +19,7 @@ const Container = styled.footer`
 
   section {
     line-height: 1.75rem;
-    max-width: ${MAX_SECTION_WIDTH}px;
+    max-width: ${MAX_FOOTER_WIDTH};
     margin: 0 auto;
   }
 `
