@@ -135,7 +135,7 @@ export const Styles = createGlobalStyle`
     font-size: 1.25rem;
   }
 
-  p, blockquote, code, pre, li {
+  div, p, blockquote, code, pre, li {
     line-height: 2.5rem;
   }
 
@@ -156,6 +156,7 @@ export const Styles = createGlobalStyle`
 
     li {
       padding-left: 0.25rem;
+      line-height: 2.5rem;
     }
   }
 `
