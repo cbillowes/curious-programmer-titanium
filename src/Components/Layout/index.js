@@ -5,6 +5,7 @@ import Navigation from "../Navigation"
 import Footer from "../Footer"
 import Head from "../Head"
 import ThemeSwitcher from "../ThemeSwitcher"
+import ThemeSwitcherIcon from "../ThemeSwitcher/icon"
 import {
   Styles,
   Things,
@@ -64,6 +65,16 @@ const Layout = ({
       <Wrapper theme={theme}>
         <Header>{header}</Header>
         <Page maxWidth={maxWidth}>{children}</Page>
+        <ThemeSwitcherIcon
+          theme={theme}
+          switcher={
+            <ThemeSwitcher
+              theme={theme}
+              toggle={toggleTheme}
+              setCookie={themeCookieSetter}
+            />
+          }
+        />
       </Wrapper>
       <Footer
         theme={theme}
