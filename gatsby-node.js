@@ -30,7 +30,7 @@ exports.onCreateNode = ({ node, actions }) => {
 // Create the necessary dynamic pages required to make the blog delicious.
 // https://www.gatsbyjs.org/docs/node-apis/#createPages
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  blog.create(actions, reporter)
+  // blog.create(actions, reporter)
   // await tags.create(actions, graphql, reporter)
   // await search.create(graphql, reporter)
 }
