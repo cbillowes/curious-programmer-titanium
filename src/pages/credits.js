@@ -61,257 +61,195 @@ const CreditsPage = () => {
         <Container theme={theme}>
           <div>
             <h2>Hosting</h2>
-            <Credit to="https://netlify.com" title="Netlify">
-              is good at hosting static websites in a way that is scalable and
-              secure.{" "}
+            <div>
+              <Credit to="https://netlify.com" title="Netlify">
+                is good at hosting static websites in a way that is scalable and
+                secure. Ogurinka Benjamin at Dev.to shares
+                <Anchor
+                  to="https://dev.to/ogurinkaben/13-reasons-why-you-should-be-using-netlify-kgl"
+                  title="13 reasons why you should be using Netlify"
+                  className="unstyled"
+                >
+                  13 reasons
+                </Anchor>{" "}
+                why you should be using it.
+              </Credit>
+            </div>{" "}
+          </div>
+
+          <div>
+            <h2>Code</h2>
+            <Credit to="https://www.gatsbyjs.com/" title="GatsbyJs">
+              {" "}
+              is a freaking cool static site generator. It is React-based and
+              makes use of pop-tech such as GraphQL, Webpack, modern ES6+
+              JavaScript and CSS. Ajay NS at freeCodeCamp shares
               <Anchor
-                to="https://dev.to/ogurinkaben/13-reasons-why-you-should-be-using-netlify-kgl"
+                to="https://www.freecodecamp.org/news/why-you-should-use-gatsbyjs-to-build-static-sites-4f90eb6d1a7b/"
+                title="Why you should use GatsbyJS to build static sites"
                 className="unstyled"
               >
-                Ogurinka Benjamin
+                why
               </Anchor>{" "}
-              shares 13 reasons why you should be using it.
+              you should use GatsbyJs.
             </Credit>
-          </div>
 
-          <div>
-            <h2>Code</h2>
-            <Credit to="https://www.gatsbyjs.com/" title="Gatsby">
-              is a React-based, GraphQL powered, static site generator. It is
-              the super cool and conveniently generates my blog from markdown
-              files.
-              <h3>Plugins</h3>
-              <ul>
-                <li>
-                  <Credit
-                    to="https://github.com/gatsbyjs/gatsby-starter-default"
-                    title="gatsby-starter-default"
-                  >
-                    is a boilerplate with some bells and whistles to help
-                    kick-off new Gatsby projects. This is the starter that I
-                    used for my blog.
-                  </Credit>
-                </li>
-                <li>
-                  <Credit to="https://fortawesome.com/" title="fortawesome">
-                    builds and manages icons and typefaces in a single place,
-                    then serves them with a single line of code.
-                  </Credit>
-                </li>
-                <li>
-                  <Credit
-                    to="https://github.com/zenorocha/clipboard.js#readme"
-                    title="clipboard"
-                  >
-                    is a modern copy to clipboard library with no flash and
-                    gzipped to 3kb.
-                  </Credit>
-                </li>
-                <li>
-                  <Credit
-                    to="https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sitemap#readme"
-                    title="gatsby-plugin-sitemap"
-                  ></Credit>
-                </li>
-                <li>
-                  <Credit
-                    to="https://www.gatsbyjs.org/packages/gatsby-plugin-robots-txt/"
-                    title="gatsby-plugin-robots-txt"
-                  ></Credit>
-                </li>
-                <li>
-                  <Credit
-                    to="https://github.com/Rulikkk/gatsby-remark-emoji#readme"
-                    title="gatsby-remark-emoji"
-                  >
-                    adds slack-style emoji to gatsby&rsquo;s markdown 🚀
-                  </Credit>
-                </li>
-                <li>
-                  <Credit
-                    to="https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-remark-prismjs#readme"
-                    title="gatsby-remark-prismjs"
-                  >
-                    adds syntax highlighting to code blocks in markdown files
-                    using
-                    <Anchor className="unstyled" to="https://prismjs.com/">
-                      PrismJs
-                    </Anchor>
-                    .
-                  </Credit>
-                </li>
-                <li>
-                  <Credit
-                    to="https://www.npmjs.com/package/gatsby-remark-responsive-iframe"
-                    title="gatsby-remark-responsive-iframe"
-                  >
-                    wraps iframes or objects (e.g. embedded YouTube videos)
-                    within markdown files in a responsive elastic container with
-                    a fixed aspect ratio. This ensures that the iframe or object
-                    will scale proportionally and to the full width of its
-                    container.
-                  </Credit>
-                </li>
-                <li>
-                  <Credit
-                    to="https://github.com/ntwcklng/gatsby-remark-embed-youtube#readme"
-                    title="gatsby-remark-embed-youtube"
-                  ></Credit>
-                </li>
-                <li>
-                  <Credit
-                    to="https://github.com/weirdpattern/gatsby-remark-embed-gist#readme"
-                    title="gatsby-remark-embed-gist"
-                  ></Credit>
-                </li>
-              </ul>
-            </Credit>
-          </div>
-
-          <div>
-            <h2>Code</h2>
             <Credit
               to="https://codepen.io/JohnOSTend/pen/ZXrwoM"
               title="Ribbons"
             >
-              implemented using the &ldquo;Various Styles CSS Ribbons&rdquo;
-              through a pen by
-              <Anchor to="https://codepen.io/JohnOSTend">John</Anchor>.
-            </Credit>
-          </div>
-
-          <div>
-            <h2>Emoji Resources</h2>
-            <Credit
-              to="https://gist.github.com/oliveratgithub/0bf11a9aff0d6da7b46f1490f86a71eb"
-              title="oliveratgithub/emojis.json"
-            >
-              is the emoji-list full of emojis, names, short codes, unicode and
-              html entities that I reference.
+              borrowed from{" "}
+              <Anchor
+                to="https://codepen.io/JohnOSTend"
+                title="John on CodePen"
+                className="unstyled"
+              >
+                @JohnOSTend
+              </Anchor>
+              .
             </Credit>
 
-            <Credit
-              to="https://www.webfx.com/tools/emoji-cheat-sheet/"
-              title="webfx.com"
-            >
-              emoji cheat sheet.
+            <Credit to="https://emojipedia.org/" title="Emojipedia">
+              is an emoji search engine.
             </Credit>
           </div>
 
           <div>
             <h2>Icons</h2>
             <Credit
-              to="https://www.flaticon.com/free-icon/gmail_324123?term=gmail&page=1&position=38"
-              title="Gmail"
+              to="https://www.flaticon.com/authors/kiranshastry"
+              title="kiranshastry"
             >
-              &nbsp;
+              at{" "}
+              <Anchor
+                to="https://www.flaticon.com/"
+                title="flaticon.com"
+                className="unstyled"
+              >
+                flaticon.com
+              </Anchor>
+              :
+              <br />
+              <Anchor
+                className="unstyled"
+                to="https://www.flaticon.com/free-icon/gmail_324123?term=gmail&page=1&position=38"
+                title="Gmail"
+              >
+                Gmail
+              </Anchor>
+              ,
+              <Anchor
+                className="unstyled"
+                to="https://www.flaticon.com/free-icon/twitter_255331?term=twitter&page=1&position=20"
+                title="Twitter"
+              >
+                Twitter
+              </Anchor>
+              ,
+              <Anchor
+                className="unstyled"
+                to="https://www.iconfinder.com/icons/1220346/overflow_stachoverflow_stack_stackoverflow_icon"
+                title="StackOverflow"
+              >
+                StackOverflow
+              </Anchor>
+              ,
+              <Anchor
+                className="unstyled"
+                to="https://www.flaticon.com/free-icon/github_1322053?term=github&page=1&position=46"
+                title="GitHub"
+              >
+                GitHub
+              </Anchor>
+              ,
+              <Anchor
+                className="unstyled"
+                to="https://www.flaticon.com/free-icon/linkedin_255319?term=linkedin&page=1&position=23"
+                title="LinkedIn"
+              >
+                LinkedIn
+              </Anchor>
+              ,
+              <Anchor
+                className="unstyled"
+                to="https://www.flaticon.com/free-icon/file_1092000"
+                title="Download"
+              >
+                Download
+              </Anchor>
+              ,
+              <Anchor
+                className="unstyled"
+                to="https://www.flaticon.com/free-icon/grid_847582"
+                title="Grid"
+              >
+                Grid
+              </Anchor>{" "}
+              and{" "}
+              <Anchor
+                className="unstyled"
+                to="https://www.flaticon.com/free-icon/grid_847582"
+                title="Listing"
+              >
+                Listing
+              </Anchor>
+              .
             </Credit>
-            <Credit
-              to="https://www.flaticon.com/free-icon/twitter_255331?term=twitter&page=1&position=20"
-              title="Twitter"
-            >
-              &nbsp;
-            </Credit>
-            <Credit
-              to="https://www.iconfinder.com/icons/1220346/overflow_stachoverflow_stack_stackoverflow_icon"
-              title="StackOverflow"
-            >
-              &nbsp;
-            </Credit>
-            <Credit
-              to="https://www.flaticon.com/free-icon/github_1322053?term=github&page=1&position=46"
-              title="GitHub"
-            >
-              &nbsp;
-            </Credit>
-            <Credit
-              to="https://www.flaticon.com/free-icon/linkedin_255319?term=linkedin&page=1&position=23"
-              title="LinkedIn"
-            >
-              &nbsp;
-            </Credit>
-            Icons made by{" "}
-            <a
-              href="https://www.flaticon.com/authors/kiranshastry"
-              title="Kiranshastry"
-            >
-              Kiranshastry
-            </a>{" "}
-            from{" "}
-            <a href="https://www.flaticon.com/" title="Flaticon">
-              {" "}
-              www.flaticon.com
-            </a>
-          </div>
 
-          <div>
-            <h2>Icons</h2>
-            <Credit
-              to="https://www.flaticon.com/free-icon/file_1092000"
-              title="Download icon"
-            >
-              Made by{" "}
-              <Anchor to="https://www.flaticon.com/authors/kiranshastry">
-                Kiranshastry
-              </Anchor>{" "}
-              from{" "}
-              <Anchor to="https://www.flaticon.com">www.flaticon.com</Anchor>.
-            </Credit>
-            <Credit
-              to="https://www.flaticon.com/free-icon/grid_847582"
-              title="Grid icon"
-            >
-              Made by{" "}
-              <Anchor to="https://www.flaticon.com/authors/kiranshastry">
-                Kiranshastry
-              </Anchor>{" "}
-              from{" "}
-              <Anchor to="https://www.flaticon.com">www.flaticon.com</Anchor>.
-            </Credit>
-            <Credit
-              to="https://www.flaticon.com/free-icon/grid_847582"
-              title="Listing icon"
-            >
-              Made by{" "}
-              <Anchor to="https://www.flaticon.com/authors/kiranshastry">
-                Kiranshastry
-              </Anchor>{" "}
-              from{" "}
-              <Anchor to="https://www.flaticon.com">www.flaticon.com</Anchor>.
-            </Credit>
-            <Credit
-              to="https://www.flaticon.com/free-icon/magnifying-glass_1086933"
-              title="Magnifying glass icon"
-            >
-              Made by{" "}
-              <Anchor to="https://www.flaticon.com/authors/good-ware">
-                Good Ware
-              </Anchor>{" "}
-              from{" "}
-              <Anchor to="https://www.flaticon.com">www.flaticon.com</Anchor>.
-            </Credit>
-            <Credit
-              to="https://www.flaticon.com/free-icon/menu_1828850"
-              title="Menu icon"
-            >
-              Made by{" "}
-              <Anchor to="https://www.flaticon.com/authors/pixel-perfect">
-                Pixel perfect
-              </Anchor>{" "}
-              from{" "}
-              <Anchor to="https://www.flaticon.com">www.flaticon.com</Anchor>.
-            </Credit>
-            <Credit
-              to="https://www.flaticon.com/free-icon/close_1828774"
-              title="Close icon"
-            >
-              Made by{" "}
-              <Anchor to="https://www.flaticon.com/authors/pixel-perfect">
-                Pixel perfect
-              </Anchor>{" "}
-              from{" "}
-              <Anchor to="https://www.flaticon.com">www.flaticon.com</Anchor>.
-            </Credit>
+            <div>
+              <Credit
+                to="https://www.flaticon.com/authors/good-ware"
+                title="Good Ware"
+              >
+                at{" "}
+                <Anchor
+                  to="https://www.flaticon.com/"
+                  title="flaticon.com"
+                  className="unstyled"
+                >
+                  flaticon.com
+                </Anchor>
+                :<br />
+                <Anchor
+                  to="https://www.flaticon.com/free-icon/magnifying-glass_1086933"
+                  title="Magnifying glass"
+                  className="unstyled"
+                >
+                  Magnifying glass
+                </Anchor>
+              </Credit>
+
+              <Credit
+                to="https://www.flaticon.com/authors/pixel-perfect"
+                title="Pixel perfect"
+              >
+                at{" "}
+                <Anchor
+                  to="https://www.flaticon.com/"
+                  title="flaticon.com"
+                  className="unstyled"
+                >
+                  flaticon.com
+                </Anchor>
+                : <br />
+                <Anchor
+                  to="https://www.flaticon.com/free-icon/menu_1828850"
+                  title="Menu"
+                  className="unstyled"
+                >
+                  Menu
+                </Anchor>{" "}
+                and{" "}
+                <Anchor
+                  to="https://www.flaticon.com/free-icon/close_1828774"
+                  title="Close"
+                  className="unstyled"
+                >
+                  Close
+                </Anchor>
+                .
+              </Credit>
+            </div>
           </div>
 
           <div>
