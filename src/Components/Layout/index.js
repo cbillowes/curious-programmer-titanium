@@ -30,6 +30,7 @@ const Page = styled.main`
 `
 
 const Layout = ({
+  route,
   crawl,
   title,
   description,
@@ -54,6 +55,7 @@ const Layout = ({
       <Styles theme={theme} />
       <Navigation
         theme={theme}
+        route={route}
         switcher={
           <ThemeSwitcher
             theme={theme}
@@ -110,6 +112,7 @@ Layout.propTypes = {
   image: PropTypes.string,
   keywords: PropTypes.string,
   maxWidth: PropTypes.string,
+  route: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   theme: PropTypes.string.isRequired,
   themeCookieSetter: PropTypes.func.isRequired,

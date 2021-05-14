@@ -44,6 +44,7 @@ const CreditsPage = () => {
   return (
     <CookiesProvider>
       <Layout
+        route="/credits"
         title="Credits & Resources"
         description="A list of libraries, frameworks, services, plugins, tools and stuff that I use on my blog."
         keywords="react, netlify, gatsby, flaticon.com, unsplash, picsum, pixlr, vscode"

@@ -38,7 +38,7 @@ const Logo = styled.div`
     ${(props) => getShadow(props.theme, Things.NAVIGATION)};
 `
 
-const Navigation = ({ theme, switcher }) => {
+const Navigation = ({ theme, switcher, route }) => {
   const [isMenuOpen, toggleMenu] = useState(false)
 
   return (
@@ -51,7 +51,12 @@ const Navigation = ({ theme, switcher }) => {
         </Logo>
         <Hamburger theme={theme} isOpen={isMenuOpen} toggle={toggleMenu} />
       </Bar>
-      <Menu isOpen={isMenuOpen} theme={theme} switcher={switcher} />
+      <Menu
+        isOpen={isMenuOpen}
+        theme={theme}
+        switcher={switcher}
+        route={route}
+      />
     </Container>
   )
 }
@@ -59,6 +64,7 @@ const Navigation = ({ theme, switcher }) => {
 export default Navigation
 
 Navigation.propTypes = {
+  route: PropTypes.node.isRequired,
   switcher: PropTypes.node.isRequired,
   theme: PropTypes.string.isRequired,
 }

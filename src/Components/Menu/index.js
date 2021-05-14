@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Anchor from "../Anchor"
 import Connect from "../Connect"
-import { SPACE_BETWEEN_HEADER_AND_PAGE, Things, getBase } from "../Themes"
+import { SPACE_BETWEEN_HEADER_AND_PAGE, Things, getAlternate } from "../Themes"
 
 const items = [
   {
@@ -44,7 +44,7 @@ const Container = styled.nav`
   right: 0;
   bottom: 0;
   top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
-  background-color: ${(props) => getBase(props.theme, Things.MENU)};
+  background-color: ${(props) => getAlternate(props.theme, Things.NAVIGATION)};
   z-index: 9998;
   overflow: auto;
 
@@ -63,17 +63,33 @@ const Link = styled(Anchor)`
   display: block;
   border-radius: 0;
   width: 100%;
+  /* &.active {
+    background-color: ${(props) => getAlternate(props.theme, Things.MENU)};
+  } */
 `
 
-const Menu = ({ isOpen, theme, switcher }) => (
+const Item = styled.li`
+  .active a {
+    background-color: blue;
+  }
+  &:hover a {
+    background-color: ${(props) => getAlternate(props.theme, Things.MENU)};
+  }
+`
+
+const Menu = ({ isOpen, theme, switcher, route }) => (
   <Container isOpen={isOpen} theme={theme}>
     <ul className="menu-items">
       {items.map((item, i) => (
-        <li key={i}>
+        <Item
+          key={i}
+          theme={theme}
+          className={route === item.to ? "active" : ""}
+        >
           <Link to={item.to} title={item.title}>
             {item.anchor}
           </Link>
-        </li>
+        </Item>
       ))}
     </ul>
 
@@ -85,6 +101,7 @@ export default Menu
 
 Menu.propTypes = {
   isOpen: PropTypes.bool.isRequired,
+  route: PropTypes.string.isRequired,
   switcher: PropTypes.node.isRequired,
   theme: PropTypes.string.isRequired,
 }

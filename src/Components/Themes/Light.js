@@ -67,6 +67,7 @@ export default {
 
   menu: {
     base: "#085BA7",
+    alternate: "#cf09ae",
   },
 
   about: {

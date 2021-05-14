@@ -12,6 +12,7 @@ const AboutPage = () => {
   return (
     <CookiesProvider>
       <Layout
+        route="about"
         title="About"
         description="My name is Clarice Bouwer and I love writing software."
         author={{

@@ -49,6 +49,7 @@ const IndexPage = ({ data }) => {
   return (
     <CookiesProvider>
       <Layout
+        route="/"
         title="Home"
         toggleTheme={(theme) => getToggledTheme(theme)}
         themeCookieSetter={setCookie}
