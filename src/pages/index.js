@@ -1,11 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
 import { graphql } from "gatsby"
-import { CookiesProvider, useCookies } from "react-cookie"
-import { getToggledTheme, THEME_COOKIE_NAME } from "../components/Themes"
 import Layout from "../components/Layout"
 import Articles from "../components/Articles"
+import config from "../config/pages"
 
 export const query = graphql`
   query LandingPageQuery {
@@ -37,29 +35,14 @@ export const query = graphql`
   }
 `
 
-const Container = styled.div`
-  padding: 2rem;
-`
-
 const IndexPage = ({ data }) => {
-  const [cookie, setCookie] = useCookies([THEME_COOKIE_NAME])
-  const theme = cookie.theme
   const edges = data.allMarkdownRemark.edges
 
   return (
-    <CookiesProvider>
-      <Layout
-        route="/"
-        title="Home"
-        toggleTheme={(theme) => getToggledTheme(theme)}
-        themeCookieSetter={setCookie}
-        theme={theme}
-      >
-        <Container>
-          <Articles edges={edges} limit={50} theme={theme} />
-        </Container>
-      </Layout>
-    </CookiesProvider>
+    <Layout
+      config={{ ...config.index }}
+      wideContent={<Articles edges={edges} limit={50} />}
+    />
   )
 }
 

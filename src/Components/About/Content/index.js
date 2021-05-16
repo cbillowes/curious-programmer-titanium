@@ -1,32 +1,31 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
+import { StaticImage } from "gatsby-plugin-image"
 import Anchor from "../../Anchor"
 import Ribbon from "../../Ribbon"
 import Block from "../../Block"
-import { getBase, size, Things } from "../../Themes"
-import { StaticImage } from "gatsby-plugin-image"
+import { bp, getAllFromTheme, NESTED_KEY, TOP_LEVEL_KEY } from "../../Theme"
 
 const Container = styled.div`
   display: inline-block;
   width: 100%;
-  background-color: ${(props) => getBase(props.theme, Things.ABOUT)};
+  ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.page, NESTED_KEY.about])};
 `
 
 const Wrapper = styled.div`
-  max-width: ${size.laptopL};
+  max-width: ${bp.space.section};
   margin: 0 auto;
 `
 
-const Header = ({ theme }) => {
+const Header = () => {
   return (
-    <Container theme={theme}>
+    <Container>
       <Wrapper>
         <Block
-          theme={theme}
+          type={NESTED_KEY.contrast}
           rotate={-2}
           direction="right"
-          shadow={Things.CARD_ABOUT}
+          shadow="red"
           width={{
             blurb: "60%",
             image: "450px",
@@ -76,7 +75,7 @@ const Header = ({ theme }) => {
             </p>
           }
           ribbon={
-            <Ribbon theme={theme} color={Things.PRIMARY}>
+            <Ribbon>
               Together{" "}
               <span role="img" aria-label="Heart emoji">
                 🤍
@@ -86,10 +85,9 @@ const Header = ({ theme }) => {
         />
 
         <Block
-          theme={theme}
+          type={NESTED_KEY.contrast}
           rotate={3}
           direction="left"
-          shadow={Things.CARD_ABOUT}
           width={{
             blurb: "80%",
             image: "300px",
@@ -174,7 +172,7 @@ const Header = ({ theme }) => {
             </p>
           }
           ribbon={
-            <Ribbon theme={theme} color={Things.SECONDARY}>
+            <Ribbon>
               Different{" "}
               <span role="img" aria-label="Unicorn emoji">
                 🦄
@@ -184,10 +182,9 @@ const Header = ({ theme }) => {
         />
 
         <Block
-          theme={theme}
+          type={NESTED_KEY.contrast}
           rotate={2}
           direction="right"
-          shadow={Things.CARD_ABOUT}
           width={{
             blurb: "60%",
             image: "350px",
@@ -229,7 +226,7 @@ const Header = ({ theme }) => {
             </p>
           }
           ribbon={
-            <Ribbon theme={theme} color={Things.TERTIARY}>
+            <Ribbon>
               Go-getter{" "}
               <span role="img" aria-label="Coffee emoji">
                 ☕
@@ -243,7 +240,3 @@ const Header = ({ theme }) => {
 }
 
 export default Header
-
-Header.propTypes = {
-  theme: PropTypes.string.isRequired,
-}

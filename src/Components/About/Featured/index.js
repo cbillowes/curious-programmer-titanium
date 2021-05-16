@@ -1,24 +1,22 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
-import { size, Things } from "../../Themes"
-import Image from "../../Image"
 import Ribbon from "../../Ribbon"
 import Anchor from "../../Anchor"
-
 import Block from "../../Block"
+import { bp, NESTED_KEY } from "../../Theme"
 
 const Container = styled.div`
+  max-width: ${bp.breakpoint.laptopL};
   position: relative;
-  max-width: ${size.laptopL};
   margin: 0 auto;
 `
 
-const Featured = ({ theme }) => (
+const Featured = () => (
   <Container>
     <Block
-      theme={theme}
+      type={NESTED_KEY.default}
+      type={NESTED_KEY.default}
       rotate={2}
       direction="left"
       width={{
@@ -57,15 +55,11 @@ const Featured = ({ theme }) => (
           on OfferZen
         </p>
       }
-      ribbon={
-        <Ribbon theme={theme} color={Things.PRIMARY}>
-          2018
-        </Ribbon>
-      }
+      ribbon={<Ribbon>2018</Ribbon>}
     />
 
     <Block
-      theme={theme}
+      type={NESTED_KEY.default}
       rotate={-2}
       direction="right"
       width={{
@@ -103,15 +97,11 @@ const Featured = ({ theme }) => (
           released).
         </p>
       }
-      ribbon={
-        <Ribbon theme={theme} color={Things.SECONDARY}>
-          2017
-        </Ribbon>
-      }
+      ribbon={<Ribbon color={"red"}>2017</Ribbon>}
     />
 
     <Block
-      theme={theme}
+      type={NESTED_KEY.default}
       rotate={2}
       direction="left"
       width={{
@@ -142,15 +132,11 @@ const Featured = ({ theme }) => (
           </Anchor>
         </p>
       }
-      ribbon={
-        <Ribbon theme={theme} color={Things.TERTIARY}>
-          2017
-        </Ribbon>
-      }
+      ribbon={<Ribbon>2017</Ribbon>}
     />
 
     <Block
-      theme={theme}
+      type={NESTED_KEY.default}
       rotate={-5}
       direction="right"
       width={{
@@ -174,6 +160,7 @@ const Featured = ({ theme }) => (
         </div>
       }
       image={
+        // TODO WTF?
         <div
           style={{
             backgroundColor: "#ffffff",
@@ -198,15 +185,11 @@ const Featured = ({ theme }) => (
           </Anchor>
         </p>
       }
-      ribbon={
-        <Ribbon theme={theme} color={Things.PRIMARY}>
-          2017
-        </Ribbon>
-      }
+      ribbon={<Ribbon>2017</Ribbon>}
     />
 
     <Block
-      theme={theme}
+      type={NESTED_KEY.default}
       rotate={2}
       direction="left"
       width={{
@@ -243,15 +226,11 @@ const Featured = ({ theme }) => (
           at RubyFuza about Imposter Syndrome
         </p>
       }
-      ribbon={
-        <Ribbon theme={theme} color={Things.SECONDARY}>
-          2017
-        </Ribbon>
-      }
+      ribbon={<Ribbon>2017</Ribbon>}
     />
 
     <Block
-      theme={theme}
+      type={NESTED_KEY.default}
       rotate={-1}
       direction="right"
       width={{
@@ -290,15 +269,11 @@ const Featured = ({ theme }) => (
           published on my blog
         </p>
       }
-      ribbon={
-        <Ribbon theme={theme} color={Things.TERTIARY}>
-          2016
-        </Ribbon>
-      }
+      ribbon={<Ribbon>2016</Ribbon>}
     />
 
     <Block
-      theme={theme}
+      type={NESTED_KEY.default}
       rotate={-1}
       direction="left"
       width={{
@@ -342,17 +317,9 @@ const Featured = ({ theme }) => (
           Mistakes We Make
         </p>
       }
-      ribbon={
-        <Ribbon theme={theme} color={Things.PRIMARY}>
-          2016
-        </Ribbon>
-      }
+      ribbon={<Ribbon>2016</Ribbon>}
     />
   </Container>
 )
 
 export default Featured
-
-Featured.propTypes = {
-  theme: PropTypes.string.isRequired,
-}

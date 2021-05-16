@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 const DEFAULT_LIMIT = 50
 
 const squash = (content) => {
-  console.log(content)
   if (!content) return ""
   if (typeof content === "string") return content
 

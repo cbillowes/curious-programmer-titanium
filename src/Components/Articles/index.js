@@ -2,10 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import Article from "../Article"
 
-const Articles = ({ edges, limit, theme }) => {
+const Articles = ({ edges, limit }) => {
   if (edges && edges.length > 0) {
     return edges.map(({ node }, index) => {
-      return <Article key={index} node={node} limit={limit} theme={theme} />
+      return <Article key={index} node={node} limit={limit} />
     })
   }
 
@@ -13,8 +13,7 @@ const Articles = ({ edges, limit, theme }) => {
 }
 
 Articles.propTypes = {
-  edges: PropTypes.array,
-  theme: PropTypes.string.isRequired,
+  edges: PropTypes.array.isRequired,
   limit: PropTypes.number,
 }
 

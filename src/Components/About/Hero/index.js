@@ -1,12 +1,19 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
-import { device, getBase, getShadow, getText, Things } from "../../Themes"
 import Contact from "../Contact"
+import {
+  getAllFromTheme,
+  getFromTheme,
+  bp,
+  KEY,
+  NESTED_KEY,
+  TOP_LEVEL_KEY,
+} from "../../Theme"
 
 const Container = styled.div`
-  background-color: ${(props) => getBase(props.theme, Things.HERO)};
+  background-color: ${(props) =>
+    getFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.hero, KEY.base])};
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -23,8 +30,9 @@ const Cover = styled.div`
 `
 
 const Overlay = styled.div`
-  background-color: ${(props) => getBase(props.theme, Things.HERO)};
-  opacity: 0.6;
+  background-color: ${(props) =>
+    getFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.hero, KEY.base])};
+  opacity: 0.7;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -39,23 +47,23 @@ const Greeting = styled.div`
   right: 5rem;
   text-align: right;
   font-size: 1.35rem;
-  color: ${(props) => getText(props.theme, Things.HERO)};
-  text-shadow: 1px 1px 1px ${(props) => getShadow(props.theme, Things.HERO)};
+  ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.hero])};
+  background-color: transparent;
 
   h1 {
     text-align: right;
 
-    @media ${device.laptopL} {
+    @media ${bp.query.laptopL} {
       font-size: 2.5rem;
     }
   }
 
-  @media ${device.laptopL} {
+  @media ${bp.query.laptopL} {
     width: 40%;
     right: 2rem;
   }
 
-  @media ${device.mobileL} {
+  @media ${bp.query.mobileL} {
     width: 80%;
     right: 2rem;
   }
@@ -69,23 +77,28 @@ const Icons = styled.div`
   span {
     margin: 10px;
   }
+
+  .logo {
+    margin-top: 5px;
+  }
 `
 
-const Hero = ({ theme }) => (
-  <Container theme={theme}>
+const Hero = () => (
+  <Container>
     <Cover>
-      <StaticImage src="./profile.jpg" alt="Clarice Bouwer" />
+      <StaticImage src="../profile.jpg" alt="Clarice Bouwer" />
     </Cover>
-    <Overlay theme={theme} />
-    <Greeting theme={theme}>
+    <Overlay />
+    <Greeting>
       <h1>{`< Hello World />`}</h1>
       <p>
-        My name is <strong>Clarice Bouwer</strong>, a Senior Software Engineer
-        from South Africa. I work at <strong>Cloudsure</strong> in Mauritius.
+        My name is <strong>Clarice Bouwer</strong>, a Senior{" "}
+        <strong>Software Engineer</strong> from South Africa. I work at{" "}
+        <strong>Cloudsure</strong> in Mauritius.
       </p>
       <p>
-        I specialize in Clojure(Script) and other web technologies. I seriously
-        love what I do!
+        I specialize in <strong>Clojure(Script)</strong> and other web
+        technologies. I seriously love what I do!
       </p>
       <Icons>
         <span role="img" aria-label="South African flag emoji">
@@ -97,8 +110,8 @@ const Hero = ({ theme }) => (
         <span role="img" aria-label="Island emoji">
           🏝️
         </span>
-        <span>
-          <StaticImage src="./cloudsure.png" alt="Cloudsure" width={55} />
+        <span className="logo">
+          <StaticImage src="./cloudsure.png" alt="Cloudsure" width={48} />
         </span>
       </Icons>
       <Contact />
@@ -107,7 +120,3 @@ const Hero = ({ theme }) => (
 )
 
 export default Hero
-
-Hero.propTypes = {
-  theme: PropTypes.string.isRequired,
-}

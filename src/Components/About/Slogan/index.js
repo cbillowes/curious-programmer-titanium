@@ -1,10 +1,9 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
-import { size, getText, Things, getShadow, getBase, device } from "../../Themes"
+import { bp, getAllFromTheme, NESTED_KEY, TOP_LEVEL_KEY } from "../../Theme"
 
 const Container = styled.div`
-  max-width: ${size.desktop};
+  max-width: ${bp.space.section};
   position: relative;
   z-index: 3;
   margin-left: 2rem;
@@ -13,19 +12,19 @@ const Container = styled.div`
 const Baby = styled.h3`
   margin-top: -11rem;
   transform: rotate(-2deg);
+
   span {
     font-size: 3rem;
     line-height: 180%;
-    color: ${(props) => getText(props.theme, Things.HERO)};
-    text-shadow: ${(props) => getShadow(props.theme, Things.HERO)};
-    background-color: ${(props) => getBase(props.theme, Things.PRIMARY)};
+    ${(props) =>
+      getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.shade1])};
   }
 
-  @media ${device.laptopL} {
+  @media ${bp.query.laptopL} {
     margin-top: -3rem;
   }
 
-  @media ${device.tablet} {
+  @media ${bp.query.tablet} {
     margin-top: 0;
   }
 `
@@ -33,28 +32,24 @@ const Baby = styled.h3`
 const Big = styled.h2`
   transform: rotate(-1deg);
   margin-top: -0.5rem;
+
   span {
     font-size: 5rem;
     line-height: 160%;
-    color: ${(props) => getText(props.theme, Things.HERO)};
-    text-shadow: ${(props) => getShadow(props.theme, Things.HERO)};
-    background-color: ${(props) => getBase(props.theme, Things.SECONDARY)};
+    ${(props) =>
+      getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.shade2])};
   }
 `
 
-const Slogan = ({ theme }) => (
+const Slogan = () => (
   <Container>
     <Baby>
       <span>I write code. I share code. I love code.</span>
     </Baby>
-    <Big theme={theme}>
+    <Big>
       <span>I am a curious programmer.</span>
     </Big>
   </Container>
 )
 
 export default Slogan
-
-Slogan.propTypes = {
-  theme: PropTypes.string.isRequired,
-}

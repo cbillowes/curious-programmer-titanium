@@ -5,24 +5,31 @@ import Blurb from "../Blurb"
 import Ribbon from "../Ribbon"
 import Anchor from "../Anchor"
 import {
-  getBase,
-  getShadow,
-  getText,
-  MAX_READING_PANE_WIDTH,
-  Things,
-} from "../Themes"
+  getAllFromTheme,
+  getFromTheme,
+  bp,
+  KEY,
+  NESTED_KEY,
+  TOP_LEVEL_KEY,
+} from "../Theme"
 
 const getColour = (number) => {
-  if (number % 3 === 0) return Things.TERTIARY
-  if (number % 2 === 0) return Things.SECONDARY
-  return Things.PRIMARY
+  if (number % 3 === 0) return "green"
+  if (number % 2 === 0) return "red"
+  return "blue"
 }
 
 const Container = styled.div`
-  max-width: ${MAX_READING_PANE_WIDTH};
-  box-shadow: ${(props) => getShadow(props.theme, props.shadow || Things.CARD)}
-    0px 7px 29px 0px;
-  background-color: ${(props) => getBase(props.theme, Things.CARD)};
+  max-width: ${bp.space.readingPane};
+  box-shadow: 0 7px 29px 0
+    ${(props) =>
+      getFromTheme(props, [
+        TOP_LEVEL_KEY.card,
+        NESTED_KEY.default,
+        KEY.shadow,
+      ])};
+  background-color: ${(props) =>
+    getFromTheme(props, [TOP_LEVEL_KEY.card, NESTED_KEY.default, KEY.base])};
   margin: 4rem auto;
   padding: 1rem 3rem;
   position: relative;
@@ -36,9 +43,9 @@ const Heading = styled.h2`
   line-height: 160%;
 
   a {
+    ${(props) =>
+      getAllFromTheme(props, [TOP_LEVEL_KEY.card, NESTED_KEY.default])};
     background-color: transparent;
-    color: ${(props) => getText(props.theme, Things.CARD)};
-    text-shadow: 1px 1px 1px ${(props) => getShadow(props.theme, Things.CARD)};
     padding: 0;
   }
 `
@@ -68,11 +75,13 @@ const Metadata = styled.div``
 
 const Tags = styled.div``
 
-const Article = ({ theme, node, limit }) => (
-  <Container theme={theme}>
+const Article = ({ node, limit }) => (
+  <Container>
+    {node.timeToRead}
+    {limit}
     <Ribbon color={getColour(node.fields.number)}>{node.fields.number}</Ribbon>
     <Thumbnail />
-    <Heading theme={theme}>
+    <Heading>
       <Anchor to={node.fields.slug} title={node.frontmatter.title}>
         {node.frontmatter.title}
       </Anchor>
@@ -80,8 +89,8 @@ const Article = ({ theme, node, limit }) => (
     <Body>
       <Blurb limit={limit}>{node.excerpt}</Blurb>
     </Body>
-    <Metadata></Metadata>
-    <Tags></Tags>
+    <Metadata>Metadata</Metadata>
+    <Tags>Tags</Tags>
   </Container>
 )
 
@@ -92,7 +101,6 @@ Article.defaultTypes = {
 Article.propTypes = {
   limit: PropTypes.number,
   node: PropTypes.object.isRequired,
-  theme: PropTypes.string.isRequired,
 }
 
 export default Article

@@ -5,8 +5,8 @@ import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { IoIosMail } from "@react-icons/all-files/io/IoIosMail"
-import { Things, getAlternate, getBase } from "../Themes"
 import Anchor from "../Anchor"
+import { getFromTheme, KEY, NESTED_KEY, TOP_LEVEL_KEY } from "../Theme"
 
 const items = [
   {
@@ -46,13 +46,15 @@ const Container = styled.ul`
   }
 
   .switcher button {
-    color: ${(props) => getBase(props.theme, Things.CONNECT)};
+    color: ${(props) =>
+      getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.default, KEY.color])};
     font-size: 1.5rem;
     margin-top: -2px;
 
     &:hover {
       background-color: transparent;
-      color: ${(props) => getAlternate(props.theme, Things.CONNECT)};
+      color: ${(props) =>
+        getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.hover, KEY.color])};
       opacity: 0.5;
     }
   }
@@ -61,22 +63,24 @@ const Container = styled.ul`
 const Link = styled(Anchor)`
   background-color: transparent;
   padding: 0;
-  color: ${(props) => getBase(props.theme, Things.CONNECT)};
+  color: ${(props) =>
+    getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.default, KEY.color])};
   font-size: 1.25rem;
 
   &:hover {
     background-color: transparent;
-    color: ${(props) => getAlternate(props.theme, Things.CONNECT)};
+    color: ${(props) =>
+      getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.hover, KEY.color])};
     opacity: 0.5;
   }
 `
 
-const Connect = ({ theme, switcher }) => (
-  <Container theme={theme}>
+const Connect = ({ switcher }) => (
+  <Container>
     <li className="switcher">{switcher}</li>
     {items.map((item, i) => (
       <li key={i}>
-        <Link to={item.to} title={item.title} theme={theme}>
+        <Link to={item.to} title={item.title}>
           {item.anchor}
         </Link>
       </li>
@@ -88,5 +92,4 @@ export default Connect
 
 Connect.propTypes = {
   switcher: PropTypes.node.isRequired,
-  theme: PropTypes.string.isRequired,
 }

@@ -1,10 +1,61 @@
 import React from "react"
+import styled from "styled-components"
+import Anchor from "../components/Anchor"
 import Layout from "../components/Layout"
+import { getAllFromTheme, NESTED_KEY, TOP_LEVEL_KEY } from "../components/Theme"
+
+const Primary = styled.div`
+  padding: 1rem;
+  margin: 1rem 0;
+  ${(props) =>
+    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.primary])};
+`
+
+const Secondary = styled.div`
+  padding: 1rem;
+  margin: 1rem 0;
+  ${(props) =>
+    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.secondary])};
+`
+
+const Tertiary = styled.div`
+  padding: 1rem;
+  margin: 1rem 0;
+  ${(props) =>
+    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.tertiary])};
+`
+
+const Forth = styled.div`
+  padding: 1rem;
+  margin: 1rem 0;
+  ${(props) =>
+    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.forth])};
+`
+
+const Fifth = styled.div`
+  padding: 1rem;
+  margin: 1rem 0;
+  ${(props) =>
+    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.fifth])};
+`
+
+const Body = styled.div`
+  padding: 1rem;
+  margin: 1rem 0;
+  ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.body])};
+`
 
 const DesignPage = () => {
   return (
     <Layout
-      title="Design"
+      config={{
+        title: "Design",
+        description: "Description",
+        keywords: "",
+        image: "",
+        crawl: false,
+        route: "/design",
+      }}
       header={
         <div>
           <h1>Jujubes powder cotton candy cake</h1>
@@ -15,20 +66,53 @@ const DesignPage = () => {
         Topping caramels candy canes chupa chups donut sweet roll icing carrot
         cake. Icing cookie fruitcake marshmallow chocolate bar toffee sweet.
         Sweet roll croissant cupcake. Cheesecake brownie sesame snaps danish
+        <Anchor to="/#">caramels marzipan icing</Anchor>
         chocolate cake candy canes caramels.{" "}
         <strong>Topping fruitcake icing.</strong> Sweet roll brownie gingerbread
         lemon drops. Wafer jelly beans tart dragée cake. Sugar plum pudding
         chocolate cake topping tootsie roll chocolate cake. Gingerbread brownie
-        oat cake jujubes caramels marzipan icing. Lollipop caramels candy canes
-        fruitcake bear claw. Jujubes powder cotton candy cake gingerbread sesame
-        snaps.{" "}
+        oat cake jujubes{" "}
+        <Anchor className="bland" to="/#">
+          caramels marzipan icing
+        </Anchor>
+        . Lollipop caramels candy canes fruitcake bear claw. Jujubes powder
+        cotton candy cake gingerbread sesame snaps.{" "}
         <em>
           Liquorice fruitcake danish jelly-o sweet macaroon apple pie cotton
           candy. Danish donut lollipop danish halvah sesame snaps cotton candy
           topping candy.
         </em>
       </p>
-
+      <Primary>
+        Topping fruitcake icing. Sweet roll brownie gingerbread lemon drops.
+        Wafer jelly beans tart dragée cake. Sugar plum pudding chocolate cake
+        topping.
+      </Primary>
+      <Secondary>
+        Topping fruitcake icing. Sweet roll brownie gingerbread lemon drops.
+        Wafer jelly beans tart dragée cake. Sugar plum pudding chocolate cake
+        topping.
+      </Secondary>
+      <Tertiary>
+        Topping fruitcake icing. Sweet roll brownie gingerbread lemon drops.
+        Wafer jelly beans tart dragée cake. Sugar plum pudding chocolate cake
+        topping.
+      </Tertiary>
+      <Forth>
+        Topping fruitcake icing. Sweet roll brownie gingerbread lemon drops.
+        Wafer jelly beans tart dragée cake. Sugar plum pudding chocolate cake
+        topping.
+      </Forth>
+      <Fifth>
+        Topping fruitcake icing. Sweet roll brownie gingerbread lemon drops.
+        Wafer jelly beans tart dragée cake. Sugar plum pudding chocolate cake
+        topping.
+      </Fifth>
+      <Body>
+        Topping fruitcake icing. Sweet roll brownie gingerbread lemon drops.
+        Wafer jelly beans tart dragée cake. Sugar plum pudding chocolate cake
+        topping.
+      </Body>
       <blockquote>
         Candy bear claw gummies chocolate cake. Carrot cake topping croissant
         marzipan dragée jelly gummi bears gingerbread. Jelly donut biscuit
@@ -38,7 +122,6 @@ const DesignPage = () => {
         sweet marzipan pastry toffee. Gummi bears chocolate cake danish wafer
         cookie dessert oat cake. Fruitcake gummies oat cake.
       </blockquote>
-
       <h2>Chupa chups jelly beans</h2>
       <pre>
         Danish gingerbread topping. Bonbon donut jelly beans pudding cookie
@@ -52,7 +135,6 @@ const DesignPage = () => {
           Apple pie ice cream bear claw.
         </a>
       </p>
-
       <h3>Tiramisu macaroon icing</h3>
       <p>
         Cookie powder chupa chups. Jujubes muffin bonbon. Oat cake biscuit
@@ -68,7 +150,6 @@ const DesignPage = () => {
         snaps fruitcake danish sweet roll wafer liquorice. Apple pie ice cream
         bear claw.
       </p>
-
       <h4>Lollipop chocolate cake</h4>
       <p>
         Caramels gummi bears marshmallow danish candy tart jujubes candy. Sweet
@@ -87,7 +168,6 @@ const DesignPage = () => {
         lemon drops marshmallow jelly beans pie brownie cotton candy marzipan
         chocolate cake.
       </p>
-
       <h5>Gummies caramels candy canes</h5>
       <p>
         Jujubes icing lemon drops icing. Brownie chocolate bar carrot cake donut
@@ -99,7 +179,6 @@ const DesignPage = () => {
         marshmallow chocolate bar toffee chocolate bar marzipan. Brownie
         chocolate bar marzipan lollipop croissant bonbon.
       </p>
-
       <h6>Bear claw pudding</h6>
       <p>
         Cake marzipan chocolate caramels cheesecake cheesecake cake tiramisu

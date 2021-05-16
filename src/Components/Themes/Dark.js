@@ -9,22 +9,22 @@ export default {
     text: "#cdd2d5",
   },
   primary: {
-    base: "#0b7acf",
+    base: "#",
     alternate: "#085BA7",
-    shadow: "#181c1f",
-    text: "#f0f0f0",
+    shadow: "#",
+    text: "#",
   },
   secondary: {
-    base: "#cf09ae",
+    base: "#",
     alternate: "#cf09ae",
-    shadow: "#181c1f",
-    text: "#f0f0f0",
+    shadow: "#",
+    text: "#",
   },
   tertiary: {
-    base: "#c6c91c",
+    base: "#",
     alternate: "#f6f6a4",
-    shadow: "#f6f83c",
-    text: "#181c1f",
+    shadow: "#",
+    text: "#",
   },
 
   // Components

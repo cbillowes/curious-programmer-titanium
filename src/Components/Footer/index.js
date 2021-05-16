@@ -2,24 +2,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Anchor from "../Anchor"
-import {
-  Things,
-  getBase,
-  getText,
-  getShadow,
-  MAX_FOOTER_WIDTH,
-} from "../Themes"
+import { bp, getAllFromTheme, NESTED_KEY, TOP_LEVEL_KEY } from "../Theme"
 
 const Container = styled.footer`
   padding: 2rem;
-  background-color: ${(props) => getBase(props.theme, Things.FOOTER)};
-  color: ${(props) => getText(props.theme, Things.FOOTER)};
-  text-shadow: 1px 1px 1px ${(props) => getShadow(props.theme, Things.FOOTER)};
   font-size: 0.85rem;
+  ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.footer])};
 
   section {
+    max-width: ${bp.space.footer};
     line-height: 1.75rem;
-    max-width: ${MAX_FOOTER_WIDTH};
     margin: 0 auto;
   }
 `
@@ -36,31 +28,39 @@ const Links = styled.div`
   display: flex;
   align-items: bottom;
   justify-content: flex-start;
-  margin-top: 0.5rem;
 
   button {
-    padding-left: 0;
+    font-size: 0.95rem;
+    margin-right: 0.5rem;
+
+    ${(props) =>
+      getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.default])};
+
+    &:hover {
+      ${(props) =>
+        getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.hover])};
+    }
   }
 
   a {
     display: inline-block;
-    margin-top: -4px;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
+    padding-right: 1rem;
     background-color: transparent;
-    color: ${(props) => getText(props.theme, Things.FOOTER)};
-    text-shadow: 1px 1px 1px ${(props) => getShadow(props.theme, Things.FOOTER)};
+    font-weight: 600;
+
+    ${(props) =>
+      getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.default])};
 
     &:hover {
-      color: ${(props) => getBase(props.theme, Things.PRIMARY)} !important;
-      text-shadow: 1px 1px 1px
-        ${(props) => getText(props.theme, Things.PRIMARY)};
+      ${(props) =>
+        getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.hover])};
     }
   }
 `
 
-const Footer = ({ theme, switcher }) => (
-  <Container theme={theme}>
+const Footer = ({ switcher }) => (
+  <Container>
     <section>
       <Copyright>
         Copyright &copy; {new Date().getFullYear()}. Curious Programmer.{" "}
@@ -76,9 +76,9 @@ const Footer = ({ theme, switcher }) => (
           </Anchor>
         </Credits>
       </Copyright>
-      <Links theme={theme}>
+      <Links>
         {switcher}
-        <Anchor to="/about`" title="About Clarice Bouwer">
+        <Anchor to="/about" title="About Clarice Bouwer">
           About me
         </Anchor>
         <Anchor to="/privacy" title="Privacy policy">
@@ -100,7 +100,6 @@ const Footer = ({ theme, switcher }) => (
 
 Footer.propTypes = {
   switcher: PropTypes.node.isRequired,
-  theme: PropTypes.string.isRequired,
 }
 
 export default Footer

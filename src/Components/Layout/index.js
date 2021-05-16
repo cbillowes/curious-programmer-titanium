@@ -1,120 +1,128 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useState } from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
+import { CookiesProvider, useCookies } from "react-cookie"
+import Head from "../Head"
 import Navigation from "../Navigation"
 import Footer from "../Footer"
-import Head from "../Head"
-import ThemeSwitcher from "../ThemeSwitcher"
-import ThemeSwitcherIcon from "../ThemeSwitcher/icon"
-import {
-  Styles,
-  Things,
-  getBase,
-  MAX_SECTION_WIDTH,
-  SPACE_BETWEEN_HEADER_AND_PAGE,
-} from "../Themes"
+import Theme, {
+  COOKIE_NAME,
+  DEFAULT_THEME,
+  KEY,
+  NESTED_KEY,
+  TOP_LEVEL_KEY,
+  bp,
+  getAllFromTheme,
+  getFromTheme,
+  GlobalStyle,
+  toggle,
+} from "../Theme"
+
+const Wrapper = styled.div`
+  background-color: ${(props) =>
+    getFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.page, KEY.base])};
+  padding-top: ${bp.space.betweenHeaderAndPage};
+`
 
 const Header = styled.div`
   padding-bottom: 0;
 `
 
-const Wrapper = styled.div`
-  background-color: ${(props) => getBase(props.theme, Things.STANDARD)};
-  padding-top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
+const FullWidth = styled.div`
+  width: 100vw;
 `
 
 const Page = styled.main`
-  max-width: ${(props) => props.maxWidth};
+  max-width: ${bp.space.readingPane};
   margin: 0 auto;
   padding: 0 3rem;
 `
 
-const Layout = ({
-  route,
-  crawl,
-  title,
-  description,
-  keywords,
-  image,
-  header,
-  maxWidth,
-  children,
-  theme,
-  themeCookieSetter,
-  toggleTheme,
-}) => {
+const Switcheroo = styled.button`
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-radius: 8px;
+  ${(props) =>
+    getAllFromTheme(props, [TOP_LEVEL_KEY.switcheroo, NESTED_KEY.default])};
+
+  &:hover {
+    ${(props) =>
+      getAllFromTheme(props, [TOP_LEVEL_KEY.switcheroo, NESTED_KEY.hover])};
+  }
+`
+
+const Stickyroo = styled.div`
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1.5rem 2rem;
+`
+
+const Layout = ({ header, wideContent, config, children }) => {
+  const [cookie, setCookie] = useCookies([COOKIE_NAME])
+  const [theme, setTheme] = useState(Theme(cookie.theme || DEFAULT_THEME))
+  const { route, title, description, keywords, image, crawl } = config
+
+  const switcher = (
+    <Switcheroo
+      onClick={() => {
+        const toggled = toggle(theme)
+        setCookie(COOKIE_NAME, toggled.name, { path: "/" })
+        setTheme(toggled)
+      }}
+    >
+      {theme.icon}
+    </Switcheroo>
+  )
+
   return (
-    <Fragment>
-      <Head
-        title={title}
-        description={description}
-        keywords={keywords}
-        image={image}
-        crawl={crawl}
-      />
-      <Styles theme={theme} />
-      <Navigation
-        theme={theme}
-        route={route}
-        switcher={
-          <ThemeSwitcher
-            theme={theme}
-            toggle={toggleTheme}
-            setCookie={themeCookieSetter}
-          />
-        }
-      />
-      <Wrapper theme={theme}>
-        <Header>{header}</Header>
-        <Page maxWidth={maxWidth}>{children}</Page>
-        <ThemeSwitcherIcon
-          theme={theme}
-          switcher={
-            <ThemeSwitcher
-              theme={theme}
-              toggle={toggleTheme}
-              setCookie={themeCookieSetter}
-            />
-          }
+    <CookiesProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Head
+          title={title}
+          description={description}
+          keywords={keywords}
+          image={image}
+          crawl={crawl}
         />
-      </Wrapper>
-      <Footer
-        theme={theme}
-        switcher={
-          <ThemeSwitcher
-            theme={theme}
-            toggle={toggleTheme}
-            setCookie={themeCookieSetter}
-          />
-        }
-      />
-    </Fragment>
+        <Navigation route={route} switcher={switcher} />
+        <Wrapper>
+          <Header>{header}</Header>
+          <FullWidth>{wideContent}</FullWidth>
+          <Page>{children}</Page>
+        </Wrapper>
+        <Stickyroo>{switcher}</Stickyroo>
+        <Footer switcher={switcher} />
+      </ThemeProvider>
+    </CookiesProvider>
   )
 }
 
-export default Layout
-
-Layout.defaultProps = {
-  children: <Fragment />,
-  crawl: false,
-  description: "",
+Layout.defaultTypes = {
+  wideContent: <Fragment />,
   header: <Fragment />,
-  image: "",
-  keywords: "",
-  maxWidth: MAX_SECTION_WIDTH,
 }
 
 Layout.propTypes = {
-  children: PropTypes.node,
-  crawl: PropTypes.bool,
-  description: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  config: PropTypes.object.isRequired,
+  wideContent: PropTypes.node,
   header: PropTypes.node,
-  image: PropTypes.string,
-  keywords: PropTypes.string,
-  maxWidth: PropTypes.string,
-  route: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  theme: PropTypes.string.isRequired,
-  themeCookieSetter: PropTypes.func.isRequired,
-  toggleTheme: PropTypes.func.isRequired,
+  meta: PropTypes.shape({
+    crawl: PropTypes.bool,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    keywords: PropTypes.string,
+    route: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 }
+
+export default Layout

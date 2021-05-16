@@ -4,59 +4,68 @@ import styled from "styled-components"
 import Hamburger from "../Hamburger"
 import Menu from "../Menu"
 import {
-  Things,
-  getBase,
-  getAlternate,
-  getText,
-  getShadow,
-  MAX_NAV_WIDTH,
-} from "../Themes"
+  getAllFromTheme,
+  getFromTheme,
+  bp,
+  KEY,
+  NESTED_KEY,
+  TOP_LEVEL_KEY,
+} from "../Theme"
 
 const Container = styled.nav`
+  ${(props) =>
+    getAllFromTheme(props, [TOP_LEVEL_KEY.navigation, NESTED_KEY.bar])}
+
   z-index: 9999;
   padding: 1rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: ${(props) => getAlternate(props.theme, Things.NAVIGATION)};
   border-bottom: solid 10px
-    ${(props) => getBase(props.theme, Things.NAVIGATION)};
+    ${(props) =>
+      getFromTheme(props, [
+        TOP_LEVEL_KEY.navigation,
+        NESTED_KEY.strip,
+        KEY.base,
+      ])};
+  box-shadow: 1px 4px 6px
+    ${(props) =>
+      getFromTheme(props, [
+        TOP_LEVEL_KEY.navigation,
+        NESTED_KEY.strip,
+        KEY.shadow,
+      ])};
 `
 
 const Bar = styled.div`
-  max-width: ${MAX_NAV_WIDTH};
+  max-width: ${bp.space.navigation};
   margin: 0 auto;
   position: relative;
 `
 
 const Logo = styled.div`
+  ${(props) =>
+    getAllFromTheme(props, [TOP_LEVEL_KEY.navigation, NESTED_KEY.logo])};
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 1.75rem;
-  color: ${(props) => getText(props.theme, Things.NAVIGATION)};
-  text-shadow: 1px 1px 1px
-    ${(props) => getShadow(props.theme, Things.NAVIGATION)};
 `
 
-const Navigation = ({ theme, switcher, route }) => {
+const Navigation = ({ switcher, route }) => {
   const [isMenuOpen, toggleMenu] = useState(false)
 
   return (
     <Container>
-      <Bar theme={theme}>
-        <Logo theme={theme}>
-          <span>{`{ :curious `}</span>
+      <Bar>
+        <Logo>
+          <span>{`{ `}</span>
+          <span>{`:curious `}</span>
           <strong>{` "programmer" `}</strong>
           <span>{`}`}</span>
         </Logo>
-        <Hamburger theme={theme} isOpen={isMenuOpen} toggle={toggleMenu} />
+        <Hamburger isOpen={isMenuOpen} toggle={toggleMenu} />
       </Bar>
-      <Menu
-        isOpen={isMenuOpen}
-        theme={theme}
-        switcher={switcher}
-        route={route}
-      />
+      <Menu isOpen={isMenuOpen} switcher={switcher} route={route} />
     </Container>
   )
 }
@@ -64,7 +73,6 @@ const Navigation = ({ theme, switcher, route }) => {
 export default Navigation
 
 Navigation.propTypes = {
-  route: PropTypes.node.isRequired,
+  route: PropTypes.string.isRequired,
   switcher: PropTypes.node.isRequired,
-  theme: PropTypes.string.isRequired,
 }

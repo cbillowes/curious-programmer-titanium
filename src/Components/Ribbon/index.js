@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import { getBase, getShadow, getText, Things } from "../Themes"
+import { getAllFromTheme, NESTED_KEY, TOP_LEVEL_KEY } from "../Theme"
 
 const Container = styled.div`
   position: absolute;
@@ -52,22 +52,17 @@ const Body = styled.div`
   border: 1px dashed;
   text-align: center;
   font-weight: bold;
-  background-color: ${(props) =>
-    getBase(props.theme, props.color || Things.PRIMARY)};
-  color: ${(props) => getText(props.theme, props.color || Things.PRIMARY)};
-  text-shadow: 1px 1px 1px
-    ${(props) => getShadow(props.theme, props.color || Things.PRIMARY)};
+  ${(props) =>
+    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.primary])};
 `
 
-const Ribbon = ({ color, theme, children }) => {
+const Ribbon = ({ color, children }) => {
   if (!children) return <></>
 
   return (
     <Container>
       <Backdrop>
-        <Body theme={theme} color={color}>
-          {children}
-        </Body>
+        <Body color={color}>{children}</Body>
       </Backdrop>
     </Container>
   )
@@ -76,7 +71,6 @@ const Ribbon = ({ color, theme, children }) => {
 Ribbon.propTypes = {
   children: PropTypes.node.isRequired,
   color: PropTypes.string.isRequired,
-  theme: PropTypes.string.isRequired,
 }
 
 export default Ribbon

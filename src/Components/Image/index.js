@@ -1,7 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { getBase, getShadow, getText, Things } from "../Themes"
+import {
+  getAllFromTheme,
+  getFromTheme,
+  KEY,
+  NESTED_KEY,
+  TOP_LEVEL_KEY,
+} from "../Theme"
 
 const Container = styled.div`
   padding: 1rem;
@@ -10,17 +16,18 @@ const Container = styled.div`
   width: 100%;
   text-align: center;
   max-width: ${(props) => props.width};
-  box-shadow: ${(props) => getShadow(props.theme, props.shadow || Things.CARD)}
-    0px 7px 29px 0px;
-  background-color: ${(props) => getBase(props.theme, Things.CARD)};
   transform: rotate(${(props) => props.rotate || "0"}deg);
-  color: ${(props) => getText(props.theme, Things.CARD)};
-  text-shadow: 1px 1px 1px ${(props) => getShadow(props.theme, Things.CARD)};
+  ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.card, props.nestedKey])};
+  box-shadow: 0 7px 29px 0
+    ${(props) =>
+      getFromTheme(props, [TOP_LEVEL_KEY.card, props.nestedKey, KEY.shadow])};
 
   p {
     font-size: 80%;
     line-height: 1.5rem;
     text-align: center;
+    color: ${(props) =>
+      getFromTheme(props, [TOP_LEVEL_KEY.card, props.nestedKey, KEY.color])};
   }
 
   img {
@@ -37,8 +44,8 @@ const Container = styled.div`
   }
 `
 
-const Image = ({ ribbon, image, rotate, width, shadow, theme, children }) => (
-  <Container theme={theme} width={width} rotate={rotate} shadow={shadow}>
+const Image = ({ ribbon, image, rotate, width, type, children }) => (
+  <Container width={width} rotate={rotate} nestedKey={type}>
     {ribbon}
     {image}
     <div>{children}</div>
@@ -52,7 +59,6 @@ Image.propTypes = {
   image: PropTypes.node.isRequired,
   ribbon: PropTypes.node,
   rotate: PropTypes.number,
-  shadow: PropTypes.string,
-  theme: PropTypes.string.isRequired,
+  type: PropTypes.oneOf([NESTED_KEY.default, NESTED_KEY.contrast]).isRequired,
   width: PropTypes.number,
 }

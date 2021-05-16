@@ -3,7 +3,14 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Anchor from "../Anchor"
 import Connect from "../Connect"
-import { SPACE_BETWEEN_HEADER_AND_PAGE, Things, getAlternate } from "../Themes"
+import {
+  bp,
+  getAllFromTheme,
+  getFromTheme,
+  KEY,
+  NESTED_KEY,
+  TOP_LEVEL_KEY,
+} from "../Theme"
 
 const items = [
   {
@@ -39,61 +46,83 @@ const items = [
 ]
 
 const Container = styled.nav`
-  display: ${(props) => (props.isOpen ? "block" : "none")};
   position: fixed;
   right: 0;
   bottom: 0;
-  top: ${SPACE_BETWEEN_HEADER_AND_PAGE}px;
-  background-color: ${(props) => getAlternate(props.theme, Things.NAVIGATION)};
   z-index: 9998;
   overflow: auto;
+  top: ${bp.space.betweenHeaderAndPage};
+  display: ${(props) => (props.isOpen ? "block" : "none")};
+  background-color: ${(props) =>
+    getFromTheme(props, [
+      TOP_LEVEL_KEY.navigation,
+      NESTED_KEY.sidebar,
+      KEY.base,
+    ])};
+  box-shadow: -2 20px 15px
+    ${(props) =>
+      getFromTheme(props, [
+        TOP_LEVEL_KEY.navigation,
+        NESTED_KEY.sidebar,
+        KEY.color,
+      ])};
+`
 
-  ul.menu-items,
-  .menu-items li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 100%;
-  }
+const MenuItems = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+`
+
+const Item = styled.li`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
 `
 
 const Link = styled(Anchor)`
   margin: 0;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1.5rem;
   display: block;
   border-radius: 0;
   width: 100%;
-  /* &.active {
-    background-color: ${(props) => getAlternate(props.theme, Things.MENU)};
-  } */
+  ${(props) =>
+    getAllFromTheme(props, [TOP_LEVEL_KEY.link, NESTED_KEY.default])};
+
+  &:hover {
+    ${(props) =>
+      getAllFromTheme(props, [TOP_LEVEL_KEY.link, NESTED_KEY.hover])};
+  }
+
+  &.active {
+    ${(props) =>
+      getAllFromTheme(props, [TOP_LEVEL_KEY.link, NESTED_KEY.active])};
+
+    &:hover {
+      ${(props) =>
+        getAllFromTheme(props, [TOP_LEVEL_KEY.link, NESTED_KEY.hover])};
+    }
+  }
 `
 
-const Item = styled.li`
-  .active a {
-    background-color: blue;
-  }
-  &:hover a {
-    background-color: ${(props) => getAlternate(props.theme, Things.MENU)};
-  }
-`
-
-const Menu = ({ isOpen, theme, switcher, route }) => (
-  <Container isOpen={isOpen} theme={theme}>
-    <ul className="menu-items">
+const Menu = ({ isOpen, switcher, route }) => (
+  <Container isOpen={isOpen}>
+    <MenuItems>
       {items.map((item, i) => (
-        <Item
-          key={i}
-          theme={theme}
-          className={route === item.to ? "active" : ""}
-        >
-          <Link to={item.to} title={item.title}>
+        <Item key={i}>
+          <Link
+            to={item.to}
+            title={item.title}
+            className={route === item.to ? "active" : ""}
+          >
             {item.anchor}
           </Link>
         </Item>
       ))}
-    </ul>
-
-    <Connect theme={theme} switcher={switcher} />
+    </MenuItems>
+    <Connect switcher={switcher} />
   </Container>
 )
 
@@ -103,5 +132,4 @@ Menu.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   route: PropTypes.string.isRequired,
   switcher: PropTypes.node.isRequired,
-  theme: PropTypes.string.isRequired,
 }

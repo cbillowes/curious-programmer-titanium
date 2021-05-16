@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Things, getText } from "../Themes"
+import { getFromTheme, KEY, NESTED_KEY, TOP_LEVEL_KEY } from "../Theme"
 
 const BURGER_WIDTH = 40
 const BURGER_HEIGHT = 24
@@ -30,7 +30,7 @@ const Container = styled.button`
   margin: 0;
   overflow: visible;
   position: absolute;
-  top: 0;
+  top: 0.5rem;
   right: 0;
 
   .hamburger {
@@ -44,7 +44,13 @@ const Container = styled.button`
     .hamburger-inner,
     .hamburger-inner::before,
     .hamburger-inner::after {
-      background-color: ${(props) => getText(props.theme, Things.PRIMARY)};
+      background-color: ${(props) =>
+        getFromTheme(props, [
+          TOP_LEVEL_KEY.navigation,
+          NESTED_KEY.hamburger,
+          KEY.base,
+        ])};
+
       opacity: 1;
     }
   }
@@ -54,7 +60,12 @@ const Container = styled.button`
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner::before,
   .hamburger.is-active .hamburger-inner::after {
-    background-color: ${(props) => getText(props.theme, Things.PRIMARY)};
+    background-color: ${(props) =>
+      getFromTheme(props, [
+        TOP_LEVEL_KEY.navigation,
+        NESTED_KEY.hamburger,
+        KEY.color,
+      ])};
   }
 
   .hamburger-box {
@@ -72,7 +83,12 @@ const Container = styled.button`
   .hamburger-inner,
   .hamburger-inner::before,
   .hamburger-inner::after {
-    background-color: ${(props) => getText(props.theme, Things.PRIMARY)};
+    background-color: ${(props) =>
+      getFromTheme(props, [
+        TOP_LEVEL_KEY.navigation,
+        NESTED_KEY.hamburger,
+        KEY.base,
+      ])};
     width: ${BURGER_WIDTH}px;
     height: ${BAR_HEIGHT}px;
     border-radius: 4px;
@@ -155,8 +171,8 @@ const Container = styled.button`
   }
 `
 
-const Hamburger = ({ theme, isOpen, toggle }) => (
-  <Container aria-label="Menu" onClick={() => toggle(!isOpen)} theme={theme}>
+const Hamburger = ({ isOpen, toggle }) => (
+  <Container aria-label="Menu" onClick={() => toggle(!isOpen)}>
     <div className={`hamburger hamburger--spin ${isOpen ? "is-active" : ""}`}>
       <div className="hamburger-box">
         <div className="hamburger-inner"></div>
@@ -169,6 +185,5 @@ export default Hamburger
 
 Hamburger.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  theme: PropTypes.string.isRequired,
   toggle: PropTypes.func.isRequired,
 }
