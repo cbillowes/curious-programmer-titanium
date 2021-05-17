@@ -59,12 +59,12 @@ const Container = styled.nav`
       NESTED_KEY.sidebar,
       KEY.base,
     ])};
-  box-shadow: -2 20px 15px
+  border-left: solid 0.5rem
     ${(props) =>
       getFromTheme(props, [
         TOP_LEVEL_KEY.navigation,
         NESTED_KEY.sidebar,
-        KEY.color,
+        KEY.shadow,
       ])};
 `
 
@@ -89,16 +89,16 @@ const Link = styled(Anchor)`
   border-radius: 0;
   width: 100%;
   ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.link, NESTED_KEY.default])};
+    getAllFromTheme(props, [TOP_LEVEL_KEY.menuItem, NESTED_KEY.default])};
 
   &:hover {
     ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.link, NESTED_KEY.hover])};
+      getAllFromTheme(props, [TOP_LEVEL_KEY.menuItem, NESTED_KEY.hover])};
   }
 
   &.active {
     ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.link, NESTED_KEY.active])};
+      getAllFromTheme(props, [TOP_LEVEL_KEY.menuItem, NESTED_KEY.active])};
 
     &:hover {
       ${(props) =>

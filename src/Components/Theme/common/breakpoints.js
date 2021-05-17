@@ -3,7 +3,7 @@ const media = (size) => `screen and (max-width: ${size})`
 const sizes = ["320px", "375px", "425px", "768px", "1024px", "1440px", "2560px"]
 
 const space = {
-  betweenHeaderAndPage: "93px",
+  betweenHeaderAndPage: "94px",
   readingPane: "840px",
   navigation: "1440px",
   footer: "1440px",

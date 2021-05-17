@@ -155,17 +155,17 @@ export default {
     default: {
       base: adjust(colors.primary, -20),
       color: colors.base,
-      shadow: colors.base,
+      shadow: adjust(colors.base, -60),
     },
     hover: {
-      base: colors.base,
+      base: adjust(colors.secondary, -20),
       color: colors.base,
-      shadow: colors.base,
+      shadow: adjust(colors.base, -60),
     },
     active: {
-      base: colors.base,
+      base: adjust(colors.tertiary, -20),
       color: colors.base,
-      shadow: colors.base,
+      shadow: adjust(colors.base, -60),
     },
   },
 

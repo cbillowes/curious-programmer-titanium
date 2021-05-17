@@ -138,7 +138,7 @@ export default {
     sidebar: {
       base: adjust(colors.primary, -20),
       color: adjust(colors.primary, 100),
-      shadow: adjust(colors.base, -6),
+      shadow: adjust(colors.base, 5),
     },
     hamburger: {
       base: adjust(colors.base, 100),
@@ -154,18 +154,18 @@ export default {
   menuItem: {
     default: {
       base: adjust(colors.primary, -20),
-      color: colors.base,
-      shadow: colors.base,
+      color: adjust(colors.primary, 80),
+      shadow: adjust(colors.primary, -20),
     },
     hover: {
-      base: colors.base,
-      color: colors.base,
-      shadow: colors.base,
+      base: adjust(colors.secondary, -20),
+      color: adjust(colors.secondary, 80),
+      shadow: adjust(colors.secondary, -20),
     },
     active: {
-      base: colors.base,
-      color: colors.base,
-      shadow: colors.base,
+      base: adjust(colors.tertiary, -20),
+      color: adjust(colors.tertiary, 80),
+      shadow: adjust(colors.tertiary, -20),
     },
   },
 

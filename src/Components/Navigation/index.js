@@ -14,7 +14,7 @@ import {
 
 const Container = styled.nav`
   ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.navigation, NESTED_KEY.bar])}
+    getAllFromTheme(props, [TOP_LEVEL_KEY.navigation, NESTED_KEY.bar])};
 
   z-index: 9999;
   padding: 1rem 2rem;
