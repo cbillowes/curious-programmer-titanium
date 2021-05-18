@@ -35,24 +35,45 @@ const Container = styled.div`
   position: relative;
 `
 
-const Thumbnail = styled.div``
+const TopMeta = styled.div`
+  position: absolute;
+  top: 0.25rem;
+  left: 1rem;
+  font-size: 80%;
+`
+
+const Thumbnail = styled.img`
+  height: 380px;
+  width: 100%;
+  object-fit: cover;
+`
 
 const Heading = styled.h2`
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   max-width: 90%;
   line-height: 160%;
+  text-align: center;
 
   a {
-    ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.card, NESTED_KEY.default])};
-    background-color: transparent;
     padding: 0;
+    margin: 0;
+    background-color: transparent;
+    color: ${(props) =>
+      getFromTheme(props, [TOP_LEVEL_KEY.card, NESTED_KEY.default, KEY.color])};
+
+    &:hover {
+      ${(props) =>
+        getAllFromTheme(props, [
+          TOP_LEVEL_KEY.palette,
+          NESTED_KEY.secondary,
+          KEY.base,
+        ])};
+    }
   }
 `
 
 const Body = styled.div`
   max-width: 90%;
-
   h1,
   h2,
   h3,
@@ -71,26 +92,29 @@ const Body = styled.div`
   }
 `
 
-const Metadata = styled.div``
-
-const Tags = styled.div``
+const getThumbnailSrc = (photo) => {
+  const resource = require(`../../images/articles/${photo || "default-10.jpg"}`)
+  return resource ? resource.default : `../../images/articles/default-10.jpg`
+}
 
 const Article = ({ node, limit }) => (
   <Container>
-    {node.timeToRead}
-    {limit}
     <Ribbon color={getColour(node.fields.number)}>{node.fields.number}</Ribbon>
-    <Thumbnail />
+    <TopMeta>
+      {node.fields.date} | Est. {node.timeToRead} minute read.
+    </TopMeta>
     <Heading>
       <Anchor to={node.fields.slug} title={node.frontmatter.title}>
         {node.frontmatter.title}
       </Anchor>
     </Heading>
+    <Thumbnail
+      src={getThumbnailSrc(node.frontmatter.photo)}
+      alt={node.frontmatter.title}
+    />
     <Body>
       <Blurb limit={limit}>{node.excerpt}</Blurb>
     </Body>
-    <Metadata>Metadata</Metadata>
-    <Tags>Tags</Tags>
   </Container>
 )
 
