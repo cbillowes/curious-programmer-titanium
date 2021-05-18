@@ -207,9 +207,9 @@ export default {
 
   card: {
     default: {
-      base: adjust(colors.base, -1),
-      text: adjust(colors.base, 10),
-      shadow: adjust(colors.base, -5),
+      base: adjust(colors.base, 2),
+      color: adjust(colors.base, 80),
+      shadow: adjust(colors.base, -3),
     },
     contrast: {
       base: adjust(colors.base, 80),
