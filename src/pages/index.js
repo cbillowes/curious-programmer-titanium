@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 import Layout from "../components/Layout"
 import Articles from "../components/Articles"
 import config from "../config/pages"
@@ -18,7 +19,7 @@ export const query = graphql`
           excerpt(truncate: true, pruneLength: 1000, format: HTML)
           fields {
             slug
-            date
+            date(formatString: "LL")
             number
           }
           frontmatter {
@@ -35,13 +36,21 @@ export const query = graphql`
   }
 `
 
+const Container = styled.div`
+  padding-bottom: 2rem;
+`
+
 const IndexPage = ({ data }) => {
   const edges = data.allMarkdownRemark.edges
 
   return (
     <Layout
       config={{ ...config.index }}
-      wideContent={<Articles edges={edges} limit={50} />}
+      wideContent={
+        <Container>
+          <Articles edges={edges} limit={50} />
+        </Container>
+      }
     />
   )
 }
