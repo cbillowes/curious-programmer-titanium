@@ -9,7 +9,6 @@ import config from "../config/pages"
 export const query = graphql`
   query TagTemplateQuery($tag: String!) {
     allMarkdownRemark(
-      limit: 10
       filter: {
         fields: { slug: { nin: "/blog/example/" } }
         frontmatter: { tags: { in: [$tag] } }

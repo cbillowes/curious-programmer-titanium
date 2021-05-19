@@ -1,7 +1,7 @@
 const _ = require("lodash")
 const path = require(`path`)
 const constants = require("./build/const")
-//const blog = require("./build/pages-index")
+const articles = require("./build/pages-articles")
 const tags = require("./build/pages-tags")
 // const search = require("./build/search")
 
@@ -30,7 +30,7 @@ exports.onCreateNode = ({ node, actions }) => {
 // Create the necessary dynamic pages required to make the blog delicious.
 // https://www.gatsbyjs.org/docs/node-apis/#createPages
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  // blog.create(actions, reporter)
+  await articles.create(actions, graphql, reporter)
   await tags.create(actions, graphql, reporter)
   // await search.create(graphql, reporter)
 }

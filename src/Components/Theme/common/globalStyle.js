@@ -71,6 +71,7 @@ export const Style = createGlobalStyle`
     margin: 0;
     margin-top: 2.5rem;
     margin-bottom: 0.5rem;
+    line-height: 150%;
   }
 
   h1 {

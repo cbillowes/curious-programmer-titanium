@@ -50,4 +50,9 @@ export default {
     image: share,
     author,
   },
+  article: {
+    crawl: true,
+    image: share,
+    author,
+  },
 }

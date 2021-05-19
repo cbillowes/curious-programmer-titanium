@@ -1,79 +1,87 @@
+// TODO: do this "tag slug identifier" thing in a central place
+// https://trello.com/c/hNcLLGKR
+import _ from "lodash"
 import React from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 import PropTypes from "prop-types"
-import SEO from "../components/seo"
-import PostPage from "../components/pages/post"
+import Layout from "../components/Layout"
+import config from "../config/pages"
+import Anchor from "../components/Anchor"
 
 export const query = graphql`
-  query PostTemplateQuery($slug: String!) {
-    site {
-      siteMetadata {
-        url
-        title
-        author {
-          name
-          url
-        }
-        brand
-      }
-    }
+  query ArticleTemplateQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      excerpt
       timeToRead
+      html
       fields {
         slug
-        date
+        date(formatString: "LL")
         number
       }
       frontmatter {
         title
         photo
+        credit
+        creditLink
+        creditSource
         tags
       }
     }
   }
 `
 
-const ArticleTemplate = ({ data, pageContext }) => {
-  const siteMetadata = data.site.siteMetadata
-  const { slug, next, previous, number } = pageContext
-  const { html, excerpt, timeToRead } = data.markdownRemark
-  const { date } = data.markdownRemark.fields
-  const { title, tags, photo } = data.markdownRemark.frontmatter
-  const image = `/social-media/${photo}`
+const Container = styled.div`
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+`
 
+const Header = styled.div`
+  text-align: center;
+`
+
+const ArticleTemplate = ({ data, pageContext }) => {
+  console.log(data, pageContext)
+  const node = data.markdownRemark
+  const { html, timeToRead } = node
+  const { date } = node.fields
+  const { title, tags } = node.frontmatter
   return (
-    <>
-      <SEO
-        title={title}
-        type={`article`}
-        crawl={true}
-        siteMetadata={siteMetadata}
-        image={image}
-      >
-        {excerpt}
-      </SEO>
-      <PostPage
-        slug={slug}
-        title={title}
-        date={date}
-        tags={tags}
-        excerpt={excerpt}
-        timeToRead={timeToRead}
-        author={siteMetadata.author}
-        html={html}
-        next={next}
-        previous={previous}
-        number={number}
-      />
-    </>
+    <Layout
+      config={{
+        ...config,
+        title: "",
+        description: "",
+        keywords: "",
+      }}
+      header={
+        <Header>
+          <h1>{title}</h1>
+          <span>posted on {date} by Clarice Bouwer.</span>{" "}
+          <span>Est. {timeToRead} minute read.</span>
+          <div>
+            {tags.map((tag) => {
+              return (
+                <Anchor key={tag} to={`/${_.kebabCase(tag)}`} title={tag}>
+                  {tag}
+                </Anchor>
+              )
+            })}
+          </div>
+        </Header>
+      }
+    >
+      <Container>
+        {/* eslint-disable-next-line react/no-danger */}
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </Container>
+    </Layout>
   )
 }
 
 ArticleTemplate.propTypes = {
-  data: PropTypes.object,
-  pageContext: PropTypes.object,
+  data: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
 }
 
 export default ArticleTemplate

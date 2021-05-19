@@ -1,8 +1,8 @@
 const _ = require("lodash")
 const path = require("path")
 const config = require("./const")
-const createPages = true
 const template = `./src/templates/tag.js`
+const createPages = true
 
 const query = async (graphql) => {
   return await graphql(`
