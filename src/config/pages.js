@@ -36,4 +36,13 @@ export default {
     image: share,
     author,
   },
+  tags: {
+    route: "/tags",
+    crawl: true,
+    title: "Tags",
+    description: "A different perspective.",
+    keywords: "curious programmer, tags",
+    image: share,
+    author,
+  },
 }

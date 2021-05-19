@@ -2,41 +2,37 @@ import _ from "lodash"
 import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import SEO from "../components/seo"
-import TagPage from "../components/pages/tag"
-import "../styles/tag.scss"
+import Layout from "../components/Layout"
+import ArticlesByTag from "../components/ArticlesByTag"
 
 export const query = graphql`
   query TagTemplateQuery($tag: String!) {
     allMarkdownRemark(
+      limit: 10
       filter: {
+        fields: { slug: { nin: "/blog/example/" } }
         frontmatter: { tags: { in: [$tag] } }
-        fields: { slug: { nin: "/blog/example" } }
       }
-      sort: { order: DESC, fields: fields___date }
+      sort: { order: DESC, fields: fields___number }
     ) {
       edges {
         node {
+          timeToRead
+          excerpt(truncate: true, pruneLength: 1000, format: HTML)
+          fields {
+            slug
+            date(formatString: "LL")
+            number
+          }
           frontmatter {
             title
+            photo
+            credit
+            creditLink
+            creditSource
             tags
           }
-          fields {
-            date
-            number
-            slug
-          }
-          html
-          timeToRead
         }
-      }
-    }
-    site {
-      siteMetadata {
-        url
-        title
-        description
-        brand
       }
     }
   }
@@ -44,18 +40,20 @@ export const query = graphql`
 
 const TagTemplate = ({ data, pageContext }) => {
   const tag = _.upperFirst(pageContext.tag)
-  const siteMetadata = data.site.siteMetadata
   const edges = data.allMarkdownRemark.edges
   return (
-    <>
-      <SEO
-        title={tag}
-        type={`website`}
-        crawl={false}
-        siteMetadata={siteMetadata}
-      />
-      <TagPage tag={tag} edges={edges} />
-    </>
+    <Layout
+      config={{
+        route: `/${tag}`,
+        title: tag,
+        description: "",
+        keywords: "",
+        image: "",
+        crawl: true,
+      }}
+    >
+      <ArticlesByTag edges={edges} />
+    </Layout>
   )
 }
 

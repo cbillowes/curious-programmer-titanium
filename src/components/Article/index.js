@@ -13,10 +13,12 @@ import {
   TOP_LEVEL_KEY,
 } from "../Theme"
 
+// TODO: update colors
+// https://trello.com/c/Olz1mEcX
 const getColour = (number) => {
-  if (number % 3 === 0) return "green"
-  if (number % 2 === 0) return "red"
-  return "blue"
+  if (number % 3 === 0) return "blue"
+  if (number % 2 === 0) return "green"
+  return "red"
 }
 
 const Container = styled.div`
@@ -42,10 +44,28 @@ const TopMeta = styled.div`
   font-size: 80%;
 `
 
+const Wrapper = styled.div``
+
 const Thumbnail = styled.img`
-  height: 380px;
-  width: 100%;
-  object-fit: cover;
+  height: 150px;
+  object-fit: contain;
+  float: left;
+  margin-right: 1.5rem;
+  margin-top: 0.8rem;
+  box-shadow: 3px 3px 20px 5px
+    ${(props) =>
+      getFromTheme(props, [
+        TOP_LEVEL_KEY.card,
+        NESTED_KEY.default,
+        KEY.shadow,
+      ])};
+  border: solid 2px
+    ${(props) =>
+      getFromTheme(props, [
+        TOP_LEVEL_KEY.card,
+        NESTED_KEY.default,
+        KEY.shadow,
+      ])};
 `
 
 const Heading = styled.h2`
@@ -55,8 +75,6 @@ const Heading = styled.h2`
   text-align: center;
 
   a {
-    padding: 0;
-    margin: 0;
     background-color: transparent;
     color: ${(props) =>
       getFromTheme(props, [TOP_LEVEL_KEY.card, NESTED_KEY.default, KEY.color])};
@@ -90,11 +108,20 @@ const Body = styled.div`
     padding: 0;
     font-family: Raleway, Helvetica, Arial, sans-serif;
   }
+
+  hr {
+    display: none;
+  }
 `
 
+// TODO: https://trello.com/c/zudPd7Gd
+// Turn this into StaticImage
 const getThumbnailSrc = (photo) => {
-  const resource = require(`../../images/articles/${photo || "default-10.jpg"}`)
-  return resource ? resource.default : `../../images/articles/default-10.jpg`
+  try {
+    return require(`../../images/articles/${photo}`).default
+  } catch (e) {
+    return require(`../../images/articles/default-03.jpg`).default
+  }
 }
 
 const Article = ({ node, limit }) => (
@@ -108,13 +135,17 @@ const Article = ({ node, limit }) => (
         {node.frontmatter.title}
       </Anchor>
     </Heading>
-    <Thumbnail
-      src={getThumbnailSrc(node.frontmatter.photo)}
-      alt={node.frontmatter.title}
-    />
-    <Body>
-      <Blurb limit={limit}>{node.excerpt}</Blurb>
-    </Body>
+    <Wrapper>
+      {node.frontmatter.photo && (
+        <Thumbnail
+          src={getThumbnailSrc(node.frontmatter.photo)}
+          alt={node.frontmatter.title}
+        />
+      )}
+      <Body>
+        <Blurb limit={limit}>{node.excerpt}</Blurb>
+      </Body>
+    </Wrapper>
   </Container>
 )
 

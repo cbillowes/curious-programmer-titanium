@@ -1,8 +1,8 @@
 const _ = require("lodash")
 const path = require(`path`)
 const constants = require("./build/const")
-const blog = require("./build/pages-index")
-// const tags = require("./build/pages-tags")
+//const blog = require("./build/pages-index")
+const tags = require("./build/pages-tags")
 // const search = require("./build/search")
 
 // The order of which nodes are processed is no guaranteed.
@@ -31,7 +31,7 @@ exports.onCreateNode = ({ node, actions }) => {
 // https://www.gatsbyjs.org/docs/node-apis/#createPages
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // blog.create(actions, reporter)
-  // await tags.create(actions, graphql, reporter)
+  await tags.create(actions, graphql, reporter)
   // await search.create(graphql, reporter)
 }
 
