@@ -45,4 +45,9 @@ export default {
     image: share,
     author,
   },
+  tag: {
+    crawl: true,
+    image: share,
+    author,
+  },
 }

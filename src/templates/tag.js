@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import Layout from "../components/Layout"
 import ArticlesByTag from "../components/ArticlesByTag"
+import config from "../config/pages"
 
 export const query = graphql`
   query TagTemplateQuery($tag: String!) {
@@ -44,12 +45,11 @@ const TagTemplate = ({ data, pageContext }) => {
   return (
     <Layout
       config={{
+        ...config,
         route: `/${tag}`,
         title: tag,
-        description: "",
-        keywords: "",
-        image: "",
-        crawl: true,
+        description: `All articles tagged with ${tag}.`,
+        keywords: `curious programmer, articles, ${tag}`,
       }}
     >
       <ArticlesByTag edges={edges} />
