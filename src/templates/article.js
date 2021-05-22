@@ -6,9 +6,12 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import Layout from "../components/Layout"
-import config from "../config/pages"
 import Anchor from "../components/Anchor"
 import Ribbon from "../components/Ribbon"
+import ArticleNavigationSimple from "../components/ArticleNavigationSimple"
+import config from "../config/pages"
+
+import { getAllFromTheme, NESTED_KEY, TOP_LEVEL_KEY } from "../components/Theme"
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {
@@ -44,11 +47,41 @@ const Header = styled.div`
   border: solid 1px transparent;
 `
 
+const Title = styled.h1`
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 2rem;
+`
+
+const Article = styled.article`
+  a {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    transition: all ease-in 0.25s;
+
+    ${(props) =>
+      getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.default])};
+
+    &:hover {
+      ${(props) =>
+        getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.hover])};
+    }
+  }
+`
+
+const getArticleDataForNavigation = (article) => {
+  return {
+    title: article.frontmatter.title,
+    slug: article.fields.slug,
+  }
+}
+
 const ArticleTemplate = ({ data, pageContext }) => {
-  console.log(data, pageContext)
+  const { previous, next } = pageContext
   const node = data.markdownRemark
   const { html, timeToRead } = node
-  const { date } = node.fields
+  const { date, number } = node.fields
   const { title, tags } = node.frontmatter
   return (
     <Layout
@@ -61,6 +94,22 @@ const ArticleTemplate = ({ data, pageContext }) => {
       header={
         <Header>
           <Ribbon>#{number}</Ribbon>
+          <ArticleNavigationSimple
+            previous={getArticleDataForNavigation(previous)}
+            next={getArticleDataForNavigation(next)}
+          />
+          <Title>{title}</Title>
+          <span>
+            posted on {date} by{" "}
+            <Anchor
+              to="https://clarice.bouwer.dev"
+              title="Clarice Bouwer"
+              className="bland"
+            >
+              Clarice Bouwer
+            </Anchor>
+            .
+          </span>{" "}
           <span>Est. {timeToRead} minute read.</span>
           <div>
             {tags.map((tag) => {
@@ -76,7 +125,7 @@ const ArticleTemplate = ({ data, pageContext }) => {
     >
       <Container>
         {/* eslint-disable-next-line react/no-danger */}
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <Article dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
     </Layout>
   )
