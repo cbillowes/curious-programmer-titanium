@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Anchor = ({ className, to, title, children }) => {
-  if (to.startsWith("/")) {
+  if (to && to.startsWith("/")) {
     return (
       <Link className={className} to={to} title={title}>
         {children}
