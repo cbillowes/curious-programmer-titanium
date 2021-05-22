@@ -28,5 +28,17 @@ module.exports = {
         path: `./src/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: siteMetadata.title,
+        short_name: siteMetadata.title,
+        start_url: "/",
+        background_color: "#212a39",
+        theme_color: "#ffc000",
+        display: "standalone",
+        icon: "src/images/icon.png",
+      },
+    },
   ],
 }
