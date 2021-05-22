@@ -8,6 +8,7 @@ import PropTypes from "prop-types"
 import Layout from "../components/Layout"
 import config from "../config/pages"
 import Anchor from "../components/Anchor"
+import Ribbon from "../components/Ribbon"
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {
@@ -38,6 +39,9 @@ const Container = styled.div`
 
 const Header = styled.div`
   text-align: center;
+  padding: 0;
+  /* Pushes the ribbon to the top of the element for some reason */
+  border: solid 1px transparent;
 `
 
 const ArticleTemplate = ({ data, pageContext }) => {
@@ -56,8 +60,7 @@ const ArticleTemplate = ({ data, pageContext }) => {
       }}
       header={
         <Header>
-          <h1>{title}</h1>
-          <span>posted on {date} by Clarice Bouwer.</span>{" "}
+          <Ribbon>#{number}</Ribbon>
           <span>Est. {timeToRead} minute read.</span>
           <div>
             {tags.map((tag) => {
