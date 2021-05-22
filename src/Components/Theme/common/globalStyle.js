@@ -36,7 +36,7 @@ export const Style = createGlobalStyle`
     padding: 0.25rem 0.5rem;
     margin: 0 0.15rem;
     font-weight: 200;
-    transition: background-color ease-in 0.5s;
+    transition: all ease-in 0.5s;
     border-radius: 4px;
     ${(props) =>
       getAllFromTheme(props, [TOP_LEVEL_KEY.link, NESTED_KEY.default])};
