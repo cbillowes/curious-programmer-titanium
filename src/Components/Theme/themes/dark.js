@@ -1,9 +1,9 @@
 import React from "react"
 import Colors from "../colors/dark"
-import { MdBrightness2 } from "@react-icons/all-files/md/MdBrightness2"
+import { MdWbSunny } from "@react-icons/all-files/md/MdWbSunny"
 
 export default {
   name: "dark",
-  icon: <MdBrightness2 />,
+  icon: <MdWbSunny />,
   color: { ...Colors },
 }
