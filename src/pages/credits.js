@@ -222,7 +222,7 @@ const CreditsPage = () => {
             .
           </Credit>
           <Credit
-            to="https://www.flaticon.com/free-icon/photo_2793644"
+            to="https://www.flaticon.com/free-icon/image_1186124"
             title="Photo icon"
           >
             Made by{" "}
@@ -232,9 +232,8 @@ const CreditsPage = () => {
             from <Anchor to="https://www.flaticon.com">www.flaticon.com</Anchor>
             .
           </Credit>
-          <Credit to="https://loading.io/" title="Loading image">
-            Generated from loading.io - ajax Loader, animated icons, live
-            backgrounds.
+          <Credit to="https://icons8.com/preloaders" title="Loading image">
+            Downloaded from icons8. Loading, waiting, and spinning animations
           </Credit>
         </div>
         <div>

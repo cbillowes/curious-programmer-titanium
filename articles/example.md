@@ -136,7 +136,7 @@ Anyone who is capable of getting themselves made President should on no account 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;Cool Chrome DevTools tips and tricks you wish you knew already&quot; by <a href="https://twitter.com/flaviocopes?ref_src=twsrc%5Etfw">@flaviocopes</a><a href="https://t.co/G2ReQ7xrvw">https://t.co/G2ReQ7xrvw</a></p>&mdash; Chrome DevTools (@ChromeDevTools) <a href="https://twitter.com/ChromeDevTools/status/1019627868500955137?ref_src=twsrc%5Etfw">July 18, 2018</a></blockquote>
 
-### gifs
+### gatsby-remark-interactive-gifs
 
 `gif:nyancat.gif:caption=Nyanyanyanyanyanyanya`
 

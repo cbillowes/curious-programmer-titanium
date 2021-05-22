@@ -6,7 +6,25 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-interactive-gifs`,
+            options: {
+              root: `${__dirname}`,
+              src: `${__dirname}/src/images/interactive-gifs`,
+              dest: `${__dirname}/public/gifs`,
+              play: `${__dirname}/src/images/play.gif`,
+              placeholder: `${__dirname}/src/images/placeholder.png`,
+              loading: `${__dirname}/src/images/loading.gif`,
+              relativePath: `/gifs`,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
