@@ -9,6 +9,7 @@ import Layout from "../components/Layout"
 import Anchor from "../components/Anchor"
 import Ribbon from "../components/Ribbon"
 import ArticleNavigationSimple from "../components/ArticleNavigationSimple"
+import ArticleNavigationDetailed from "../components/ArticleNavigationDetailed"
 import config from "../config/pages"
 
 import { getAllFromTheme, NESTED_KEY, TOP_LEVEL_KEY } from "../components/Theme"
@@ -74,6 +75,7 @@ const getArticleDataForNavigation = (article) => {
   return {
     title: article.frontmatter.title,
     slug: article.fields.slug,
+    excerpt: article.excerpt,
   }
 }
 
@@ -126,6 +128,10 @@ const ArticleTemplate = ({ data, pageContext }) => {
       <Container>
         {/* eslint-disable-next-line react/no-danger */}
         <Article dangerouslySetInnerHTML={{ __html: html }} />
+        <ArticleNavigationDetailed
+          previous={getArticleDataForNavigation(previous)}
+          next={getArticleDataForNavigation(next)}
+        />
       </Container>
     </Layout>
   )
