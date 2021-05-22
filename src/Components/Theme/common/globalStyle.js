@@ -138,6 +138,16 @@ export const Style = createGlobalStyle`
 
   ${(props) => generateStylesFromColors(props)};
 
+  /**
+    gatsby-remark-embed-gist
+  */
+  .gist {
+    text-shadow: none;
+  }
+
+  /**
+    gatsby-remark-interactive-gifs
+  */
   .interactive-gif {}
 
   /* Responsive flicker-less display */

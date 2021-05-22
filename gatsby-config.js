@@ -23,6 +23,12 @@ module.exports = {
               relativePath: `/gifs`,
             },
           },
+          {
+            resolve: "gatsby-remark-embed-gist",
+            options: {
+              username: `cbillowes`,
+            },
+          },
         ],
       },
     },

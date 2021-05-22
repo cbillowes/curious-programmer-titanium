@@ -124,7 +124,7 @@ Anyone who is capable of getting themselves made President should on no account 
 
 ## :tada: Remark plugins
 
-### gist
+### gatsby-remark-embed-gist
 
 `gist:cbillowes/7c3f3f6de72ba9e92ad4c31c7410e072#unhide.sh`
 
