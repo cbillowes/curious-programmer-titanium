@@ -19,6 +19,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       timeToRead
       html
+      excerpt
       fields {
         slug
         date(formatString: "LL")
@@ -82,15 +83,15 @@ const getArticleDataForNavigation = (article) => {
 const ArticleTemplate = ({ data, pageContext }) => {
   const { previous, next } = pageContext
   const node = data.markdownRemark
-  const { html, timeToRead } = node
+  const { html, excerpt, timeToRead } = node
   const { date, number } = node.fields
   const { title, tags } = node.frontmatter
   return (
     <Layout
       config={{
         ...config,
-        title: "",
-        description: "",
+        title,
+        description: excerpt,
         keywords: "",
       }}
       header={
