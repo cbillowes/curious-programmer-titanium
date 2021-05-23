@@ -41,6 +41,15 @@ module.exports = {
               maxWidth: 840,
             },
           },
+          {
+            resolve: `gatsby-remark-embed-youtube`,
+            options: {
+              // src/components/Theme/common/breakpoints.js: readingPane
+              // Module cannot be required because it is not a CommonJS module :(
+              width: 840,
+              height: 400,
+            },
+          },
         ],
       },
     },

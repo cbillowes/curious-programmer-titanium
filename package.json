@@ -27,6 +27,7 @@
     "gatsby-plugin-manifest": "^3.5.0",
     "gatsby-plugin-sharp": "^3.5.0",
     "gatsby-remark-embed-gist": "^1.2.1",
+    "gatsby-remark-embed-youtube": "0.0.7",
     "gatsby-remark-emoji": "0.0.3",
     "gatsby-remark-images": "^5.2.1",
     "gatsby-remark-interactive-gifs": "^1.0.4",
