@@ -87,8 +87,7 @@ const createBlogPages = (createPage, result, reporter) => {
 const createDemoPage = (createPage, result, reporter) => {
   const edges = result.data.allMarkdownRemark.edges
   const index = edges.map((edge) => edge.node.fields.slug).indexOf(DEMO_PAGE)
-
-  if (index) {
+  if (index === 0) {
     createThePage(createPage, edges, index, reporter)
   }
 }

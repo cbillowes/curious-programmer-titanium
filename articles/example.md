@@ -143,3 +143,7 @@ Anyone who is capable of getting themselves made President should on no account 
 Gif does not exist :point_down:
 
 `gif:look-away.gif:caption=This picture does not exist!`
+
+### gatsby-remark-images
+
+![Screenshot](./2016/2016-05-14-importance-of-git-history/jira-bitbucket-integration.jpg)

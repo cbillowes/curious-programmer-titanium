@@ -28,6 +28,7 @@
     "gatsby-plugin-sharp": "^3.5.0",
     "gatsby-remark-embed-gist": "^1.2.1",
     "gatsby-remark-emoji": "0.0.3",
+    "gatsby-remark-images": "^5.2.1",
     "gatsby-remark-interactive-gifs": "^1.0.4",
     "gatsby-source-filesystem": "^3.5.0",
     "gatsby-transformer-remark": "^4.2.0",
