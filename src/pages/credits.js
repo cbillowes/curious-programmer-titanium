@@ -18,7 +18,7 @@ const CreditsPage = () => {
       }
     >
       <Container>
-        <div>
+        <div id="hosting">
           <h2>Hosting</h2>
           <div>
             <Credit to="https://netlify.com" title="Netlify">
@@ -36,7 +36,7 @@ const CreditsPage = () => {
           </div>{" "}
         </div>
 
-        <div>
+        <div id="code">
           <h2>Code</h2>
           <Credit to="https://www.gatsbyjs.com/" title="GatsbyJs">
             {" "}
@@ -70,7 +70,7 @@ const CreditsPage = () => {
           </Credit>
         </div>
 
-        <div>
+        <div id="icons">
           <h2>Icons</h2>
           <Credit
             to="https://www.flaticon.com/authors/kiranshastry"
@@ -208,35 +208,162 @@ const CreditsPage = () => {
           </div>
         </div>
 
-        <div>
-          <h2>Interactive animated gifs</h2>
-          <Credit
-            to="https://www.flaticon.com/free-icon/play_281903"
-            title="Play icon"
-          >
-            Play icon made my{" "}
-            <Anchor to="https://www.flaticon.com/authors/vitaly-gorbachev">
-              Vitaly Gorbachev
-            </Anchor>{" "}
-            from <Anchor to="https://www.flaticon.com">www.flaticon.com</Anchor>
-            .
-          </Credit>
-          <Credit
-            to="https://www.flaticon.com/free-icon/image_1186124"
-            title="Photo icon"
-          >
-            Made by{" "}
-            <Anchor to="https://www.flaticon.com/authors/freepik">
-              Freepik
-            </Anchor>{" "}
-            from <Anchor to="https://www.flaticon.com">www.flaticon.com</Anchor>
-            .
-          </Credit>
-          <Credit to="https://icons8.com/preloaders" title="Loading image">
-            Downloaded from icons8. Loading, waiting, and spinning animations
-          </Credit>
+        <div id="plugins">
+          <h2>Official plugins</h2>
+          <ul>
+            <li>
+              <Credit
+                to="https://www.gatsbyjs.com/plugins/gatsby-remark-responsive-iframe/"
+                title="gatsby-remark-responsive-iframe"
+              >
+                Wraps iframes or objects (e.g. embedded YouTube videos) within
+                markdown files in a responsive elastic container with a fixed
+                aspect ratio. This ensures that the iframe or object will scale
+                proportionally and to the full width of its container.
+              </Credit>
+            </li>
+            <li>
+              <Credit
+                to="https://www.gatsbyjs.com/plugins/gatsby-remark-images/"
+                title="gatsby-remark-images"
+              >
+                Processes images in markdown so they can be used in the
+                production build. Creates an elastic container to avoid layout
+                jumps, generates different image sizes and used the &ldquo;blur
+                up&rdquo; technique to display a placeholder image.
+              </Credit>
+            </li>
+            <li>
+              <Credit
+                to="https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/"
+                title="gatsby-remark-prismjs"
+              >
+                Adds syntax highlighting to code blocks in markdown files using{" "}
+                <Anchor
+                  to="http://prismjs.com/"
+                  title="PrismJS"
+                  className="bland"
+                >
+                  PrimsJS
+                </Anchor>
+                .
+              </Credit>
+            </li>
+          </ul>
+
+          <h2>Community plugins</h2>
+          <ul>
+            <li>
+              <Credit
+                to="https://www.gatsbyjs.com/plugins/gatsby-remark-emoji/"
+                title="gatsby-remark-emoji"
+              >
+                Adds slack-style emojis to markdown files, like{" "}
+                <code>:smile:</code> {" -> "} 😀
+              </Credit>
+            </li>
+            <li>
+              <Credit
+                to="https://www.gatsbyjs.com/plugins/gatsby-remark-embed-gist/"
+                title="gatsby-remark-embed-gist"
+              >
+                Embeds{" "}
+                <Anchor
+                  to="https://gist.github.com/"
+                  title="gist"
+                  className="bland"
+                >
+                  gist
+                </Anchor>{" "}
+                snippets using the <code>gist:</code> protocol.
+              </Credit>
+            </li>
+            <li>
+              <Credit
+                to="https://www.gatsbyjs.com/plugins/gatsby-remark-embed-youtube/"
+                title="gatsby-remark-embed-youtube"
+              >
+                Embeds a Youtube video using the <code>youtube:</code> protocol.
+              </Credit>
+            </li>
+
+            <li>
+              <Credit
+                to="https://www.gatsbyjs.com/plugins/gatsby-remark-code-titles/"
+                title="gatsby-remark-code-titles"
+              >
+                Adds a code title to code snippets using syntax similar to{" "}
+                <code>js:title=example-file.js</code>.
+              </Credit>
+            </li>
+            <li>
+              <Credit
+                to="https://www.gatsbyjs.com/plugins/gatsby-remark-interactive-gifs/"
+                title="gatsby-remark-interactive-gifs"
+              >
+                Adds interactive animated gifs to markdown files using the{" "}
+                <code>gif:</code> protocol. Take a tutorial for example. By the
+                time you get the image, the frame could be anywhere in the
+                animation as it starts once the gif has downloaded. This plugin
+                will wait for the person to interact with it before playing it.
+                <ul>
+                  <li>
+                    <Credit
+                      to="https://www.flaticon.com/free-icon/play_281903"
+                      title="Play icon"
+                    >
+                      Play icon made my{" "}
+                      <Anchor
+                        to="https://www.flaticon.com/authors/vitaly-gorbachev"
+                        className="bland"
+                      >
+                        Vitaly Gorbachev
+                      </Anchor>{" "}
+                      from{" "}
+                      <Anchor to="https://www.flaticon.com" className="bland">
+                        www.flaticon.com
+                      </Anchor>
+                      .
+                    </Credit>
+                  </li>
+                  <li>
+                    <Credit
+                      to="https://www.flaticon.com/free-icon/image_1186124"
+                      title="Photo icon"
+                    >
+                      Made by{" "}
+                      <Anchor
+                        to="https://www.flaticon.com/authors/freepik"
+                        className="bland"
+                      >
+                        Freepik
+                      </Anchor>{" "}
+                      from{" "}
+                      <Anchor to="https://www.flaticon.com" className="bland">
+                        www.flaticon.com
+                      </Anchor>
+                      .
+                    </Credit>
+                  </li>
+                  <li>
+                    <Credit
+                      to="https://icons8.com/preloaders"
+                      title="Loading image"
+                    >
+                      Downloaded from{" "}
+                      <Anchor to="https://icons8.com/" className="bland">
+                        icons8
+                      </Anchor>
+                      . Loading, waiting, and spinning animations
+                    </Credit>
+                  </li>
+                </ul>
+              </Credit>
+            </li>
+          </ul>
         </div>
-        <div>
+
+        <div id="photography">
           <h2>Photography</h2>
           <Credit to="https://picsum.photos" title="picsum.photos">
             Lorem Ipsum... but for photos.
@@ -247,7 +374,7 @@ const CreditsPage = () => {
           </Credit>
         </div>
 
-        <div>
+        <div id="tools">
           <h2>Tools</h2>
           <Credit
             to="https://code.visualstudio.com/"
@@ -287,8 +414,8 @@ const CreditsPage = () => {
           </Credit>
         </div>
 
-        <h2>Privacy Policy</h2>
-        <div>
+        <div id="privacy-policy">
+          <h2>Privacy Policy</h2>
           <Credit to="https://www.iubenda.com" title="iubenda">
             Attorney-level solutions to make your websites and apps compliant
             with the law across multiple countries and legislation.
