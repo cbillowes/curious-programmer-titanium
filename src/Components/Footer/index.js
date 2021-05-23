@@ -7,7 +7,7 @@ import { bp, getAllFromTheme, NESTED_KEY, TOP_LEVEL_KEY } from "../Theme"
 const Container = styled.footer`
   padding: 2rem;
   font-size: 0.85rem;
-  ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.footer])};
+  ${(props) => getAllFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.footer)};
 
   section {
     max-width: ${bp.space.footer};
@@ -34,11 +34,11 @@ const Links = styled.div`
     margin-right: 0.5rem;
 
     ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.default])};
+      getAllFromTheme(props, TOP_LEVEL_KEY.bland, NESTED_KEY.default)};
 
     &:hover {
       ${(props) =>
-        getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.hover])};
+        getAllFromTheme(props, TOP_LEVEL_KEY.bland, NESTED_KEY.hover)};
     }
   }
 
@@ -50,11 +50,11 @@ const Links = styled.div`
     font-weight: 600;
 
     ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.default])};
+      getAllFromTheme(props, TOP_LEVEL_KEY.bland, NESTED_KEY.default)};
 
     &:hover {
       ${(props) =>
-        getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.hover])};
+        getAllFromTheme(props, TOP_LEVEL_KEY.bland, NESTED_KEY.hover)};
     }
   }
 `

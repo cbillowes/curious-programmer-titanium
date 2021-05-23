@@ -45,11 +45,12 @@ const Container = styled.button`
     .hamburger-inner::before,
     .hamburger-inner::after {
       background-color: ${(props) =>
-        getFromTheme(props, [
+        getFromTheme(
+          props,
           TOP_LEVEL_KEY.navigation,
           NESTED_KEY.hamburger,
           KEY.base,
-        ])};
+        )};
 
       opacity: 1;
     }
@@ -61,11 +62,12 @@ const Container = styled.button`
   .hamburger.is-active .hamburger-inner::before,
   .hamburger.is-active .hamburger-inner::after {
     background-color: ${(props) =>
-      getFromTheme(props, [
+      getFromTheme(
+        props,
         TOP_LEVEL_KEY.navigation,
         NESTED_KEY.hamburger,
         KEY.color,
-      ])};
+      )};
   }
 
   .hamburger-box {
@@ -84,11 +86,12 @@ const Container = styled.button`
   .hamburger-inner::before,
   .hamburger-inner::after {
     background-color: ${(props) =>
-      getFromTheme(props, [
+      getFromTheme(
+        props,
         TOP_LEVEL_KEY.navigation,
         NESTED_KEY.hamburger,
         KEY.base,
-      ])};
+      )};
     width: ${BURGER_WIDTH}px;
     height: ${BAR_HEIGHT}px;
     border-radius: 4px;

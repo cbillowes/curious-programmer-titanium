@@ -27,12 +27,12 @@ export const Style = createGlobalStyle`
     min-height: 100vh;
     max-width: 100%;
     margin: 0;
-    ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.body])};
+    ${(props) => getAllFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.body)};
   }
 
   *::selection {
     ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.primary])};
+      getAllFromTheme(props, TOP_LEVEL_KEY.palette, NESTED_KEY.primary)};
   }
 
   a {
@@ -43,11 +43,11 @@ export const Style = createGlobalStyle`
     transition: all ease-in 0.5s;
     border-radius: 4px;
     ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.link, NESTED_KEY.default])};
+      getAllFromTheme(props, TOP_LEVEL_KEY.link, NESTED_KEY.default)};
 
     &:hover {
       ${(props) =>
-        getAllFromTheme(props, [TOP_LEVEL_KEY.link, NESTED_KEY.hover])};
+        getAllFromTheme(props, TOP_LEVEL_KEY.link, NESTED_KEY.hover)};
     }
 
     &.bland {
@@ -56,11 +56,11 @@ export const Style = createGlobalStyle`
       margin: 0;
 
       ${(props) =>
-        getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.default])};
+        getAllFromTheme(props, TOP_LEVEL_KEY.bland, NESTED_KEY.default)};
 
       &:hover {
         ${(props) =>
-          getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.hover])};
+          getAllFromTheme(props, TOP_LEVEL_KEY.bland, NESTED_KEY.hover)};
       }
     }
   }
@@ -113,18 +113,19 @@ export const Style = createGlobalStyle`
     overflow-x: auto;
     padding: 0.3rem 0.4rem;
     border-radius: 5px;
-    ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.code])};
+    ${(props) => getAllFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.code)};
   }
 
   blockquote {
     margin: 0;
     padding-left: 1.5rem;
     border-left: solid 0.5rem ${(props) =>
-      getFromTheme(props, [
+      getFromTheme(
+        props,
         TOP_LEVEL_KEY.palette,
         NESTED_KEY.tertiary,
         KEY.base,
-      ])};
+      )};
   }
 
   ul, ol {
@@ -147,7 +148,7 @@ export const Style = createGlobalStyle`
   */
   .gatsby-remark-code-title {
     ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.primary])};
+      getAllFromTheme(props, TOP_LEVEL_KEY.palette, NESTED_KEY.primary)};
     display: inline-block;
     padding: 0 1rem;
   }

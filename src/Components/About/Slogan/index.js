@@ -16,8 +16,7 @@ const Baby = styled.h3`
   span {
     font-size: 3rem;
     line-height: 180%;
-    ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.shade1])};
+    ${(props) => getAllFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.shade1)};
   }
 
   @media ${bp.query.laptopL} {
@@ -36,8 +35,7 @@ const Big = styled.h2`
   span {
     font-size: 5rem;
     line-height: 160%;
-    ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.shade2])};
+    ${(props) => getAllFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.shade2)};
   }
 `
 

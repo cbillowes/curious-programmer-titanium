@@ -47,14 +47,14 @@ const Container = styled.ul`
 
   .switcher button {
     color: ${(props) =>
-      getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.default, KEY.color])};
+      getFromTheme(props, TOP_LEVEL_KEY.icon, NESTED_KEY.default, KEY.color)};
     font-size: 1.5rem;
     margin-top: -2px;
 
     &:hover {
       background-color: transparent;
       color: ${(props) =>
-        getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.hover, KEY.color])};
+        getFromTheme(props, TOP_LEVEL_KEY.icon, NESTED_KEY.hover, KEY.color)};
       opacity: 0.5;
     }
   }
@@ -64,13 +64,13 @@ const Link = styled(Anchor)`
   background-color: transparent;
   padding: 0;
   color: ${(props) =>
-    getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.default, KEY.color])};
+    getFromTheme(props, TOP_LEVEL_KEY.icon, NESTED_KEY.default, KEY.color)};
   font-size: 1.25rem;
 
   &:hover {
     background-color: transparent;
     color: ${(props) =>
-      getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.hover, KEY.color])};
+      getFromTheme(props, TOP_LEVEL_KEY.icon, NESTED_KEY.hover, KEY.color)};
     opacity: 0.5;
   }
 `

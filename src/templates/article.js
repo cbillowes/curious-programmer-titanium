@@ -63,11 +63,11 @@ const Article = styled.article`
     transition: all ease-in 0.25s;
 
     ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.default])};
+      getAllFromTheme(props, TOP_LEVEL_KEY.bland, NESTED_KEY.default)};
 
     &:hover {
       ${(props) =>
-        getAllFromTheme(props, [TOP_LEVEL_KEY.bland, NESTED_KEY.hover])};
+        getAllFromTheme(props, TOP_LEVEL_KEY.bland, NESTED_KEY.hover)};
     }
   }
 `

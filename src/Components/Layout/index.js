@@ -20,7 +20,7 @@ import Theme, {
 
 const Wrapper = styled.div`
   background-color: ${(props) =>
-    getFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.page, KEY.base])};
+    getFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.page, KEY.base)};
   padding-top: ${bp.space.betweenHeaderAndPage};
 `
 
@@ -49,11 +49,11 @@ const Switcheroo = styled.button`
   padding-bottom: 0.25rem;
   border-radius: 8px;
   ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.switcheroo, NESTED_KEY.default])};
+    getAllFromTheme(props, TOP_LEVEL_KEY.switcheroo, NESTED_KEY.default)};
 
   &:hover {
     ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.switcheroo, NESTED_KEY.hover])};
+      getAllFromTheme(props, TOP_LEVEL_KEY.switcheroo, NESTED_KEY.hover)};
   }
 `
 

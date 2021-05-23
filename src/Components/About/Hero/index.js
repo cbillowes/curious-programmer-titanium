@@ -13,7 +13,7 @@ import {
 
 const Container = styled.div`
   background-color: ${(props) =>
-    getFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.hero, KEY.base])};
+    getFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.hero, KEY.base)};
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -31,7 +31,7 @@ const Cover = styled.div`
 
 const Overlay = styled.div`
   background-color: ${(props) =>
-    getFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.hero, KEY.base])};
+    getFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.hero, KEY.base)};
   opacity: 0.7;
   position: absolute;
   top: 0;
@@ -47,7 +47,7 @@ const Greeting = styled.div`
   right: 5rem;
   text-align: right;
   font-size: 1.35rem;
-  ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.hero])};
+  ${(props) => getAllFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.hero)};
   background-color: transparent;
 
   h1 {

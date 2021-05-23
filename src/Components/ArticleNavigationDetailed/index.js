@@ -16,11 +16,7 @@ const Navigation = styled.nav`
   width: 100%;
   border-top: solid 1px
     ${(props) =>
-      getFromTheme(props, [
-        TOP_LEVEL_KEY.palette,
-        NESTED_KEY.neutral,
-        KEY.base,
-      ])};
+      getFromTheme(props, TOP_LEVEL_KEY.palette, NESTED_KEY.neutral, KEY.base)};
 
   svg {
     font-size: 250%;

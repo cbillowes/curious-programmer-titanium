@@ -17,17 +17,17 @@ const Container = styled.div`
   text-align: center;
   max-width: ${(props) => props.width};
   transform: rotate(${(props) => props.rotate || "0"}deg);
-  ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.card, props.nestedKey])};
+  ${(props) => getAllFromTheme(props, TOP_LEVEL_KEY.card, props.nestedKey)};
   box-shadow: 0 7px 29px 0
     ${(props) =>
-      getFromTheme(props, [TOP_LEVEL_KEY.card, props.nestedKey, KEY.shadow])};
+      getFromTheme(props, TOP_LEVEL_KEY.card, props.nestedKey, KEY.shadow)};
 
   p {
     font-size: 80%;
     line-height: 1.5rem;
     text-align: center;
     color: ${(props) =>
-      getFromTheme(props, [TOP_LEVEL_KEY.card, props.nestedKey, KEY.color])};
+      getFromTheme(props, TOP_LEVEL_KEY.card, props.nestedKey, KEY.color)};
   }
 
   img {

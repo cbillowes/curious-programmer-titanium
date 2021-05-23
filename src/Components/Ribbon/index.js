@@ -53,7 +53,7 @@ const Body = styled.div`
   text-align: center;
   font-weight: bold;
   ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.primary])};
+    getAllFromTheme(props, TOP_LEVEL_KEY.palette, NESTED_KEY.primary)};
 `
 
 const Ribbon = ({ color, children }) => {

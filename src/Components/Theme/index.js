@@ -68,29 +68,24 @@ export const toggle = (theme) => {
   return Theme(theme.name === "light" ? "dark" : "light")
 }
 
-export const getFromTheme = (props, keys) => {
-  const top = keys[0]
-  const nested = keys[1]
-  const key = keys[2]
+export const getFromTheme = (props, topLevelKey, nestedKey, key) => {
   try {
-    return props.theme.color[top][nested][key]
+    return props.theme.color[topLevelKey][nestedKey][key]
   } catch (e) {
-    throw `Could not get [${top}, ${nested}, ${key}] from theme: ${e}`
+    throw `Could not get [${topLevelKey}, ${nestedKey}, ${key}] from theme: ${e}`
   }
 }
 
-export const getAllFromTheme = (props, keys) => {
-  const top = keys[0]
-  const nested = keys[1]
+export const getAllFromTheme = (props, topLevelKey, nestedKey) => {
   try {
-    const items = props.theme.color[top][nested]
+    const items = props.theme.color[topLevelKey][nestedKey]
     return {
       backgroundColor: items[KEY.base],
       color: items[KEY.color],
       textShadow: `1px 1px 1px ${items[KEY.shadow]}`,
     }
   } catch (e) {
-    throw `Could not get [${top}, ${nested}] from theme: ${e}`
+    throw `Could not get [${topLevelKey}, ${nestedKey}] from theme: ${e}`
   }
 }
 

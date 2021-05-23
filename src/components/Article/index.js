@@ -25,13 +25,9 @@ const Container = styled.div`
   max-width: ${bp.space.readingPane};
   box-shadow: 0 7px 29px 0
     ${(props) =>
-      getFromTheme(props, [
-        TOP_LEVEL_KEY.card,
-        NESTED_KEY.default,
-        KEY.shadow,
-      ])};
+      getFromTheme(props, TOP_LEVEL_KEY.card, NESTED_KEY.default, KEY.shadow)};
   background-color: ${(props) =>
-    getFromTheme(props, [TOP_LEVEL_KEY.card, NESTED_KEY.default, KEY.base])};
+    getFromTheme(props, TOP_LEVEL_KEY.card, NESTED_KEY.default, KEY.base)};
   margin: 4rem auto;
   padding: 1rem 3rem;
   position: relative;
@@ -54,18 +50,10 @@ const Thumbnail = styled.img`
   margin-top: 0.8rem;
   box-shadow: 3px 3px 20px 5px
     ${(props) =>
-      getFromTheme(props, [
-        TOP_LEVEL_KEY.card,
-        NESTED_KEY.default,
-        KEY.shadow,
-      ])};
+      getFromTheme(props, TOP_LEVEL_KEY.card, NESTED_KEY.default, KEY.shadow)};
   border: solid 2px
     ${(props) =>
-      getFromTheme(props, [
-        TOP_LEVEL_KEY.card,
-        NESTED_KEY.default,
-        KEY.shadow,
-      ])};
+      getFromTheme(props, TOP_LEVEL_KEY.card, NESTED_KEY.default, KEY.shadow)};
 `
 
 const Heading = styled.h2`
@@ -77,15 +65,16 @@ const Heading = styled.h2`
   a {
     background-color: transparent;
     color: ${(props) =>
-      getFromTheme(props, [TOP_LEVEL_KEY.card, NESTED_KEY.default, KEY.color])};
+      getFromTheme(props, TOP_LEVEL_KEY.card, NESTED_KEY.default, KEY.color)};
 
     &:hover {
       ${(props) =>
-        getAllFromTheme(props, [
+        getAllFromTheme(
+          props,
           TOP_LEVEL_KEY.palette,
           NESTED_KEY.secondary,
           KEY.base,
-        ])};
+        )};
     }
   }
 `

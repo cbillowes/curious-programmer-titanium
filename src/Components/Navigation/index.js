@@ -14,7 +14,7 @@ import {
 
 const Container = styled.nav`
   ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.navigation, NESTED_KEY.bar])};
+    getAllFromTheme(props, TOP_LEVEL_KEY.navigation, NESTED_KEY.bar)};
 
   z-index: 9999;
   padding: 1rem 2rem;
@@ -24,18 +24,20 @@ const Container = styled.nav`
   right: 0;
   border-bottom: solid 10px
     ${(props) =>
-      getFromTheme(props, [
+      getFromTheme(
+        props,
         TOP_LEVEL_KEY.navigation,
         NESTED_KEY.strip,
         KEY.base,
-      ])};
+      )};
   box-shadow: 1px 4px 6px
     ${(props) =>
-      getFromTheme(props, [
+      getFromTheme(
+        props,
         TOP_LEVEL_KEY.navigation,
         NESTED_KEY.strip,
         KEY.shadow,
-      ])};
+      )};
 `
 
 const Bar = styled.div`
@@ -46,7 +48,7 @@ const Bar = styled.div`
 
 const Logo = styled.div`
   ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.navigation, NESTED_KEY.logo])};
+    getAllFromTheme(props, TOP_LEVEL_KEY.navigation, NESTED_KEY.logo)};
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 1.75rem;
 `

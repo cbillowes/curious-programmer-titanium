@@ -6,15 +6,11 @@ const TopPath = styled.div`
   svg {
     display: block;
     fill: ${(props) =>
-      getFromTheme(props, [
-        TOP_LEVEL_KEY.palette,
-        NESTED_KEY.primary,
-        KEY.base,
-      ])};
+      getFromTheme(props, TOP_LEVEL_KEY.palette, NESTED_KEY.primary, KEY.base)};
 
     rect {
       fill: ${(props) =>
-        getFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.page, KEY.base])};
+        getFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.page, KEY.base)};
     }
   }
 `
@@ -23,15 +19,16 @@ const BottomPath = styled.div`
   svg {
     display: block;
     fill: ${(props) =>
-      getFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.body, KEY.base])};
+      getFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.body, KEY.base)};
 
     rect {
       fill: ${(props) =>
-        getFromTheme(props, [
+        getFromTheme(
+          props,
           TOP_LEVEL_KEY.palette,
           NESTED_KEY.primary,
           KEY.base,
-        ])};
+        )};
     }
   }
 `

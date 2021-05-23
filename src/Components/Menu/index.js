@@ -54,18 +54,20 @@ const Container = styled.nav`
   top: ${bp.space.betweenHeaderAndPage};
   display: ${(props) => (props.isOpen ? "block" : "none")};
   background-color: ${(props) =>
-    getFromTheme(props, [
+    getFromTheme(
+      props,
       TOP_LEVEL_KEY.navigation,
       NESTED_KEY.sidebar,
       KEY.base,
-    ])};
+    )};
   border-left: solid 0.5rem
     ${(props) =>
-      getFromTheme(props, [
+      getFromTheme(
+        props,
         TOP_LEVEL_KEY.navigation,
         NESTED_KEY.sidebar,
         KEY.shadow,
-      ])};
+      )};
 `
 
 const MenuItems = styled.ul`
@@ -89,20 +91,20 @@ const Link = styled(Anchor)`
   border-radius: 0;
   width: 100%;
   ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.menuItem, NESTED_KEY.default])};
+    getAllFromTheme(props, TOP_LEVEL_KEY.menuItem, NESTED_KEY.default)};
 
   &:hover {
     ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.menuItem, NESTED_KEY.hover])};
+      getAllFromTheme(props, TOP_LEVEL_KEY.menuItem, NESTED_KEY.hover)};
   }
 
   &.active {
     ${(props) =>
-      getAllFromTheme(props, [TOP_LEVEL_KEY.menuItem, NESTED_KEY.active])};
+      getAllFromTheme(props, TOP_LEVEL_KEY.menuItem, NESTED_KEY.active)};
 
     &:hover {
       ${(props) =>
-        getAllFromTheme(props, [TOP_LEVEL_KEY.link, NESTED_KEY.hover])};
+        getAllFromTheme(props, TOP_LEVEL_KEY.link, NESTED_KEY.hover)};
     }
   }
 `

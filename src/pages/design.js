@@ -8,41 +8,39 @@ const Primary = styled.div`
   padding: 1rem;
   margin: 1rem 0;
   ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.primary])};
+    getAllFromTheme(props, TOP_LEVEL_KEY.palette, NESTED_KEY.primary)};
 `
 
 const Secondary = styled.div`
   padding: 1rem;
   margin: 1rem 0;
   ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.secondary])};
+    getAllFromTheme(props, TOP_LEVEL_KEY.palette, NESTED_KEY.secondary)};
 `
 
 const Tertiary = styled.div`
   padding: 1rem;
   margin: 1rem 0;
   ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.tertiary])};
+    getAllFromTheme(props, TOP_LEVEL_KEY.palette, NESTED_KEY.tertiary)};
 `
 
 const Forth = styled.div`
   padding: 1rem;
   margin: 1rem 0;
-  ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.forth])};
+  ${(props) => getAllFromTheme(props, TOP_LEVEL_KEY.palette, NESTED_KEY.forth)};
 `
 
 const Fifth = styled.div`
   padding: 1rem;
   margin: 1rem 0;
-  ${(props) =>
-    getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.fifth])};
+  ${(props) => getAllFromTheme(props, TOP_LEVEL_KEY.palette, NESTED_KEY.fifth)};
 `
 
 const Body = styled.div`
   padding: 1rem;
   margin: 1rem 0;
-  ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.root, NESTED_KEY.body])};
+  ${(props) => getAllFromTheme(props, TOP_LEVEL_KEY.root, NESTED_KEY.body)};
 `
 
 const DesignPage = () => {

@@ -9,7 +9,7 @@ import { bp, getAllFromTheme, NESTED_KEY, TOP_LEVEL_KEY } from "../../Theme"
 const Container = styled.div`
   display: inline-block;
   width: 100%;
-  ${(props) => getAllFromTheme(props, [TOP_LEVEL_KEY.page, NESTED_KEY.about])};
+  ${(props) => getAllFromTheme(props, TOP_LEVEL_KEY.page, NESTED_KEY.about)};
 `
 
 const Wrapper = styled.div`

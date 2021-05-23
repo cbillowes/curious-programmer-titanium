@@ -13,7 +13,7 @@ const Container = styled.div``
 // https://codepen.io/olam/pen/zcqea
 const Pulse = styled.div`
   background-color: ${(props) =>
-    getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.default, KEY.base])};
+    getFromTheme(props, TOP_LEVEL_KEY.icon, NESTED_KEY.default, KEY.base)};
   position: relative;
   margin-left: 1.5rem;
   margin-top: 1.5rem;
@@ -34,17 +34,17 @@ const Pulse = styled.div`
     line-height: 0;
     font-size: 1.95rem;
     color: ${(props) =>
-      getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.default, KEY.color])};
+      getFromTheme(props, TOP_LEVEL_KEY.icon, NESTED_KEY.default, KEY.color)};
   }
 
   &:hover {
     animation: pulse 2s infinite;
     background-color: ${(props) =>
-      getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.hover, KEY.base])};
+      getFromTheme(props, TOP_LEVEL_KEY.icon, NESTED_KEY.hover, KEY.base)};
 
     a {
       color: ${(props) =>
-        getFromTheme(props, [TOP_LEVEL_KEY.icon, NESTED_KEY.hover, KEY.color])};
+        getFromTheme(props, TOP_LEVEL_KEY.icon, NESTED_KEY.hover, KEY.color)};
     }
   }
 
@@ -52,29 +52,32 @@ const Pulse = styled.div`
     0% {
       box-shadow: 0 0 0 0
         ${(props) =>
-          getFromTheme(props, [
+          getFromTheme(
+            props,
             TOP_LEVEL_KEY.pulse,
             NESTED_KEY.shade1,
             KEY.base,
-          ])};
+          )};
     }
     70% {
       box-shadow: 0 0 0 10px
         ${(props) =>
-          getFromTheme(props, [
+          getFromTheme(
+            props,
             TOP_LEVEL_KEY.pulse,
             NESTED_KEY.shade2,
             KEY.base,
-          ])};
+          )};
     }
     100% {
       box-shadow: 0 0 0 0
         ${(props) =>
-          getFromTheme(props, [
+          getFromTheme(
+            props,
             TOP_LEVEL_KEY.pulse,
             NESTED_KEY.shade3,
             KEY.base,
-          ])};
+          )};
     }
   }
 `
