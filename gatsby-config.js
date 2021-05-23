@@ -7,6 +7,15 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        sassOptions: {
+          precision: 6,
+        },
+        sourceMap: true,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -48,6 +57,16 @@ module.exports = {
               // Module cannot be required because it is not a CommonJS module :(
               width: 840,
               height: 400,
+            },
+          },
+          {
+            // keep this as the last item in the plugins array.
+            // code blocks are parsed and styled which will break
+            // code protocols like gatsby-remark-embed-gist.
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: `language-`,
+              inlineCodeMarker: `±`,
             },
           },
         ],

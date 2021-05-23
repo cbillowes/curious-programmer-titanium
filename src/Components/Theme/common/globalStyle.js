@@ -8,6 +8,9 @@ import {
   KEY,
 } from "../index"
 
+require("../prismjs/material-dark.scss")
+require("../prismjs/material-light.scss")
+
 /*
   FONTS:
   Open+Sans:wght@300;700

@@ -159,3 +159,7 @@ Gif does not exist :point_down:
 ### gatsby-remark-images
 
 ![Screenshot](./2016/2016-05-14-importance-of-git-history/jira-bitbucket-integration.jpg)
+
+## gatsby-remark-prismjs
+
+`bash±systemctl -l --type service --all`

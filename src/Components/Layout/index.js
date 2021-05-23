@@ -93,7 +93,7 @@ const Layout = ({ header, wideContent, config, children }) => {
           crawl={crawl}
         />
         <Navigation route={route} switcher={switcher} />
-        <Wrapper>
+        <Wrapper id={theme.name === "light" ? "light-theme" : "dark-theme"}>
           <Header>{header}</Header>
           <FullWidth>{wideContent}</FullWidth>
           <Page>{children}</Page>
