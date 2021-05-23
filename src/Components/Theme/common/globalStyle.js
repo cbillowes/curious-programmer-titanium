@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import bp from "./breakpoints"
 import {
   getFromTheme,
   getAllFromTheme,
@@ -143,6 +144,18 @@ export const Style = createGlobalStyle`
   */
   .gist {
     text-shadow: none;
+  }
+
+  /**
+    gatsby-remark-responsive-iframe
+  */
+  .video-wrapper {
+    margin: 0 auto;
+    width: ${bp.space.readingPane};
+
+    iframe {
+      width: 100%;
+    }
   }
 
   /**
