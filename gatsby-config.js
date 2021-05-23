@@ -61,6 +61,12 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-code-titles`,
+            options: {
+              className: `gatsby-remark-code-title`,
+            },
+          },
+          {
             // keep this as the last item in the plugins array.
             // code blocks are parsed and styled which will break
             // code protocols like gatsby-remark-embed-gist.

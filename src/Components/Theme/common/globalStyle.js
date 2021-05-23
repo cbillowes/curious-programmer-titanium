@@ -143,6 +143,16 @@ export const Style = createGlobalStyle`
   ${(props) => generateStylesFromColors(props)};
 
   /**
+    gatsby-remark-code-titles
+  */
+  .gatsby-remark-code-title {
+    ${(props) =>
+      getAllFromTheme(props, [TOP_LEVEL_KEY.palette, NESTED_KEY.primary])};
+    display: inline-block;
+    padding: 0 1rem;
+  }
+
+  /**
     gatsby-plugin-twitter
   */
   .twitter-tweet {

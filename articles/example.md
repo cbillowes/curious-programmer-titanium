@@ -163,3 +163,12 @@ Gif does not exist :point_down:
 ## gatsby-remark-prismjs
 
 `bash±systemctl -l --type service --all`
+
+## gatsby-remark-code-titles
+
+```clojure:title=printer.clj
+(defn print-something
+  []
+  (let [somethings '("do" "not" "panic!")]
+    (println (apply str (interpose " " somethings)))))
+```
