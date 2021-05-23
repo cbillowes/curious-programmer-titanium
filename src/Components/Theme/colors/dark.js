@@ -50,6 +50,11 @@ export default {
       color: adjust(colors.fifth, 100),
       shadow: adjust(colors.fifth, -30),
     },
+    neutral: {
+      base: adjust(colors.base, -3),
+      color: adjust(colors.base, -3),
+      shadow: adjust(colors.base, -3),
+    }
   },
 
   root: {
