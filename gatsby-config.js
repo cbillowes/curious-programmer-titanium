@@ -20,8 +20,6 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-emoji`,
-          `gatsby-remark-responsive-iframe`,
           {
             resolve: `gatsby-remark-interactive-gifs`,
             options: {
@@ -76,6 +74,15 @@ module.exports = {
               inlineCodeMarker: `±`,
             },
           },
+          `gatsby-remark-emoji`,
+          /*
+            Should be last?
+            Wraps iframes or objects (e.g. embedded YouTube videos) within
+            markdown files in a responsive elastic container with a fixed
+            aspect ratio. This ensures that the iframe or object will scale
+            proportionally and to the full width of its container.
+          */
+          `gatsby-remark-responsive-iframe`,
         ],
       },
     },
