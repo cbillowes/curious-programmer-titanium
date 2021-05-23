@@ -4,6 +4,7 @@ module.exports = {
   siteMetadata,
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-plugin-twitter`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {

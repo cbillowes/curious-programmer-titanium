@@ -143,6 +143,13 @@ export const Style = createGlobalStyle`
   ${(props) => generateStylesFromColors(props)};
 
   /**
+    gatsby-plugin-twitter
+  */
+  .twitter-tweet {
+    margin: 0 auto;
+  }
+
+  /**
     gatsby-remark-embed-gist
   */
   .gist {
