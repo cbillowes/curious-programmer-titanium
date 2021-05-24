@@ -137,8 +137,8 @@ export default {
       shadow: adjust(colors.primary, -30),
     },
     strip: {
-      base: adjust(colors.primary, -20),
-      shadow: adjust(colors.primary, -40),
+      base: adjust(colors.primary, -10),
+      shadow: adjust(colors.primary, -50),
     },
     sidebar: {
       base: adjust(colors.primary, -20),
