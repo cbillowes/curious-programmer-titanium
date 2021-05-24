@@ -137,8 +137,8 @@ export default {
       shadow: adjust(colors.primary, -30),
     },
     strip: {
-      base: adjust(colors.primary, -20),
-      shadow: adjust(colors.primary, -40),
+      base: adjust(colors.primary, -10),
+      shadow: adjust(colors.primary, -30),
     },
     sidebar: {
       base: adjust(colors.primary, -20),
@@ -152,7 +152,7 @@ export default {
     logo: {
       base: "transparent",
       color: colors.base,
-      shadow: colors.base,
+      shadow: adjust(colors.base, -90),
     },
   },
 
