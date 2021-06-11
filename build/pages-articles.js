@@ -1,5 +1,6 @@
 const path = require("path")
 const config = require("./const")
+const metadata = require("../gatsby-site")
 const template = `./src/templates/article.js`
 const createPages = true
 
@@ -75,7 +76,7 @@ const createThePage = (createPage, edges, index, reporter) => {
   reporter.verbose(`article: [${number}] ${slug}`)
 }
 
-const createBlogPages = (createPage, result, reporter) => {
+const createArticlePages = (createPage, result, reporter) => {
   const edges = result.data.allMarkdownRemark.edges.filter(
     (edge) => edge.node.fields.slug !== DEMO_PAGE,
   )
@@ -115,7 +116,7 @@ module.exports.create = async (actions, graphql, reporter) => {
     }
 
     const { createPage } = actions
-    createBlogPages(createPage, result, reporter)
+    createArticlePages(createPage, result, reporter)
     createDemoPage(createPage, result, reporter)
     createLandingPage(createPage, reporter)
   })
