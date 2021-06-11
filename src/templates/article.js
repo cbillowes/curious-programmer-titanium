@@ -10,8 +10,8 @@ import Anchor from "../components/Anchor"
 import Ribbon from "../components/Ribbon"
 import ArticleNavigationSimple from "../components/ArticleNavigationSimple"
 import ArticleNavigationDetailed from "../components/ArticleNavigationDetailed"
+import SocialSharing from "../components/SocialSharing"
 import config from "../config/pages"
-
 import { getAllFromTheme, NESTED_KEY, TOP_LEVEL_KEY } from "../components/Theme"
 
 export const query = graphql`
@@ -84,7 +84,7 @@ const ArticleTemplate = ({ data, pageContext }) => {
   const { previous, next } = pageContext
   const node = data.markdownRemark
   const { html, excerpt, timeToRead } = node
-  const { date, number } = node.fields
+  const { date, number, slug } = node.fields
   const { title, tags } = node.frontmatter
   return (
     <Layout
@@ -127,6 +127,7 @@ const ArticleTemplate = ({ data, pageContext }) => {
       }
     >
       <Container>
+        <SocialSharing title={title} slug={slug} />
         {/* eslint-disable-next-line react/no-danger */}
         <Article dangerouslySetInnerHTML={{ __html: html }} />
         <ArticleNavigationDetailed
