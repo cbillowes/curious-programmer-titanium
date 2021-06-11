@@ -39,22 +39,20 @@ const Page = styled.main`
 `
 
 const Switcheroo = styled.button`
-  display: inline-block;
   border: 0;
   outline: 0;
-  cursor: pointer;
   background-color: transparent;
-  font-size: 1.25rem;
+  color: ${(props) =>
+    getFromTheme(
+      props,
+      TOP_LEVEL_KEY.switcheroo,
+      NESTED_KEY.default,
+      KEY.base,
+    )};
+  font-size: 1.5rem;
   padding: 0.5rem;
   padding-bottom: 0.25rem;
-  border-radius: 8px;
-  ${(props) =>
-    getAllFromTheme(props, TOP_LEVEL_KEY.switcheroo, NESTED_KEY.default)};
-
-  &:hover {
-    ${(props) =>
-      getAllFromTheme(props, TOP_LEVEL_KEY.switcheroo, NESTED_KEY.hover)};
-  }
+  cursor: pointer;
 `
 
 const Stickyroo = styled.div`

@@ -225,7 +225,7 @@ export default {
 
   switcheroo: {
     default: {
-      base: `${adjust(colors.base, 70)}33`,
+      base: `${adjust(colors.base, -70)}33`,
       color: colors.base,
     },
     hover: {
