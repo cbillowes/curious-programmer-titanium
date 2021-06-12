@@ -2,7 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Anchor from "../Anchor"
-import { getAllFromTheme, bp, NESTED_KEY, TOP_LEVEL_KEY } from "../Theme"
+import {
+  getAllFromTheme,
+  bp,
+  NESTED_KEY,
+  TOP_LEVEL_KEY,
+  KEY,
+  getFromTheme,
+} from "../Theme"
 import { Cloud } from "../Tags"
 
 const Container = styled.div`
@@ -17,17 +24,35 @@ const Meta = styled.div`
     background-color: transparent;
     text-transform: lowercase;
     padding: 0;
+    font-weight: bold;
 
     &::before {
       content: "#";
     }
+
+    color: ${(props) =>
+      getFromTheme(
+        props,
+        TOP_LEVEL_KEY.palette,
+        NESTED_KEY.secondary,
+        KEY.base,
+      )};
+
+    text-shadow: ${(props) =>
+      getFromTheme(
+        props,
+        TOP_LEVEL_KEY.palette,
+        NESTED_KEY.secondary,
+        KEY.shadow,
+      )};
   }
 `
 
 const Heading = styled.h2`
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   width: 100%;
   margin: 0;
+  padding: 0;
 
   a {
     padding: 0;
