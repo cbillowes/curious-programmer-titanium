@@ -46,11 +46,16 @@ const Bar = styled.div`
   position: relative;
 `
 
-const Logo = styled.div`
+const Logo = styled.a`
   ${(props) =>
     getAllFromTheme(props, TOP_LEVEL_KEY.navigation, NESTED_KEY.logo)};
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 1.75rem;
+  padding: 0;
+
+  &:hover {
+    background-color: transparent;
+  }
 `
 
 const Navigation = ({ switcher, route }) => {
@@ -59,7 +64,7 @@ const Navigation = ({ switcher, route }) => {
   return (
     <Container>
       <Bar>
-        <Logo>
+        <Logo href="/">
           <span>{`{ `}</span>
           <span>{`:curious `}</span>
           <strong>{` "programmer" `}</strong>
