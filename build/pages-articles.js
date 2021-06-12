@@ -1,11 +1,14 @@
 const path = require("path")
 const config = require("./const")
-const metadata = require("../gatsby-site")
 const template = `./src/templates/article.js`
 const createPages = true
 
 const landingPage = "./src/pages/index.js"
-const landingPageSlug = "/blog"
+const landingPageSlug = "/"
+
+const everythingPage = "./src/pages/everything.js"
+const everythingPageSlug = "/blog"
+
 const DEMO_PAGE = config.DEMO_PAGE
 
 const query = async (graphql) => {
@@ -73,7 +76,7 @@ const createThePage = (createPage, edges, index, reporter) => {
       next,
     },
   })
-  reporter.verbose(`article: [${number}] ${slug}`)
+  reporter.success(`create article: [${number}] ${slug}`)
 }
 
 const createArticlePages = (createPage, result, reporter) => {
@@ -90,6 +93,7 @@ const createDemoPage = (createPage, result, reporter) => {
   const index = edges.map((edge) => edge.node.fields.slug).indexOf(DEMO_PAGE)
   if (index === 0) {
     createThePage(createPage, edges, index, reporter)
+    reporter.success(`create: article [demo]`)
   }
 }
 
@@ -102,7 +106,19 @@ const createLandingPage = (createPage, reporter) => {
       slug,
     },
   })
-  reporter.verbose(`article: ${slug}`)
+  reporter.success(`create: article [home]: ${slug}`)
+}
+
+const createEverythingPage = (createPage, reporter) => {
+  const slug = everythingPageSlug
+  createPage({
+    path: slug,
+    component: path.resolve(everythingPage),
+    context: {
+      slug,
+    },
+  })
+  reporter.success(`create: article [all]: ${slug}`)
 }
 
 module.exports.create = async (actions, graphql, reporter) => {
@@ -119,5 +135,6 @@ module.exports.create = async (actions, graphql, reporter) => {
     createArticlePages(createPage, result, reporter)
     createDemoPage(createPage, result, reporter)
     createLandingPage(createPage, reporter)
+    createEverythingPage(createPage, reporter)
   })
 }

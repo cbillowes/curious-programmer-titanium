@@ -3,20 +3,18 @@ import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/Layout"
-import Articles from "../components/Articles"
+import Articles from "../components/Everything"
 import config from "../config/pages"
 
 export const query = graphql`
-  query LandingPageQuery {
+  query EverythingPageQuery {
     allMarkdownRemark(
-      limit: 10
       filter: { fields: { slug: { nin: "/blog/example/" } } }
       sort: { order: DESC, fields: fields___number }
     ) {
       edges {
         node {
           timeToRead
-          excerpt(truncate: true, pruneLength: 1000, format: HTML)
           fields {
             slug
             date(formatString: "LL")
@@ -24,10 +22,6 @@ export const query = graphql`
           }
           frontmatter {
             title
-            photo
-            credit
-            creditLink
-            creditSource
             tags
           }
         }
@@ -40,7 +34,7 @@ const Container = styled.div`
   padding-bottom: 2rem;
 `
 
-const IndexPage = ({ data }) => {
+const EverythingPage = ({ data }) => {
   const edges = data.allMarkdownRemark.edges
 
   return (
@@ -48,15 +42,15 @@ const IndexPage = ({ data }) => {
       config={{ ...config.index }}
       wideContent={
         <Container>
-          <Articles edges={edges} wordCount={50} />
+          <Articles edges={edges} />
         </Container>
       }
     />
   )
 }
 
-IndexPage.propTypes = {
+EverythingPage.propTypes = {
   data: PropTypes.object,
 }
 
-export default IndexPage
+export default EverythingPage

@@ -1,20 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Article from "../Article"
+import SimpleArticle from "../SimpleArticle"
 
-const Articles = ({ edges, wordCount }) => {
+const Everything = ({ edges }) => {
   if (edges && edges.length > 0) {
     return edges.map(({ node }, index) => {
-      return <Article key={index} node={node} wordCount={wordCount} />
+      return <SimpleArticle key={index} node={node} />
     })
   }
 
   return <div>Sorry, there are no articles.</div>
 }
 
-Articles.propTypes = {
+Everything.propTypes = {
   edges: PropTypes.array.isRequired,
-  wordCount: PropTypes.number,
 }
 
-export default Articles
+export default Everything

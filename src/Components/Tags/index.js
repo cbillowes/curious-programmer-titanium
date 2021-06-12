@@ -22,7 +22,7 @@ function getListOfTags(tags) {
   return [...new Set(flattened)].sort()
 }
 
-const Cloud = ({ tags }) => {
+export const Cloud = ({ tags }) => {
   return tags.map((tag) => {
     return (
       <Tag key={tag} to={`/tag/${_.kebabCase(tag.toLowerCase())}/`} title={tag}>
@@ -30,6 +30,10 @@ const Cloud = ({ tags }) => {
       </Tag>
     )
   })
+}
+
+Cloud.propTypes = {
+  tags: PropTypes.array.isRequired,
 }
 
 const getTagsFromEdges = (edges) => {
