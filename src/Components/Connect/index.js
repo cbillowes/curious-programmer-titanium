@@ -26,12 +26,6 @@ const items = [
     to: "https://www.linkedin.com/in/cbouwer/",
     title: "LinkedIn account",
   },
-
-  {
-    anchor: <IoIosMail />,
-    to: "/contact",
-    title: "Get in touch with me",
-  },
 ]
 
 const Container = styled.ul`
