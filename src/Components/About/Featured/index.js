@@ -5,6 +5,7 @@ import Ribbon from "../../Ribbon"
 import Anchor from "../../Anchor"
 import Block from "../../Block"
 import { bp, NESTED_KEY } from "../../Theme"
+import chromeDevTools from "./chrome-dev-tools.gif"
 
 const Container = styled.div`
   max-width: ${bp.breakpoint.laptopL};
@@ -15,7 +16,6 @@ const Container = styled.div`
 const Featured = () => (
   <Container>
     <Block
-      type={NESTED_KEY.default}
       type={NESTED_KEY.default}
       rotate={2}
       direction="left"
@@ -37,8 +37,8 @@ const Featured = () => (
         </div>
       }
       image={
-        <StaticImage
-          src="./chrome-dev-tools.gif"
+        <img
+          src={chromeDevTools}
           alt="Demonstrating a feature in the Chrome DevTools"
         />
       }
