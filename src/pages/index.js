@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/Layout"
 
 export const query = graphql`
-  query LandingPageQuery {
+  query IndexPageQuery {
     allMarkdownRemark(
       limit: 10
       filter: { fields: { slug: { nin: "/blog/example/" } } }
@@ -32,7 +33,13 @@ export const query = graphql`
 `
 
 const IndexPage = () => {
-  return <div>Home page</div>
+  return (
+    <Layout>
+      <h1>Hi people</h1>
+      <p>Welcome to your new Gatsby site.</p>
+      <p>Now go build something great.</p>
+    </Layout>
+  )
 }
 
 export default IndexPage
