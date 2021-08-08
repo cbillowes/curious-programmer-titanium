@@ -12,7 +12,6 @@ import Theme, {
   NESTED_KEY,
   TOP_LEVEL_KEY,
   bp,
-  getAllFromTheme,
   getFromTheme,
   GlobalStyle,
   toggle,

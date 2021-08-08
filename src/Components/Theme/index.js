@@ -72,7 +72,7 @@ export const getFromTheme = (props, topLevelKey, nestedKey, key) => {
   try {
     return props.theme.color[topLevelKey][nestedKey][key]
   } catch (e) {
-    throw `Could not get [${topLevelKey}, ${nestedKey}, ${key}] from theme: ${e}`
+    throw `Could not get [${topLevelKey}, ${nestedKey}, ${key}] from theme: ${e} (color: ${props.theme.color})`
   }
 }
 
@@ -85,7 +85,7 @@ export const getAllFromTheme = (props, topLevelKey, nestedKey) => {
       textShadow: `1px 1px 1px ${items[KEY.shadow]}`,
     }
   } catch (e) {
-    throw `Could not get [${topLevelKey}, ${nestedKey}] from theme: ${e}`
+    throw `Could not get [${topLevelKey}, ${nestedKey}] from theme: ${e} (color: ${props.theme.color})`
   }
 }
 
