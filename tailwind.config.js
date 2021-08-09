@@ -5,9 +5,13 @@ module.exports = {
     extend: {
       colors: {
         primary: "var(--primary)",
+        "primary-script": "var(--primary-script)",
         secondary: "var(--secondary)",
-        "main-text": "var(--text-main)",
-        "secondary-text": "var(--text-secondary)",
+        "secondary-script": "var(--secondary-script)",
+        accent: "var(--accent)",
+        "accent-script": "var(--accent-script)",
+
+        "accent-secondary": "var(--accent-secondary)",
       },
     },
   },
