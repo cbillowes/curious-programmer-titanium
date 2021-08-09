@@ -33,7 +33,7 @@ Schema.propTypes = {
     url: PropTypes.string.isRequired,
   }).isRequired,
   description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,

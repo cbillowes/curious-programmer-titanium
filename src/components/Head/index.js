@@ -6,31 +6,29 @@ import Icons from "./icons"
 import Social from "./social"
 import Schema from "./schema"
 import Font from "./font"
-import { StaticQuery, graphql } from "gatsby"
-import { Location } from "@reach/router"
 import { Helmet } from "react-helmet"
 
 const removeWhitespace = (text) => {
   return text
-    .trim()
-    .split(" ")
-    .filter((word) => word)
-    .join(" ")
+    ?.trim()
+    ?.split(" ")
+    ?.filter((word) => word)
+    ?.join(" ")
 }
 
 const Head = ({
   author,
   brand,
+  crawl,
   description,
   image,
   keywords,
   lang,
-  siteTitle,
+  pageTitle,
   social,
   title,
   type,
   url,
-  crawl,
 }) => (
   <React.Fragment>
     <Helmet
@@ -59,7 +57,7 @@ const Head = ({
       )}
     </Helmet>
 
-    <Title page={title} site={siteTitle} />
+    <Title page={pageTitle} site={title} />
 
     <Description
       keywords={keywords}
@@ -97,7 +95,7 @@ const author = PropTypes.shape({
 })
 
 const social = PropTypes.shape({
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   twitter: PropTypes.string.isRequired,
 })
 
@@ -111,52 +109,14 @@ Head.propTypes = {
   brand: PropTypes.string.isRequired,
   crawl: PropTypes.bool,
   description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   keywords: PropTypes.string.isRequired,
   lang: PropTypes.string.isRequired,
-  siteTitle: PropTypes.string.isRequired,
-  social: social.isRequired,
   title: PropTypes.string.isRequired,
+  social: social.isRequired,
+  pageTitle: PropTypes.string,
   type: PropTypes.string,
   url: PropTypes.string.isRequired,
 }
 
-const HeadWithQuery = (props) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        site {
-          siteMetadata {
-            author {
-              name
-              url
-            }
-            brand
-            description
-            keywords
-            lang
-            title
-            url
-            social {
-              twitter
-            }
-          }
-        }
-      }
-    `}
-    render={(data) => (
-      <Location>
-        {({ location }) => (
-          <Head
-            {...data.site.siteMetadata}
-            {...props}
-            siteTitle={data.site.siteMetadata.title}
-            location={location}
-          />
-        )}
-      </Location>
-    )}
-  />
-)
-
-export default HeadWithQuery
+export default Head
