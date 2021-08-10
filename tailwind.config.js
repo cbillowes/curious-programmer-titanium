@@ -11,7 +11,8 @@ module.exports = {
         accent: "var(--accent)",
         "accent-script": "var(--accent-script)",
 
-        "accent-secondary": "var(--accent-secondary)",
+        "accent-1": "var(--accent-1)",
+        "accent-2": "var(--accent-2)",
       },
     },
   },

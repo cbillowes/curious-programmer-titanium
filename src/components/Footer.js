@@ -23,14 +23,14 @@ const Blocks = () => {
 const TopAnchor = (props) => (
   <Anchor
     {...props}
-    className="text-secondary-script font-semibold hover:text-accent-secondary"
+    className="text-secondary-script font-semibold hover:text-accent-2"
   />
 )
 
 const BottomAnchor = (props) => (
   <Anchor
     {...props}
-    className="mt-4 mr-4 py-1 px-3 text-sm rounded text-secondary bg-secondary-script hover:bg-accent-secondary"
+    className="mt-4 mr-4 py-1 px-3 text-sm rounded text-secondary bg-secondary-script hover:bg-accent-2"
   />
 )
 

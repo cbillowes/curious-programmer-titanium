@@ -8,7 +8,8 @@
   --accent: #00a2ff;
   --accent-script: #f8f8f8;
 
-  --accent-secondary: #9fdcff;
+  --accent-1: #02314d;
+  --accent-2: #9fdcff;
 }
 
 .theme-dark {
@@ -21,5 +22,6 @@
   --accent: #C6C91B;
   --accent-script: #1A1C20;
 
-  --accent-secondary: #fdff84;
+  --accent-1: #5e5f0a;
+  --accent-2: #fdff84;
 }
