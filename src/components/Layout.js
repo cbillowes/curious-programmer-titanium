@@ -14,7 +14,7 @@ const Toggler = ({ theme, setTheme }) => {
 
   return (
     <button onClick={handleThemeToggle}>
-      {theme === "light" ? <MdBrightness2 /> : <MdWbSunny />}
+      {theme === "dark" ? <MdBrightness2 /> : <MdWbSunny />}
     </button>
   )
 }
