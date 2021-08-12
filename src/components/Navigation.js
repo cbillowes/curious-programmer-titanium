@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
+import Hamburger from "./Hamburger"
 
 const Logo = () => {
   return (
@@ -12,10 +13,13 @@ const Logo = () => {
 }
 
 const Navigation = () => {
+  const [isMenuOpen, toggleMenu] = useState(false)
+
   return (
     <div className="bg-accent-1 py-2">
-      <div className="max-w-screen-md mx-auto">
+      <div className="max-w-screen-md mx-auto flex justify-between items-center">
         <Logo />
+        <Hamburger isOpen={isMenuOpen} toggle={toggleMenu} />
       </div>
     </div>
   )
