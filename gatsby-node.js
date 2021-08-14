@@ -1,6 +1,8 @@
 const _ = require("lodash")
 const path = require(`path`)
 const constants = require("./build/const")
+const images = require("./build/images")
+const thumbnail = require("./build/thumbnail")
 const articles = require("./build/pages-articles")
 const tags = require("./build/pages-tags")
 // const search = require("./build/search")
@@ -20,10 +22,20 @@ const DEMO_PAGE = constants.DEMO_PAGE
 
 // Add the date field to the node.
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateNode
-exports.onCreateNode = ({ node, actions }) => {
+exports.onCreateNode = ({ node, actions, reporter }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
     createNodes(node, createNodeField)
+  }
+
+  if (node.internal.type === `File`) {
+    const absolutePath = node.absolutePath
+    if (images.isResource(absolutePath)) {
+      reporter.verbose(`Need to process ${absolutePath}`)
+      images.processHighRes(absolutePath, reporter)
+      images.processLowRes(absolutePath, reporter)
+      images.generateComponent(absolutePath, reporter)
+    }
   }
 }
 
@@ -45,10 +57,10 @@ exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
   }
 }
 
-/**
- * CORE LOGIC.
- * 💪 Powerful worker functions.
- */
+exports.onPostBootstrap = ({ reporter }) => {
+  images.generateComponentIndex(reporter)
+}
+
 const createNodes = (node, createNodeField) => {
   const { title, date } = node.frontmatter
   const slug = path.join(`/blog`, _.kebabCase(title), `/`)
@@ -109,13 +121,10 @@ const applyNumbers = (createNodeField) => {
       name: `number`,
       value: index + 1,
     })
+
+    thumbnail.create(createNodeField, node, index + 1)
   })
 }
-
-/**
- * HELPERS.
- * 🦄 The unicorns bringing everything magically together.
- */
 
 const toTimestamp = (date) => {
   return new Date(date).getTime()
