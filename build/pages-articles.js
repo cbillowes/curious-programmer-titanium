@@ -93,7 +93,7 @@ const createDemoPage = (createPage, result, reporter) => {
   const index = edges.map((edge) => edge.node.fields.slug).indexOf(DEMO_PAGE)
   if (index === 0) {
     createThePage(createPage, edges, index, reporter)
-    reporter.success(`create: article [demo]`)
+    reporter.success(`create article: [demo]`)
   }
 }
 
@@ -106,7 +106,7 @@ const createLandingPage = (createPage, reporter) => {
       slug,
     },
   })
-  reporter.success(`create: article [home]: ${slug}`)
+  reporter.success(`create article: [home] ${slug}`)
 }
 
 const createEverythingPage = (createPage, reporter) => {
@@ -118,7 +118,7 @@ const createEverythingPage = (createPage, reporter) => {
       slug,
     },
   })
-  reporter.success(`create: article [all]: ${slug}`)
+  reporter.success(`create article: [all] ${slug}`)
 }
 
 module.exports.create = async (actions, graphql, reporter) => {
