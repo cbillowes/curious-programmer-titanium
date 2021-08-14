@@ -1,4 +1,4 @@
-const page = `../src/pages/Index/index.js`
+const page = `../src/pages/index.js`
 const slug = `/`
 const create = true
 
