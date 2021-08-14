@@ -12,12 +12,15 @@ export const Elastic = ({ alt }) => {
     <StaticImage
       src="../../images/articles/elastic.jpg"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 Elastic.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default Elastic

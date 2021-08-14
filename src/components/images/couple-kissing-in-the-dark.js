@@ -12,12 +12,15 @@ export const CoupleKissingInTheDark = ({ alt }) => {
     <StaticImage
       src="../../images/articles/couple-kissing-in-the-dark.jpg"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 CoupleKissingInTheDark.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default CoupleKissingInTheDark

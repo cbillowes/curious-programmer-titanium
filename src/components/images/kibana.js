@@ -12,12 +12,15 @@ export const Kibana = ({ alt }) => {
     <StaticImage
       src="../../images/articles/kibana.jpg"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 Kibana.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default Kibana

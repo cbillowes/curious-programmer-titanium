@@ -12,12 +12,15 @@ export const PeopleAtACafeteria = ({ alt }) => {
     <StaticImage
       src="../../images/articles/people-at-a-cafeteria.jpg"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 PeopleAtACafeteria.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default PeopleAtACafeteria

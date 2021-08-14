@@ -12,12 +12,15 @@ export const Gatsby = ({ alt }) => {
     <StaticImage
       src="../../images/articles/gatsby.png"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 Gatsby.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default Gatsby

@@ -12,12 +12,15 @@ export const Clojure = ({ alt }) => {
     <StaticImage
       src="../../images/articles/clojure.jpg"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 Clojure.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default Clojure

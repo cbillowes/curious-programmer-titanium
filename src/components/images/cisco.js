@@ -12,12 +12,15 @@ export const Cisco = ({ alt }) => {
     <StaticImage
       src="../../images/articles/cisco.png"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 Cisco.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default Cisco

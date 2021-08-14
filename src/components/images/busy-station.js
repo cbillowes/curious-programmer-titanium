@@ -12,12 +12,15 @@ export const BusyStation = ({ alt }) => {
     <StaticImage
       src="../../images/articles/busy-station.jpg"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 BusyStation.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default BusyStation

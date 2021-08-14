@@ -12,12 +12,15 @@ export const CogsWithGlobe = ({ alt }) => {
     <StaticImage
       src="../../images/articles/cogs-with-globe.jpg"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 CogsWithGlobe.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default CogsWithGlobe

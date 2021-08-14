@@ -12,12 +12,15 @@ export const Csteqziq_400x400 = ({ alt }) => {
     <StaticImage
       src="../../images/articles/csTEQzIQ_400x400.jpg"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 Csteqziq_400x400.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default Csteqziq_400x400

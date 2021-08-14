@@ -12,12 +12,15 @@ export const DogInBlanket = ({ alt }) => {
     <StaticImage
       src="../../images/articles/dog-in-blanket.jpg"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 DogInBlanket.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default DogInBlanket

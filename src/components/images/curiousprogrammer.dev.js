@@ -12,12 +12,15 @@ export const Curiousprogrammerdev = ({ alt }) => {
     <StaticImage
       src="../../images/articles/curiousprogrammer.dev.png"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 Curiousprogrammerdev.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default Curiousprogrammerdev

@@ -12,12 +12,15 @@ export const Default10 = ({ alt }) => {
     <StaticImage
       src="../../images/articles/default-10.jpg"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 Default10.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default Default10

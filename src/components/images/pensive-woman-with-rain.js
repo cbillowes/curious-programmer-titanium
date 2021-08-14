@@ -12,12 +12,15 @@ export const PensiveWomanWithRain = ({ alt }) => {
     <StaticImage
       src="../../images/articles/pensive-woman-with-rain.jpg"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 PensiveWomanWithRain.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default PensiveWomanWithRain

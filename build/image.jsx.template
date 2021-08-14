@@ -12,12 +12,15 @@ export const %COMPONENT_NAME% = ({ alt }) => {
     <StaticImage
       src="../../images/articles/%IMAGE_FILENAME%"
       alt={alt}
+      width={800}
+      height={600}
+      layout="constrained"
     />
   )
 }
 
 %COMPONENT_NAME%.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default %COMPONENT_NAME%
