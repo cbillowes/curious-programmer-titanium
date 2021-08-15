@@ -11,124 +11,124 @@
 let Component = {}
 
 
-Component["BlurredCycling"] = (
-  require("./blurred-cycling").default
+Component["BlurredCycling"] = (props) => (
+  require("./blurred-cycling").default(props)
 )
 
-Component["BusyStation"] = (
-  require("./busy-station").default
+Component["BusyStation"] = (props) => (
+  require("./busy-station").default(props)
 )
 
-Component["Cisco"] = (
-  require("./cisco").default
+Component["Cisco"] = (props) => (
+  require("./cisco").default(props)
 )
 
-Component["Clojure"] = (
-  require("./clojure").default
+Component["Clojure"] = (props) => (
+  require("./clojure").default(props)
 )
 
-Component["CogsWithGlobe"] = (
-  require("./cogs-with-globe").default
+Component["CogsWithGlobe"] = (props) => (
+  require("./cogs-with-globe").default(props)
 )
 
-Component["CoupleKissingInTheDark"] = (
-  require("./couple-kissing-in-the-dark").default
+Component["CoupleKissingInTheDark"] = (props) => (
+  require("./couple-kissing-in-the-dark").default(props)
 )
 
-Component["Csteqziq_400x400"] = (
-  require("./csTEQzIQ_400x400").default
+Component["Csteqziq_400x400"] = (props) => (
+  require("./csTEQzIQ_400x400").default(props)
 )
 
-Component["Curious"] = (
-  require("./curious").default
+Component["Curious"] = (props) => (
+  require("./curious").default(props)
 )
 
-Component["Curiousprogrammer.dev"] = (
-  require("./curiousprogrammer.dev").default
+Component["Curiousprogrammer.dev"] = (props) => (
+  require("./curiousprogrammer.dev").default(props)
 )
 
-Component["Default01"] = (
-  require("./default-01").default
+Component["Default01"] = (props) => (
+  require("./default-01").default(props)
 )
 
-Component["Default02"] = (
-  require("./default-02").default
+Component["Default02"] = (props) => (
+  require("./default-02").default(props)
 )
 
-Component["Default03"] = (
-  require("./default-03").default
+Component["Default03"] = (props) => (
+  require("./default-03").default(props)
 )
 
-Component["Default04"] = (
-  require("./default-04").default
+Component["Default04"] = (props) => (
+  require("./default-04").default(props)
 )
 
-Component["Default05"] = (
-  require("./default-05").default
+Component["Default05"] = (props) => (
+  require("./default-05").default(props)
 )
 
-Component["Default06"] = (
-  require("./default-06").default
+Component["Default06"] = (props) => (
+  require("./default-06").default(props)
 )
 
-Component["Default07"] = (
-  require("./default-07").default
+Component["Default07"] = (props) => (
+  require("./default-07").default(props)
 )
 
-Component["Default08"] = (
-  require("./default-08").default
+Component["Default08"] = (props) => (
+  require("./default-08").default(props)
 )
 
-Component["Default09"] = (
-  require("./default-09").default
+Component["Default09"] = (props) => (
+  require("./default-09").default(props)
 )
 
-Component["Default10"] = (
-  require("./default-10").default
+Component["Default10"] = (props) => (
+  require("./default-10").default(props)
 )
 
-Component["DogInBlanket"] = (
-  require("./dog-in-blanket").default
+Component["DogInBlanket"] = (props) => (
+  require("./dog-in-blanket").default(props)
 )
 
-Component["Elastic"] = (
-  require("./elastic").default
+Component["Elastic"] = (props) => (
+  require("./elastic").default(props)
 )
 
-Component["Gatsby"] = (
-  require("./gatsby").default
+Component["Gatsby"] = (props) => (
+  require("./gatsby").default(props)
 )
 
-Component["Git"] = (
-  require("./git").default
+Component["Git"] = (props) => (
+  require("./git").default(props)
 )
 
-Component["HighriseBuildings"] = (
-  require("./highrise-buildings").default
+Component["HighriseBuildings"] = (props) => (
+  require("./highrise-buildings").default(props)
 )
 
-Component["Kibana"] = (
-  require("./kibana").default
+Component["Kibana"] = (props) => (
+  require("./kibana").default(props)
 )
 
-Component["Mac"] = (
-  require("./mac").default
+Component["Mac"] = (props) => (
+  require("./mac").default(props)
 )
 
-Component["Mauritius"] = (
-  require("./mauritius").default
+Component["Mauritius"] = (props) => (
+  require("./mauritius").default(props)
 )
 
-Component["PensiveWomanWithRain"] = (
-  require("./pensive-woman-with-rain").default
+Component["PensiveWomanWithRain"] = (props) => (
+  require("./pensive-woman-with-rain").default(props)
 )
 
-Component["PeopleAtACafeteria"] = (
-  require("./people-at-a-cafeteria").default
+Component["PeopleAtACafeteria"] = (props) => (
+  require("./people-at-a-cafeteria").default(props)
 )
 
-Component["TwoPeoplePlanningAtATable"] = (
-  require("./two-people-planning-at-a-table").default
+Component["TwoPeoplePlanningAtATable"] = (props) => (
+  require("./two-people-planning-at-a-table").default(props)
 )
 
 

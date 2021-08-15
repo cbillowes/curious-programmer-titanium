@@ -12,9 +12,13 @@ export const Mac = ({ alt }) => {
     <StaticImage
       src="../../images/articles/mac.jpg"
       alt={alt}
-      width={800}
-      height={600}
-      layout="constrained"
+      width={1980}
+      height={1080}
+      objectPosition="50% 50%"
+      objectFit="cover"
+      transformOptions={{
+        cropFocus: "attention",
+      }}
     />
   )
 }

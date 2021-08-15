@@ -12,9 +12,13 @@ export const Default09 = ({ alt }) => {
     <StaticImage
       src="../../images/articles/default-09.jpg"
       alt={alt}
-      width={800}
-      height={600}
-      layout="constrained"
+      width={1980}
+      height={1080}
+      objectPosition="50% 50%"
+      objectFit="cover"
+      transformOptions={{
+        cropFocus: "attention",
+      }}
     />
   )
 }
