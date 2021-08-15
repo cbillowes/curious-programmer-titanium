@@ -4,7 +4,7 @@ import Hamburger from "./Hamburger"
 
 const Logo = () => {
   return (
-    <div className="text-2xl">
+    <div className="text-2xl -mt-1">
       <span className="mr-2">{`{`}</span>
       <span className="mr-2">curious</span>
       <span className="font-bold">programmer</span>
@@ -19,9 +19,9 @@ const Navigation = ({ layout }) => {
   return (
     <div className="bg-color-2 text-color-2-script py-2 px-4">
       <div
-        className={`${
-          layout === "fluid" ? "" : "max-w-screen-md mx-auto"
-        } " flex justify-between items-center"`}
+        className={`flex justify-between items-center ${
+          layout === "fluid" ? "" : "max-w-screen-md mx-auto w-full"
+        }`}
       >
         <Logo />
         <Hamburger isOpen={isMenuOpen} toggle={toggleMenu} />
