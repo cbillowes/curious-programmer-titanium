@@ -15,29 +15,54 @@ const Articles = ({ edges }) => {
   if (edges && edges.length > 0) {
     return edges.map(({ node }, index) => {
       const { frontmatter, fields } = node
+      const isEven = index % 2 === 0
 
       return (
         <div
           key={index}
           className={`relative md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
-            index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
+            isEven ? "md:flex-row-reverse" : "md:flex-row"
           }`}
         >
           <div
             className={`md:w-1/4 md:mx-16 md:${
-              index % 2 === 0 ? "text-left" : "text-right"
+              isEven ? "text-left" : "text-right"
             }`}
           >
             <h1 className="text-xl mt-8 md:mt-0 md:text-2xl leading-loose font-semibold">
               {frontmatter.title}
             </h1>
-            <div className="leading-loose mb-4">{node.excerpt}</div>
-            <Anchor
-              className="bg-color-1 text-color-1-script rounded py-2 px-3 transform shadow-md"
-              to={fields.slug}
+            <div className="leading-loose mb-4">
+              <p className="text-gray-500">
+                {fields.date} - Estimated {node.timeToRead} minute read
+              </p>
+              {node.excerpt}
+            </div>
+            <div
+              className={`flex items-center flex-wrap ${
+                isEven ? "flex-row" : "flex-row-reverse"
+              }`}
             >
-              Read more
-            </Anchor>
+              <Anchor
+                className={`bg-color-1 text-color-1-script rounded py-2 px-3 transform shadow-md ${
+                  isEven ? "mr-2" : "ml-4"
+                }`}
+                to={fields.slug}
+              >
+                Read more
+              </Anchor>
+              {frontmatter.tags &&
+                frontmatter.tags.map((tag, index) => (
+                  <Anchor
+                    key={index}
+                    to={`/tag/${tag}`}
+                    title={tag.toLowerCase()}
+                    className="ml-2 text-gray-500 leading-loose"
+                  >
+                    #{tag.toLowerCase()}
+                  </Anchor>
+                ))}
+            </div>
           </div>
           <div className="md:w-1/4">
             <Thumbnail
@@ -165,7 +190,7 @@ Articles.propTypes = {
 export const query = graphql`
   query IndexPageQuery {
     allMarkdownRemark(
-      limit: 6
+      limit: 10
       filter: { fields: { slug: { nin: "/blog/example/" } } }
       sort: { order: DESC, fields: fields___number }
     ) {
