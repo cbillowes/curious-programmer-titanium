@@ -2,9 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-const BURGER_WIDTH = 30
+const BURGER_WIDTH = 25
 const BURGER_HEIGHT = 24
-const BAR_HEIGHT = 2
+const BAR_HEIGHT = 3
 
 /*!
  * Hamburgers: hamburger--spin
