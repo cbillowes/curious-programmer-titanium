@@ -18,6 +18,11 @@ module.exports = {
 
         "color-3": "var(--color-3)",
         "color-3-script": "var(--color-3-script)",
+
+        twitter: "#1DA1F2",
+        stackoverflow: "#c9510c",
+        github: "#000000",
+        linkedin: "#2867B2",
       },
     },
   },
