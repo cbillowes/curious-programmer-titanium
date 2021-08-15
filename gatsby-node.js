@@ -7,11 +7,13 @@ const articles = require("./build/pages-articles")
 const tags = require("./build/pages-tags")
 // const search = require("./build/search")
 
-// The order of which nodes are processed is no guaranteed.
+// The order of which nodes are processed is not guaranteed.
 // To add numbers to each post, nodes need to be captured
 // and processed sequentially by date
 const nodes = []
 
+// This is a page that contains examples of usage and what
+// generated markdown content will look like.
 const DEMO_PAGE = constants.DEMO_PAGE
 
 /**
@@ -20,22 +22,24 @@ const DEMO_PAGE = constants.DEMO_PAGE
  * https://www.gatsbyjs.org/docs/actions/
  */
 
-// Add the date field to the node.
+// Generates a bunch of images and creates nodes for markdown files.
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateNode
 exports.onCreateNode = ({ node, actions, reporter }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
-    createNodes(node, createNodeField)
-  }
-
   if (node.internal.type === `File`) {
     const absolutePath = node.absolutePath
     if (images.isResource(absolutePath)) {
-      reporter.verbose(`Need to process ${absolutePath}`)
       images.processHighRes(absolutePath, reporter)
       images.processLowRes(absolutePath, reporter)
       images.generateComponent(absolutePath, reporter)
+      reporter.success(`Processed resource: ${absolutePath}\n`)
     }
+  }
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const { title } = node.frontmatter
+    createNodes(node, createNodeField, reporter)
+    reporter.success(`Created nodes: ${title}\n`)
   }
 }
 
@@ -61,9 +65,22 @@ exports.onPostBootstrap = ({ reporter }) => {
   images.generateComponentIndex(reporter)
 }
 
-const createNodes = (node, createNodeField) => {
-  const { title, date } = node.frontmatter
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      fallback: {
+        fs: false,
+        path: require.resolve("path-browserify"),
+      },
+    },
+  })
+}
+
+const createNodes = (node, createNodeField, reporter) => {
+  const { title, date, photo } = node.frontmatter
   const slug = path.join(`/blog`, _.kebabCase(title), `/`)
+  const component =
+    images.getComponentName(photo) || images.getRandomDefaultComponent()
 
   createNodeField({
     node,
@@ -85,27 +102,11 @@ const createNodes = (node, createNodeField) => {
 
   createNodeField({
     node,
-    name: `photo`,
-    value: `logo.jpg`,
+    name: `component`,
+    value: component,
   })
 
-  createNodeField({
-    node,
-    name: `source`,
-    value: ``,
-  })
-
-  createNodeField({
-    node,
-    name: `credit`,
-    value: `Clarice Bouwer`,
-  })
-
-  createNodeField({
-    node,
-    name: `link`,
-    value: ``,
-  })
+  reporter.info(`Created node fields: ${component}`)
 
   nodes.push(node)
 }
@@ -116,13 +117,15 @@ const applyNumbers = (createNodeField) => {
     (a, b) => toTimestamp(a.fields.date) - toTimestamp(b.fields.date),
   )
   sorted.forEach((node, index) => {
+    const number = index + 1
+
     createNodeField({
       node,
       name: `number`,
-      value: index + 1,
+      value: number,
     })
 
-    thumbnail.create(createNodeField, node, index + 1)
+    thumbnail.create(createNodeField, node, number)
   })
 }
 

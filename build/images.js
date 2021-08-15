@@ -17,12 +17,38 @@ const toDestinationPath = (destinationPath, sourcePath) => {
 }
 
 const kebabToTitleCase = (text) => {
+  if (!text) return ""
+
   return text
     .replace(/-/g, " ")
     .replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
     })
     .replace(/ /g, "")
+}
+
+const toComponentName = (text) => {
+  return kebabToTitleCase(text).replace(/\.|jpg|png|gif|svg/g, "")
+}
+
+exports.getComponentName = (text) => {
+  return toComponentName(text)
+}
+
+exports.getRandomDefaultComponent = () => {
+  const sourcePath = path.join(__dirname, "../src/components/images/")
+  const files = fs.readdirSync(sourcePath)
+
+  const defaults = files.filter((file) => {
+    return file.startsWith("default-")
+  })
+
+  const outerBounds = defaults.length
+  const index = parseInt(Math.random() * (outerBounds + 1))
+  const number = index < 10
+    ? (index === 0 ? `01` : `0${index}`)
+    : index
+  return `Default${number}`
 }
 
 /**
@@ -128,10 +154,7 @@ exports.generateComponent = (sourcePath, reporter) => {
 
       const component = data
         .toString()
-        .replace(
-          /%COMPONENT_NAME%/g,
-          kebabToTitleCase(filename).replace(/\.|jpg|png|gif|svg/g, ""),
-        )
+        .replace(/%COMPONENT_NAME%/g, toComponentName(filename))
         .replace(/%IMAGE_FILENAME%/g, path.basename(sourcePath))
         .replace(/%IMAGE_WIDTH%/, 1920)
 
