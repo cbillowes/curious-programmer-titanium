@@ -151,7 +151,7 @@ const getComponentIndex = (sourcePath) => {
 
     const filename = path.basename(file).replace(path.extname(file), "")
     const componentName = kebabToTitleCase(filename)
-    content += `\nComponent["${componentName}"] = (\n  require("./${filename}").default\n)\n`
+    content += `\nComponent["${componentName}"] = (props) => (\n  require("./${filename}").default(props)\n)\n`
   })
   return content
 }
