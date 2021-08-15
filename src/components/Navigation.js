@@ -1,15 +1,18 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import Hamburger from "./Hamburger"
+import Anchor from "./Anchor"
 
 const Logo = () => {
   return (
-    <div className="text-2xl -mt-1">
-      <span className="mr-2">{`{`}</span>
-      <span className="mr-2">curious</span>
-      <span className="font-bold">programmer</span>
-      <span className="ml-2">{`}`}</span>
-    </div>
+    <Anchor to="/" title="Home page">
+      <div className="text-2xl -mt-1">
+        <span className="mr-2">{`{`}</span>
+        <span className="mr-2">curious</span>
+        <span className="font-bold">programmer</span>
+        <span className="ml-2">{`}`}</span>
+      </div>
+    </Anchor>
   )
 }
 
