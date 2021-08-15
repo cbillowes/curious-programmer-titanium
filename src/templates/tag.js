@@ -15,11 +15,12 @@ export const query = graphql`
       edges {
         node {
           timeToRead
-          excerpt(truncate: true, pruneLength: 1000, format: HTML)
+          excerpt(truncate: true, pruneLength: 250, format: PLAIN)
           fields {
             slug
             date(formatString: "LL")
             number
+            component
           }
           frontmatter {
             title
@@ -32,19 +33,33 @@ export const query = graphql`
         }
       }
     }
+    site {
+      siteMetadata {
+        author {
+          name
+          url
+        }
+        brand
+        description
+        keywords
+        lang
+        title
+        url
+        social {
+          twitter
+        }
+      }
+    }
   }
 `
 
 const TagTemplate = ({ data, pageContext }) => {
-  const tag = _.upperFirst(pageContext.tag)
-  const edges = data.allMarkdownRemark.edges
-  return edges.map(({ node }, index) => {
-    return (
-      <div key={index}>
-        {tag} ... {node}
-      </div>
-    )
-  })
+  return <span>Hi</span>
+  // const tag = _.upperFirst(pageContext.tag)
+  // const edges = data.allMarkdownRemark.edges
+  // return edges.map(({ node }, index) => {
+  //   return <div key={index}>{tag}</div>
+  // })
 }
 
 TagTemplate.propTypes = {
