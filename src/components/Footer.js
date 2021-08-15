@@ -9,7 +9,6 @@ const Blocks = () => {
       preserveAspectRatio="none"
       viewBox="0 0 2048 150"
       height="150px"
-      width="100%"
     >
       <rect width="2048" height="150" className="fill-current text-default" />
       <path
@@ -30,16 +29,16 @@ const TopAnchor = (props) => (
 const BottomAnchor = (props) => (
   <Anchor
     {...props}
-    className="mt-4 mr-4 py-1 px-3 text-sm rounded text-inverse bg-inverse-script hover:bg-color-3 hover:text-color-3-script"
+    className="inline-block mt-3 mr-3 py-2 px-4 md:py-1 md:px-3 text-sm rounded text-inverse bg-inverse-script hover:bg-color-3 hover:text-color-3-script"
   />
 )
 
 const Footer = ({ toggler }) => (
   <footer>
     <Blocks />
-    <div className="mx-auto max-w-screen-md flex flex-row-reverse justify-between align-baseline py-12 leading-loose">
-      <div className="pt-1">{toggler}</div>
-      <div>
+    <div className="mx-auto md:max-w-screen-md md:flex md:flex-row-reverse md:justify-between md:align-baseline py-12 leading-loose">
+      <div className="absolute right-2 pt-1 md:relative">{toggler}</div>
+      <div className="px-8">
         <p>
           Copyright &copy; {new Date().getFullYear()}. Curious Programmer. A
           curious place for a curious mind.
@@ -55,7 +54,7 @@ const Footer = ({ toggler }) => (
           </TopAnchor>
           .
         </div>
-        <div className="flex align-bottom justify-start">
+        <div className="md:flex align-bottom justify-start">
           <BottomAnchor to="/about" title="About Clarice Bouwer">
             About me
           </BottomAnchor>
