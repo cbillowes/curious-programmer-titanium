@@ -31,7 +31,7 @@ const Layout = ({ meta, children }) => {
     <div
       className={`${
         theme === "light" ? "theme-light" : "theme-dark"
-      } bg-accent text-accent-script m-0 px-0 py-1 min-h-screen`}
+      } bg-color-1 text-color-1-script m-0 px-4 py-1 min-h-screen`}
     >
       <Head {...meta} />
       <div className="text-right mr-4 text-lg">
@@ -39,13 +39,42 @@ const Layout = ({ meta, children }) => {
       </div>
 
       <Navigation />
-      <main className="bg-primary text-primary-script">
+
+      <main className="bg-default text-default-script">
         <div className="max-w-screen-md mx-auto py-16">{children}</div>
       </main>
 
       <Footer toggler={<Toggler theme={theme} setTheme={setTheme} />} />
     </div>
   )
+}
+
+export const LayoutWithoutConstraints = ({ meta, children }) => {
+  const { theme, setTheme } = useContext(ThemeContext)
+
+  return (
+    <div
+      className={`${
+        theme === "light" ? "theme-light" : "theme-dark"
+      } bg-color-1 text-color-1-script m-0 px-0 py-1 min-h-screen`}
+    >
+      <Head {...meta} />
+      <div className="text-right mr-4 text-lg">
+        <Toggler theme={theme} setTheme={setTheme} />
+      </div>
+
+      <Navigation layout="fluid" />
+
+      <main className="bg-default text-default-script">{children}</main>
+
+      <Footer toggler={<Toggler theme={theme} setTheme={setTheme} />} />
+    </div>
+  )
+}
+
+LayoutWithoutConstraints.propTypes = {
+  children: PropTypes.node.isRequired,
+  meta: PropTypes.object,
 }
 
 Layout.propTypes = {

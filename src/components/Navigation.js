@@ -1,9 +1,10 @@
 import React, { useState } from "react"
+import PropTypes from "prop-types"
 import Hamburger from "./Hamburger"
 
 const Logo = () => {
   return (
-    <div className="text-2xl text-white">
+    <div className="text-2xl">
       <span className="mr-2">{`{`}</span>
       <span className="mr-2">curious</span>
       <span className="font-bold">programmer</span>
@@ -12,17 +13,25 @@ const Logo = () => {
   )
 }
 
-const Navigation = () => {
+const Navigation = ({ layout }) => {
   const [isMenuOpen, toggleMenu] = useState(false)
 
   return (
-    <div className="bg-accent-1 py-2">
-      <div className="max-w-screen-md mx-auto flex justify-between items-center">
+    <div className="bg-color-2 text-color-2-script py-2 px-4">
+      <div
+        className={`${
+          layout === "fluid" ? "" : "max-w-screen-md mx-auto"
+        } " flex justify-between items-center"`}
+      >
         <Logo />
         <Hamburger isOpen={isMenuOpen} toggle={toggleMenu} />
       </div>
     </div>
   )
+}
+
+Navigation.propTypes = {
+  layout: PropTypes.string,
 }
 
 export default Navigation

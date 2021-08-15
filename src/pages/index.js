@@ -5,33 +5,52 @@ import { StaticImage } from "gatsby-plugin-image"
 import { LayoutWithoutConstraints } from "../components/Layout"
 import Emoji from "../components/Emoji"
 import Thumbnail from "../components/Thumbnail"
+import Anchor from "../components/Anchor"
 
-const Articles = ({ edges, wordCount }) => {
+const Articles = ({ edges }) => {
   if (edges && edges.length > 0) {
     return edges.map(({ node }, index) => {
       const { frontmatter, fields } = node
 
       return (
-        <div key={index}>
-          <h1>{frontmatter.title}</h1>
-          <div>{wordCount}</div>
-          <Thumbnail
-            number={index}
-            to={fields.slug}
-            alt={frontmatter.title}
-            photo={frontmatter.photo}
-            credit={frontmatter.credit}
-            source={frontmatter.creditSource}
-            link={frontmatter.creditLink}
-            componentName={fields.component}
-          />
-          <hr />
+        <div
+          key={index}
+          className={`relative mt-32 flex mb-16 justify-center ${
+            index % 2 === 0 ? "flex-row-reverse" : "flex-row"
+          }`}
+        >
+          <div
+            className={`w-1/4 mx-16 ${
+              index % 2 === 0 ? "text-left" : "text-right"
+            }`}
+          >
+            <h1 className="text-2xl leading-loose font-semibold">
+              {frontmatter.title}
+            </h1>
+            <div className="leading-loose mb-4">{node.excerpt}</div>
+            <Anchor
+              className="bg-color-1 text-color-1-script rounded py-1 px-2 transform shadow-md"
+              to={fields.slug}
+            >
+              Read more
+            </Anchor>
+          </div>
+          <div className="w-1/4">
+            <Thumbnail
+              number={index}
+              to={fields.slug}
+              alt={frontmatter.title}
+              photo={frontmatter.photo}
+              credit={frontmatter.credit}
+              source={frontmatter.creditSource}
+              link={frontmatter.creditLink}
+              componentName={fields.component}
+            />
+          </div>
         </div>
       )
     })
   }
-
-  // return <div />
 }
 
 const IndexPage = ({ data }) => {
@@ -90,8 +109,8 @@ const IndexPage = ({ data }) => {
       </div>
 
       <main className="bg-default text-default-script">
-        <div className="max-w-screen-md mx-auto py-16">
-          <Articles edges={edges} wordCount={75} />
+        <div className="mx-auto py-8">
+          <Articles edges={edges} />
         </div>
       </main>
     </LayoutWithoutConstraints>
@@ -118,14 +137,14 @@ Articles.propTypes = {
 export const query = graphql`
   query IndexPageQuery {
     allMarkdownRemark(
-      limit: 25
+      limit: 6
       filter: { fields: { slug: { nin: "/blog/example/" } } }
       sort: { order: DESC, fields: fields___number }
     ) {
       edges {
         node {
           timeToRead
-          excerpt(truncate: true, pruneLength: 1000, format: HTML)
+          excerpt(truncate: true, pruneLength: 200, format: PLAIN)
           fields {
             slug
             date(formatString: "LL")

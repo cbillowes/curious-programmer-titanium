@@ -4,15 +4,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "var(--primary)",
-        "primary-script": "var(--primary-script)",
-        secondary: "var(--secondary)",
-        "secondary-script": "var(--secondary-script)",
-        accent: "var(--accent)",
-        "accent-script": "var(--accent-script)",
+        default: "var(--default)",
+        "default-script": "var(--default-script)",
 
-        "accent-1": "var(--accent-1)",
-        "accent-2": "var(--accent-2)",
+        inverse: "var(--inverse)",
+        "inverse-script": "var(--inverse-script)",
+
+        "color-1": "var(--color-1)",
+        "color-1-script": "var(--color-1-script)",
+
+        "color-2": "var(--color-2)",
+        "color-2-script": "var(--color-2-script)",
+
+        "color-3": "var(--color-3)",
+        "color-3-script": "var(--color-3-script)",
       },
     },
   },
