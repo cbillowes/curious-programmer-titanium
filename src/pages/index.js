@@ -47,7 +47,7 @@ const Articles = ({ edges }) => {
               }`}
             >
               <Anchor
-                className={`bg-color-1 text-color-1-script rounded py-2 px-3 transform shadow-md ${
+                className={`bg-color-1 text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-green-600 ${
                   isEven ? "mr-2" : "ml-4"
                 }`}
                 to={fields.slug}
