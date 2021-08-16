@@ -83,19 +83,19 @@ const IndexPage = ({ data }) => {
     <LayoutWithoutConstraints meta={site.siteMetadata}>
       <div className="relative">
         <StaticImage src="../images/profile.jpg" alt="Clarice Bouwer" />
-        <div className="absolute top-2 right-2 md:top-10 md:right-10 flex flex-col flex-wrap justify-center items-center w-5/12 md:w-4/12">
-          <div className="bg-color-2 opacity-90 p-2 md:px-5 md:py-3">
-            <h1 className="text-md md:text-5xl xl:text-6xl text-color-2-script font-semibold text-center">
+        <div className="hidden absolute top-2 right-2 md:top-10 md:right-10 md:flex flex-col flex-wrap justify-center items-center w-5/12 md:w-4/12">
+          <div className="text-color-2-script bg-color-2 opacity-80 p-2 md:px-5 md:py-3">
+            <h1 className="text-md md:text-5xl xl:text-6xl font-semibold text-center">
               Clarice Bouwer
             </h1>
           </div>
-          <div className="md:bg-color-1 opacity-90 pt-1 md:p-2 md:px-5 md:py-3 md:mt-4">
-            <h2 className="text-sm md:text-3xl text-color-1-script font-semibold text-center">
+          <div className="bg-color-1 text-color-1-script md:bg-color-1 opacity-80 py-1 md:p-2 md:px-5 md:py-3 mt-1 md:mt-4">
+            <h2 className="text-sm md:text-3xl font-semibold text-center">
               Senior Software Engineer
             </h2>
           </div>
-          <div className="md:bg-color-3 opacity-90 pt-1 md:p-2 md:px-5 md:py-3 md:mt-4">
-            <h2 className="text-xs md:text-2xl text-color-3-script font-semibold text-center">
+          <div className="hidden md:inline-block text-color-3-script md:bg-color-3 opacity-80 pt-1 md:p-2 md:px-5 md:py-3 md:mt-4">
+            <h2 className="text-xs md:text-2xl font-semibold text-center">
               Cloudsure Ltd
             </h2>
           </div>
@@ -127,6 +127,28 @@ const IndexPage = ({ data }) => {
               />
             </span>
           </div>
+        </div>
+      </div>
+
+      <div className="md:hidden">
+        <div className="text-sm leading-relaxed text-center text-default-script">
+          <div className="text-color-2-script bg-color-2 opacity-80 p-2">
+            <h1 className="text-lg font-semibold text-center">
+              Clarice Bouwer
+            </h1>
+          </div>
+          <div className="text-color-1-script bg-color-1 opacity-80 py-1">
+            <h2 className="text-md font-semibold text-center">
+              Senior Software Engineer
+            </h2>
+          </div>
+          <div className="text-color-3-script bg-color-3 opacity-80 py-1">
+            <h3 className="text-xs font-semibold text-center">
+              Cloudsure, Mauritius
+            </h3>
+          </div>
+          <p className="mt-3">I write code. I share code. I love code.</p>
+          <p>I am a curious programmer.</p>
         </div>
       </div>
 
