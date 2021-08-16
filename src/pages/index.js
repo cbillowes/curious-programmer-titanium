@@ -10,6 +10,7 @@ import Emoji from "../components/Emoji"
 import Thumbnail from "../components/Thumbnail"
 import Anchor from "../components/Anchor"
 import SocialMediaIcon from "../components/SocialMediaIcon"
+import { Tag } from "../components/Tags"
 
 const Articles = ({ edges }) => {
   if (edges && edges.length > 0) {
@@ -51,17 +52,7 @@ const Articles = ({ edges }) => {
               >
                 Read more
               </Anchor>
-              {frontmatter.tags &&
-                frontmatter.tags.map((tag, index) => (
-                  <Anchor
-                    key={index}
-                    to={`/tag/${tag}`}
-                    title={tag.toLowerCase()}
-                    className="ml-2 text-gray-500 leading-loose"
-                  >
-                    #{tag.toLowerCase()}
-                  </Anchor>
-                ))}
+              <Tag tags={frontmatter.tags} />
             </div>
           </div>
           <div className="md:w-1/4">
