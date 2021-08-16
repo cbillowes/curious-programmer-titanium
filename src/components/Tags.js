@@ -28,7 +28,7 @@ const Tags = ({ tags, isButton }) => {
   if (tags.length === 0) return <span></span>
 
   const className = isButton
-    ? "bg-color-1 text-color-1-script py-1 px-2 rounded mt-2 leading-loose m-2"
+    ? "bg-color-1 text-color-1-script py-1 px-4 rounded leading-loose mx-1 mt-4 inline-block"
     : "ml-2 text-gray-500 leading-loose"
 
   const prefix = isButton ? "" : "#"
