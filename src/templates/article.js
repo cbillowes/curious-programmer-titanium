@@ -1,6 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
+import { LayoutWithoutConstraints } from "../components/Layout"
+import Tags from "../components/Tags"
+import "./article.scss"
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {
@@ -27,9 +30,27 @@ export const query = graphql`
 
 const ArticleTemplate = ({ data }) => {
   const node = data.markdownRemark
-  const { html } = node
-  // eslint-disable-next-line react/no-danger
-  return <div dangerouslySetInnerHTML={{ __html: html }} />
+  const { html, fields, frontmatter } = node
+  return (
+    <LayoutWithoutConstraints>
+      <div id="article" className="pt-14 px-4 pb-60">
+        <h1 className="text-center font-bold mb-8 text-4xl">
+          {frontmatter.title}
+        </h1>
+        <div className="text-center text-gray-500">
+          {fields.date} | Estimated {node.timeToRead} minute read
+        </div>
+        <div className="text-center">
+          <Tags tags={frontmatter.tags} isButton={true} />
+        </div>
+        <div
+          className="max-w-3xl mx-auto mt-8"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </div>
+    </LayoutWithoutConstraints>
+  )
 }
 
 ArticleTemplate.propTypes = {
