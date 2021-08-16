@@ -10,7 +10,7 @@ import Emoji from "../components/Emoji"
 import Thumbnail from "../components/Thumbnail"
 import Anchor from "../components/Anchor"
 import SocialMediaIcon from "../components/SocialMediaIcon"
-import { Tag } from "../components/Tags"
+import Tags from "../components/Tags"
 
 const Articles = ({ edges }) => {
   if (edges && edges.length > 0) {
@@ -36,7 +36,7 @@ const Articles = ({ edges }) => {
               </Anchor>
             </h1>
             <div className="leading-loose mb-4">
-              <p className="text-gray-500">
+              <p className="text-neutral">
                 {fields.date} - Estimated {node.timeToRead} minute read
               </p>
               {node.excerpt}
@@ -54,7 +54,7 @@ const Articles = ({ edges }) => {
               >
                 Read more
               </Anchor>
-              <Tag tags={frontmatter.tags} />
+              <Tags tags={frontmatter.tags} />
             </div>
           </div>
           <div className="md:w-1/4">
