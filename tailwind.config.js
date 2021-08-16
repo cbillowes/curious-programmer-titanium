@@ -4,6 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        neutral: "var(--neutral)",
+
         default: "var(--default)",
         "default-script": "var(--default-script)",
 

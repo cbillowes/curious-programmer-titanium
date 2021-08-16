@@ -1,4 +1,6 @@
 .theme-light {
+  --neutral: #989898;
+
   --default: #f8f8f8;
   --default-script: #2a2e35;
 
@@ -16,6 +18,8 @@
 }
 
 .theme-dark {
+  --neutral: #989898;
+
   --default: #2a2e35;
   --default-script: #f8f8f8;
 
