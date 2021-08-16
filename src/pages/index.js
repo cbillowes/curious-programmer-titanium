@@ -30,8 +30,10 @@ const Articles = ({ edges }) => {
               isEven ? "text-left" : "text-right"
             }`}
           >
-            <h1 className="text-xl mt-8 md:mt-0 md:text-2xl leading-loose font-semibold">
-              {frontmatter.title}
+            <h1 className="text-xl mt-8 md:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1">
+              <Anchor to={fields.slug} title={frontmatter.title}>
+                {frontmatter.title}
+              </Anchor>
             </h1>
             <div className="leading-loose mb-4">
               <p className="text-gray-500">
