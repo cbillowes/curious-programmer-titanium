@@ -126,7 +126,20 @@ Anyone who is capable of getting themselves made President should on no account 
 
 ### gatsby-remark-embed-gist
 
+[Source](https://github.com/weirdpattern/gatsby-remark-embed-gist)
+
 `gist:cbillowes/7c3f3f6de72ba9e92ad4c31c7410e072#unhide.sh`
+
+```
+`gist:[<username>/]<gist_id>#<gist_file>`
+`gist:[<username>/]<gist_id>#<gist_file>?lines=<number|ranges>`
+`gist:[<username>/]<gist_id>#<gist_file>?highlights=<number|ranges>`
+`gist:[<username>/]<gist_id>#<gist_file>?highlights=<number|ranges>&lines=<number|ranges>`
+`gist:[<username>/]<gist_id>?file=<gist_file>`
+`gist:[<username>/]<gist_id>?file=<gist_file>?lines=<number|ranges>`
+`gist:[<username>/]<gist_id>?file=<gist_file>?highlights=<number|ranges>`
+`gist:[<username>/]<gist_id>?file=<gist_file>?highlights=<number|ranges>&lines=<number|ranges>`
+```
 
 ### gatsby-remark-embed-youtube
 
