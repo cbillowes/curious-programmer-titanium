@@ -50,4 +50,15 @@
     max-width: 100vw;
     overflow: scroll;
   }
+
+  a {
+    background-color: var(--color-3);
+    color: var(--color-3-script);
+    padding: 0.25rem 0.5rem;
+
+    &:hover {
+      background-color: var(--color-1);
+      color: var(--color-1-script);
+    }
+  }
 }
