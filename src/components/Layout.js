@@ -59,13 +59,16 @@ export const LayoutWithoutConstraints = ({ meta, children }) => {
       } bg-color-1 text-color-1-script m-0 px-0 py-1 min-h-screen`}
     >
       <Head {...meta} />
-      <div className="text-right mr-4 text-lg">
-        <Toggler theme={theme} setTheme={setTheme} />
+      <div className="fixed top-0 left-0 right-0 z-10">
+        <div className="text-right text-lg bg-color-1 text-color-1-script">
+          <div className="mr-4 pt-1">
+            <Toggler theme={theme} setTheme={setTheme} />
+          </div>
+        </div>
+        <Navigation layout="fluid" />
       </div>
 
-      <Navigation layout="fluid" />
-
-      <main className="bg-default text-default-script">{children}</main>
+      <main className="pt-14 bg-default text-default-script">{children}</main>
 
       <Footer toggler={<Toggler theme={theme} setTheme={setTheme} />} />
     </div>
