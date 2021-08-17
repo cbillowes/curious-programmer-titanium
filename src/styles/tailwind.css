@@ -2,13 +2,13 @@
   --neutral: #989898;
 
   --default: #f8f8f8;
-  --default-script: #2a2e35;
+  --default-script: #1b1d20;
 
-  --inverse: #dbe1e8;
-  --inverse-script: #2a2e35;
+  --inverse: #1b1d20;
+  --inverse-script: #f8f8f8;
 
   --color-1: #00a2ff;
-  --color-1-script: #f8f8f8;
+  --color-1-script: #012133;
 
   --color-2: #02314d;
   --color-2-script: #f8f8f8;
@@ -20,11 +20,11 @@
 .theme-dark {
   --neutral: #989898;
 
-  --default: #2a2e35;
+  --default: #012133;
   --default-script: #f8f8f8;
 
-  --inverse: #2a2e35;
-  --inverse-script: #dbe1e8;
+  --inverse: #f8f8f8;
+  --inverse-script: #1b1d20;
 
   --color-1: #a7277c;
   --color-1-script: #f8f8f8;
