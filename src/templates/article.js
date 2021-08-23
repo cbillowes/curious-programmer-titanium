@@ -61,7 +61,9 @@ const ArticleTemplate = ({ data }) => {
       }}
     >
       <div id="article" className="pt-14 px-4 pb-24">
-        <h1 className="text-center font-bold">{frontmatter.title}</h1>
+        <h1 className="text-center font-bold px-4 md:px-10">
+          {frontmatter.title}
+        </h1>
         <div className="text-center text-neutral">
           {fields.date} | Estimated {timeToRead} minute read
         </div>
