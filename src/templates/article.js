@@ -7,6 +7,7 @@ import "./article.scss"
 import "../styles/gist/common.scss"
 import "../styles/gist/solarized-dark.scss"
 import "../styles/gist/solarized-light.scss"
+import "../styles/interactive-gifs.scss"
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {
