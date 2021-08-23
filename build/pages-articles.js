@@ -6,8 +6,8 @@ const createPages = true
 const landingPage = "./src/pages/index.js"
 const landingPageSlug = "/"
 
-const everythingPage = "./src/pages/everything.js"
-const everythingPageSlug = "/blog"
+const articlesPage = "./src/pages/articles.js"
+const articlesPageSlug = "/blog"
 
 const DEMO_PAGE = config.DEMO_PAGE
 
@@ -110,10 +110,10 @@ const createLandingPage = (createPage, reporter) => {
 }
 
 const createEverythingPage = (createPage, reporter) => {
-  const slug = everythingPageSlug
+  const slug = articlesPageSlug
   createPage({
     path: slug,
-    component: path.resolve(everythingPage),
+    component: path.resolve(articlesPage),
     context: {
       slug,
     },
