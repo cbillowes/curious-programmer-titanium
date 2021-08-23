@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import { LayoutWithoutConstraints } from "../components/Layout"
 import Tags from "../components/Tags"
-import "./article.scss"
+import "../styles/article.scss"
 // gatsby-remark-embed-gist
 import "../styles/gist/common.scss"
 import "../styles/gist/solarized-dark.scss"
