@@ -57,9 +57,9 @@ const Footer = ({ toggler }) => (
           .
         </div>
         <div className="md:flex align-bottom justify-start">
-          <BottomAnchor to="/about" title="About Clarice Bouwer">
+          {/* <BottomAnchor to="/about" title="About Clarice Bouwer">
             About me
-          </BottomAnchor>
+          </BottomAnchor> */}
           <BottomAnchor to="/privacy" title="Privacy policy">
             Privacy policy
           </BottomAnchor>
