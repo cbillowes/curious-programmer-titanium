@@ -176,11 +176,11 @@ const IndexPage = ({ data }) => {
         </SocialMediaIcon>
       </div>
 
-      <main className="bg-default text-default-script">
+      <div className="bg-default text-default-script">
         <div className="mx-auto pb-5">
           <Articles edges={edges} />
         </div>
-      </main>
+      </div>
     </LayoutWithoutConstraints>
   )
 }
