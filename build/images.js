@@ -199,7 +199,7 @@ const generateComponentIndex = (destinationPath, content, reporter) => {
 exports.generateComponentIndex = (reporter) => {
   const sourcePath = path.join(__dirname, "../src/images/articles")
   const filename = "image-component-index.js"
-  const destinationRelativePath = "../src/components/Images"
+  const destinationRelativePath = "../src/components/images"
   const destinationPath = path.join(
     __dirname,
     destinationRelativePath,
