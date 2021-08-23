@@ -38,9 +38,7 @@ const ArticleTemplate = ({ data }) => {
   return (
     <LayoutWithoutConstraints>
       <div id="article" className="pt-14 px-4 pb-60">
-        <h1 className="text-center font-bold mb-8 text-4xl">
-          {frontmatter.title}
-        </h1>
+        <h1 className="text-center font-bold">{frontmatter.title}</h1>
         <div className="text-center text-gray-500">
           {fields.date} | Estimated {node.timeToRead} minute read
         </div>
