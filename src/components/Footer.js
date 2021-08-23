@@ -50,10 +50,10 @@ const Footer = ({ toggler }) => (
           <TopAnchor to="https://www.gatsbyjs.org/" title="Gatsby">
             Gatsby
           </TopAnchor>{" "}
-          and other{" "}
-          <TopAnchor to="/credits" title="Credits">
+          and other cool stuff.
+          {/* <TopAnchor to="/credits" title="Credits">
             cool stuff
-          </TopAnchor>
+          </TopAnchor> */}
           .
         </div>
         <div className="md:flex align-bottom justify-start">
