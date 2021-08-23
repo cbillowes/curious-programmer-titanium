@@ -70,8 +70,8 @@ const Footer = ({ toggler }) => (
             Source code
           </BottomAnchor>
           <BottomAnchor
-            to="https://www.flaticon.com"
-            title="Icons from Flaticon"
+            to="https://react-icons.github.io/react-icons/"
+            title="Icons from react-icons"
           >
             Icons
           </BottomAnchor>
