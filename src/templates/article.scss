@@ -89,4 +89,9 @@
   img {
     margin: 0 auto;
   }
+
+  .gatsby-resp-image-wrapper {
+    max-width: 100% !important;
+    width: 100%;
+  }
 }
