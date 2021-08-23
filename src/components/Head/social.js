@@ -6,8 +6,7 @@ const getResource = (url, resource) => `${url}${resource || "/"}`
 const Social = ({ pageType, title, imagePath, url, route, twitter }) => {
   const canonical = getResource(url, route)
   const image = `${url}${
-    require(`../../images/social-media/${imagePath}`).default ||
-    require("../../images/share.jpg").default
+    require(`../../images/social-media/${imagePath || "share.jpg"}`).default
   }`
 
   return (
