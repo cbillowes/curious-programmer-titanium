@@ -5,6 +5,7 @@ const images = require("./build/images")
 const thumbnail = require("./build/thumbnail")
 const articles = require("./build/pages-articles")
 const tags = require("./build/pages-tags")
+const { copyGifs, copySvgs } = require("./build/copy")
 // const search = require("./build/search")
 
 // The order of which nodes are processed is not guaranteed.
@@ -63,6 +64,8 @@ exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
 
 exports.onPostBootstrap = ({ reporter }) => {
   images.generateComponentIndex(reporter)
+  copyGifs()
+  copySvgs()
 }
 
 exports.onCreateWebpackConfig = ({ actions }) => {

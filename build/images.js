@@ -45,6 +45,7 @@ exports.getRandomDefaultComponent = () => {
 
   const outerBounds = defaults.length
   const index = parseInt(Math.random() * (outerBounds + 1))
+  // eslint-disable-next-line prettier/prettier
   const number = index < 10
     ? (index === 0 ? `01` : `0${index}`)
     : index
