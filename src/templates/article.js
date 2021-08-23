@@ -4,6 +4,9 @@ import PropTypes from "prop-types"
 import { LayoutWithoutConstraints } from "../components/Layout"
 import Tags from "../components/Tags"
 import "./article.scss"
+import "../styles/gist/common.scss"
+import "../styles/gist/solarized-dark.scss"
+import "../styles/gist/solarized-light.scss"
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {
@@ -31,6 +34,7 @@ export const query = graphql`
 const ArticleTemplate = ({ data }) => {
   const node = data.markdownRemark
   const { html, fields, frontmatter } = node
+
   return (
     <LayoutWithoutConstraints>
       <div id="article" className="pt-14 px-4 pb-60">

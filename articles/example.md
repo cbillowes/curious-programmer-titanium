@@ -141,6 +141,8 @@ Anyone who is capable of getting themselves made President should on no account 
 `gist:[<username>/]<gist_id>?file=<gist_file>?highlights=<number|ranges>&lines=<number|ranges>`
 ```
 
+Theming is generated using [github-syntax-theme-generator](https://github.com/primer/github-syntax-theme-generator).
+
 ### gatsby-remark-embed-youtube
 
 `youtube:https://www.youtube.com/embed/2Xc9gXyf2G4`
