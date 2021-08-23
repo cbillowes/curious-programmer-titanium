@@ -4,10 +4,15 @@ import PropTypes from "prop-types"
 import { LayoutWithoutConstraints } from "../components/Layout"
 import Tags from "../components/Tags"
 import "./article.scss"
+// gatsby-remark-embed-gist
 import "../styles/gist/common.scss"
 import "../styles/gist/solarized-dark.scss"
 import "../styles/gist/solarized-light.scss"
+// gatsby-remark-interactive-gifs
 import "../styles/interactive-gifs.scss"
+// gatsby-remark-prismjs
+import "../styles/prismjs/dark.scss"
+import "../styles/prismjs/light.scss"
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {

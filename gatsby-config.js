@@ -92,6 +92,15 @@ module.exports = {
               className: `gatsby-remark-code-title`,
             },
           },
+          `gatsby-remark-emoji`,
+          /*
+            Should be last?
+            Wraps iframes or objects (e.g. embedded YouTube videos) within
+            markdown files in a responsive elastic container with a fixed
+            aspect ratio. This ensures that the iframe or object will scale
+            proportionally and to the full width of its container.
+          */
+          `gatsby-remark-responsive-iframe`,
           {
             // keep this as the last item in the plugins array.
             // code blocks are parsed and styled which will break
@@ -102,15 +111,6 @@ module.exports = {
               inlineCodeMarker: `±`,
             },
           },
-          `gatsby-remark-emoji`,
-          /*
-            Should be last?
-            Wraps iframes or objects (e.g. embedded YouTube videos) within
-            markdown files in a responsive elastic container with a fixed
-            aspect ratio. This ensures that the iframe or object will scale
-            proportionally and to the full width of its container.
-          */
-          `gatsby-remark-responsive-iframe`,
         ],
       },
     },
