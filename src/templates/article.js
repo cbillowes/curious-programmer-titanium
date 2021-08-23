@@ -40,7 +40,7 @@ const ArticleTemplate = ({ data }) => {
     <LayoutWithoutConstraints>
       <div id="article" className="pt-14 px-4 pb-24">
         <h1 className="text-center font-bold">{frontmatter.title}</h1>
-        <div className="text-center text-gray-500">
+        <div className="text-center text-neutral">
           {fields.date} | Estimated {node.timeToRead} minute read
         </div>
         <div className="text-center">
