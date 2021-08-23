@@ -7,14 +7,18 @@ export const Tag = ({ tag, prefix, className }) => {
   if (!tag) return <span></span>
 
   return (
-    <Anchor
-      to={`/tag/${_.kebabCase(tag)}`}
-      title={tag.toLowerCase()}
-      className={className}
-    >
+    <span className={className}>
       {prefix}
       {tag.toLowerCase()}
-    </Anchor>
+    </span>
+    // <Anchor
+    //   to={`/tag/${_.kebabCase(tag)}`}
+    //   title={tag.toLowerCase()}
+    //   className={className}
+    // >
+    //   {prefix}
+    //   {tag.toLowerCase()}
+    // </Anchor>
   )
 }
 
