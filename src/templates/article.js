@@ -29,19 +29,36 @@ export const query = graphql`
         tags
       }
     }
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
+        url
+        lang
+        brand
+      }
+    }
   }
 `
 
 const ArticleTemplate = ({ data }) => {
-  const node = data.markdownRemark
-  const { html, fields, frontmatter } = node
+  const { excerpt, timeToRead, html, fields, frontmatter } = data.markdownRemark
+  const { description } = data.site.siteMetadata
 
   return (
-    <LayoutWithoutConstraints>
+    <LayoutWithoutConstraints
+      meta={{
+        pageTitle: frontmatter.title,
+        description: excerpt || description,
+        image: frontmatter.photo,
+        ...data.site.siteMetadata,
+      }}
+    >
       <div id="article" className="pt-14 px-4 pb-24">
         <h1 className="text-center font-bold">{frontmatter.title}</h1>
         <div className="text-center text-neutral">
-          {fields.date} | Estimated {node.timeToRead} minute read
+          {fields.date} | Estimated {timeToRead} minute read
         </div>
         <div className="text-center">
           <Tags tags={frontmatter.tags} isButton={true} />

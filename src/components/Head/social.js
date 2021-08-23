@@ -5,8 +5,10 @@ const getResource = (url, resource) => `${url}${resource || "/"}`
 
 const Social = ({ pageType, title, imagePath, url, route, twitter }) => {
   const canonical = getResource(url, route)
-  const defaultImage = require("../../images/share.jpg").default
-  const image = `${url}${imagePath || defaultImage}`
+  const image = `${url}${
+    require(`../../images/social-media/${imagePath}`).default ||
+    require("../../images/share.jpg").default
+  }`
 
   return (
     <Helmet>
