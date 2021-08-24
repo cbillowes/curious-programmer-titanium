@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
-import { LayoutWithoutConstraints } from "../components/Layout"
+import { Layout } from "../components/Layout"
 import List from "../components/Articles/List"
 
 const Articles = ({ edges }) => {
@@ -15,7 +15,7 @@ const TagTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext
 
   return (
-    <LayoutWithoutConstraints
+    <Layout
       meta={{
         ...site.siteMetadata,
         pageTitle: `Tag: ${tag}`,
@@ -31,7 +31,7 @@ const TagTemplate = ({ pageContext, data }) => {
           <Articles edges={edges} />
         </div>
       </div>
-    </LayoutWithoutConstraints>
+    </Layout>
   )
 }
 

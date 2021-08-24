@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { LayoutWithoutConstraints } from "../components/Layout"
+import { Layout } from "../components/Layout"
 import { FaTwitter, FaLinkedinIn } from "react-icons/fa/index"
 import { ImStackoverflow } from "react-icons/im/index"
 import { VscGithub } from "react-icons/vsc/index"
@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
   const { title } = site.siteMetadata
 
   return (
-    <LayoutWithoutConstraints
+    <Layout
       meta={{
         ...site.siteMetadata,
         pageTitle: "Welcome",
@@ -127,7 +127,7 @@ const IndexPage = ({ data }) => {
           <Articles edges={edges} />
         </div>
       </div>
-    </LayoutWithoutConstraints>
+    </Layout>
   )
 }
 

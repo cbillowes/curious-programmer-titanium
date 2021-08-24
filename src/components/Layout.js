@@ -24,7 +24,7 @@ Toggler.propTypes = {
   setTheme: PropTypes.func.isRequired,
 }
 
-export const LayoutWithoutConstraints = ({ meta, children }) => {
+export const Layout = ({ meta, children }) => {
   const { theme, setTheme } = useContext(ThemeContext)
 
   return (
@@ -50,7 +50,7 @@ export const LayoutWithoutConstraints = ({ meta, children }) => {
   )
 }
 
-LayoutWithoutConstraints.propTypes = {
+Layout.propTypes = {
   children: PropTypes.node.isRequired,
   meta: PropTypes.object.isRequired,
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
-import { LayoutWithoutConstraints } from "../components/Layout"
+import { Layout } from "../components/Layout"
 import List from "../components/Articles/List"
 
 const Articles = ({ edges }) => {
@@ -14,7 +14,7 @@ const ArticlesPage = ({ data }) => {
   const { title } = site.siteMetadata
 
   return (
-    <LayoutWithoutConstraints
+    <Layout
       meta={{
         ...site.siteMetadata,
         pageTitle: "Articles",
@@ -26,7 +26,7 @@ const ArticlesPage = ({ data }) => {
           <Articles edges={edges} />
         </div>
       </div>
-    </LayoutWithoutConstraints>
+    </Layout>
   )
 }
 

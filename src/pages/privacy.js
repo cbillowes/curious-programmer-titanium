@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
-import { LayoutWithoutConstraints } from "../components/Layout"
+import { Layout } from "../components/Layout"
 import Anchor from "../components/Anchor"
 import "../styles/privacy.scss"
 
@@ -10,7 +10,7 @@ const Privacy = ({ data }) => {
   const { title } = site.siteMetadata
 
   return (
-    <LayoutWithoutConstraints
+    <Layout
       meta={{
         ...site.siteMetadata,
         pageTitle: "Privacy Policy",
@@ -239,7 +239,7 @@ const Privacy = ({ data }) => {
           professional as possible. Parental guidance is still advised.
         </p>
       </div>
-    </LayoutWithoutConstraints>
+    </Layout>
   )
 }
 

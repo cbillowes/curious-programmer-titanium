@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { LayoutWithoutConstraints } from "../components/Layout"
+import { Layout } from "../components/Layout"
 import Tags from "../components/Tags"
 import "../styles/article.scss"
 // gatsby-remark-embed-gist
@@ -54,7 +54,7 @@ const ArticleTemplate = ({ data }) => {
   const { description } = data.site.siteMetadata
 
   return (
-    <LayoutWithoutConstraints
+    <Layout
       meta={{
         ...data.site.siteMetadata,
         pageTitle: frontmatter.title,
@@ -79,7 +79,7 @@ const ArticleTemplate = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
-    </LayoutWithoutConstraints>
+    </Layout>
   )
 }
 
