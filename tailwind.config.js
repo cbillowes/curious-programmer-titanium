@@ -3,6 +3,10 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Open Sans", "sans-serif"],
+        mono: ["Courier Prime", "mono"],
+      },
       colors: {
         neutral: "var(--neutral)",
 
