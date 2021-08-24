@@ -36,8 +36,8 @@ Preview.propTypes = {
       date: PropTypes.string.isRequired,
       number: PropTypes.number.isRequired,
       component: PropTypes.string.isRequired,
-    })
-  })
+    }),
+  }),
 }
 
 export default List
