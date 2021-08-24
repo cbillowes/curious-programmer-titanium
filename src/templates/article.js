@@ -36,12 +36,19 @@ export const query = graphql`
     }
     site {
       siteMetadata {
-        title
+        author {
+          name
+          url
+        }
+        brand
         description
         keywords
-        url
         lang
-        brand
+        title
+        url
+        social {
+          twitter
+        }
       }
     }
   }
