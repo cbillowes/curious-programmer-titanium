@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 const KEY = "theme"
-const DEFAULT = "light"
+const DEFAULT =
+  typeof window !== "undefined" &&
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light"
 
 export const ThemeContext = React.createContext({
   theme: "",
