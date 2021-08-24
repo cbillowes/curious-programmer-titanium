@@ -80,8 +80,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 }
 
 const createNodes = (node, createNodeField, reporter) => {
-  const { title, date, photo } = node.frontmatter
-  const slug = path.join(`/blog`, _.kebabCase(title), `/`)
+  const { title, slug, date, photo } = node.frontmatter
   const component =
     images.getComponentName(photo) || images.getRandomDefaultComponent()
 
@@ -94,7 +93,7 @@ const createNodes = (node, createNodeField, reporter) => {
   createNodeField({
     node,
     name: `slug`,
-    value: slug,
+    value: slug || path.join(`/blog`, _.kebabCase(title), `/`),
   })
 
   createNodeField({
