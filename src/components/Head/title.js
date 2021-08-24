@@ -10,9 +10,10 @@ const Title = ({ site, page }) => {
 
       <meta content={site} name="application-name" />
       <meta content={site} name="apple-mobile-web-app-title" />
-      <meta content={site} property="og:site_name" />
 
+      <meta content={site} property="og:site_name" />
       <meta content={title} property="og:title" />
+
       <meta content={title} name="twitter:title" />
       <meta content={title} name="twitter:text:title" />
     </Helmet>
