@@ -9,7 +9,8 @@ import Navigation from "../components/Navigation"
 
 const Toggler = ({ theme, setTheme }) => {
   const handleThemeToggle = () => {
-    setTheme(getToggled(theme))
+    const toggled = getToggled(theme)
+    setTheme(toggled)
   }
 
   return (
