@@ -19,7 +19,7 @@ export const getToggled = (theme) => {
 }
 
 const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState(DEFAULT)
+  const [theme, setTheme] = useState(localStorage.getItem(KEY) || DEFAULT)
 
   useEffect(() => {
     function loadTheme() {
