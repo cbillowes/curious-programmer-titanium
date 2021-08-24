@@ -15,7 +15,7 @@ export const ThemeContext = React.createContext({
 })
 
 export const getToggled = (theme) => {
-  return theme === "light" ? "dark" : "light"
+  return (theme || DEFAULT) === "light" ? "dark" : "light"
 }
 
 const ThemeContextProvider = ({ children }) => {
