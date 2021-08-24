@@ -11,9 +11,16 @@ const Articles = ({ edges }) => {
 const ArticlesPage = ({ data }) => {
   const { allMarkdownRemark, site } = data
   const edges = allMarkdownRemark.edges
+  const { title } = site.siteMetadata
 
   return (
-    <LayoutWithoutConstraints meta={site.siteMetadata}>
+    <LayoutWithoutConstraints
+      meta={{
+        ...site.siteMetadata,
+        pageTitle: "Articles",
+        siteTitle: title,
+      }}
+    >
       <div className="bg-default text-default-script">
         <div className="mx-auto pb-5">
           <Articles edges={edges} />

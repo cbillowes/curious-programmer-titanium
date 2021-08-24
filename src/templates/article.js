@@ -48,16 +48,19 @@ export const query = graphql`
 `
 
 const ArticleTemplate = ({ data }) => {
-  const { excerpt, timeToRead, html, fields, frontmatter } = data.markdownRemark
+  const { markdownRemark, site } = data
+  const { excerpt, timeToRead, html, fields, frontmatter } = markdownRemark
+  const { title } = site.siteMetadata
   const { description } = data.site.siteMetadata
 
   return (
     <LayoutWithoutConstraints
       meta={{
+        ...data.site.siteMetadata,
         pageTitle: frontmatter.title,
+        siteTitle: title,
         description: excerpt || description,
         image: frontmatter.photo,
-        ...data.site.siteMetadata,
       }}
     >
       <div id="article" className="pt-14 px-4 pb-24">

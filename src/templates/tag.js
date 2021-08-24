@@ -11,10 +11,18 @@ const Articles = ({ edges }) => {
 const TagTemplate = ({ pageContext, data }) => {
   const { allMarkdownRemark, site } = data
   const edges = allMarkdownRemark.edges
+  const { title } = site.siteMetadata
   const { tag } = pageContext
 
   return (
-    <LayoutWithoutConstraints meta={site.siteMetadata}>
+    <LayoutWithoutConstraints
+      meta={{
+        ...site.siteMetadata,
+        pageTitle: `Tag: ${tag}`,
+        siteTitle: title,
+      }}
+    >
+      >
       <div className="bg-default text-default-script">
         <div className="mx-auto pb-5 pt-10">
           <h1 className="text-center text-5xl font-bold mb-0 mt-5">

@@ -26,7 +26,7 @@ const Head = ({
   lang,
   pageTitle,
   social,
-  title,
+  siteTitle,
   type,
   url,
 }) => (
@@ -57,7 +57,7 @@ const Head = ({
       )}
     </Helmet>
 
-    <Title page={pageTitle} site={title} />
+    <Title page={pageTitle} site={siteTitle} />
 
     <Description
       keywords={keywords}
@@ -78,7 +78,7 @@ const Head = ({
     <Schema
       type={type}
       url={url}
-      name={title}
+      name={pageTitle}
       description={removeWhitespace(description)}
       author={{
         name: author && author.name,
@@ -112,7 +112,7 @@ Head.propTypes = {
   image: PropTypes.string,
   keywords: PropTypes.string.isRequired,
   lang: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  siteTitle: PropTypes.string.isRequired,
   social: social.isRequired,
   pageTitle: PropTypes.string,
   type: PropTypes.string,

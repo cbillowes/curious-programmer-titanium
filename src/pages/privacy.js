@@ -7,11 +7,14 @@ import "../styles/privacy.scss"
 
 const Privacy = ({ data }) => {
   const { site } = data
+  const { title } = site.siteMetadata
+
   return (
     <LayoutWithoutConstraints
       meta={{
         ...site.siteMetadata,
         pageTitle: "Privacy Policy",
+        siteTitle: title,
       }}
     >
       <div className="privacy max-w-screen-md mx-auto p-4">

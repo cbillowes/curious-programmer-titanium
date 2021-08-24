@@ -19,6 +19,23 @@ export const query = graphql`
         }
       }
     }
+    site {
+      siteMetadata {
+        author {
+          name
+          url
+        }
+        brand
+        description
+        keywords
+        lang
+        title
+        url
+        social {
+          twitter
+        }
+      }
+    }
   }
 `
 
@@ -33,10 +50,19 @@ const getTags = (edges) => {
 }
 
 const TagsPage = ({ data }) => {
-  const { edges } = data.allMarkdownRemark
+  const { allMarkdownRemark, site } = data
+  const edges = allMarkdownRemark.edges
+  const { title } = site.siteMetadata
   const tags = getTags(edges)
+
   return (
-    <LayoutWithoutConstraints>
+    <LayoutWithoutConstraints
+      meta={{
+        ...site.siteMetadata,
+        pageTitle: "Tags",
+        siteTitle: title,
+      }}
+    >
       <div className="bg-default text-default-script">
         <div className="mx-auto pb-5 pt-10">
           <h1 className="text-center text-5xl font-bold mb-0 mt-5">

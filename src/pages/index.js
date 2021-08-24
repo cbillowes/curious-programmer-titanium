@@ -17,9 +17,16 @@ const Articles = ({ edges }) => {
 const IndexPage = ({ data }) => {
   const { allMarkdownRemark, site } = data
   const edges = allMarkdownRemark.edges
+  const { title } = site.siteMetadata
 
   return (
-    <LayoutWithoutConstraints meta={site.siteMetadata}>
+    <LayoutWithoutConstraints
+      meta={{
+        ...site.siteMetadata,
+        pageTitle: "Welcome",
+        siteTitle: title,
+      }}
+    >
       <div className="relative">
         <StaticImage src="../images/profile.jpg" alt="Clarice Bouwer" />
         <div className="hidden absolute top-2 right-2 md:top-10 md:right-10 md:flex flex-col flex-wrap justify-center items-center w-5/12 md:w-4/12">
