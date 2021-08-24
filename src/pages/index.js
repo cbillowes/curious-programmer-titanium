@@ -7,72 +7,11 @@ import { FaTwitter, FaLinkedinIn } from "react-icons/fa/index"
 import { ImStackoverflow } from "react-icons/im/index"
 import { VscGithub } from "react-icons/vsc/index"
 import Emoji from "../components/Emoji"
-import Thumbnail from "../components/Thumbnail"
-import Anchor from "../components/Anchor"
 import SocialMediaIcon from "../components/SocialMediaIcon"
-import Tags from "../components/Tags"
+import List from "../components/Articles/List"
 
 const Articles = ({ edges }) => {
-  if (edges && edges.length > 0) {
-    return edges.map(({ node }, index) => {
-      const { frontmatter, fields } = node
-      const isEven = index % 2 === 0
-
-      return (
-        <div
-          key={index}
-          className={`relative md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
-            isEven ? "md:flex-row-reverse" : "md:flex-row"
-          }`}
-        >
-          <div
-            className={`md:w-1/4 md:mx-16 md:${
-              isEven ? "text-left" : "text-right"
-            }`}
-          >
-            <h1 className="text-xl mt-8 md:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1">
-              <Anchor to={fields.slug} title={frontmatter.title}>
-                {frontmatter.title}
-              </Anchor>
-            </h1>
-            <div className="leading-loose mb-4">
-              <p className="text-neutral">
-                {fields.date} - Estimated {node.timeToRead} minute read
-              </p>
-              {node.excerpt}
-            </div>
-            <div
-              className={`flex items-center flex-wrap ${
-                isEven ? "flex-row" : "flex-row-reverse"
-              }`}
-            >
-              <Anchor
-                className={`bg-color-1 text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-green-600 ${
-                  isEven ? "mr-2" : "ml-4"
-                }`}
-                to={fields.slug}
-              >
-                Read more
-              </Anchor>
-              <Tags tags={frontmatter.tags} />
-            </div>
-          </div>
-          <div className="md:w-1/4">
-            <Thumbnail
-              number={index}
-              to={fields.slug}
-              alt={frontmatter.title}
-              photo={frontmatter.photo}
-              credit={frontmatter.credit}
-              source={frontmatter.creditSource}
-              link={frontmatter.creditLink}
-              componentName={fields.component}
-            />
-          </div>
-        </div>
-      )
-    })
-  }
+  return <List edges={edges} />
 }
 
 const IndexPage = ({ data }) => {
