@@ -5,7 +5,7 @@ const KEY = "theme"
 const DEFAULT = "light"
 
 export const ThemeContext = React.createContext({
-  theme: "",
+  theme: "light",
   setTheme: () => {},
 })
 
