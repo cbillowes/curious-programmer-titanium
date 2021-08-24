@@ -1,7 +1,48 @@
-import _ from "lodash"
 import React from "react"
-import { graphql } from "gatsby"
 import PropTypes from "prop-types"
+import { graphql } from "gatsby"
+import { LayoutWithoutConstraints } from "../components/Layout"
+import List from "../components/Articles/List"
+
+const Articles = ({ edges }) => {
+  return <List edges={edges} />
+}
+
+const TagTemplate = ({ pageContext, data }) => {
+  const { allMarkdownRemark, site } = data
+  const edges = allMarkdownRemark.edges
+  const { tag } = pageContext
+
+  return (
+    <LayoutWithoutConstraints meta={site.siteMetadata}>
+      <div className="bg-default text-default-script">
+        <div className="mx-auto pb-5 pt-10">
+          <h1 className="text-center text-5xl font-bold mb-0 mt-5">
+            All things <span className="text-color-1">{tag}</span>
+          </h1>
+          <Articles edges={edges} />
+        </div>
+      </div>
+    </LayoutWithoutConstraints>
+  )
+}
+
+TagTemplate.propTypes = {
+  pageContext: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array.isRequired,
+    }).isRequired,
+
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.object.isRequired,
+    }).isRequired,
+  }).isRequired,
+}
+
+Articles.propTypes = {
+  edges: PropTypes.array.isRequired,
+}
 
 export const query = graphql`
   query TagTemplateQuery($tag: String!) {
@@ -52,19 +93,5 @@ export const query = graphql`
     }
   }
 `
-
-const TagTemplate = ({ data, pageContext }) => {
-  return <span>Hi</span>
-  // const tag = _.upperFirst(pageContext.tag)
-  // const edges = data.allMarkdownRemark.edges
-  // return edges.map(({ node }, index) => {
-  //   return <div key={index}>{tag}</div>
-  // })
-}
-
-TagTemplate.propTypes = {
-  data: PropTypes.object,
-  pageContext: PropTypes.object,
-}
 
 export default TagTemplate

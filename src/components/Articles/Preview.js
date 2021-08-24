@@ -6,6 +6,7 @@ import Thumbnail from "../Thumbnail"
 import Ribbon from "./Ribbon"
 
 const Preview = ({
+  index,
   number,
   slug,
   title,
@@ -19,21 +20,20 @@ const Preview = ({
   creditLink,
   component,
 }) => {
-  const isEven = number % 2 === 0
-  const color = number % 2 === 0 ? 1 : number % 3 === 0 ? 2 : 3
+  const isEven = index % 2 === 0
   return (
     <div
       key={number}
-      className={`relative md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
-        isEven ? "md:flex-row-reverse" : "md:flex-row"
+      className={`relative mx-auto lg:w-7/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
+        isEven ? "xl:flex-row-reverse" : "xl:flex-row"
       }`}
     >
       <div
-        className={`md:w-1/4 md:mx-16 md:${
+        className={`xl:w-1/4 xl:mx-16 xl:${
           isEven ? "text-left" : "text-right"
         }`}
       >
-        <h1 className="text-xl mt-8 md:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1">
+        <h1 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1">
           <Anchor to={slug} title={title}>
             {title}
           </Anchor>
@@ -60,7 +60,7 @@ const Preview = ({
           <Tags tags={tags} />
         </div>
       </div>
-      <div className="md:w-1/4 relative">
+      <div className="xl:w-1/4 relative">
         <Ribbon>{number}</Ribbon>
         <Thumbnail
           number={number}
@@ -78,6 +78,7 @@ const Preview = ({
 }
 
 Preview.propTypes = {
+  index: PropTypes.number.isRequired,
   number: PropTypes.number.isRequired,
   slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

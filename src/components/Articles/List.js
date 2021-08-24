@@ -7,9 +7,10 @@ const List = ({ edges }) => {
     return edges.map(({ node }, index) => {
       return (
         <Preview
-          key={index}
-          {...node.frontmatter}
           {...node.fields}
+          {...node.frontmatter}
+          key={index}
+          index={index}
           timeToRead={node.timeToRead}
           excerpt={node.excerpt}
         />
