@@ -52,7 +52,8 @@
     "react-social-sharing": "^3.3.0",
     "sass": "^1.34.1",
     "sass-loader": "^12.1.0",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.0",
+    "tailwindcss": "^2.2.7"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.1",
@@ -63,7 +64,6 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "postcss": "^8.3.6",
-    "prettier": "2.3.1",
-    "tailwindcss": "^2.2.7"
+    "prettier": "2.3.1"
   }
 }
