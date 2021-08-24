@@ -54,6 +54,7 @@ const Preview = ({
               isEven ? "mr-2" : "ml-4"
             }`}
             to={slug}
+            title={slug}
           >
             Read more
           </Anchor>

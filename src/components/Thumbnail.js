@@ -63,7 +63,7 @@ const Thumbnail = ({ alt, to, credit, source, link, componentName }) => {
   const Image = ComponentIndex[componentName]
   return (
     <div title={alt} className="relative shadow-md transform">
-      <Anchor to={to}>
+      <Anchor to={to} title={alt}>
         <Image alt={alt} />
       </Anchor>
       <Credit
