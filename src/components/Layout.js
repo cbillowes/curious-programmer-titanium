@@ -33,7 +33,7 @@ export const LayoutWithoutConstraints = ({ meta, children }) => {
         theme === "light" ? "theme-light" : "theme-dark"
       } bg-color-1 text-color-1-script m-0 px-0 py-1 min-h-screen`}
     >
-      <Head {...meta} />
+      <Head crawl={true} lang="en-US" {...meta} />
       <div className="fixed top-0 left-0 right-0 z-10">
         <div className="text-right text-lg bg-color-1 text-color-1-script">
           <div className="mr-4 pt-1">
@@ -52,5 +52,5 @@ export const LayoutWithoutConstraints = ({ meta, children }) => {
 
 LayoutWithoutConstraints.propTypes = {
   children: PropTypes.node.isRequired,
-  meta: PropTypes.object,
+  meta: PropTypes.object.isRequired,
 }
