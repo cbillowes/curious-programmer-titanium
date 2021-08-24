@@ -4,13 +4,9 @@ import PropTypes from "prop-types"
 const KEY = "theme"
 const DEFAULT = "light"
 
-const setTheme = (theme) => {
-  localStorage.setItem(KEY, theme)
-}
-
 export const ThemeContext = React.createContext({
-  theme: DEFAULT,
-  setTheme: () => setTheme(DEFAULT),
+  theme: "",
+  setTheme: () => {},
 })
 
 export const getToggled = (theme) => {
@@ -26,10 +22,10 @@ const ThemeContextProvider = ({ children }) => {
       return theme || DEFAULT
     }
     setTheme(loadTheme())
-  }, [theme])
+  }, [])
 
   useEffect(() => {
-    setTheme(theme)
+    localStorage.setItem(KEY, theme)
   }, [theme])
 
   return (

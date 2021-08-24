@@ -30,7 +30,7 @@ export const Layout = ({ meta, children }) => {
   return (
     <div
       className={`${
-        theme === "light" ? "theme-light" : "theme-dark"
+        theme === null || theme === "light" ? "theme-light" : "theme-dark"
       } bg-color-1 text-color-1-script m-0 px-0 py-1 min-h-screen`}
     >
       <Head crawl={true} lang="en-US" {...meta} />
