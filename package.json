@@ -28,6 +28,7 @@
     "gatsby-plugin-sass": "^4.7.1",
     "gatsby-plugin-sharp": "^3.7.1",
     "gatsby-plugin-twitter": "^3.7.1",
+    "gatsby-plugin-postcss": "^4.11.0",
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-embed-gist": "^1.2.1",
     "gatsby-remark-embed-youtube": "0.0.7",
@@ -61,7 +62,6 @@
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "gatsby-plugin-postcss": "^4.11.0",
     "postcss": "^8.3.6",
     "prettier": "2.3.1",
     "tailwindcss": "^2.2.7"
