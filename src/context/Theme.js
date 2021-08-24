@@ -15,30 +15,32 @@ export const ThemeContext = React.createContext({
 })
 
 export const getToggled = (theme) => {
-  return (theme || DEFAULT) === "light" ? "dark" : "light"
+  const themeOrDefault = theme || DEFAULT
+  return themeOrDefault === "light" ? "dark" : "light"
 }
 
+const getTheme = () => localStorage.getItem(KEY) || DEFAULT
+
+const saveTheme = (theme) => localStorage.setItem(KEY, theme)
+
 const ThemeContextProvider = ({ children }) => {
-  const initialTheme = localStorage.getItem(KEY) || DEFAULT
+  const initialTheme = getTheme()
   const [theme, setTheme] = useState(initialTheme)
 
   useEffect(() => {
-    function loadTheme() {
-      const theme = localStorage.getItem(KEY) || DEFAULT
-      return theme
-    }
-    setTheme(loadTheme())
+    const loadedTheme = getTheme()
+    setTheme(loadedTheme)
   }, [])
 
   useEffect(() => {
-    localStorage.setItem(KEY, theme)
+    saveTheme(theme)
   }, [theme])
 
   return (
     <ThemeContext.Provider
       value={{
-        theme: theme,
-        setTheme: setTheme,
+        theme,
+        setTheme,
       }}
     >
       {children}
