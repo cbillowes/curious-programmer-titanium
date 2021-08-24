@@ -22,7 +22,7 @@ const ThemeContextProvider = ({ children }) => {
       return theme || DEFAULT
     }
     setTheme(loadTheme())
-  }, [])
+  }, [theme])
 
   useEffect(() => {
     localStorage.setItem(KEY, theme)
