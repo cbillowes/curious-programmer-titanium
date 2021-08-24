@@ -1,0 +1,37 @@
+.ribbon {
+  .backdrop {
+    //h-24 w-36 -top-9 -right-2
+    height: 150px;
+    width: 150px;
+    right: -10px;
+    top: -10px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      left: -1px;
+      width: 40px;
+      height: 50px;
+      right: 100px;
+      border-radius: 8px 8px 0px 0px;
+      background-color: var(--color-1);
+    }
+
+    &::after {
+      right: -2px;
+      bottom: -15px;
+      width: 100px;
+      height: 70px;
+      border-radius: 40px;
+      background-color: var(--color-1);
+    }
+  }
+
+  .foreground {
+    z-index: 1;
+  }
+}

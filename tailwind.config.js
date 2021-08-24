@@ -7,6 +7,16 @@ module.exports = {
         sans: ["Open Sans", "sans-serif"],
         mono: ["Courier Prime", "mono"],
       },
+      borderColor: {
+        "color-1": "var(--color-1)",
+        "color-1-inverse": "var(--color-1-script)",
+
+        "color-2": "var(--color-2)",
+        "color-2-inverse": "var(--color-2-script)",
+
+        "color-3": "var(--color-3)",
+        "color-3-inverse": "var(--color-3-script)",
+      },
       colors: {
         neutral: "var(--neutral)",
 
