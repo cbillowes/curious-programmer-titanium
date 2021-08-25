@@ -1,46 +1,55 @@
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
-const KEY = "theme"
-const DEFAULT =
+const supportsDarkMode =
   typeof window !== "undefined" &&
   window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light"
+  window.matchMedia("(prefers-color-scheme: dark)").matches === true
 
-export const ThemeContext = React.createContext({
-  theme: "",
-  setTheme: () => {},
-})
-
-export const getToggled = (theme) => {
-  const themeOrDefault = theme || DEFAULT
-  return themeOrDefault === "light" ? "dark" : "light"
+const getDefaultTheme = () => {
+  return supportsDarkMode ? "dark" : "light"
 }
 
-const getTheme = () => localStorage.getItem(KEY) || DEFAULT
+const getTheme = () => {
+  return (
+    (typeof localStorage !== "undefined" && localStorage.getItem("theme")) ||
+    getDefaultTheme()
+  )
+}
 
-const saveTheme = (theme) => localStorage.setItem(KEY, theme)
+const saveTheme = (theme) => {
+  typeof localStorage !== "undefined" && localStorage.setItem("theme", theme)
+}
 
-const ThemeContextProvider = ({ children }) => {
-  const initialTheme = getTheme()
-  const [theme, setTheme] = useState(initialTheme)
+const defaultState = {
+  theme: getTheme() || getDefaultTheme(),
+  toggle: () => {},
+}
 
-  useEffect(() => {
-    const loadedTheme = getTheme()
-    setTheme(loadedTheme)
-  }, [])
+export const isDark = (theme) => theme === "dark"
 
-  useEffect(() => {
-    saveTheme(theme)
-  }, [theme])
+export const ThemeContext = React.createContext(defaultState)
+
+export const ThemeProvider = ({ children }) => {
+  console.log(getDefaultTheme())
+  const currentTheme = getTheme()
+  const [_, setTheme] = useState(currentTheme)
+
+  const toggle = () => {
+    const currentTheme = getTheme()
+    const toggledTheme = currentTheme === "light" ? "dark" : "light"
+    saveTheme(toggledTheme)
+    return toggledTheme
+  }
 
   return (
     <ThemeContext.Provider
       value={{
-        theme,
-        setTheme,
+        theme: currentTheme,
+        toggle: () => {
+          const theme = toggle()
+          setTheme(theme)
+        },
       }}
     >
       {children}
@@ -48,8 +57,6 @@ const ThemeContextProvider = ({ children }) => {
   )
 }
 
-ThemeContextProvider.propTypes = {
+ThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
-export default ThemeContextProvider
