@@ -7,3 +7,27 @@
 .gatsby-image-wrapper-constrained {
   width: 100%;
 }
+
+html {
+  display: none;
+}
+
+html.dark, html.light {
+  display: block;
+}
+
+.dark .dark-button {
+  display: inline-block;
+}
+
+.light .light-button {
+  display: inline-block;
+}
+
+.dark .light-button {
+  display: none;
+}
+
+.light .dark-button {
+  display: none;
+}

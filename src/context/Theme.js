@@ -1,60 +1,36 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, createContext } from "react"
 import PropTypes from "prop-types"
 
-const prefersDark = () => {
-  return (
-    typeof window !== "undefined" &&
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  )
+export const toggleColorMode = (colorMode) => {
+  return colorMode === "dark" ? "light" : "dark"
 }
 
-const get = () => {
-  return (typeof window.localStorage !== "undefined" &&
-    window.localStorage.getItem("theme")) ||
-    prefersDark()
-    ? "dark"
-    : "light"
-}
-
-const store = (theme) => {
-  typeof window.localStorage !== "undefined" &&
-    window.localStorage.setItem("theme", theme)
-}
-
-export const isDark = (theme) => {
-  return theme === "dark"
-}
-
-export const toggle = (theme) => {
-  return isDark(theme) ? "light" : "dark"
-}
-
-export const ThemeContext = React.createContext({
-  theme: "",
-  setTheme: () => {},
+export const ThemeContext = createContext({
+  colorMode: "",
+  setColorMode: () => {},
 })
 
 export const ThemeProvider = ({ children }) => {
-  const initialTheme = get()
-  const [theme, setTheme] = useState(initialTheme)
+  const [colorMode, rawSetColorMode] = useState(undefined)
 
   useEffect(() => {
-    const initialTheme = get()
-    setTheme(initialTheme)
+    const root = window.document.documentElement
+    const initialColorValue = root.style.getPropertyValue(
+      "--initial-color-mode",
+    )
+    rawSetColorMode(initialColorValue)
+    localStorage.setItem("color-mode", initialColorValue)
   }, [])
 
-  useEffect(() => {
-    store(theme)
-  }, [theme])
+  const setColorMode = (newValue) => {
+    const root = window.document.documentElement
+    rawSetColorMode(newValue)
+    localStorage.setItem("color-mode", newValue)
+    root.classList = newValue
+  }
 
   return (
-    <ThemeContext.Provider
-      value={{
-        theme,
-        setTheme,
-      }}
-    >
+    <ThemeContext.Provider value={{ colorMode, setColorMode }}>
       {children}
     </ThemeContext.Provider>
   )
