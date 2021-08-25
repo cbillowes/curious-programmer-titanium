@@ -28,7 +28,11 @@ const IndexPage = ({ data }) => {
       }}
     >
       <div className="relative">
-        <StaticImage src="../images/profile.jpg" alt="Clarice Bouwer" />
+        <StaticImage
+          src="../images/profile.jpg"
+          alt="Clarice Bouwer"
+          layout="fullWidth"
+        />
         <div className="hidden text-welcome-headings absolute top-2 right-2 lg:top-10 lg:right-10 lg:flex flex-col flex-wrap justify-center items-center w-5/12 lg:w-4/12">
           <div className="p-2 lg:px-5 lg:py-3">
             <h1 className="text-md lg:text-5xl xl:text-6xl font-bold text-center">
