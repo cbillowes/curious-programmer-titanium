@@ -23,7 +23,7 @@ const getTheme = () => localStorage.getItem(KEY) || DEFAULT
 
 const saveTheme = (theme) => localStorage.setItem(KEY, theme)
 
-const ThemeContextProvider = ({ children }) => {
+const ThemeProvider = ({ children }) => {
   const initialTheme = getTheme()
   const [theme, setTheme] = useState(initialTheme)
 
@@ -48,8 +48,8 @@ const ThemeContextProvider = ({ children }) => {
   )
 }
 
-ThemeContextProvider.propTypes = {
+ThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default ThemeContextProvider
+export default ThemeProvider
