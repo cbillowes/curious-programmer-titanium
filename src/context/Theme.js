@@ -1,39 +1,51 @@
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
-const KEY = "theme"
-const DEFAULT =
-  typeof window !== "undefined" &&
-  window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches
+const prefersDark = () => {
+  return (
+    typeof window !== "undefined" &&
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  )
+}
+
+const get = () => {
+  return (typeof window.localStorage !== "undefined" &&
+    window.localStorage.getItem("theme")) ||
+    prefersDark()
     ? "dark"
     : "light"
+}
+
+const store = (theme) => {
+  typeof window.localStorage !== "undefined" &&
+    window.localStorage.setItem("theme", theme)
+}
+
+export const isDark = (theme) => {
+  return theme === "dark"
+}
+
+export const toggle = (theme) => {
+  return isDark(theme) ? "light" : "dark"
+}
 
 export const ThemeContext = React.createContext({
   theme: "",
   setTheme: () => {},
 })
 
-export const getToggled = (theme) => {
-  const themeOrDefault = theme || DEFAULT
-  return themeOrDefault === "light" ? "dark" : "light"
-}
-
-const getTheme = () => localStorage.getItem(KEY) || DEFAULT
-
-const saveTheme = (theme) => localStorage.setItem(KEY, theme)
-
 export const ThemeProvider = ({ children }) => {
-  const initialTheme = getTheme()
+  const initialTheme = get()
   const [theme, setTheme] = useState(initialTheme)
 
   useEffect(() => {
-    const loadedTheme = getTheme()
+    const loadedTheme = get()
     setTheme(loadedTheme)
   }, [])
 
   useEffect(() => {
-    saveTheme(theme)
+    store(theme)
   }, [theme])
 
   return (

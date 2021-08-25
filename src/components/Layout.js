@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import PropTypes from "prop-types"
-import { ThemeContext, getToggled } from "../context/Theme"
+import { ThemeContext, toggle, isDark } from "../context/Theme"
 import { MdWbSunny } from "@react-icons/all-files/md/MdWbSunny"
 import { MdBrightness2 } from "@react-icons/all-files/md/MdBrightness2"
 import Head from "../components/Head"
@@ -9,13 +9,13 @@ import Navigation from "../components/Navigation"
 
 const Toggler = ({ theme, setTheme }) => {
   const handleThemeToggle = () => {
-    const toggled = getToggled(theme)
+    const toggled = toggle(theme)
     setTheme(toggled)
   }
 
   return (
     <button onClick={handleThemeToggle}>
-      {theme === "dark" ? <MdBrightness2 /> : <MdWbSunny />}
+      {isDark(theme) ? <MdBrightness2 /> : <MdWbSunny />}
     </button>
   )
 }
