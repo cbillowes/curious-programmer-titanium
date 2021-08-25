@@ -18,6 +18,8 @@ module.exports = {
         "color-3-inverse": "var(--color-3-script)",
       },
       colors: {
+        "welcome-headings": "var(--welcome-headings)",
+
         neutral: "var(--neutral)",
 
         default: "var(--default)",
