@@ -36,7 +36,8 @@ export const ThemeContext = React.createContext({
 })
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState()
+  const initialTheme = get()
+  const [theme, setTheme] = useState(initialTheme)
 
   useEffect(() => {
     const initialTheme = get()
