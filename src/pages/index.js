@@ -28,27 +28,35 @@ const IndexPage = ({ data }) => {
       }}
     >
       <div className="relative">
-        <StaticImage
-          src="../images/profile.jpg"
-          alt="Clarice Bouwer"
-          layout="fullWidth"
-        />
+        <div className="max-h-screen overflow-hidden">
+          <StaticImage
+            src="../images/profile.jpg"
+            alt="Clarice Bouwer"
+            layout="fullWidth"
+          />
+        </div>
         <div className="hidden text-welcome-headings absolute top-2 right-2 lg:top-10 lg:right-10 lg:flex flex-col flex-wrap justify-center items-center w-5/12 lg:w-4/12">
           <div className="p-2 lg:px-5 lg:py-3">
-            <h1 className="text-md lg:text-5xl xl:text-6xl font-bold text-center">
-              Clarice Bouwer
+            <h1 className="text-md lg:text-5xl xl:text-8xl text-center">
+              Hello <span className="font-semibold">Clarice</span>
             </h1>
           </div>
           <div className="py-1 lg:px-5 lg:py-3 mt-1">
-            <h2 className="text-sm lg:text-2xl font-semibold text-center leading-10">
-              Senior Software Engineer @ Cloudsure, Mauritius
-            </h2>
+            <p className="text-sm lg:text-2xl text-center mb-2">
+              I&apos;m a Senior{" "}
+              <span className="font-semibold">Software Engineer</span>
+            </p>
+            <p className="text-sm lg:text-2xl text-center">
+              and I work at Cloudsure in Mauritius.
+            </p>
           </div>
-          <div className="hidden lg:inline-block mt-8 leading-loose text-center lg:text-2xl">
-            <p>I write code. I share code. I love code.</p>
-            <p>I am a curious programmer.</p>
+          <div className="hidden lg:inline-block mt-8 text-center lg:text-2xl">
+            <p className="mb-2">I write code. I share code. I love code.</p>
+            <p>
+              I am a <span className="font-semibold">curious programmer</span>.
+            </p>
           </div>
-          <div className="hidden lg:flex mt-8 items-center">
+          <div className="hidden lg:flex mt-16 items-center">
             <Emoji
               className="text-5xl inline mr-4"
               label="South African flag emoji"
@@ -64,6 +72,13 @@ const IndexPage = ({ data }) => {
             <Emoji className="text-5xl inline mr-4" label="Island emoji">
               🏝️
             </Emoji>
+            <span className="mr-4">
+              <StaticImage
+                src="../images/clojure.png"
+                alt="Clojure(Script)"
+                width={48}
+              />
+            </span>
             <span>
               <StaticImage
                 src="../images/cloudsure.png"
@@ -75,20 +90,16 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
 
-      <div className="lg:hidden">
-        <div className="text-sm leading-relaxed text-center">
-          <div className="opacity-80 p-2">
-            <h1 className="text-lg font-semibold text-center">
-              Clarice Bouwer
-            </h1>
-          </div>
-          <div className="opacity-80 py-1">
-            <h2 className="text-sm font-semibold text-center">
-              Senior Software Engineer @ Cloudsure, Mauritius
-            </h2>
-          </div>
-          <p className="mt-3">I write code. I share code. I love code.</p>
-          <p>I am a curious programmer.</p>
+      <div className="lg:hidden p-4">
+        <div className="leading-relaxed text-center">
+          <p className="text-md text-center">
+            I&apos;m Clarice Bouwer, a Senior Software Engineer at Cloudsure,
+            Mauritius
+          </p>
+          <p className="mt-3 text-xs">
+            I write code. I share code. I love code.
+          </p>
+          <p className="mt-1 text-xs">I am a curious programmer.</p>
         </div>
       </div>
 
