@@ -45,12 +45,12 @@ const Preview = ({
           {excerpt}
         </div>
         <div
-          className={`flex items-center flex-wrap ${
+          className={`flex items-center flex-wrap xl:${
             isEven ? "flex-row" : "flex-row-reverse"
           }`}
         >
           <Anchor
-            className={`bg-color-1 text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-green-600 ${
+            className={`bg-color-1 text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-green-600 xl:${
               isEven ? "mr-2" : "ml-4"
             }`}
             to={slug}
