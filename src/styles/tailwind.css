@@ -1,5 +1,5 @@
 .light {
-  --welcome-headings: black;
+  --welcome-headings: #171e29;
 
   --neutral: #989898;
 
@@ -20,7 +20,7 @@
 }
 
 .dark {
-  --welcome-headings: black;
+  --welcome-headings: #171e29;
 
   --neutral: #989898;
 
