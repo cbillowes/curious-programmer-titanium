@@ -1,7 +1,7 @@
 ---
 title: Rewire your brain (Part 2) - Activate neuro pathways
-slug: "rewire-your-brain-2"
-cover: "https://picsum.photos/1600/800/?image=881"
+slug: /blog/rewire-your-brain-2
+cover: https://picsum.photos/1600/800/?image=881
 date: 2017-05-25 20:03:54 +0200
 tags:
   - Mindset

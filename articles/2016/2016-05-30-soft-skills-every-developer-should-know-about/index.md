@@ -1,7 +1,7 @@
 ---
-title: "5 Soft skills every developer should know about"
-slug: "soft-skils-every-developer-should-know-about"
-cover: "https://picsum.photos/1600/800/?image=770"
+title: 5 Soft skills every developer should know about
+slug: /blog/soft-skils-every-developer-should-know-about
+cover: https://picsum.photos/1600/800/?image=770
 date: 2016-05-30 20:37:06 +0200
 tags:
   - Mindset

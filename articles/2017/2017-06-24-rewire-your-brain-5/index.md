@@ -1,8 +1,8 @@
 ---
-title: "Rewire your brain (Part 5) - The Satir Change Process Model"
-slug: "rewire-your-brain-5"
+title: Rewire your brain (Part 5) - The Satir Change Process Model
+slug: /blog/rewire-your-brain-5
 date: 2017-06-25 22:02:42 +0200
-cover: "https://picsum.photos/1600/800/?image=874"
+cover: https://picsum.photos/1600/800/?image=874
 tags:
   - Mindset
   - Productivity

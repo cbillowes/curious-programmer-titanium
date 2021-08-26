@@ -1,7 +1,7 @@
 ---
-title: "Rewire your brain (Part 4) - Childhood survival rules"
-slug: "rewire-your-brain-4"
-cover: "https://picsum.photos/1600/800/?image=889"
+title: Rewire your brain (Part 4) - Childhood survival rules
+slug: /blog/rewire-your-brain-4
+cover: https://picsum.photos/1600/800/?image=889
 date: 2017-06-24 20:35:14 +0200
 tags:
   - Mindset

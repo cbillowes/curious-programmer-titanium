@@ -1,8 +1,8 @@
 ---
-title: "Rewire your brain (Part 8) - Conclusion"
-slug: "rewire-your-brain-8"
+title: Rewire your brain (Part 8) - Conclusion
+slug: /blog/rewire-your-brain-8
 date: 2017-06-28 19:05:39 +0200
-cover: "https://picsum.photos/1600/800/?image=903"
+cover: https://picsum.photos/1600/800/?image=903
 tags:
   - Mindset
   - Productivity
