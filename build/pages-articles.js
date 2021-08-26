@@ -1,5 +1,6 @@
+const { DEMO_PAGE } = require("./const")
+
 const path = require("path")
-const config = require("./const")
 const template = `./src/templates/article.js`
 const createPages = true
 
@@ -8,8 +9,6 @@ const landingPageSlug = "/"
 
 const articlesPage = "./src/pages/articles.js"
 const articlesPageSlug = "/blog"
-
-const DEMO_PAGE = config.DEMO_PAGE
 
 const query = async (graphql) => {
   return await graphql(`
@@ -23,7 +22,6 @@ const query = async (graphql) => {
             fields {
               slug
               date
-              number
             }
             frontmatter {
               title
@@ -63,7 +61,8 @@ const getArticle = (edges, index) => {
 
 const createThePage = (createPage, edges, index, reporter) => {
   const article = getArticle(edges, index)
-  const { number, slug, date, previous, next } = article
+  const { slug, date, previous, next } = article
+  const number = index + 1
 
   createPage({
     path: slug,
@@ -90,7 +89,9 @@ const createArticlePages = (createPage, result, reporter) => {
 
 const createDemoPage = (createPage, result, reporter) => {
   const edges = result.data.allMarkdownRemark.edges
-  const index = edges.map((edge) => edge.node.fields.slug).indexOf(DEMO_PAGE)
+  const index =
+    edges.filter(({ node }) => node.fields.slug.indexOf(DEMO_PAGE) > -1)
+      .length > 0
   if (index === 0) {
     createThePage(createPage, edges, index, reporter)
     reporter.success(`create article: [demo]`)

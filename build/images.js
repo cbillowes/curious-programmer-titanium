@@ -8,8 +8,9 @@ const sharp = require("sharp")
  * @param {string} absolutePath
  * @returns a boolean value
  */
-exports.isResource = (absolutePath) => {
-  return absolutePath.indexOf("/resources/source/") >= 0
+const isResource = ({ internal, absolutePath }) => {
+  const { type } = internal
+  return type === "File" && absolutePath.indexOf("/resources/source/") >= 0
 }
 
 const toDestinationPath = (destinationPath, sourcePath) => {
@@ -46,9 +47,7 @@ exports.getRandomDefaultComponent = () => {
   const outerBounds = defaults.length
   const index = parseInt(Math.random() * (outerBounds + 1))
   // eslint-disable-next-line prettier/prettier
-  const number = index < 10
-    ? (index === 0 ? `01` : `0${index}`)
-    : index
+  const number = index < 10 ? (index === 0 ? `01` : `0${index}`) : index
   return `Default${number}`
 }
 
@@ -86,7 +85,7 @@ const processImage = (
       kernel: sharp.kernel.nearest,
     })
     .toFile(destinationPath, (err) => {
-      const message = `optimize image: ${absolutePath} -> ${destinationPath}`
+      const message = `image [optimize]: ${absolutePath} -> ${destinationPath}`
       if (err) {
         reporter.error(`${message}\n${err}`)
       } else {
@@ -95,7 +94,7 @@ const processImage = (
     })
 }
 
-exports.processHighRes = (sourcePath, reporter) => {
+const processHighRes = (sourcePath, reporter) => {
   const quality = 100
   const destinationPath = toDestinationPath(`src/images/articles`, sourcePath)
   const width = 1920
@@ -103,9 +102,7 @@ exports.processHighRes = (sourcePath, reporter) => {
   const fit = sharp.fit.cover
   const position = sharp.strategy.attention
 
-  reporter.info(
-    `[High Res] Process article image: ${path.basename(sourcePath)}`,
-  )
+  reporter.verbose(`image [high res]: ${path.basename(sourcePath)}`)
   processImage(
     sourcePath,
     destinationPath,
@@ -118,7 +115,7 @@ exports.processHighRes = (sourcePath, reporter) => {
   )
 }
 
-exports.processLowRes = (sourcePath, reporter) => {
+const processLowRes = (sourcePath, reporter) => {
   const quality = 80
   const destinationPath = toDestinationPath(
     `src/images/social-media`,
@@ -129,7 +126,7 @@ exports.processLowRes = (sourcePath, reporter) => {
   const fit = sharp.fit.cover
   const position = sharp.strategy.attention
 
-  reporter.info(`[Low Res] Process article image: ${path.basename(sourcePath)}`)
+  reporter.verbose(`image [low res]: ${path.basename(sourcePath)}`)
   processImage(
     sourcePath,
     destinationPath,
@@ -142,7 +139,7 @@ exports.processLowRes = (sourcePath, reporter) => {
   )
 }
 
-exports.generateComponent = (sourcePath, reporter) => {
+const generateComponent = (sourcePath, reporter) => {
   const template = path.join(__dirname, "image.jsx.template")
   fs.readFile(template, (err, data) => {
     if (err) {
@@ -160,13 +157,13 @@ exports.generateComponent = (sourcePath, reporter) => {
         .replace(/%IMAGE_WIDTH%/, 1920)
 
       fs.writeFile(destinationPath, component, () => {
-        reporter.info(`Generate component: ${filename}`)
+        reporter.verbose(`image [component]: ${filename}`)
       })
     }
   })
 }
 
-const getComponentIndex = (sourcePath) => {
+const getComponentsToBeIndexed = (sourcePath) => {
   const files = fs.readdirSync(sourcePath)
 
   let content = ""
@@ -180,22 +177,6 @@ const getComponentIndex = (sourcePath) => {
   return content
 }
 
-const generateComponentIndex = (destinationPath, content, reporter) => {
-  const template = path.join(__dirname, "image.index.template")
-  fs.readFile(template, (err, data) => {
-    if (err) {
-      reporter.error(`Could not generate component index: ${err}`)
-    } else {
-      const component = data.toString().replace(/%INDEX%/, content)
-      fs.writeFile(destinationPath, component, () => {
-        reporter.info(
-          `Generate image component index: ${path.basename(destinationPath)}`,
-        )
-      })
-    }
-  })
-}
-
 exports.generateComponentIndex = (reporter) => {
   const sourcePath = path.join(__dirname, "../src/images/articles")
   const filename = "image-component-index.js"
@@ -205,6 +186,26 @@ exports.generateComponentIndex = (reporter) => {
     destinationRelativePath,
     filename,
   )
-  const index = getComponentIndex(sourcePath)
-  generateComponentIndex(destinationPath, index, reporter)
+  const indexDb = getComponentsToBeIndexed(sourcePath)
+  const template = path.join(__dirname, "image.index.template")
+  fs.readFile(template, (err, data) => {
+    if (err) {
+      reporter.error(`could not generate component index: ${err}`)
+    } else {
+      const component = data.toString().replace(/%INDEX%/, indexDb)
+      fs.writeFile(destinationPath, component, () => {
+        reporter.verbose(`image [index db]: ${path.basename(destinationPath)}`)
+      })
+    }
+  })
+}
+
+exports.process = (node, reporter) => {
+  const { absolutePath } = node
+  if (isResource(node)) {
+    processHighRes(absolutePath, reporter)
+    processLowRes(absolutePath, reporter)
+    generateComponent(absolutePath, reporter)
+    reporter.success(`image [processed]: ${absolutePath}`)
+  }
 }

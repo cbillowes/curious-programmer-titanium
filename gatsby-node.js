@@ -1,8 +1,6 @@
-const _ = require("lodash")
-const path = require(`path`)
-const constants = require("./build/const")
+const nodes = require("./build/nodes")
 const images = require("./build/images")
-const thumbnail = require("./build/thumbnail")
+const thumbnails = require("./build/thumbnails")
 const articles = require("./build/pages-articles")
 const tags = require("./build/pages-tags")
 const { copyGifs, copySvgs } = require("./build/copy")
@@ -11,11 +9,7 @@ const { copyGifs, copySvgs } = require("./build/copy")
 // The order of which nodes are processed is not guaranteed.
 // To add numbers to each post, nodes need to be captured
 // and processed sequentially by date
-const nodes = []
-
-// This is a page that contains examples of usage and what
-// generated markdown content will look like.
-const DEMO_PAGE = constants.DEMO_PAGE
+const markdownNodes = []
 
 /**
  * GATSBY API.
@@ -23,24 +17,25 @@ const DEMO_PAGE = constants.DEMO_PAGE
  * https://www.gatsbyjs.org/docs/actions/
  */
 
+// This is the part where numbers and any other graphql fields can be added.
+// https://www.gatsbyjs.org/docs/node-apis/#setFieldsOnGraphQLNodeType
+exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
+  const { name } = type
+  const { createNodeField } = actions
+  if (name === "MarkdownRemark") {
+    nodes.applyNumbers(markdownNodes, createNodeField)
+  }
+}
+
 // Generates a bunch of images and creates nodes for markdown files.
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateNode
 exports.onCreateNode = ({ node, actions, reporter }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `File`) {
-    const absolutePath = node.absolutePath
-    if (images.isResource(absolutePath)) {
-      images.processHighRes(absolutePath, reporter)
-      images.processLowRes(absolutePath, reporter)
-      images.generateComponent(absolutePath, reporter)
-      reporter.success(`Processed resource: ${absolutePath}\n`)
-    }
-  }
-
+  images.process(node, reporter)
+  thumbnails.createFields(node, createNodeField, reporter)
+  nodes.createFields(node, createNodeField, reporter)
   if (node.internal.type === `MarkdownRemark`) {
-    const { title } = node.frontmatter
-    createNodes(node, createNodeField, reporter)
-    reporter.success(`Created nodes: ${title}\n`)
+    markdownNodes.push(node)
   }
 }
 
@@ -49,17 +44,7 @@ exports.onCreateNode = ({ node, actions, reporter }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await articles.create(actions, graphql, reporter)
   await tags.create(actions, graphql, reporter)
-  // await search.create(graphql, reporter)
-}
-
-// This is the part where numbers and any other graphql fields can be added.
-// https://www.gatsbyjs.org/docs/node-apis/#setFieldsOnGraphQLNodeType
-exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
-  const { name } = type
-  const { createNodeField } = actions
-  if (name === "MarkdownRemark") {
-    applyNumbers(createNodeField)
-  }
+  // // await search.create(graphql, reporter)
 }
 
 exports.onPostBootstrap = ({ reporter }) => {
@@ -77,60 +62,4 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       },
     },
   })
-}
-
-const createNodes = (node, createNodeField, reporter) => {
-  const { title, slug, date, photo } = node.frontmatter
-  const component =
-    images.getComponentName(photo) || images.getRandomDefaultComponent()
-
-  createNodeField({
-    node,
-    name: `number`,
-    value: 0,
-  })
-
-  createNodeField({
-    node,
-    name: `slug`,
-    value: slug || path.join(`/blog`, _.kebabCase(title), `/`),
-  })
-
-  createNodeField({
-    node,
-    name: `date`,
-    value: date,
-  })
-
-  createNodeField({
-    node,
-    name: `component`,
-    value: component,
-  })
-
-  reporter.info(`Created node fields: ${component}`)
-
-  nodes.push(node)
-}
-
-const applyNumbers = (createNodeField) => {
-  const numberable = nodes.filter((node) => node.fields.slug !== DEMO_PAGE)
-  const sorted = numberable.sort(
-    (a, b) => toTimestamp(a.fields.date) - toTimestamp(b.fields.date),
-  )
-  sorted.forEach((node, index) => {
-    const number = index + 1
-
-    createNodeField({
-      node,
-      name: `number`,
-      value: number,
-    })
-
-    thumbnail.create(createNodeField, node, number)
-  })
-}
-
-const toTimestamp = (date) => {
-  return new Date(date).getTime()
 }
