@@ -29,7 +29,7 @@ const Preview = ({
       }`}
     >
       <div
-        className={`border-color-3 border-dashed xl:w-1/4 xl:mx-8 xl:${
+        className={`border-color-3 border-none xl:border-dashed xl:w-1/4 xl:mx-8 xl:${
           isEven ? "text-left border-l pl-8" : "text-right border-r pr-8"
         }`}
       >
