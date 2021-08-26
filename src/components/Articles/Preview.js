@@ -24,13 +24,13 @@ const Preview = ({
   return (
     <div
       key={number}
-      className={`relative mx-auto lg:w-7/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
+      className={`relative mx-auto lg:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
         isEven ? "xl:flex-row-reverse" : "xl:flex-row"
       }`}
     >
       <div
-        className={`xl:w-1/4 xl:mx-16 xl:${
-          isEven ? "text-left" : "text-right"
+        className={`border-color-3 border-dashed xl:w-1/4 xl:mx-8 xl:${
+          isEven ? "text-left border-l pl-8" : "text-right border-r pr-8"
         }`}
       >
         <h1 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1">
