@@ -19,6 +19,10 @@ Component["BusyStation"] = (props) => (
   require("./busy-station").default(props)
 )
 
+Component["ChromeDevtoolsEmulation"] = (props) => (
+  require("./chrome-devtools-emulation").default(props)
+)
+
 Component["Cisco"] = (props) => (
   require("./cisco").default(props)
 )
