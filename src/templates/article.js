@@ -75,7 +75,7 @@ const ArticleTemplate = ({ data }) => {
           {frontmatter.title}
         </h1>
         <div className="text-center text-neutral">
-          {fields.date} | Estimated {timeToRead} minute read
+          #{fields.number} | {fields.date} | Estimated {timeToRead} minute read
         </div>
         <div className="text-center">
           <Tags tags={frontmatter.tags} isButton={true} />
