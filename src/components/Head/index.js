@@ -19,7 +19,6 @@ const removeWhitespace = (text) => {
 const Head = ({
   author,
   brand,
-  crawl,
   description,
   image,
   keywords,
@@ -50,11 +49,7 @@ const Head = ({
         name="apple-mobile-web-app-status-bar-style"
       />
 
-      {crawl ? (
-        <meta name="robots" content="index" />
-      ) : (
-        <meta name="robots" content="noindex" />
-      )}
+      <meta name="robots" content="index" />
     </Helmet>
 
     <Title page={pageTitle} site={siteTitle} />
@@ -100,14 +95,12 @@ const social = PropTypes.shape({
 })
 
 Head.defaultProps = {
-  crawl: true,
   type: "WebSite",
 }
 
 Head.propTypes = {
   author: author.isRequired,
   brand: PropTypes.string.isRequired,
-  crawl: PropTypes.bool,
   description: PropTypes.string.isRequired,
   image: PropTypes.string,
   keywords: PropTypes.string.isRequired,

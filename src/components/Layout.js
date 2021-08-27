@@ -36,7 +36,7 @@ Toggler.propTypes = {
   setColorMode: PropTypes.func.isRequired,
 }
 
-export const Layout = ({ crawl = false, meta, children }) => {
+export const Layout = ({ meta, children }) => {
   const { colorMode, setColorMode } = useContext(ThemeContext)
   const [showSearch, toggleSearchMode] = useState(false)
 
@@ -51,7 +51,7 @@ export const Layout = ({ crawl = false, meta, children }) => {
         }
       }}
     >
-      <Head crawl={crawl} {...meta} />
+      <Head {...meta} />
       <div className="fixed top-0 left-0 right-0 z-50">
         <div className="text-right text-lg bg-color-1 text-color-1-script">
           <div className="mr-3 pt-1 inline-block">
@@ -84,6 +84,5 @@ export const Layout = ({ crawl = false, meta, children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  crawl: PropTypes.bool,
   meta: PropTypes.object.isRequired,
 }
