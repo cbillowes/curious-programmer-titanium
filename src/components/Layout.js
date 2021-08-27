@@ -41,7 +41,9 @@ export const Layout = ({ crawl = false, meta, children }) => {
   const [showSearch, toggleSearchMode] = useState(false)
   return (
     <div
-      className={`${colorMode} bg-color-1 text-color-1-script m-0 px-0 py-1 min-h-screen`}
+      className={`${colorMode} bg-color-1 text-color-1-script m-0 px-0 py-1 ${
+        showSearch ? "overflow-hidden max-h-screen" : "min-h-screen"
+      }`}
       onKeyUp={(e) => {
         if (e.key === "Escape") {
           toggleSearchMode(!showSearch)
