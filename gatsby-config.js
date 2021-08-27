@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-twitter`,
     `gatsby-plugin-image`,
     `gatsby-plugin-advanced-sitemap`,
+    `gatsby-plugin-robots-txt`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,

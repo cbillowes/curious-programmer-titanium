@@ -5,7 +5,9 @@ module.exports = {
   keywords: "software development, software, programming",
   url: "https://curiousprogrammer.dev",
   // This duplicated gem is used for gatsby-plugin-advanced-sitemap
+  // and gatsby-plugin-robots-txt
   // https://www.gatsbyjs.com/plugins/gatsby-plugin-advanced-sitemap/?=sitemap
+  // https://www.gatsbyjs.com/plugins/gatsby-plugin-robots-txt/?=Robots.txt
   siteUrl: "https://curiousprogrammer.dev",
   lang: "en-US",
   brand: "#0b7acf",
