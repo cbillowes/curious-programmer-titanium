@@ -29,7 +29,10 @@ const copySvgs = () => copy("svgs")
 
 const copyGifs = () => copy("gifs")
 
+const copyWebps = () => copy("webps")
+
 module.exports = {
   copySvgs,
   copyGifs,
+  copyWebps,
 }
