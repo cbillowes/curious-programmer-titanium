@@ -19,6 +19,10 @@ module.exports = {
       },
       colors: {
         "welcome-headings": "var(--welcome-headings)",
+        "search-neutral-1": "var(--search-neutral-1)",
+        "search-neutral-2": "var(--search-neutral-2)",
+        "footer-link-1": "var(--footer-link-1)",
+        "footer-link-2": "var(--footer-link-2)",
 
         neutral: "var(--neutral)",
 
