@@ -22,7 +22,6 @@ const TagTemplate = ({ pageContext, data }) => {
         siteTitle: title,
       }}
     >
-      >
       <div className="bg-default text-default-script">
         <div className="mx-auto pb-5 pt-10">
           <h1 className="text-center text-5xl font-bold mb-0 mt-5">
