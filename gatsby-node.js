@@ -4,7 +4,6 @@ const thumbnails = require("./build/thumbnails")
 const articles = require("./build/pages-articles")
 const tags = require("./build/pages-tags")
 const { copyGifs, copySvgs } = require("./build/copy")
-// const search = require("./build/search")
 
 // The order of which nodes are processed is not guaranteed.
 // To add numbers to each post, nodes need to be captured
@@ -44,7 +43,6 @@ exports.onCreateNode = ({ node, actions, reporter }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await articles.create(actions, graphql, reporter)
   await tags.create(actions, graphql, reporter)
-  // // await search.create(graphql, reporter)
 }
 
 exports.onPostBootstrap = ({ reporter }) => {
