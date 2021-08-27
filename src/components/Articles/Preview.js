@@ -29,8 +29,10 @@ const Preview = ({
       }`}
     >
       <div
-        className={`border-color-3 border-none xl:border-dashed xl:w-1/4 xl:mx-8 xl:${
-          isEven ? "text-left border-l xl:pl-8" : "text-right border-r xl:pr-8"
+        className={`border-color-3 border-none xl:border-dashed xl:w-1/4 xl:mx-8 ${
+          isEven
+            ? "xl:text-left xl:border-l xl:pl-8"
+            : "xl:text-right xl:border-r xl:pr-8"
         }`}
       >
         <h1 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1">
@@ -45,13 +47,13 @@ const Preview = ({
           {excerpt}
         </div>
         <div
-          className={`flex items-center flex-wrap xl:${
-            isEven ? "flex-row" : "flex-row-reverse"
+          className={`flex items-center flex-wrap ${
+            isEven ? "xl:flex-row" : "xl:flex-row-reverse"
           }`}
         >
           <Anchor
-            className={`bg-color-1 text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-color-1-alternative xl:${
-              isEven ? "mr-2" : "ml-4"
+            className={`bg-color-1 text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-color-1-alternative ${
+              isEven ? "xl:mr-2" : "xl:ml-4"
             }`}
             to={slug}
             title={slug}
