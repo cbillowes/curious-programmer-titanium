@@ -68,6 +68,7 @@ const ArticleTemplate = ({ data }) => {
         siteTitle: title,
         description: excerpt || description,
         image: frontmatter.photo,
+        pageType: "article",
       }}
     >
       <div id="article" className="pt-14 px-4 pb-24">

@@ -9,6 +9,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
@@ -159,6 +160,6 @@ module.exports = {
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries: require("./build/search"),
       },
-    }
+    },
   ],
 }

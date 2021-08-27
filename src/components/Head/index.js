@@ -24,6 +24,7 @@ const Head = ({
   keywords,
   lang,
   pageTitle,
+  pageType,
   social,
   siteTitle,
   type,
@@ -68,6 +69,7 @@ const Head = ({
       url={url}
       twitter={social && social.twitter}
       imagePath={image || (social && social.image)}
+      pageType={pageType}
     />
 
     <Schema
@@ -108,6 +110,7 @@ Head.propTypes = {
   siteTitle: PropTypes.string.isRequired,
   social: social.isRequired,
   pageTitle: PropTypes.string,
+  pageType: PropTypes.string,
   type: PropTypes.string,
   url: PropTypes.string.isRequired,
 }
