@@ -24,7 +24,7 @@ const Blocks = () => {
 const TopAnchor = (props) => (
   <Anchor
     {...props}
-    className="text-color-3 font-semibold hover:text-color-2"
+    className="text-footer-link-1 font-semibold hover:text-footer-link-2"
   />
 )
 
