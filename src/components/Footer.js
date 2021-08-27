@@ -75,9 +75,6 @@ const Footer = ({ toggler }) => (
           >
             Icons
           </BottomAnchor>
-          <BottomAnchor to="/articles" title="Go to all articles">
-            Articles
-          </BottomAnchor>
         </div>
       </div>
     </div>
