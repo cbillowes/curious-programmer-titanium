@@ -46,7 +46,7 @@ const SetConsoleEggScript = () => {
     };
     image.src = url;
   };
-  console.image("https://i.pinimg.com/originals/78/89/e9/7889e9fb00e971c7357d06725b7cde07.png", 25);
+  console.image("https://curiousprogrammer.dev/static/webps/all-the-things.webp", 25);
 })()
 `
   return <script dangerouslySetInnerHTML={{ __html: javascript }} />
