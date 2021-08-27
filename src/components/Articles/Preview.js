@@ -50,7 +50,7 @@ const Preview = ({
           }`}
         >
           <Anchor
-            className={`bg-color-1 text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-green-600 xl:${
+            className={`bg-color-1 text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-color-1-alternative xl:${
               isEven ? "mr-2" : "ml-4"
             }`}
             to={slug}
