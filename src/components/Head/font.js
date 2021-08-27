@@ -6,7 +6,8 @@ const Font = () => (
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Courier+Prime&family=Handlee&display=swap"
-      rel="stylesheet"
+      crossOrigin="anonymous"
+      rel="preload"
     />
   </Helmet>
 )
