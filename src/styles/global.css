@@ -39,3 +39,9 @@ html.dark, html.light {
 .light .ais-PoweredBy path:last-child {
   fill: white;
 }
+
+.ais-Highlight-highlighted,
+.ais-Snippet-highlighted {
+  background-color: var(--color-1);
+  color: var(--color-1-script);
+}
