@@ -39,6 +39,34 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        query: `
+        {
+          allSitePage {
+            edges {
+              node {
+                path
+                slug: path
+                url: path
+              }
+            }
+          }
+        }
+        `,
+        mapping: {
+          allSitePage: {
+            sitemap: `pages`,
+          },
+        },
+        exclude: [`/dev-404-page`, `/404`, `/404.html`],
+        createLinkInHead: true,
+        // optional: create a link in the `<head>` of your site
+        addUncaughtPages: true,
+        // optional: will fill up pages that are not caught by queries and mapping and list them under `sitemap-pages.xml`
+      },
+    },
+    {
       resolve: `gatsby-plugin-sass`,
       options: {
         sassOptions: {
