@@ -18,7 +18,9 @@ const HitCount = connectStateResults(({ searchResults }) => {
     <div>
       {hitCount} result{hitCount !== 1 ? `s` : ``}
     </div>
-  ) : null
+  ) : (
+    <div className="inline-block animate animate-spin ease-linear rounded-full border-2 border-t-8 border-gray-200 h-6 w-6 z-10"></div>
+  )
 })
 
 const PageHit = ({ hit }) => (
