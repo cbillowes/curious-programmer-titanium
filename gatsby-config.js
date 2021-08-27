@@ -7,8 +7,6 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-twitter`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-advanced-sitemap`,
-    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     {
@@ -60,10 +58,18 @@ module.exports = {
           },
         },
         exclude: [`/dev-404-page`, `/404`, `/404.html`],
-        createLinkInHead: true,
         // optional: create a link in the `<head>` of your site
-        addUncaughtPages: true,
+        createLinkInHead: true,
         // optional: will fill up pages that are not caught by queries and mapping and list them under `sitemap-pages.xml`
+        addUncaughtPages: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: siteMetadata.siteUrl,
+        sitemap: `${siteMetadata.siteUrl}/sitemap.xml`,
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
     {
