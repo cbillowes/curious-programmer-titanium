@@ -3,9 +3,9 @@ import { connectSearchBox } from "react-instantsearch-dom"
 
 export default connectSearchBox(
   ({ refine, currentRefinement, className, onFocus, toggle }) => (
-    <form className={`relative ${className}`}>
+    <form className={`relative bg-color-2 ${className}`}>
       <input
-        className="py-4 bg-color-2 placeholder-search-neutral-1 text-search-neutral-2 text-3xl lg:text-7xl border-b border-search-neutral-1 w-screen outline-none pl-4"
+        className="py-4 bg-transparent placeholder-search-neutral-1 text-search-neutral-2 text-3xl lg:text-7xl border-b border-search-neutral-1 w-screen outline-none ml-4"
         type="text"
         placeholder="Search"
         aria-label="Search"
