@@ -100,7 +100,7 @@ const social = PropTypes.shape({
 })
 
 Head.defaultProps = {
-  crawl: false,
+  crawl: true,
   type: "WebSite",
 }
 
