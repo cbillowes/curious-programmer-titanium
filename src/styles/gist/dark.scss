@@ -3,31 +3,24 @@
    https://github.com/lonekorean/gist-syntax-themes/blob/master/stylesheets/solarized-light.css
 */
 
-.light {
+.dark {
   // Overrides
-  .file-box > div {
-    margin-bottom: 0;
-  }
-
   .blob-wrapper {
-    background-color: #fdf6e3;
+    background-color: #1b2933;
   }
 
   .gist-meta {
-    background-color: #f0e9d6;
+    background-color: #16222b;
 
     a {
-      color: #2aa198 !important;
+      color: #859900 !important;
+      font-size: 1rem !important;
     }
-  }
-
-  .gist .pl-c {
-    color: rgb(19, 75, 11) !important;
   }
 
   // Theme
   .gist .highlight {
-    background: #fdf6e3;
+    background: #1b2933;
   }
   .gist .blob-num,
   .gist .blob-code-inner,
@@ -37,11 +30,11 @@
   .gist .pl-stj,
   .gist .pl-vo,
   .gist .pl-vpf {
-    color: #657b83;
+    color: #839496;
   }
   .gist .pl-c,
   .gist .pl-c span {
-    color: #93a1a1;
+    color: #586e75;
     font-style: italic;
   }
   .gist .pl-mb {
@@ -90,7 +83,7 @@
   }
   .gist .pl-mq,
   .gist .highlight-source-css .pl-k {
-    color: #93a1a1;
+    color: #586e75;
   }
   .gist .pl-sr,
   .gist .pl-sr .pl-sra,
@@ -104,14 +97,14 @@
   }
   .gist .pl-mi1,
   .gist .pl-mdht {
-    color: #657b83;
+    color: #839496;
     background: rgba(0, 64, 0, 0.5);
   }
   .gist .pl-md,
   .gist .pl-mdhf,
   .gist .pl-id,
   .gist .pl-ii {
-    color: #657b83;
+    color: #839496;
     background: rgba(64, 0, 0, 0.5);
   }
 }

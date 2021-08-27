@@ -6,8 +6,8 @@ import Tags from "../components/Tags"
 import "../styles/article.scss"
 // gatsby-remark-embed-gist
 import "../styles/gist/common.scss"
-import "../styles/gist/solarized-dark.scss"
-import "../styles/gist/solarized-light.scss"
+import "../styles/gist/dark.scss"
+import "../styles/gist/light.scss"
 // gatsby-remark-interactive-gifs
 import "../styles/interactive-gifs.scss"
 // gatsby-remark-prismjs
