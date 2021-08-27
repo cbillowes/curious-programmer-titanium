@@ -81,7 +81,7 @@ const ArticleTemplate = ({ data }) => {
           <Tags tags={frontmatter.tags} isButton={true} />
         </div>
         <div
-          className="max-w-3xl mx-auto mt-8"
+          className="content max-w-3xl mx-auto mt-8"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: html }}
         />

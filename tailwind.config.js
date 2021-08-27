@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         sans: ["Open Sans", "sans-serif"],
         mono: ["Courier Prime", "mono"],
+        cursive: ["Handlee", "cursive"],
       },
       borderColor: {
         "search-neutral-1": "var(--search-neutral-1)",
