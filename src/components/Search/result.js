@@ -34,6 +34,7 @@ const PageHit = ({ hit }) => (
       </h4>
     </Link>
     <Snippet attribute="excerpt" hit={hit} tagName="mark" />
+    ...
   </div>
 )
 
