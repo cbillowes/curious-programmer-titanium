@@ -39,6 +39,7 @@ Toggler.propTypes = {
 export const Layout = ({ crawl = false, meta, children }) => {
   const { colorMode, setColorMode } = useContext(ThemeContext)
   const [showSearch, toggleSearchMode] = useState(false)
+
   return (
     <div
       className={`${colorMode} bg-color-1 text-color-1-script m-0 px-0 py-1 ${

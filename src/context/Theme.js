@@ -1,6 +1,12 @@
 import React, { useState, useEffect, createContext } from "react"
 import PropTypes from "prop-types"
 
+const getInitialColorValue = (root) => {
+  const storedValue = localStorage.getItem("color-mode")
+  const initialValue = root.style.getPropertyValue("--initial-color-mode")
+  return storedValue || initialValue || "light"
+}
+
 export const toggleColorMode = (colorMode) => {
   return colorMode === "dark" ? "light" : "dark"
 }
@@ -11,21 +17,23 @@ export const ThemeContext = createContext({
 })
 
 export const ThemeProvider = ({ children }) => {
-  const [colorMode, rawSetColorMode] = useState(undefined)
+  const root = window.document.documentElement
+  const initialColorValue = getInitialColorValue(root)
+  root.style.setProperty("--initial-color-mode", initialColorValue)
+  root.classList = initialColorValue
+
+  const [colorMode, rawSetColorMode] = useState(initialColorValue)
 
   useEffect(() => {
-    const root = window.document.documentElement
-    const initialColorValue = root.style.getPropertyValue(
-      "--initial-color-mode",
-    )
+    const initialColorValue = getInitialColorValue(root)
     rawSetColorMode(initialColorValue)
     localStorage.setItem("color-mode", initialColorValue)
   }, [])
 
   const setColorMode = (newValue) => {
-    const root = window.document.documentElement
     rawSetColorMode(newValue)
     localStorage.setItem("color-mode", newValue)
+    root.style.setProperty("--initial-color-mode", newValue)
     root.classList = newValue
   }
 
