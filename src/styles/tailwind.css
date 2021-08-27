@@ -14,7 +14,8 @@
   --inverse-script: #f8f8f8;
 
   --color-1: #00a2ff;
-  --color-1-script: #012133;
+  --color-1-alternative: #ff009d;
+  --color-1-script: #f8f8f8;
 
   --color-2: #02314d;
   --color-2-script: #f8f8f8;
@@ -39,6 +40,7 @@
   --inverse-script: #1b1d20;
 
   --color-1: #f0ff7b;
+  --color-1-alternative: #7bb9ff;
   --color-1-script: #1b1d20;
 
   --color-2: #c1d34d;

@@ -13,6 +13,7 @@ module.exports = {
         "search-neutral-2": "var(--search-neutral-2)",
 
         "color-1": "var(--color-1)",
+        "color-1-alternative": "var(--color-1-alternative)",
         "color-1-inverse": "var(--color-1-script)",
 
         "color-2": "var(--color-2)",
@@ -37,6 +38,7 @@ module.exports = {
         "inverse-script": "var(--inverse-script)",
 
         "color-1": "var(--color-1)",
+        "color-1-alternative": "var(--color-1-alternative)",
         "color-1-script": "var(--color-1-script)",
 
         "color-2": "var(--color-2)",
