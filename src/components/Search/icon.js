@@ -1,22 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { FiSearch as Search } from "@react-icons/all-files/fi/FiSearch"
-import { IoCloseOutline as Close } from "@react-icons/all-files/io5/IoCloseOutline"
+import { IoCloseCircle as Close } from "@react-icons/all-files/io5/IoCloseCircle"
 
 const CloseIcon = () => {
   return (
-    <span className="flex relative">
-      <span className="absolute text-sm" style={{ left: "1px", top: "1px" }}>
-        <Close />
-      </span>
-      <Search />
+    <span className="cursor-pointer hover:text-color-2 hover:animate-wiggle animate">
+      <Close />
     </span>
   )
 }
 
 export const SearchIcon = ({ show, toggle }) => {
   return (
-    <div onClick={toggle} className="cursor-pointer">
+    <div
+      onClick={toggle}
+      className="cursor-pointer hover:text-color-2 hover:animate-wiggle animate"
+    >
       {!show && <Search />}
       {show && <CloseIcon />}
     </div>

@@ -62,10 +62,25 @@ module.exports = {
         "color-2": "var(--color-2)",
         "color-3": "var(--color-3)",
       },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": {
+            transform: "rotate(-10deg)",
+          },
+          "50%": {
+            transform: "rotate(10deg)",
+          },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 1s ease-in-out infinite",
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      animation: ["hover", "focus"],
+    },
   },
   plugins: [],
 }

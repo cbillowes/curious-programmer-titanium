@@ -17,7 +17,10 @@ const Toggler = ({ colorMode, setColorMode }) => {
   }
 
   return (
-    <button onClick={handleThemeToggle}>
+    <button
+      onClick={handleThemeToggle}
+      className="hover:text-color-2 hover:animate-wiggle animate"
+    >
       <span className="dark-button">
         <MdBrightness2 />
       </span>
