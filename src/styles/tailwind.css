@@ -24,18 +24,18 @@
 
   --neutral: #989898;
 
-  --default: #171e29;
+  --default: #1f303b;
   --default-script: #f8f8f8;
 
   --inverse: #f8f8f8;
   --inverse-script: #1b1d20;
 
-  --color-1: #a7277c;
-  --color-1-script: #f8f8f8;
+  --color-1: #f0ff7b;
+  --color-1-script: #1b1d20;
 
-  --color-2: #4d0228;
-  --color-2-script: #f8f8f8;
+  --color-2: #c1d34d;
+  --color-2-script: #1b1d20;
 
-  --color-3: #ff9fea;
-  --color-3-script: #4d0228;
+  --color-3: #f0ff7b;
+  --color-3-script: #1f303b;
 }
