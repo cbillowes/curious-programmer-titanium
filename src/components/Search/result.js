@@ -56,7 +56,6 @@ const SearchResult = ({ toggle, indices, className, setFocus, hasFocus }) => (
   <div
     className={className}
     onKeyUp={(e) => {
-      console.log(e)
       if (e.key === "Escape") {
         toggle()
       }
