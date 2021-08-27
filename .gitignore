@@ -1,6 +1,7 @@
 node_modules/
-.cache/
 public/
+.env*
+.cache/
 .DS_Store
 .netlify/
 .playground/
