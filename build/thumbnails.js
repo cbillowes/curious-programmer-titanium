@@ -69,7 +69,7 @@ const getRandomThumbnail = () => {
 exports.createFields = (node, createNodeField, reporter) => {
   if (node.internal.type === "MarkdownRemark") {
     const { photo, creditSource, credit, creditLink } =
-      node.frontmatter.photo || getRandomThumbnail()
+      node.frontmatter || getRandomThumbnail()
     createNodeField({
       node,
       name: `photo`,
