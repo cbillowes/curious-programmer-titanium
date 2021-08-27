@@ -1,10 +1,14 @@
 ---
 title: Simulating mobile devices in Chrome
-cover: "https://picsum.photos/1600/800/?image=3"
 date: 2016-06-09 00:17:28 +0200
+photo: device-emulation-preview.jpg
 tags:
   - Technical
+  - Chrome DevTools
 ---
+
+**[Edited](https://github.com/cbillowes/curious-programmer-titanium/blob/master/articles/2016/2016-06-09-simulating-mobile-devices-in-chrome/index.md)**
+on Friday, 27 August 2021.
 
 > Discover the simulation power behind the Device Mode feature in Google Chrome.
 
@@ -33,13 +37,8 @@ used to achieve this but is beyond the scope of this topic.
     - Open the **Chrome menu**
       at the top-right of your browser window, then select
       **More tools > Developer tools**.
-
-    - Use a shortcut:
-
       - Windows: `F12` or `Ctrl` + `Shift` + `I`
       - Mac: `Cmd` + `Opt` + `I`
-
-      ![Icon](./icon-chrome-menu.png "Chrome menu icon")
 
 2.  - Enable the **Device Mode** feature.
 
@@ -48,11 +47,10 @@ used to achieve this but is beyond the scope of this topic.
 
     - You could use shortcuts, but make sure the focus is on the Developer Tools
       window and not the browser window for it to work.
-
       - Windows: `Ctrl` + `Shift` + `M`
       - Mac: `Cmd` + `Shift` + `M`
 
-      ![Icon](./icon-device-mode.png "Device Mode icon")
+      ![Toggle Device Toolbar](device-toggle.png)
 
       You can disable Device Mode by clicking on the icon or using the same
       shortcuts as above.
@@ -66,36 +64,24 @@ the device, width, height, zoom and orientation _(if height is present)_.
 ![Screenshot](./viewport-controls.jpg "iPad device selected through the Viewport controls")
 _Source of image: Screenshot of viewport controls in Chrome Developer Tools_
 
-### Pre-configured devices
+### Configure devices
 
-You can add pre-configured devices to the list by clicking on
-**Device dropdown > Edit...**. Check the boxes of the devices you want to add
-to the list. Click on the device dropdown in the viewport controls to see your
-updated list.
-
-![Screenshot](./emulated-devices.jpg "Selected Galaxy Note 3 and Galaxy Note II in emulated devices to add them to the list of devices")
-_Source of image: Screenshot of emulated devices in Chrome_
-
-### Custom devices
-
-You can add your own devices by following the same steps as above but instead of
-checking boxes you can click on the **Add custom device...** button.
-
-**Note:** The simulator makes use of User Agent strings. These are used by
-web browsers and applications to identify themselves by web servers.
+Click on that **drop down > Edit** to add a custom device. Your will input a device name - used to display
+in the drop down options, viewport width and height,
+[device pixel ratio](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio),
+user agent string, device type, and, if you want, additional
+[user agent client hints](https://web.dev/user-agent-client-hints/) (websites render different content depending on the
+type of device it interprets based off these hints).
 
 You can get a comprehensive list from
 [User Agent String.com](http://www.useragentstring.com/).
 
-![Screenshot](./add-custom-device.jpg "Add custom device using User Agent String for SeaMonkey on Linux")
-_Source of image: Screenshot of adding a custom device_
+> **DPR**, or Device Pixel Ratio, is the number of pixels on the screen that
+> it takes to draw a single pixel used by CSS. The more screen pixels used, the
+> sharper the image. You should be able to distinguish the difference between standard, HiDPI and Retina displays.
 
-`Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20120501 Firefox/12.0 SeaMonkey/2.9.1 Lightning/1.4`
-
-**Tip:** Increase the height of the Developer Tools window before adding the new device.
-The Settings modal overlays the Developer Tools window. If you increase
-the height of the window, the overlay will fill it. Unfortunately once the
-modal is open, the window height cannot be adjusted _(at least not on Windows)_.
+![Screenshot](./emulated-devices.jpg "Selected Galaxy Note 3 and Galaxy Note II in emulated devices to add them to the list of devices")
+_Source of image: Screenshot of emulated devices in Chrome_
 
 ## Media queries
 
@@ -128,24 +114,46 @@ When you **right-click** on a color, you can reveal the CSS in the source code.
 a curly brace icon **{ }** at the bottom of the view pane next to the line number.
 Click on this to format the source code for easier reading.
 
-## Connection throttling
+## Responsive
 
-You can mimic different network related behaviors by throttling your connection
-speed for the tab you are inspecting on.
+Responsive mode gives you the freedom to move the viewport left to right, up and down, and diagonally.
+The width and height can be explicitly set at the top to the right of the device drop down list.
 
-Click on **Show throttling** in the vertical three dot menu at the top-right
-corner of the Device Mode window. Select a speed to test your page at. You
-will need to refresh the page to see the result. You may also want to monitor
-your network traffic and page load time using the **Network** tab in the
-Developer Tools window.
+## Network throttling
 
-![Screenshot](./throttling.jpg "GPRS selected in throttling options")
-_Source of image: Screenshot of throttling in the Chrome Developer Tools_
+YThere are features that you can leverage in the **Network tab**
+to emulate different networking conditions.
+
+* **Cache:** this feature only works while the DevTools are open.
+  Cached resources will explicitly be fetched from the server when this
+  option is disabled.
+* **Throttling:** lets you hop onto a different type of network that is
+  emulated by the DevTools. Options like fast and slow 3G exist. You can
+  choose to go offline and you can add your own presets which require
+  latency, download and upload speed.
+* **Network conditions:**: opens up a new slit tab. Additional options include
+  custom user agents and the ability to change accepted
+  [content-encodings](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding)
+  like **deflate**, **gzip** and **br**.
+
+`gif:network-tab.gif:caption=Throttling the Network in Chrome DevTools (from CSS-TRICKS)`
+[source](https://css-tricks.com/throttling-the-network/)
 
 For out more about
 [optimizing performance under varying network conditions](https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/network-conditions).
 
-## Emulate sensors
+### Additional options
+
+Click on the kebab menu item to the top right of the bar and get more options which include:
+
+* **Device frame:** toggles the frame of a cellphone around your viewport.
+* **Media queries:** toggles the display of the media query breakpoints bar above the viewport.
+* **Rules:** toggles pixel rulers displayed on the viewport.
+* **DPR:** toggles the display of the DPR options on the top bar.
+* **Device type:** toggles the display of the device type option on the top bar.
+* **Screenshots:** takes a screenshot of the page or a full screenshot.
+
+## Sensors
 
 When developing on a desktop you are at a disadvantage as there isn't native
 support hardware for GPS and accelerometers.

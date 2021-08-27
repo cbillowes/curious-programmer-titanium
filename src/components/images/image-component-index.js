@@ -91,6 +91,10 @@ Component["Default10"] = (props) => (
   require("./default-10").default(props)
 )
 
+Component["DeviceEmulationPreview"] = (props) => (
+  require("./device-emulation-preview").default(props)
+)
+
 Component["DogInBlanket"] = (props) => (
   require("./dog-in-blanket").default(props)
 )
