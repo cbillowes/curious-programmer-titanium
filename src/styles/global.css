@@ -31,3 +31,7 @@ html.dark, html.light {
 .light .dark-button {
   display: none;
 }
+
+.ais-PoweredBy-text {
+  display: none;
+}
