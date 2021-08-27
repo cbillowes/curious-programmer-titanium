@@ -9,6 +9,7 @@ import { VscGithub } from "react-icons/vsc/index"
 import Emoji from "../components/Emoji"
 import SocialMediaIcon from "../components/SocialMediaIcon"
 import List from "../components/Articles/List"
+import Anchor from "../components/Anchor"
 
 const Articles = ({ edges }) => {
   return <List edges={edges} />
@@ -128,8 +129,15 @@ const IndexPage = ({ data }) => {
       </div>
 
       <div className="bg-default text-default-script">
-        <div className="mx-auto pb-5">
+        <div className="mx-auto pb-16 text-center">
           <Articles edges={edges} />
+          <Anchor
+            to="/blog"
+            title="All articles"
+            className="bg-color-1-alternative text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-color-1"
+          >
+            Discover more
+          </Anchor>
         </div>
       </div>
     </Layout>
