@@ -85,6 +85,7 @@ module.exports = {
               className: `gatsby-remark-code-title`,
             },
           },
+          /* Emoji Catalog: https://projects.iamcal.com/emoji-data/table.htm */
           `gatsby-remark-emoji`,
           /*
             Should be last?
