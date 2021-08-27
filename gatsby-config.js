@@ -69,14 +69,6 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-images`,
-            options: {
-              // src/components/Theme/common/breakpoints.js: readingPane
-              // Module cannot be required because it is not a CommonJS module :(
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 840,
-            },
           },
           {
             resolve: `gatsby-remark-embed-youtube`,
