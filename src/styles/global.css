@@ -35,3 +35,7 @@ html.dark, html.light {
 .ais-PoweredBy-text {
   display: none;
 }
+
+.light .ais-PoweredBy path:last-child {
+  fill: white;
+}
