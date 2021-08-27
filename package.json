@@ -23,6 +23,7 @@
     "@react-icons/all-files": "^4.1.0",
     "algoliasearch": "^4.10.5",
     "gatsby": "^3.7.1",
+    "gatsby-plugin-advanced-sitemap": "^2.0.0",
     "gatsby-plugin-algolia": "^0.22.1",
     "gatsby-plugin-google-analytics": "^3.7.1",
     "gatsby-plugin-image": "^1.7.1",

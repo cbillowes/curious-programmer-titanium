@@ -7,6 +7,7 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-twitter`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
