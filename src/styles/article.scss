@@ -105,6 +105,11 @@
   .gatsby-resp-image-wrapper {
     max-width: 100% !important;
     width: 100%;
+    margin: 1rem 0;
+  }
+
+  .gatsby-resp-image-image {
+    box-shadow: none !important;
   }
 
   .twitter-tweet {
