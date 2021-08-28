@@ -62,7 +62,7 @@ const thumbnails = [
 ]
 
 const getRandomThumbnail = () => {
-  const index = Math.floor(Math.random() * (thumbnails.length - 1))
+  const index = parseInt(Math.random() * thumbnails.length)
   return thumbnails[index]
 }
 
