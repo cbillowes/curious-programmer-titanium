@@ -53,8 +53,6 @@ module.exports = {
               "x-xss-protection": "1; mode=block",
               "x-content-type-options": "nosniff",
               "x-download-options": "noopen",
-              "content-security-policy":
-                "base-uri 'self'; default-src 'self' https://fonts.googleapis.com data:; object-src 'none'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; style-src 'self' 'https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com",
             },
           },
         },
