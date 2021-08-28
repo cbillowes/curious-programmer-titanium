@@ -2,6 +2,7 @@
 title: Emulating rendering options in Chrome DevTools
 date: 2021-08-27 18:00:00 +0400
 photo: chrome-devtools-emulation.png
+credit: screenshot
 tags:
   - Technical
   - Chrome DevTools
@@ -15,7 +16,7 @@ Let's dive right in. Open the tools, go to **more tools** on the main shish-keba
 icon and click on **Rendering**. A new bottom split tab should open which should have options that look
 like :point_down:
 
-![Rendering tab](./chrome-devtools-emulation.png)
+![Rendering tab](./chrome-devtools-emulation-screenshot.png)
 _An example of the contents in the Rendering tab which is displayed after you click on More tools > Rendering_
 
 ## Print vs Screen media
