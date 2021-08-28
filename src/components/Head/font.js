@@ -11,6 +11,7 @@ const Font = () => (
     <link
       href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Courier+Prime&family=Handlee&display=swap"
       rel="stylesheet"
+      media="screen"
     />
   </Helmet>
 )
