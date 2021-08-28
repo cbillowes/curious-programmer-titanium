@@ -4,6 +4,7 @@ const siteMetadata = require("./gatsby-site")
 module.exports = {
   siteMetadata,
   plugins: [
+    `gatsby-plugin-csp`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-twitter`,
     `gatsby-plugin-image`,
