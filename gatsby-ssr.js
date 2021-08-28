@@ -8,7 +8,7 @@ const SetColorModeScript = () => {
   const javascript = `
 (function () {
   function getInitialColorMode() {
-    const preference = window.localStorage.getItem("theme")
+    const preference = window.localStorage.getItem("color-mode")
     const hasPreference = typeof preference === "string"
     if (hasPreference) return preference
 
