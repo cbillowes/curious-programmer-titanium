@@ -50,15 +50,7 @@ gain expertise and then you get to be a part of a much larger
 community than you so that when you need to do something there are people
 behind you.**"
 
-<div class="video-wrapper">
-    <iframe class="youtube"
-      src="https://www.youtube.com/embed/PeKKzeAte30"
-      frameborder="0"
-      allowfullscreen
-      width="560"
-      height="349">
-    </iframe>
-</div>
+`youtube:https://www.youtube.com/embed/PeKKzeAte30`
 
 On her blog, she states that her career has benefited tremendously from
 writing blog posts, speaking at conferences and sharing her code as open

@@ -95,15 +95,7 @@ about public speaking tips from world-class TED presenters.
 leadership speaker, shares some ideas in 9 minutes to help you overcome your
 fears.
 
-<div class="video-wrapper">
-    <iframe class="youtube"
-      src="https://www.youtube.com/embed/vae0sHrNfFc"
-      frameborder="0"
-      allowfullscreen
-      width="560"
-      height="349">
-    </iframe>
-</div>
+`youtube:https://www.youtube.com/embed/vae0sHrNfFc`
 
 <small>
   Thanks to [Indran Naidoo](https://twitter.com/indrannaidoo) for sharing.
@@ -115,15 +107,7 @@ fears.
 straightforward techniques for giving excellent presentations. This talk is
 very entertaining and has some interesting filler lightning talks.
 
-<div class="video-wrapper">
-    <iframe class="youtube"
-      src="https://www.youtube.com/embed/l9JXH7JPjR4"
-      frameborder="0"
-      allowfullscreen
-      width="560"
-      height="349">
-    </iframe>
-</div>
+`youtube:https://www.youtube.com/embed/l9JXH7JPjR4`
 
 <small>
   Thanks to [Steven McDonald](https://twitter.com/StevenMcD) for sharing this
@@ -156,10 +140,8 @@ This concept is new to me and I may not have given it justice here,
 but it has helped me by thinking "I'm not scared, you are [shadow self],
 so let's do this together."
 
-<small>
-  Thanks to [Thane Thomson](https://twitter.com/thanethomson) for introducing
-  me to this concept.
-</small>
+Thanks to [Thane Thomson](https://twitter.com/thanethomson) for introducing
+me to this concept.
 
 ### Stand on a chair
 
@@ -177,10 +159,8 @@ Yes, this is awkward. Asking people to listen to me just out of the blue is
 weird. But it's useful, builds confidence and prepares you for talking in front
 of some people.
 
-<small>
-  Thanks to [Jimi Lutz](https://twitter.com/jimilutz) for this awesome
-  suggestion.
-</small>
+Thanks to [Jimi Lutz](https://twitter.com/jimilutz) for this awesome
+suggestion.
 
 ### Record yourself
 
@@ -190,10 +170,8 @@ stumble and make so many mistakes.
 
 This also tied in nicely with embracing the awkwardness.
 
-<small>
-  Thanks to [Malay Pandey](https://twitter.com/malaykp) for this great
-  suggestion.
-</small>
+Thanks to [Malay Pandey](https://twitter.com/malaykp) for this great
+suggestion.
 
 ### The audience isn't your enemy
 
@@ -202,9 +180,7 @@ are rooting for you. They know it is scary being up there and they are most
 likely going to be forgiving when you make mistakes. They don't want to see you
 fail.
 
-<small>
-  Thanks to [Seef Oosthuizen](https://twitter.com/S33F) sharing this insight.
-</small>
+Thanks to [Seef Oosthuizen](https://twitter.com/S33F) sharing this insight.
 
 ### Practice
 

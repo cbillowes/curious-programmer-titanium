@@ -129,15 +129,7 @@ dealing with it. It's also a good idea to use it to our advantage so that we
 can continuously improve. Be the change we want to see even if we make a
 blunder of it. Hopefully it's not as costly as what happened to these companies:
 
-<div class="video-wrapper">
-    <iframe class="youtube"
-      src="https://www.youtube.com/embed/w8qBzMl7_Q0"
-      frameborder="0"
-      allowfullscreen
-      width="560"
-      height="349">
-    </iframe>
-</div>
+`youtube:https://www.youtube.com/embed/w8qBzMl7_Q0`
 
 > If you don’t fail it’s because you did not risk enough, and if you didn’t
 > risk enough it’s because you didn’t put your whole self out there.

@@ -32,8 +32,4 @@ so much to it.
 > We only grow when we are doing things that makes us uncomfortable. ~
 > John Sonmez
 
-<iframe class="youtube"
-  src="https://www.youtube.com/embed/cVC3DQvAAIA"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
+`youtube:https://www.youtube.com/embed/cVC3DQvAAIA`

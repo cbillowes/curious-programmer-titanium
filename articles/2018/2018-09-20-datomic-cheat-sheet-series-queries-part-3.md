@@ -13,7 +13,7 @@ In this post I work through the creation of rules using the [Datomic MusicBrainz
 
 ![Relationship diagram](https://raw.githubusercontent.com/Datomic/mbrainz-sample/master/relationships.png)
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/bAilFQdaiHk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+`youtube:https://www.youtube.com/embed/bAilFQdaiHk`
 
 ## Create a database connection
 
