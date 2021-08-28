@@ -9,7 +9,6 @@ module.exports = {
     `gatsby-plugin-twitter`,
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
-    `netlify-plugin-csp-generator`,
     `gatsby-plugin-netlify`,
     `gatsby-transformer-sharp`,
     {

@@ -4,20 +4,3 @@ publish = "public/"
 
 [[plugins]]
 package = "@netlify/plugin-gatsby"
-
-[[plugins]]
-package = "netlify-plugin-csp-generator"
-
-  [plugins.inputs]
-  buildDir = "public"
-  disableGeneratedPolicies = []
-
-  [plugins.inputs.policies]
-    defaultSrc = "'self' 'unsafe-inline'"
-    fontSrc = "fonts.googleapis.com"
-    frameSrc = "youtube.com www.youtube.com"
-    objectSrc = "youtube.com www.youtube.com"
-    prefetchSrc = "fonts.googleapis.com youtube.com www.youtube.com"
-    imageSrc = "'self' https: data:"
-    styleSrc = "'self' 'unsafe-hashes' https: data:"
-    scriptSrc = "'self' 'unsafe-hashes' https: data:"
