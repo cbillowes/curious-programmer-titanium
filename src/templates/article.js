@@ -13,6 +13,7 @@ import "../styles/interactive-gifs.scss"
 // gatsby-remark-prismjs
 import "../styles/prismjs/dark.scss"
 import "../styles/prismjs/light.scss"
+import CommentSystem from "../components/CommentSystem"
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {
@@ -58,8 +59,7 @@ export const query = graphql`
 const ArticleTemplate = ({ data }) => {
   const { markdownRemark, site } = data
   const { excerpt, timeToRead, html, fields, frontmatter } = markdownRemark
-  const { title } = site.siteMetadata
-  const { description } = data.site.siteMetadata
+  const { title, description, url } = site.siteMetadata
 
   return (
     <Layout
@@ -86,6 +86,11 @@ const ArticleTemplate = ({ data }) => {
           className="content max-w-3xl mx-auto mt-8"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: html }}
+        />
+        <CommentSystem
+          url={`${url}${fields.slug}`}
+          identifier={fields.slug}
+          title={title}
         />
       </div>
     </Layout>
