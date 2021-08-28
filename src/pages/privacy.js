@@ -20,10 +20,11 @@ const Privacy = ({ data }) => {
       <div className="privacy max-w-screen-md mx-auto p-4">
         <h1>Privacy Policy for Curious Programmer</h1>
         <p>
-          At Curious Programmer, accessible from https://curiousprogrammer.dev,
-          one of our main priorities is the privacy of our visitors. This
-          Privacy Policy document contains types of information that is
-          collected and recorded by Curious Programmer and how we use it.
+          At Curious Programmer, accessible from https://curiousprogrammer.dev
+          and https://curiousprogrammer.oi, one of our main priorities is the
+          privacy of our visitors. This Privacy Policy document contains types
+          of information that is collected and recorded by Curious Programmer
+          and how we use it.
         </p>
 
         <p>
@@ -68,7 +69,28 @@ const Privacy = ({ data }) => {
           <li>Provide, operate, and maintain our website</li>
           <li>Understand and analyze how you use our website</li>
           <li>Develop new features, and functionality</li>
+          <li>Read, moderate and reply to your comments</li>
         </ul>
+
+        <h2>Commenting</h2>
+
+        <p>
+          When you provide a comment on the Website, your comment will be
+          entered through a commenting platform provided by Disqus, Inc.
+          (“Disqus”), a third party commenting platform. You will need to
+          register through Disqus to comment on an article through the Website
+          and all comments and other content entered onto the Website are
+          subject to these Terms of Use as well as the Disqus terms of use and
+          privacy policy. You should familiarize yourself with the Disqus
+          <Anchor to="https://help.disqus.com/customer/portal/articles/466260-terms-of-service">
+            Terms of Use
+          </Anchor>
+          and the
+          <Anchor to="https://help.disqus.com/customer/portal/articles/466259-privacy-policy">
+            Privacy Policy
+          </Anchor>
+          .
+        </p>
 
         <h2>Log Files</h2>
 
@@ -130,6 +152,16 @@ const Privacy = ({ data }) => {
           <li>
             <Anchor to="https://support.google.com/analytics/answer/4597324">
               Google Analytics
+            </Anchor>
+          </li>
+          <li>
+            <Anchor to="https://www.algolia.com/policies/privacy/">
+              Algolia
+            </Anchor>
+          </li>
+          <li>
+            <Anchor to="https://help.disqus.com/en/collections/191787-terms-and-policies">
+              Disqus
             </Anchor>
           </li>
         </ul>
