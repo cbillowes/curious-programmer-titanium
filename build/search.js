@@ -18,7 +18,7 @@ const pageQuery = `{
         fields {
           slug
         }
-        excerpt(pruneLength: 10000)
+        excerpt(pruneLength: 5000)
       }
     }
   }
