@@ -38,6 +38,29 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-postbuild`,
+      options: {
+        "http-headers": {
+          enabled: true,
+          provider: "netlify",
+          headers: {
+            "[*]": {
+              "referrer-policy": "same-origin",
+              "expect-ct": "max-age=604800, enforce",
+              "strict-transport-security":
+                "max-age=31536000; includeSubDomains",
+              "x-frame-options": "DENY",
+              "x-xss-protection": "1; mode=block",
+              "x-content-type-options": "nosniff",
+              "x-download-options": "noopen",
+              "content-security-policy":
+                "base-uri 'self'; default-src 'self' https://fonts.googleapis.com data:; object-src 'none'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; style-src 'self' 'https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com",
+            },
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
         query: `
