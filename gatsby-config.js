@@ -192,6 +192,7 @@ module.exports = {
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        skipIndexing: process.env.ALGOLIA_INDEXING_ENABLED || true,
         queries: require("./build/search"),
       },
     },
