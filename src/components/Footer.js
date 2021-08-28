@@ -63,6 +63,9 @@ const Footer = ({ toggler }) => (
           <BottomAnchor to="/privacy" title="Privacy policy">
             Privacy policy
           </BottomAnchor>
+          <BottomAnchor to="/community" title="Community guidelines">
+            Community guidelines
+          </BottomAnchor>
           <BottomAnchor
             to="https://github.com/cbillowes/curious-programmer-titanium"
             title="Source code on GitHub"
