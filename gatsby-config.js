@@ -10,6 +10,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `netlify-plugin-csp-generator`,
+    `gatsby-plugin-netlify`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
