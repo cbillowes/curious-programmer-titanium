@@ -36,13 +36,6 @@ const Font = () => (
         __html: `<link rel="stylesheet" href=${href}>`,
       }}
     />
-
-    {/* no-JS fallback */}
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `alert(${href});`,
-      }}
-    />
   </Helmet>
 )
 
