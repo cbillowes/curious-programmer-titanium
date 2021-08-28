@@ -36,17 +36,13 @@ const Head = ({
         lang,
       }}
     >
+      <meta name="timestamp" content={new Date().getTime()} />
       <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="Content-Type" content="text/html; charset=UTF-8" />
       <meta
         content="width=device-width,initial-scale=1.0,user-scalable=yes"
         name="viewport"
-      />
-
-      <meta
-        httpEquiv="Content-Security-Policy"
-        content="base-uri 'self'; default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; object-src 'none'; form-action 'self'; font-src 'self' fonts.googleapis.com fonts.gstatic.com; connect-src 'self'; img-src 'self' data:; frame-src 'self' www.youtube.com;"
       />
 
       <meta
