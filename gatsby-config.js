@@ -178,9 +178,9 @@ module.exports = {
       options: {
         name: siteMetadata.title,
         short_name: siteMetadata.title,
-        start_url: "/",
-        background_color: "#012133",
-        theme_color: "#00a2ff",
+        start_url: ".",
+        background_color: "#171E29",
+        theme_color: "#f0ff7b",
         display: "standalone",
         icon: "src/images/icon.png",
       },
