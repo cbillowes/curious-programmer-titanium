@@ -25,10 +25,6 @@ Preview.propTypes = {
     excerpt: PropTypes.string.isRequired,
     frontmatter: PropTypes.shape({
       title: PropTypes.string.isRequired,
-      photo: PropTypes.string.isRequired,
-      credit: PropTypes.string.isRequired,
-      creditLink: PropTypes.string.isRequired,
-      creditSource: PropTypes.string.isRequired,
       tags: PropTypes.array,
     }),
     fields: PropTypes.shape({
@@ -36,6 +32,10 @@ Preview.propTypes = {
       date: PropTypes.string.isRequired,
       number: PropTypes.number.isRequired,
       component: PropTypes.string.isRequired,
+      photo: PropTypes.string.isRequired,
+      credit: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+      source: PropTypes.string.isRequired,
     }),
   }),
 }

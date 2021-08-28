@@ -16,8 +16,8 @@ const Preview = ({
   tags,
   photo,
   credit,
-  creditSource,
-  creditLink,
+  source,
+  link,
   component,
 }) => {
   const isEven = index % 2 === 0
@@ -71,8 +71,8 @@ const Preview = ({
           alt={title}
           photo={photo}
           credit={credit}
-          source={creditSource}
-          link={creditLink}
+          source={source}
+          link={link}
           componentName={component}
         />
       </div>
@@ -91,8 +91,8 @@ Preview.propTypes = {
   tags: PropTypes.array,
   photo: PropTypes.string.isRequired,
   credit: PropTypes.string.isRequired,
-  creditSource: PropTypes.string.isRequired,
-  creditLink: PropTypes.string.isRequired,
+  source: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
   component: PropTypes.string.isRequired,
 }
 

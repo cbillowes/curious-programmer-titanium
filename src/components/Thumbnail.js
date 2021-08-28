@@ -28,35 +28,34 @@ const getCredit = (componentName, source, link, credit) => {
     : { source, link, credit }
 }
 
-const Credit = ({ componentName, creditSource, creditLink, creditText }) => {
-  const { source, link, credit } = getCredit(
-    componentName,
-    creditSource,
-    creditLink,
-    creditText,
-  )
+const Credit = ({ componentName, source, link, text }) => {
+  const {
+    source: creditSource,
+    link: creditLink,
+    credit: creditText,
+  } = getCredit(componentName, source, link, text)
 
   if (!source) return <span></span>
   return (
     <Anchor
-      to={link}
-      title={getCreditTitle(source, credit)}
+      to={creditLink}
+      title={getCreditTitle(creditSource, creditText)}
       className="bg-black text-gray-300 py-1 px-2 pl-6 rounded absolute bottom-2 left-2 text-sm"
     >
       <img
         className="filter invert w-3 absolute left-2 top-2"
-        src={source === "unsplash" ? UnsplashLogo : DownloadLogo}
+        src={creditSource === "unsplash" ? UnsplashLogo : DownloadLogo}
       />
-      {source}
+      {creditSource}
     </Anchor>
   )
 }
 
 Credit.propTypes = {
   componentName: PropTypes.string,
-  creditSource: PropTypes.string,
-  creditLink: PropTypes.string,
-  creditText: PropTypes.string,
+  source: PropTypes.string,
+  link: PropTypes.string,
+  text: PropTypes.string,
 }
 
 const Thumbnail = ({ alt, to, credit, source, link, componentName }) => {
@@ -68,9 +67,9 @@ const Thumbnail = ({ alt, to, credit, source, link, componentName }) => {
       </Anchor>
       <Credit
         componentName={componentName}
-        creditSource={source}
-        creditLink={link}
-        creditText={credit}
+        source={source}
+        link={link}
+        text={credit}
       />
     </div>
   )

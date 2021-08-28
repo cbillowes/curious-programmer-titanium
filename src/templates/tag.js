@@ -69,13 +69,13 @@ export const query = graphql`
             date(formatString: "LL")
             number
             component
+            photo
+            credit
+            source
+            link
           }
           frontmatter {
             title
-            photo
-            credit
-            creditLink
-            creditSource
             tags
           }
         }
