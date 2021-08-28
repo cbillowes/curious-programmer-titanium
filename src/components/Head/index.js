@@ -45,6 +45,11 @@ const Head = ({
       />
 
       <meta
+        httpEquiv="Content-Security-Policy"
+        content="base-uri 'self'; default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; object-src 'none'; form-action 'self'; font-src 'self' fonts.googleapis.com fonts.gstatic.com; connect-src 'self'; img-src 'self' data:; frame-src 'self' www.youtube.com;"
+      />
+
+      <meta
         content="black-translucent"
         name="apple-mobile-web-app-status-bar-style"
       />
