@@ -25,10 +25,6 @@ const query = async (graphql) => {
             }
             frontmatter {
               title
-              photo
-              credit
-              creditLink
-              creditSource
               tags
             }
           }
