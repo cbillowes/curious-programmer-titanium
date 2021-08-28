@@ -9,6 +9,7 @@ module.exports = {
     `gatsby-plugin-twitter`,
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
+    `netlify-plugin-csp-generator`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
@@ -35,27 +36,6 @@ module.exports = {
         useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
         stripMetadata: true,
         defaultQuality: 80,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-postbuild`,
-      options: {
-        "http-headers": {
-          enabled: true,
-          provider: "netlify",
-          headers: {
-            "[*]": {
-              "referrer-policy": "same-origin",
-              "expect-ct": "max-age=604800, enforce",
-              "strict-transport-security":
-                "max-age=31536000; includeSubDomains",
-              "x-frame-options": "DENY",
-              "x-xss-protection": "1; mode=block",
-              "x-content-type-options": "nosniff",
-              "x-download-options": "noopen",
-            },
-          },
-        },
       },
     },
     {

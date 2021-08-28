@@ -1,0 +1,20 @@
+# Test these headers: https://play.netlify.com/headers
+
+/*
+# stops pages from loading when they detect reflected cross-site scripting (XSS) attacks
+  X-XXS-Protection: 1; mode=block
+
+  # indicate whether or not a browser should be allowed to render a page in a <frame>, <iframe>, <embed> or <object>
+  X-Frame-Options: ALLOW-FROM https://github.com https://youtube.com
+
+  # indicate that the MIME types advertised in the Content-Type headers should not be changed and be followed
+  X-Content-Type-Options: nosniff
+
+  # controls how much referrer information should be included in the requests
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # lets a web site tell browsers that it should only be accessed using HTTPS, instead of using HTTP.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+/static/*
+  Cache-Control: public, max-age=360000

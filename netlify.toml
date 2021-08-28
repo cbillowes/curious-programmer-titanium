@@ -4,3 +4,9 @@ publish = "public/"
 
 [[plugins]]
 package = "@netlify/plugin-gatsby"
+
+[[plugins]]
+package = "netlify-plugin-csp-generator"
+
+  [plugins.inputs]
+  buildDir = "dist"
