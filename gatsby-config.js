@@ -4,7 +4,6 @@ const siteMetadata = require("./gatsby-site")
 module.exports = {
   siteMetadata,
   plugins: [
-    `gatsby-plugin-csp`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-twitter`,
     `gatsby-plugin-image`,
@@ -64,27 +63,6 @@ module.exports = {
         createLinkInHead: true,
         // optional: will fill up pages that are not caught by queries and mapping and list them under `sitemap-pages.xml`
         addUncaughtPages: true,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-csp`,
-      options: {
-        disableOnDev: false,
-        reportOnly: false, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
-        mergeScriptHashes: true, // you can disable scripts sha256 hashes
-        mergeStyleHashes: true, // you can disable styles sha256 hashes
-        mergeDefaultDirectives: true,
-        directives: {
-          "script-src":
-            "'self' 'unsafe-eval' 'unsafe-inline' www.google-analytics.com",
-          "style-src":
-            "'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com",
-          "font-src": "fonts.googleapis.com fonts.gstatic.com",
-          "connect-src": "'self' http: ws:",
-          "frame-src": "www.youtube.com",
-          "img-src": "'self' 'unsafe-inline' http: https: data:",
-          "media-src": "*",
-        },
       },
     },
     {
