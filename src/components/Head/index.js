@@ -39,6 +39,7 @@ const Head = ({
       <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="Content-Type" content="text/html; charset=UTF-8" />
+      <meta httpEquiv="Content-Security-Policy" content="default-src https:" />
       <meta
         content="width=device-width,initial-scale=1.0,user-scalable=yes"
         name="viewport"
