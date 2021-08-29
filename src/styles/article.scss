@@ -48,24 +48,35 @@
   p {
     font-size: 1.1rem;
     line-height: 2.25rem;
-    margin-bottom: 1.85rem;
+    margin-bottom: 1.5rem;
   }
 
-  ul li {
-    font-size: 1.1rem;
-    line-height: 2.25rem;
-    margin-left: 1rem;
-    list-style-type: disc;
+  ul, ol {
+    margin-bottom: 1.5rem;
   }
 
+  ul li,
   ol li {
     font-size: 1.1rem;
     line-height: 2.25rem;
     margin-left: 1rem;
+  }
+
+  ul li li p,
+  ol li li p {
+    margin-bottom: 0.5rem;
+  }
+
+  ul li {
+    list-style-type: disc;
+  }
+
+  ol li {
     list-style-type: decimal;
   }
 
   blockquote {
+    margin-top: 2rem;
     padding-left: 1.25rem;
     border-left: solid var(--color-3) 0.5rem;
   }
@@ -97,10 +108,6 @@
       color: var(--color-1-alternative);
       text-decoration: underline;
     }
-  }
-
-  img {
-    margin: 0 auto;
   }
 
   .gatsby-resp-image-wrapper {
@@ -140,6 +147,11 @@
   img {
     box-shadow: 0 20px 25px -5px var(--shadow), 0 10px 10px -5px var(--shadow);
     border-radius: 8px;
+    margin: 0 auto;
+
+    &.play {
+      border-radius: 50%;
+    }
   }
 
   .gatsby-remark-autolink-header {
