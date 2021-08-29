@@ -119,9 +119,11 @@ OPTIONS The following options are understood:
 
 - **whoami** prints the effective user name.
 - Check user roles:
+
   ```bash
-  cat /etc/passwd | grep clarice:x:1 # admin
-  cat /etc/passwd | grep root:x:0 # root
+  # remove the spaces between the x and the colons
+  cat /etc/passwd | grep clarice: x :1 # admin
+  cat /etc/passwd | grep root: x :0 # root
   ```
 
 ---

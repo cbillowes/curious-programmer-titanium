@@ -95,8 +95,9 @@ It all starts with a login - and I didn't have one. I asked around. I Googled. I
 I was staring blankly at a very demanding and restricting screen when I saw the word **rock64** on the top left. That was my next attempt. So obvious. So simple. So authorized. So admin. Here is how I verified it:
 
 ```bash
-$ cat /etc/passwd | grep rock64:x:1
-> rock64:x:1...
+# remove the spaces between the x and the colons
+$ cat /etc/passwd | grep rock64: x :1
+> rock64: x :1...
 ```
 
 ### Automatically
@@ -116,9 +117,10 @@ autologin-user-timeout=0
 I wanted to reset the **root** password. I pressed all the keys I knew I should during boot up to get into GRUB. I guess there is [no GRUB](https://forum.pine64.org/showthread.php?tid=6246). I learned how to reset the account as an admin user:
 
 ```bash
+# remove the spaces between the x and the colons
 $ sudo /etc/passwd root
-$ cat /etc/passwd | grep root:x:0
-> root:x:0...
+$ cat /etc/passwd | grep root: x :0
+> root: x :0...
 ```
 
 ## Show the web page
