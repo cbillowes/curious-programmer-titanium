@@ -78,7 +78,7 @@ const ArticleTemplate = ({ data }) => {
       }}
     >
       <div id="article" className="pt-14 px-4 pb-24">
-        <div className="w-3/12 mx-auto overflow-hidden">
+        <div className="w-6/12 md:w-6/12 xl:w-4/12 mx-auto overflow-hidden rounded-2xl">
           <Thumbnail
             alt={title}
             photo={photo}
