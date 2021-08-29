@@ -1,5 +1,6 @@
 node_modules/
 public/
+.drafts
 .env*
 .cache/
 .DS_Store
