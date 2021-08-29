@@ -89,7 +89,7 @@
     padding: 0.25rem 0;
     position: relative;
     z-index: 1;
-    font-family: 'Handlee', cursive;
+    font-family: "Handlee", cursive;
     font-size: 1.5rem;
     font-style: normal;
 
@@ -125,7 +125,8 @@
       color: var(--color-2-script);
     }
 
-    th, td {
+    th,
+    td {
       padding: 0.25rem 0.5rem;
       text-align: left;
     }
@@ -134,6 +135,11 @@
       background-color: var(--color-1);
       color: var(--color-1-script);
     }
+  }
+
+  img {
+    box-shadow: 0 20px 25px -5px var(--shadow), 0 10px 10px -5px var(--shadow);
+    border-radius: 8px;
   }
 
   .gatsby-remark-autolink-header {

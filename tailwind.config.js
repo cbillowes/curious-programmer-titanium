@@ -29,6 +29,7 @@ module.exports = {
         "footer-link-1": "var(--footer-link-1)",
         "footer-link-2": "var(--footer-link-2)",
         comment: "var(--comment)",
+        shadow: "var(--shadow)",
 
         neutral: "var(--neutral)",
 
