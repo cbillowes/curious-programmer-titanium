@@ -15,6 +15,7 @@ import "../styles/interactive-gifs.scss"
 import "../styles/prismjs/dark.scss"
 import "../styles/prismjs/light.scss"
 import CommentSystem from "../components/CommentSystem"
+import { getKeywords } from "../common/keywords"
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {
@@ -62,11 +63,13 @@ const ArticleTemplate = ({ data }) => {
   const { excerpt, timeToRead, html, fields, frontmatter } = markdownRemark
   const { title, description, url } = site.siteMetadata
   const { component, photo, credit, link, source } = fields
+  const keywords = getKeywords(html)
 
   return (
     <Layout
       meta={{
         ...data.site.siteMetadata,
+        keywords: frontmatter.keywords || keywords,
         pageTitle: frontmatter.title,
         siteTitle: title,
         description: excerpt || description,
