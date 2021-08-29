@@ -37,6 +37,7 @@
     "gatsby-plugin-sass": "^4.7.1",
     "gatsby-plugin-sharp": "^3.7.1",
     "gatsby-plugin-twitter": "^3.7.1",
+    "gatsby-remark-autolink-headers": "^4.9.0",
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-embed-gist": "^1.2.1",
     "gatsby-remark-embed-youtube": "0.0.7",

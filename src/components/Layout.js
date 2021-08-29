@@ -67,7 +67,6 @@ export const Layout = ({ meta, children }) => {
         <Navigation layout="fluid" />
       </div>
 
-      <main className="pt-14 bg-default text-default-script">{children}</main>
       {showSearch && (
         <Search
           indices={searchIndices}
@@ -75,9 +74,14 @@ export const Layout = ({ meta, children }) => {
         />
       )}
 
-      <Footer
-        toggler={<Toggler colorMode={colorMode} setColorMode={setColorMode} />}
-      />
+      <div className="top-16 right-0 left-0 bottom-0 fixed overflow-y-scroll overflow-x-hidden">
+        <main className="bg-default text-default-script">{children}</main>
+        <Footer
+          toggler={
+            <Toggler colorMode={colorMode} setColorMode={setColorMode} />
+          }
+        />
+      </div>
     </div>
   )
 }
