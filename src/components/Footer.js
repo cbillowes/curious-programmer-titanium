@@ -36,11 +36,11 @@ const BottomAnchor = (props) => (
 )
 
 const Footer = ({ toggler }) => (
-  <footer>
+  <footer className="relative">
     <Blocks />
     <div className="mx-auto md:max-w-screen-md md:flex md:flex-row-reverse md:justify-between md:align-baseline py-12 leading-loose">
       <div className="absolute right-2 pt-1 md:relative">{toggler}</div>
-      <div className="px-8">
+      <div className="px-8 pb-10">
         <p>
           Copyright &copy; {new Date().getFullYear()}. Curious Programmer. A
           curious place for a curious mind.
@@ -81,6 +81,19 @@ const Footer = ({ toggler }) => (
         </div>
       </div>
     </div>
+
+    <Anchor
+      className="left-2/4 transform -translate-x-1/2 absolute bottom-2 md:left-2 md:bottom-2 md:translate-x-0"
+      to="https://www.buymeacoffee.com/cbillowes"
+    >
+      <img
+        src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
+        alt="Buy Me A Coffee"
+        style={{
+          width: "150px",
+        }}
+      />
+    </Anchor>
   </footer>
 )
 
