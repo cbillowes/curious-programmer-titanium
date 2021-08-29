@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Disqus } from "gatsby-plugin-disqus"
 
 const CommentSystem = ({ url, identifier, title }) => (
-  <div className="max-w-3xl mx-auto bg-comment p-8 rounded-xl shadow-xl">
+  <div className="max-w-3xl mt-16 mx-auto bg-comment p-8 rounded-xl shadow-xl">
     <Disqus
       config={{
         /* Article's canonical URL */

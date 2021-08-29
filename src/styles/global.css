@@ -4,6 +4,13 @@
 
 @import url(./tailwind.css);
 
+html {
+  /* https://caniuse.com/?search=scroll-padding
+     https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/
+  */
+  scroll-padding-top: 5.5rem;
+}
+
 .gatsby-image-wrapper-constrained {
   width: 100%;
 }
