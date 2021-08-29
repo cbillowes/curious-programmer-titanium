@@ -44,7 +44,13 @@ const Preview = ({
           <p className="text-neutral">
             {date} - Estimated {timeToRead} minute read
           </p>
-          {excerpt}
+          <p
+            className={`mt-2 text-left ${
+              isEven ? "xl:text-left" : "xl:text-right"
+            }`}
+          >
+            {excerpt}
+          </p>
         </div>
         <div
           className={`flex items-center flex-wrap ${
