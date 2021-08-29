@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: "Welcome",
+        pageTitle: "A place for a curious mind",
         siteTitle: title,
       }}
     >
