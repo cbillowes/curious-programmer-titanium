@@ -44,12 +44,15 @@
       border-radius: 50%;
       border: solid 10px var(--color-2);
       background-color: var(--color-1);
+      opacity: 0.5;
     }
   }
 
   .caption {
+    margin-top: 1.5rem;
     font-size: 90%;
     font-style: italic;
+    opacity: 0.8;
   }
 
   .placeholder {
