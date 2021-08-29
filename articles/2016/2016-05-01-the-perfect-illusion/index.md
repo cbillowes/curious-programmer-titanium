@@ -63,7 +63,7 @@ just in the online world. Perhaps everyone is just better than me?
 I started observing the people I admire. When I started listening carefully
 I picked up that these people - no matter how famous or experienced - all have fears like I do.
 Many feel like [imposters](https://www.hanselman.com/blog/ImAPhonyAreYou.aspx) or
-that they are [not good enough](https://devpressed.com/t/im-supposedly-a-senior-software-engineer-but-i-dont-feel-like-it/483/7).
+that they are not good enough.
 
 Some people just stick their necks out and [give stuff a try](https://irisclasson.com/2016/03/01/what-if-i-suck-confessions-of-a-wtf-contributor-by-iris-classon/).
 That's what I started doing.

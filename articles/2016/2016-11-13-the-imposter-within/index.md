@@ -190,7 +190,7 @@ to share let me know."
     Clark, M.; Vardeman, K.; Barba, S. (2014).
     "Perceived inadequacy: A study of the impostor phenomenon among college and
     research librarians". College & Research Libraries. 75 (3): 255–271.<br/>
-    DOI: [10.5860/crl12-423](http://10.5860/crl12-423)
+    DOI: 10.5860/crl12-423
 
 3.  <a id="footnote-3-ref"></a>**Techniques to deal with self-doubt** ([Navigate back](#footnote-3))<br/>
 

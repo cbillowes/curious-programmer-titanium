@@ -39,9 +39,6 @@ my expectations. Bring it closer to reality without negatively
 impacting me. I don't know how to do this entirely but I know that I need to
 stop chasing [unicorns](/blog/the-perfect-illusion/).
 
-> Check out this cool [infographic](/infographics/data-behind-why-generation-y-is-unhappy/) showing the data
-> behind why Generation Y yuppies are unhappy.
-
 ## Accept the reality
 
 I kept trying to find ways to completely eliminate pain in our team. Then

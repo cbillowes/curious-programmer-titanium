@@ -114,12 +114,6 @@ Over and above negative reinforcing loops it's important to
   Google Play Store. Urbandroid Team. Editors' Choice. Smart alarm clock with
   sleep cycle tracking. Wakes you gently in optimal moment for pleasant mornings.
 
-- [If You Have These 8 Habits, You're More Likely to Make Terrible Decisions Than Others](http://www.lifehack.org/599656/if-you-have-these-8-habits-youre-more-likely-to-make-terrible-decisions-than-others),
-  Lifehack, Ryan Ayers
-
-- [The Habits Of Supremely Happy People](http://www.huffingtonpost.co.za/entry/happiness-habits-of-exuberant-human-beings_n_3909772),
-  The Huffington Post, Kate Bratskeir. Last updated October 7, 2015 22:59 SAST.
-
 - [Everyday Tips for Living With Bipolar Disorder](http://www.webmd.com/bipolar-disorder/guide/living-healthy-life-with-bipolar),
   WebMD Medical Reference. Reviewed by Joseph Goldberg, MD on September 16, 2016.
 

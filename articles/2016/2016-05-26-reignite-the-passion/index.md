@@ -39,7 +39,7 @@ On the other spectrum, I hear of many people who put up with bad working
 conditions simply because of the money.
 
 Unfortunately the reality is that there will always be some form of pain or
-trade-off that we need to deal with. Prove to me that there is a [company](blog/the-perfect-illusion/)
+trade-off that we need to deal with. Prove to me that there is a [company](/blog/the-perfect-illusion/)
 to work for without any problems.
 
 Problems are different to each individual. We all have our own perspectives.

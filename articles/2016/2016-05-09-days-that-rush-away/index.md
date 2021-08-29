@@ -17,7 +17,7 @@ Rushed days leave me feeling exhausted. Today was one of those days. Events
 were back-to-back. Emails and instant messages were streaming in. There was
 little time to breathe.
 
-Have I fallen victim to "[rush hour syndrome](http://smartblogs.com/leadership/2014/05/19/the-rush-syndrome-how-it-affects-your-health-and-your-job/)"?
+Have I fallen victim to "rush hour syndrome"?
 
 When days get filled to the brim with noise and tasks that cannot be completed,
 how can we not feel exhausted and unaccomplished? Surely this can't be healthy.

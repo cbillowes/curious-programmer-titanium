@@ -8,9 +8,9 @@ tags:
 
 The HTML5 specification has introduced more elements to aid us with
 semantic markup. I've discussed some of the
-[design changes](/blog/design-changes-in-html5/)
+[design changes](/blog/design-changes-in-html-5/)
 as well as the introduction of
-[structural elements](/blog/html5-structural-semantics/).
+[structural elements](/blog/html-5-structural-semantics/).
 
 **Note**: There are many books, articles, wikis and posts relating to these elements.
 I wanted to document my research by combining the semantics, usage and code

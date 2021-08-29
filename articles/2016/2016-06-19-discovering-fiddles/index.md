@@ -97,9 +97,7 @@ one:
 ## JSFiddle
 
 [JSFiddle](https://jsfiddle.net/) let's you test your front end web code
-with their online code editor. You can follow this
-[tutorial](http://doc.jsfiddle.net/tutorial.html)
-to learn how to get started with it.
+with their online code editor.
 
 ![Screenshot](./jsfiddle.jpg "JSFiddle layout")
 _Source of image: Screenshot of [JSFiddle](http://jsfiddle.net/)_

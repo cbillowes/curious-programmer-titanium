@@ -62,8 +62,6 @@ Here are some resources to help you get started with Code Katas:
 - [Code Kata](http://codekata.com/) - Explore 21 different code katas by
   Dave Thomas
 - [Codewars](https://www.codewars.com) - Train on katas from their website.
-- Uncle Bob's
-  [Bowling Game Kata](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
 
 ## Alternatives
 

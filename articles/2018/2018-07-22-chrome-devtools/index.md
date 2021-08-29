@@ -28,7 +28,7 @@ Chrome releases major updates automatically about every six weeks. As much as I 
 
 `gif:chrome-devtools-whats-new.gif`
 
-1. Press `ESC` in any panel. The [drawer](https://developers.google.com/web/tools/chrome-devtools/ui#drawer) will pop up. Simply click on the What's New panel in the drawer.
+1. Press `ESC` in any panel. The drawer will pop up. Simply click on the What's New panel in the drawer.
 
 2. If you have lost the panel for some reason then resurrect it by clicking on the left side kebab button (it's like the hamburger but healthier). Click on the What's New menu item at the bottom of the menu.
 
@@ -83,7 +83,7 @@ function greet(greet) {
 
 ## Screenshots
 
-Open the [Command Menu](https://developers.google.com/web/tools/chrome-devtools/ui#command-menu)
+Open the Command Menu
 `Command+Shift+P` or `Ctrl+Shift+P` and type in screenshot.
 
 - **Capture screenshot:** Screenshot the page as you see it.

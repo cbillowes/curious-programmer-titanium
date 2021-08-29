@@ -226,8 +226,6 @@ Unfortunately I cannot vouch for the correctness of the tools provided below.
 - [Online tester](https://gsnedders.html5.org) by gsnedders
 - HTML5 Outliner [Chrome Extension](https://chrome.google.com/webstore/detail/html5-outliner/afoibpobokebhgfnknfndkgemglggomo?hl=en)
   by Dominykas Blyžė
-- HTML5 Outliner [Firefox Extension](https://addons.mozilla.org/en-US/firefox/addon/html5_outliner/)
-  by arky
 
 It can be tricky to know what to use and when.
 [HTML5 Doctor](http://html5doctor.com) has a great

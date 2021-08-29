@@ -164,7 +164,7 @@ one step at a time.
 
 Most of the content here formed part of my Ignite talk that I presented a
 Jozi-JUG on 4 June 2016. Although the slides are mainly images, you can still
-access them [here](/slides/branding-your-identity/){:target="\_blank"}. _I've
+access them [here](/slides/branding-your-identity/index.html#/). _I've
 compressed the images quite a bit so quality is lacking._
 
 As I have such a phobia, I reached out to the community to figure out how

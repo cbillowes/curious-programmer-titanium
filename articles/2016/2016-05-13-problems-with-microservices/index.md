@@ -152,4 +152,3 @@ Want to find out more about microservices?
 - [Microservice Trade-Offs](http://martinfowler.com/articles/microservice-trade-offs.html)
 - [Pattern: Microservices Architecture](http://microservices.io/patterns/microservices.html)
 - [Microservices architecture: advantages and drawbacks](http://cloudacademy.com/blog/microservices-architecture-challenge-advantage-drawback/)
-- [The Benefits Of Microservices](http://sendachi.com/2016/microservices/the-benefits-of-microservices)

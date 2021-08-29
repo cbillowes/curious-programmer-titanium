@@ -310,7 +310,7 @@ brew install the_silver_searcher
 Keep a copy of your config under version control in the event something goes wrong when you change it.
 
 [Gist (configuration)](https://gist.github.com/cbillowes/094ab477b6b28f31e0809bc9655f5c67) |
-[Practicalli](https://github.com/practicalli/spacemacs-config/blob/master/.spacemacs.d/init.el)
+[Practicalli](https://github.com/practicalli/spacemacs.d/blob/live/init.el)
 
 #### themes
 

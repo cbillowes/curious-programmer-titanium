@@ -185,7 +185,7 @@ Thanks to [Seef Oosthuizen](https://twitter.com/S33F) sharing this insight.
 ### Practice
 
 Being prepared is important and thanks to my husband and many people I work
-with at [DStv Digital Media](http://dstvdm.dstv.com/), I have been given the
+with at DStv Digital Media, I have been given the
 opportunity to practice my speech and get constructive criticism to help me
 improve.
 
@@ -202,8 +202,8 @@ has on Saturday.
 
 Thanks to [Olga](https://twitter.com/chaos_olga) for coaching me and to
 everyone at
-[DStv Digital Media](http://dstvdm.dstv.com/),
-[Britehouse](http://www.britehouse.co.za/Pages/default.aspx) and
+[Stv Digital Media,
+Britehouse and
 [DVT](http://www.dvt.co.za/) who listened to my
 dry runs and offered me so much support, constructive criticism and motivation.
 

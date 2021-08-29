@@ -21,17 +21,16 @@ Here's what I learned:
 
 ## The ROCK64 device
 
-The ROCK64 is a small computer [like](https://www.board-db.org/compare/192,4,58/) a Raspberry Pi, Arduino and a gazillion others. It is manufactured to be affordable and extendable.
+The ROCK64 is a small computer like a Raspberry Pi, Arduino and a gazillion others. It is manufactured to be affordable and extendable.
 
 It started in December 2015 as a [Kickstarter project](https://www.mickmake.com/post/rock64-cheap-rock-solid-review). These guys wanted to bring the first 64-bit expandable Quad Core 1.2Ghz board to the market. Initially there were hiccups but they eventually shipped the ROCK64 and a few [others](https://www.pine64.org/).
 
 ## Specifications
 
-<div style="text-align: center; margin-top: 2em;">
-    <img src="https://www.pine64.org/wp-content/uploads/2017/06/ROCK64_sideimg.jpg" alt="ROCK64 4K60P HDR Media Board Computer" title="ROCK64 4K60P HDR Media Board Computer" style="border: solid 1px #30303040; margin-bottom: 1em; width: 100%;">
-    <br/>
-    <span>Image from <a href="https://pine64.org/?page_id=7147" target="_blank" nofollow>Ping64.org</a></span>
-</div>
+![ROCK64 4K60P HDR Media Board Computer](https://wiki.pine64.org/images/7/77/ROCK64_sideimg.jpg)
+
+[Source](https://wiki.pine64.org/wiki/ROCK64)
+
 
 It has a 4K60P HDR Media Board Computer powered by Rockchip RK3328 Quad-Core ARM Cortex A53 64-Bit Processor and support up to 4GB 1600MHz LPDDR3 memory.
 

@@ -140,7 +140,7 @@ to emulate different networking conditions.
 [source](https://css-tricks.com/throttling-the-network/)
 
 For out more about
-[optimizing performance under varying network conditions](https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/network-conditions).
+[optimizing performance under varying network conditions](https://developer.chrome.com/docs/devtools/network/).
 
 ### Additional options
 
@@ -167,7 +167,7 @@ window > **More tools > Sensors**.
 ![Screenshot](./sensors.jpg "Enabled emulate geolocation coordinates and device orientation selected in sensors tab with default data")
 _Source of image: Screenshot of emulating selected sensors in the Chrome Developer Tools_
 
-Find out more about [emulating sensors](https://developers.google.com/web/tools/chrome-devtools/iterate/device-mode/device-input-and-sensors).
+Find out more about [emulating sensors](https://developer.chrome.com/docs/devtools/device-mode/).
 
 ---
 
@@ -175,4 +175,3 @@ Find out more about [emulating sensors](https://developers.google.com/web/tools/
 
 - [Chrome Keyboard and UI Shortcuts Reference](https://developers.google.com/web/tools/chrome-devtools/iterate/inspect-styles/shortcuts)
 - [Simulate Mobile Devices with Device Mode](https://developers.google.com/web/tools/chrome-devtools/iterate/device-mode/)
-- [Test Responsive and Device-specific Viewports](https://developers.google.com/web/tools/chrome-devtools/iterate/device-mode/emulate-mobile-viewports)

@@ -77,7 +77,7 @@ List the dependencies that you have explicitly referenced and mention why.
 
 ### Commit guidelines
 
-If you have a [standard](/blog/importance-of-git-history/#useful-messages)
+If you have a [standard](/blog/the-importance-of-git-history/#useful-messages)
 for commit messages then state how commits should be written for new features,
 bug fixes, improvements and refactoring in this repository.
 
@@ -155,7 +155,7 @@ your solution that could be reflected on for improvements.
 - [A curated list of awesome README](https://github.com/matiassingers/awesome-readme)
 - [How to write a good README](http://stackoverflow.com/questions/2304863/how-to-write-a-good-readme)
   from StackOverflow
-- [The Importance of Git History](/blog/importance-of-git-history/#useful-messages),
+- [The Importance of Git History](/blog/the-importance-of-git-history/#useful-messages),
   writing useful messages
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

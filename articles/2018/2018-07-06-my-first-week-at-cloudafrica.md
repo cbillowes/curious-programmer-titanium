@@ -63,9 +63,9 @@ I dabbled in [Semantic UI](https://semantic-ui.com/) which is just a development
 
 I was determined to get that menu to the left! I managed to get it there by moving around a few `div`s and adding classes where necessary after I knew what I needed to do in the HTML after creating a prototype.
 
-I was still playing around when a [PINE ROCK64](https://www.pine64.org/?page_id=7147) was placed on my desk and I was asked to set up a monitoring display on a 4K screen. I'll post about those learnings soon but that's not something that happens everyday. That was a lot of fun!
+I was still playing around when a PINE ROCK64 was placed on my desk and I was asked to set up a monitoring display on a 4K screen. I'll post about those learnings soon but that's not something that happens everyday. That was a lot of fun!
 
-At lunch time we attended [Jozi Lunch and Learn](https://www.meetup.com/Jozi-Lunch-Learn/?_cookie-check=eIIf-oNRFC4BYyiX) and got to spend time with [Danie Roux](http://www.danieroux.com/) and other interesting technologists.
+At lunch time we attended Jozi Lunch and Learn and got to spend time with [Danie Roux](http://www.danieroux.com/) and other interesting technologists.
 
 ## Friday
 

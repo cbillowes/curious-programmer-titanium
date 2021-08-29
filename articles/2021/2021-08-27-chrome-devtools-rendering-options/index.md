@@ -29,11 +29,11 @@ between print and screen styles! This way you don't have to print preview each t
 
 ```css
 @media print {
-  ...
+  ...;
 }
 
 @media screen {
-  ...
+  ...;
 }
 ```
 
@@ -49,14 +49,14 @@ feature `prefers-color-scheme` which forces the media type based on your selecti
 ## Vestibular motion
 
 Our vestibular system is key to controlling balance and eye movement.
-People with
-[vestibular disorders](http://a11yproject.com/posts/understanding-vestibular-disorders/)
-have the option to remove or replace the types of motion-based animation that trigger
-discomfort which gets set in the `prefers-reduced-motion` browser preference.
+People with vestibular disorders have the option to remove or replace the types
+of motion-based animation that trigger discomfort which gets set in the
+`prefers-reduced-motion` browser preference.
 
 ```css
 /* Applies styles when Reduced Motion is enabled */
-@media screen and (prefers-reduced-motion: reduce) { }
+@media screen and (prefers-reduced-motion: reduce) {
+}
 ```
 
 Read an introduction to the Reduced Motion Media Query, an
@@ -77,10 +77,10 @@ output device. Read about the expanding gamut of color on the web, an
 Chrome 83, the new **Emulate vision deficiencies** feature to gives a better idea of how
 people with different types of vision deficiencies experience your site.
 
-* Protanopia: the inability to perceive any red light.
-* Deuteranopia: the inability to perceive any green light.
-* Tritanopia: the inability to perceive any blue light.
-* Achromatopsia: the inability to perceive any color except for shades of grey (extremely rare).
+- Protanopia: the inability to perceive any red light.
+- Deuteranopia: the inability to perceive any green light.
+- Tritanopia: the inability to perceive any blue light.
+- Achromatopsia: the inability to perceive any color except for shades of grey (extremely rare).
 
 Read about simulating color vision deficiencies, an
 [article](https://developer.chrome.com/blog/cvd/) from Chrome Developers.

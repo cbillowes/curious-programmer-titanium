@@ -79,7 +79,7 @@ gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
    periodically to include plugins.
 
 
-[1]:https://www.gatsbyjs.com/docs/integration-guide/source-plugin/
+[1]:https://www.gatsbyjs.com/docs/creating-a-source-plugin/
 [2]:https://www.gatsbyjs.org/tutorial/remark-plugin-tutorial/
 [3]:https://gifs.curiousprogrammer.dev
 [4]:https://github.com/cbillowes/gatsby-remark-interactive-gifs

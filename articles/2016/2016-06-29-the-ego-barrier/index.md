@@ -25,8 +25,7 @@ operating systems are the best to use.
 
 Asking for help ends up in arguments with possible verbal abuse and belittling
 of skills and experience. StackOverflow is unfortunately an example of this.
-It's notorious for
-[abusive commentary](https://sammaye.wordpress.com/2014/04/24/why-i-am-a-little-annoyed-with-stackoverflow-currently/).
+It's notorious for abusive commentary.
 
 It discourages people from collaborating. Proposed solutions are shot down
 without constructive reasoning. Often the responses are "that's not how we've

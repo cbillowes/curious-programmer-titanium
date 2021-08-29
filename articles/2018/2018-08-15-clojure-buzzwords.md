@@ -412,7 +412,7 @@ This abstracted HTTP API allows web applications to be constructed of modular co
 
 **CIDER**
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [CIDER](http://docs.cider.mx/en/latest/) is a Clojure(Script) Interactive Development Environment that Rocks! CIDER extends Emacs with support for interactive programming in Clojure.
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [CIDER](https://docs.cider.mx/cider/index.html) is a Clojure(Script) Interactive Development Environment that Rocks! CIDER extends Emacs with support for interactive programming in Clojure.
 
 ## Resources
 
@@ -454,4 +454,4 @@ This abstracted HTTP API allows web applications to be constructed of modular co
 - [DevCards](https://github.com/bhauman/devcards)
 - [Ring](https://github.com/ring-clojure/ring)
 - [re-frisk](https://github.com/flexsurfer/re-frisk)
-- [CIDER](http://docs.cider.mx/en/latest/)
+- [CIDER](https://docs.cider.mx/cider/index.html)
