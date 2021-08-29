@@ -12,7 +12,13 @@ const Anchor = ({ className, to, title, children }) => {
   }
 
   return (
-    <a className={className} href={to} title={title} rel="noreferrer noopener">
+    <a
+      className={className}
+      href={to}
+      title={title}
+      rel="noreferrer noopener"
+      target="_blank"
+    >
       {children}
     </a>
   )
