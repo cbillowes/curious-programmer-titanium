@@ -13,8 +13,10 @@ const CommunityPage = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: "Community Guidelines",
+        pageTitle: "How to interact with the website and others",
         siteTitle: title,
+        description:
+          "Essentially, words can hurt. Be nice but clear! Find out more about how to interact in our community guidelines.",
         route: "/community",
       }}
     >
