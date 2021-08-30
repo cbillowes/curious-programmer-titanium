@@ -125,7 +125,10 @@ export const getKeywords = (text) => {
   const orderWords = getOrderedList(mostUsedWords)
   const desired = getDesiredWords(orderWords)
   const distinct = getDistinctList(desired)
-  return distinct.filter((word) => word).slice(0, 10)
+  return distinct
+    .filter((word) => word)
+    .slice(0, 10)
+    .join(",")
 }
 
 export const getTitle = (pageTitle, siteTitle) => {
