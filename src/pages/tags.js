@@ -59,7 +59,10 @@ const TagsPage = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: "Tags",
+        description:
+          "Choose from one of more tags used to categorize and help discover articles more.",
+        keywords: "technical, gatsby, git, blog, software development",
+        pageTitle: "Tags used throughout the blog",
         siteTitle: title,
         route: "/tags",
       }}
