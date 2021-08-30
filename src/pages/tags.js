@@ -85,10 +85,6 @@ const TagsPage = ({ data }) => {
   )
 }
 
-Tags.propTypes = {
-  edges: PropTypes.array.isRequired,
-}
-
 TagsPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
