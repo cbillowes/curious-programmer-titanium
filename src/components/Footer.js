@@ -85,6 +85,7 @@ const Footer = ({ toggler }) => (
     <Anchor
       className="left-2/4 transform -translate-x-1/2 absolute bottom-2 md:left-2 md:bottom-2 md:translate-x-0"
       to="https://www.buymeacoffee.com/cbillowes"
+      title="Please buy me a coffee"
     >
       <img
         src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
