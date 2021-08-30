@@ -16,3 +16,5 @@ I use this plugin for emojis on my website. The reference to all possible emojis
 The current emojis include the following. You can reference an emoji by surrounding
 the keyword with colons such as :emoji-key:
 :100:
+
+A better, more accurate, table exists [here](https://projects.iamcal.com/emoji-data/table.htm).
