@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
             layout="constrained"
           />
         </div>
-        <div className="hidden bg-color-2 text-welcome absolute right-0 top-0 bottom-0 lg:flex flex-col flex-wrap justify-center items-center w-5/12 lg:w-6/12 xl:w-5/12">
+        <div className="hidden opacity-70 bg-default text-welcome absolute right-0 top-0 bottom-0 lg:flex flex-col flex-wrap justify-center items-center w-5/12 lg:w-6/12 xl:w-5/12">
           <div className="mb-5">
             <StaticImage
               src="../images/emoji-waving-hand.png"

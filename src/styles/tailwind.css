@@ -1,6 +1,6 @@
 .light {
-  --welcome-headings: #9fdcff;
-  --welcome-headings-shadow: #1b1d20;
+  --welcome-headings: #202020;
+  --welcome-headings-shadow: #757575;
   --search-neutral-1: #1a5478;
   --search-neutral-2: #9fdcff;
   --footer-link-1: #394d6e;
@@ -28,8 +28,8 @@
 }
 
 .dark {
-  --welcome-headings: #363822;
-  --welcome-headings-shadow: #afb962;
+  --welcome-headings: #f8f8f8;
+  --welcome-headings-shadow: #000000;
   --search-neutral-1: #f0ff7b;
   --search-neutral-2: #1b1d20;
   --footer-link-1: #3c4626;
