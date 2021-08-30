@@ -43,7 +43,7 @@ const getTags = (edges) => {
   const tags = []
   if (edges && edges.length > 0) {
     edges.forEach(({ node }) => {
-      tags.push(...node.frontmatter.tags)
+      tags.push(...(node?.frontmatter?.tags || []))
     })
   }
   return [...new Set(tags)]
