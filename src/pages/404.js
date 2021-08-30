@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import { Layout } from "../components/Layout"
 import List from "../components/Articles/List"
 import Anchor from "../components/Anchor"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Articles = ({ edges }) => {
   return <List edges={edges} />
@@ -24,13 +25,25 @@ const NotFoundPage = ({ data }) => {
       }}
     >
       <div className="pt-16">
-        <div className="text-center">
-          <h1 className="text-md lg:text-5xl xl:text-8xl text-center mb-4">
+        <div className="text-center relative">
+          <div>
+            <StaticImage
+              src="../images/emoji-pensive.png"
+              alt="Pensive emoji"
+              quality={50}
+              style={{
+                width: "140px",
+                height: "140px",
+                borderRadius: "50%",
+              }}
+            />
+          </div>
+          <h1 className="text-2xl lg:text-5xl xl:text-8xl text-center mb-4">
             <span className="font-semibold">Sorry!</span> Can’t find what you
             are looking for
           </h1>
-          <p className="text-2xl">
-            You can check out the latest articles instead.
+          <p className="text-xl">
+            You can check out these latest articles instead.
           </p>
         </div>
         <div className="bg-default text-default-script">
