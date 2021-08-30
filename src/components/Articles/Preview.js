@@ -22,7 +22,7 @@ const Preview = ({
 }) => {
   const isEven = index % 2 === 0
   return (
-    <div
+    <section
       key={number}
       className={`relative mx-auto lg:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
         isEven ? "xl:flex-row-reverse" : "xl:flex-row"
@@ -35,11 +35,11 @@ const Preview = ({
             : "xl:text-right xl:border-r xl:pr-8"
         }`}
       >
-        <h1 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1">
+        <h2 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1">
           <Anchor to={slug} title={title}>
             {title}
           </Anchor>
-        </h1>
+        </h2>
         <div className="leading-loose mb-4">
           <p className="text-neutral">
             {date} - Estimated {timeToRead} minute read
@@ -82,7 +82,7 @@ const Preview = ({
           componentName={component}
         />
       </div>
-    </div>
+    </section>
   )
 }
 
