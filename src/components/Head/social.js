@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-const getResource = (url, resource) => `${url}${resource || "/"}`
+const getResource = (url, route) => `${url}${route || "/"}`
 
 const Social = ({ pageType, imagePath, url, route, twitter }) => {
   const canonical = getResource(url, route)

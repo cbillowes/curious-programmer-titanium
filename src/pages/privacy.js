@@ -15,6 +15,7 @@ const Privacy = ({ data }) => {
         ...site.siteMetadata,
         pageTitle: "Privacy Policy",
         siteTitle: title,
+        route: "/privacy",
       }}
     >
       <div className="privacy max-w-screen-md mx-auto p-4">

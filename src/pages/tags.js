@@ -61,6 +61,7 @@ const TagsPage = ({ data }) => {
         ...site.siteMetadata,
         pageTitle: "Tags",
         siteTitle: title,
+        route: "/tags",
       }}
     >
       <div className="bg-default text-default-script">

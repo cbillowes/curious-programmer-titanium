@@ -75,6 +75,7 @@ const ArticleTemplate = ({ data }) => {
         description: excerpt || description,
         image: frontmatter.photo,
         pageType: "article",
+        route: fields.slug,
       }}
     >
       <div id="article" className="pt-14 px-4 pb-24">

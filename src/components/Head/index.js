@@ -29,6 +29,7 @@ const Head = ({
   siteTitle,
   type,
   url,
+  route,
 }) => (
   <React.Fragment>
     <Helmet
@@ -70,6 +71,7 @@ const Head = ({
       twitter={social && social.twitter}
       imagePath={image || (social && social.image)}
       pageType={pageType}
+      route={route}
     />
 
     <Schema
@@ -113,6 +115,7 @@ Head.propTypes = {
   pageType: PropTypes.string,
   type: PropTypes.string,
   url: PropTypes.string.isRequired,
+  route: PropTypes.string.isRequired,
 }
 
 export default Head

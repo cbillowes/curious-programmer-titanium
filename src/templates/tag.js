@@ -12,7 +12,7 @@ const TagTemplate = ({ pageContext, data }) => {
   const { allMarkdownRemark, site } = data
   const edges = allMarkdownRemark.edges
   const { title } = site.siteMetadata
-  const { tag } = pageContext
+  const { tag, slug } = pageContext
 
   return (
     <Layout
@@ -20,6 +20,7 @@ const TagTemplate = ({ pageContext, data }) => {
         ...site.siteMetadata,
         pageTitle: `Tag: ${tag}`,
         siteTitle: title,
+        route: slug,
       }}
     >
       <div className="bg-default text-default-script">

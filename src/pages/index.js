@@ -26,6 +26,7 @@ const IndexPage = ({ data }) => {
         ...site.siteMetadata,
         pageTitle: "A place for a curious mind",
         siteTitle: title,
+        route: "/",
       }}
     >
       <div className="relative">

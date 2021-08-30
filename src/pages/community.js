@@ -15,6 +15,7 @@ const CommunityPage = ({ data }) => {
         ...site.siteMetadata,
         pageTitle: "Community Guidelines",
         siteTitle: title,
+        route: "/community",
       }}
     >
       <div className="guidelines max-w-screen-md mx-auto p-4">
