@@ -127,6 +127,8 @@
 
   table {
     width: 100%;
+    border: solid 3px var(--color-1);
+    margin-bottom: 0.5rem;
 
     th {
       background-color: var(--color-2);
@@ -135,13 +137,13 @@
 
     th,
     td {
-      padding: 0.25rem 0.5rem;
+      padding: 0.5rem 0.75rem;
       text-align: left;
     }
 
     tr:nth-child(even) td {
-      background-color: var(--color-1);
-      color: var(--color-1-script);
+      background-color: var(--color-3);
+      color: var(--color-3-script);
     }
   }
 
