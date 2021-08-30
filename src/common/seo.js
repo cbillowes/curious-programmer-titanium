@@ -127,3 +127,10 @@ export const getKeywords = (text) => {
   const distinct = getDistinctList(desired)
   return distinct.filter((word) => word).slice(0, 10)
 }
+
+export const getTitle = (pageTitle, siteTitle) => {
+  const title = `${pageTitle} - ${siteTitle}`
+  return title.length <= 65
+    ? title.substring(0, 65)
+    : `${title.substring(0, 62)}...`
+}

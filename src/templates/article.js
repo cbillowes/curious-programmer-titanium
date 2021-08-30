@@ -15,7 +15,7 @@ import "../styles/interactive-gifs.scss"
 import "../styles/prismjs/dark.scss"
 import "../styles/prismjs/light.scss"
 import CommentSystem from "../components/CommentSystem"
-import { getKeywords } from "../common/keywords"
+import { getKeywords } from "../common/seo"
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {

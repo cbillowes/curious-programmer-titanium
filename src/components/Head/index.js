@@ -53,7 +53,7 @@ const Head = ({
       <meta name="robots" content="index" />
     </Helmet>
 
-    <Title page={pageTitle} site={siteTitle} />
+    <Title pageTitle={pageTitle} siteTitle={siteTitle} />
 
     <Description
       keywords={keywords}
