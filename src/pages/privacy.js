@@ -13,8 +13,12 @@ const Privacy = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: "Privacy Policy",
+        pageTitle: "Our main priorities is the privacy of our visitors",
         siteTitle: title,
+        description: `One of our main priorities is the privacy of our visitors.
+        This Privacy Policy document contains types of information that is collected
+        and recorded by Curious Programmer and how we use it.`,
+        keywords: "",
         route: "/privacy",
       }}
     >
