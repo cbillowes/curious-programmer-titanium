@@ -18,7 +18,7 @@ const NotFoundPage = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: "Welcome",
+        pageTitle: "Sorry! Can't find what you are looking for",
         siteTitle: title,
       }}
     >
