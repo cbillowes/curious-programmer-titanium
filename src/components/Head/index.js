@@ -30,6 +30,7 @@ const Head = ({
   type,
   url,
   route,
+  crawl = true,
 }) => (
   <React.Fragment>
     <Helmet
@@ -51,7 +52,8 @@ const Head = ({
         name="apple-mobile-web-app-status-bar-style"
       />
 
-      <meta name="robots" content="index" />
+      {crawl && <meta name="robots" content="index" />}
+      {!crawl && <meta name="robots" content="noindex" />}
     </Helmet>
 
     <Title pageTitle={pageTitle} siteTitle={siteTitle} />
@@ -116,6 +118,7 @@ Head.propTypes = {
   type: PropTypes.string,
   url: PropTypes.string.isRequired,
   route: PropTypes.string.isRequired,
+  crawl: PropTypes.bool,
 }
 
 export default Head

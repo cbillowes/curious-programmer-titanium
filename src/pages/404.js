@@ -20,6 +20,7 @@ const NotFoundPage = ({ data }) => {
         ...site.siteMetadata,
         pageTitle: "Sorry! Can't find what you are looking for",
         siteTitle: title,
+        crawl: false,
       }}
     >
       <div className="pt-16">
