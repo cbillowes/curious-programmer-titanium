@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Anchor from "./Anchor"
+import BuyMeCoffee from "./Coffee"
 
 const Blocks = () => {
   return (
@@ -82,19 +83,7 @@ const Footer = ({ toggler }) => (
       </div>
     </div>
 
-    <Anchor
-      className="left-2/4 transform -translate-x-1/2 absolute bottom-2 md:left-2 md:bottom-2 md:translate-x-0"
-      to="https://www.buymeacoffee.com/cbillowes"
-      title="Please buy me a coffee"
-    >
-      <img
-        src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
-        alt="Buy Me A Coffee"
-        style={{
-          width: "150px",
-        }}
-      />
-    </Anchor>
+    <BuyMeCoffee component="footer" />
   </footer>
 )
 

@@ -10,6 +10,7 @@ import Emoji from "../components/Emoji"
 import SocialMediaIcon from "../components/SocialMediaIcon"
 import List from "../components/Articles/List"
 import Anchor from "../components/Anchor"
+import BuyMeCoffee from "../components/Coffee"
 
 const Articles = ({ edges }) => {
   return <List edges={edges} />
@@ -133,6 +134,9 @@ const IndexPage = ({ data }) => {
         <SocialMediaIcon to="https://twitter.com/cbillowes" title="Twitter">
           <FaTwitter className="text-twitter" />
         </SocialMediaIcon>
+      </div>
+      <div>
+        <BuyMeCoffee component="header" />
       </div>
 
       <div className="bg-default text-default-script">

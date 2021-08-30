@@ -8,6 +8,7 @@ import Footer from "../components/Footer"
 import Navigation from "../components/Navigation"
 import { SearchIcon } from "./Search/icon"
 import Search from "./Search"
+import BuyMeCoffee from "./Coffee"
 const searchIndices = [{ name: "Pages", title: "Pages" }]
 
 const Toggler = ({ colorMode, setColorMode }) => {
@@ -53,6 +54,7 @@ export const Layout = ({ meta, children }) => {
     >
       <Head {...meta} />
       <div className="fixed top-0 left-0 right-0 z-50">
+        <BuyMeCoffee component="top-bar" />
         <div className="text-right text-lg bg-color-1 text-color-1-script">
           <div className="mr-3 pt-1 inline-block">
             <SearchIcon
