@@ -34,6 +34,7 @@ const CommunityPage = ({ data }) => {
             <Anchor
               to="https://help.disqus.com/terms-and-policies/disqus-privacy-policy"
               useMarkdownStyles={true}
+              newTabIndicator={true}
             >
               here
             </Anchor>

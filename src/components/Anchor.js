@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { IoOpenOutline } from "@react-icons/all-files/io5/IoOpenOutline"
 import { Link } from "gatsby"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 
@@ -9,17 +10,25 @@ const trackClickEvent = (data) => {
   }
 }
 
+const getClassNames = (className, useMarkdownStyles) => {
+  const markdownClasses =
+    "font-cursive text-color-1 px-1 text-xl hover:text-color-1-alternative hover:underline"
+
+  return `w-auto inline-block ${className} ${
+    useMarkdownStyles ? markdownClasses : ""
+  }`
+}
+
 const Anchor = ({
   className,
   to,
   title,
   children,
   useMarkdownStyles,
+  newTabIndicator,
 }) => {
   const trackingData = { to, title }
-  const classNames = useMarkdownStyles
-    ? `${className} font-cursive text-color-1 px-1 text-xl hover:text-color-1-alternative hover:underline`
-    : className
+  const classNames = getClassNames(className, useMarkdownStyles)
 
   if (!to)
     return (
@@ -52,6 +61,10 @@ const Anchor = ({
         onClick={() => trackClickEvent(trackingData)}
       >
         {children}
+
+        {newTabIndicator && (
+          <IoOpenOutline className="float-right text-md mx-2 text-neutral" />
+        )}
       </OutboundLink>
     </span>
   )
@@ -63,6 +76,7 @@ Anchor.propTypes = {
   title: PropTypes.string,
   to: PropTypes.string,
   useMarkdownStyles: PropTypes.bool,
+  newTabIndicator: PropTypes.bool,
 }
 
 export default Anchor

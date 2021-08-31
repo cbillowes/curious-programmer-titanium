@@ -25,6 +25,7 @@ const Blocks = () => {
 const TopAnchor = (props) => (
   <Anchor
     {...props}
+    newTabIndicator={true}
     className="text-footer-link-1 font-semibold hover:text-footer-link-2"
   />
 )
@@ -32,6 +33,7 @@ const TopAnchor = (props) => (
 const BottomAnchor = (props) => (
   <Anchor
     {...props}
+    newTabIndicator={true}
     className="inline-block mt-3 mr-3 py-2 px-4 md:py-1 md:px-3 text-sm rounded text-inverse bg-inverse-script hover:bg-color-3 hover:text-color-3-script"
   />
 )

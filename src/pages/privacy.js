@@ -90,6 +90,7 @@ const Privacy = ({ data }) => {
           <Anchor
             to="https://help.disqus.com/customer/portal/articles/466260-terms-of-service"
             useMarkdownStyles={true}
+            newTabIndicator={true}
           >
             Terms of Use
           </Anchor>
@@ -97,6 +98,7 @@ const Privacy = ({ data }) => {
           <Anchor
             to="https://help.disqus.com/customer/portal/articles/466259-privacy-policy"
             useMarkdownStyles={true}
+            newTabIndicator={true}
           >
             Privacy Policy
           </Anchor>
@@ -154,6 +156,7 @@ const Privacy = ({ data }) => {
         <ul>
           <li>
             <Anchor
+              newTabIndicator={true}
               to="https://support.google.com/youtube/answer/171780"
               useMarkdownStyles={true}
             >
@@ -162,6 +165,7 @@ const Privacy = ({ data }) => {
           </li>
           <li>
             <Anchor
+              newTabIndicator={true}
               to="https://www.netlify.com/privacy/"
               useMarkdownStyles={true}
             >
@@ -170,6 +174,7 @@ const Privacy = ({ data }) => {
           </li>
           <li>
             <Anchor
+              newTabIndicator={true}
               to="https://support.google.com/analytics/answer/4597324"
               useMarkdownStyles={true}
             >
@@ -178,6 +183,7 @@ const Privacy = ({ data }) => {
           </li>
           <li>
             <Anchor
+              newTabIndicator={true}
               to="https://www.algolia.com/policies/privacy/"
               useMarkdownStyles={true}
             >
@@ -186,6 +192,7 @@ const Privacy = ({ data }) => {
           </li>
           <li>
             <Anchor
+              newTabIndicator={true}
               to="https://help.disqus.com/en/collections/191787-terms-and-policies"
               useMarkdownStyles={true}
             >
