@@ -172,7 +172,7 @@ module.exports = {
         pluginConfig: {
           head: false,
           // will not be loaded at all for visitors that have “Do Not Track” enabled
-          respectDNT: true,
+          respectDNT: process.env.HONOR_DNT || true,
         },
       },
     },
