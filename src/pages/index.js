@@ -96,6 +96,9 @@ const IndexPage = ({ data }) => {
             </span>
           </div>
         </div>
+        <div>
+          <BuyMeCoffee component="header" />
+        </div>
       </div>
 
       <div className="lg:hidden p-4">
@@ -134,9 +137,6 @@ const IndexPage = ({ data }) => {
         <SocialMediaIcon to="https://twitter.com/cbillowes" title="Twitter">
           <FaTwitter className="text-twitter" />
         </SocialMediaIcon>
-      </div>
-      <div>
-        <BuyMeCoffee component="header" />
       </div>
 
       <div className="bg-default text-default-script">
