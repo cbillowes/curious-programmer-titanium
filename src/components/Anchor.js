@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const Anchor = ({ className, to, title, children }) => {
   if (!to)
@@ -19,7 +20,7 @@ const Anchor = ({ className, to, title, children }) => {
   }
 
   return (
-    <a
+    <OutboundLink
       className={className}
       href={to}
       title={title}
@@ -27,7 +28,7 @@ const Anchor = ({ className, to, title, children }) => {
       target="_blank"
     >
       {children}
-    </a>
+    </OutboundLink>
   )
 }
 

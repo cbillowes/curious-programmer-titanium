@@ -161,10 +161,19 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      // This script will not load in develop mode
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: `UA-77127562-3`,
-        head: false,
+        trackingIds: ["UA-77127562-3"],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: false,
+          // will not be loaded at all for visitors that have “Do Not Track” enabled
+          respectDNT: true,
+        },
       },
     },
     {
@@ -208,7 +217,9 @@ module.exports = {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         skipIndexing: process.env.ALGOLIA_DISABLED || true,
-        queries: require("./build/search"),
+        continueOnFailure: true,
+        enablePartialUpdates: true,
+        queries: process.env.ALGOLIA_DISABLED ? [] : require("./build/search"),
       },
     },
   ],
