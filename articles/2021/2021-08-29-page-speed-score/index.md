@@ -7,7 +7,7 @@ tags:
   - Gatsby
   - Performance
   - Security
-  - SEO
+  - Analytics
 ---
 
 As much as I want an attractive blog, I prefer a blog that is more discoverable and
