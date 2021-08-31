@@ -164,7 +164,7 @@ module.exports = {
       // This script will not load in develop mode
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: ["UA-77127562-3"],
+        trackingIds: ["G-475QC81Y7F"],
         gtagConfig: {
           anonymize_ip: true,
           cookie_expires: 0,
