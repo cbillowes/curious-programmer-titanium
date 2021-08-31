@@ -7,7 +7,7 @@ const SocialMediaIcon = ({ children, to, title }) => {
     <Anchor
       to={to}
       title={title}
-      className="text-4xl md:text-4xl mx-4 my-6 bg-white border-color-2 border-4 rounded-full p-3 shadow-lg hover:bg-yellow-300"
+      className="text-xl md:text-4xl mx-4 my-6 bg-gray-100 rounded-full p-2 md:p-3 shadow-sm hover:bg-yellow-300"
     >
       {children}
     </Anchor>
