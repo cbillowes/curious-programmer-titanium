@@ -87,11 +87,17 @@ const Privacy = ({ data }) => {
           and all comments and other content entered onto the Website are
           subject to these Terms of Use as well as the Disqus terms of use and
           privacy policy. You should familiarize yourself with the Disqus
-          <Anchor to="https://help.disqus.com/customer/portal/articles/466260-terms-of-service">
+          <Anchor
+            to="https://help.disqus.com/customer/portal/articles/466260-terms-of-service"
+            useMarkdownStyles={true}
+          >
             Terms of Use
           </Anchor>
           and the
-          <Anchor to="https://help.disqus.com/customer/portal/articles/466259-privacy-policy">
+          <Anchor
+            to="https://help.disqus.com/customer/portal/articles/466259-privacy-policy"
+            useMarkdownStyles={true}
+          >
             Privacy Policy
           </Anchor>
           .
@@ -147,25 +153,42 @@ const Privacy = ({ data }) => {
 
         <ul>
           <li>
-            <Anchor to="https://support.google.com/youtube/answer/171780">
+            <Anchor
+              to="https://support.google.com/youtube/answer/171780"
+              useMarkdownStyles={true}
+            >
               Embedded YouTube Videos
             </Anchor>
           </li>
           <li>
-            <Anchor to="https://www.netlify.com/privacy/">Netlify</Anchor>
+            <Anchor
+              to="https://www.netlify.com/privacy/"
+              useMarkdownStyles={true}
+            >
+              Netlify
+            </Anchor>
           </li>
           <li>
-            <Anchor to="https://support.google.com/analytics/answer/4597324">
+            <Anchor
+              to="https://support.google.com/analytics/answer/4597324"
+              useMarkdownStyles={true}
+            >
               Google Analytics
             </Anchor>
           </li>
           <li>
-            <Anchor to="https://www.algolia.com/policies/privacy/">
+            <Anchor
+              to="https://www.algolia.com/policies/privacy/"
+              useMarkdownStyles={true}
+            >
               Algolia
             </Anchor>
           </li>
           <li>
-            <Anchor to="https://help.disqus.com/en/collections/191787-terms-and-policies">
+            <Anchor
+              to="https://help.disqus.com/en/collections/191787-terms-and-policies"
+              useMarkdownStyles={true}
+            >
               Disqus
             </Anchor>
           </li>

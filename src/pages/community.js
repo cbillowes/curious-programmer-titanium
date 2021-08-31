@@ -31,7 +31,10 @@ const CommunityPage = ({ data }) => {
             its privacy policy, recently updated to reflect strict new privacy
             laws in Europe that will ultimately be applied for all users within
             and without Europe,{" "}
-            <Anchor to="https://help.disqus.com/terms-and-policies/disqus-privacy-policy">
+            <Anchor
+              to="https://help.disqus.com/terms-and-policies/disqus-privacy-policy"
+              useMarkdownStyles={true}
+            >
               here
             </Anchor>
             .

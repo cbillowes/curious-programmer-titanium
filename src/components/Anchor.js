@@ -3,17 +3,21 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 
-const Anchor = ({ className, to, title, children }) => {
+const Anchor = ({ className, to, title, children, useMarkdownStyles }) => {
+  const classNames = useMarkdownStyles
+    ? `${className} font-cursive text-color-1 px-1 text-xl hover:text-color-1-alternative hover:underline`
+    : className
+
   if (!to)
     return (
-      <span className={className} title={title}>
+      <span className={classNames} title={title || children}>
         {children}
       </span>
     )
 
   if (to && to.startsWith("/")) {
     return (
-      <Link className={className} to={to} title={title}>
+      <Link className={classNames} to={to} title={title || children}>
         {children}
       </Link>
     )
@@ -21,9 +25,9 @@ const Anchor = ({ className, to, title, children }) => {
 
   return (
     <OutboundLink
-      className={className}
+      className={classNames}
       href={to}
-      title={title}
+      title={title || children}
       rel="noreferrer noopener"
       target="_blank"
     >
@@ -32,15 +36,12 @@ const Anchor = ({ className, to, title, children }) => {
   )
 }
 
-Anchor.defaultProps = {
-  className: "",
-}
-
 Anchor.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   to: PropTypes.string,
+  useMarkdownStyles: PropTypes.bool,
 }
 
 export default Anchor
