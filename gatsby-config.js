@@ -143,6 +143,68 @@ module.exports = {
       },
     },
     {
+      // This script will not load in develop mode
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G-475QC81Y7F"],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: false,
+          // will not be loaded at all for visitors that have “Do Not Track” enabled
+          respectDNT: process.env.HONOR_DNT || true,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `./articles`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `./src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `resources`,
+        path: `./resources/source`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: siteMetadata.title,
+        short_name: siteMetadata.title,
+        start_url: ".",
+        background_color: "#171E29",
+        theme_color: "#f0ff7b",
+        display: "standalone",
+        icon: "src/images/icon.png",
+      },
+    },
+    {
+      // https://www.gatsbyjs.com/docs/adding-search-with-algolia/
+      // Responsible for the indexing
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        skipIndexing: process.env.ALGOLIA_DISABLED || true,
+        continueOnFailure: true,
+        enablePartialUpdates: true,
+        queries: process.env.ALGOLIA_DISABLED ? [] : require("./build/search"),
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -212,68 +274,6 @@ module.exports = {
             },
           },
         ],
-      },
-    },
-    {
-      // This script will not load in develop mode
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: ["G-475QC81Y7F"],
-        gtagConfig: {
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
-        pluginConfig: {
-          head: false,
-          // will not be loaded at all for visitors that have “Do Not Track” enabled
-          respectDNT: process.env.HONOR_DNT || true,
-        },
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `articles`,
-        path: `./articles`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `./src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `resources`,
-        path: `./resources/source`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: siteMetadata.title,
-        short_name: siteMetadata.title,
-        start_url: ".",
-        background_color: "#171E29",
-        theme_color: "#f0ff7b",
-        display: "standalone",
-        icon: "src/images/icon.png",
-      },
-    },
-    {
-      // https://www.gatsbyjs.com/docs/adding-search-with-algolia/
-      // Responsible for the indexing
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        skipIndexing: process.env.ALGOLIA_DISABLED || true,
-        continueOnFailure: true,
-        enablePartialUpdates: true,
-        queries: process.env.ALGOLIA_DISABLED ? [] : require("./build/search"),
       },
     },
   ],
