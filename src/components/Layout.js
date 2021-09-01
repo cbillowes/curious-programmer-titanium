@@ -3,12 +3,14 @@ import PropTypes from "prop-types"
 import { ThemeContext, toggleColorMode } from "../context/Theme"
 import { MdWbSunny } from "@react-icons/all-files/md/MdWbSunny"
 import { MdBrightness2 } from "@react-icons/all-files/md/MdBrightness2"
+import { FiRss } from "@react-icons/all-files/fi/FiRss"
 import Head from "../components/Head"
 import Footer from "../components/Footer"
 import Navigation from "../components/Navigation"
 import { SearchIcon } from "./Search/icon"
 import Search from "./Search"
 import BuyMeCoffee from "./Coffee"
+import Anchor from "./Anchor"
 const searchIndices = [{ name: "Pages", title: "Pages" }]
 
 const Toggler = ({ colorMode, setColorMode }) => {
@@ -64,6 +66,11 @@ export const Layout = ({ meta, children }) => {
           </div>
           <div className="mr-4 pt-1 inline-block">
             <Toggler colorMode={colorMode} setColorMode={setColorMode} />
+          </div>
+          <div className="mr-4 pt-1 inline-block">
+            <Anchor to="/rss.xml" forceNewTab={true}>
+              <FiRss />
+            </Anchor>
           </div>
         </div>
         <Navigation layout="fluid" />

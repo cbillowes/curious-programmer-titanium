@@ -26,6 +26,7 @@ const Anchor = ({
   children,
   useMarkdownStyles,
   newTabIndicator,
+  forceNewTab,
 }) => {
   const trackingData = { to, title }
   const classNames = getClassNames(className, useMarkdownStyles)
@@ -37,7 +38,7 @@ const Anchor = ({
       </span>
     )
 
-  if (to && to.startsWith("/")) {
+  if (to && to.startsWith("/") && !forceNewTab) {
     return (
       <Link
         className={classNames}
@@ -77,6 +78,7 @@ Anchor.propTypes = {
   to: PropTypes.string,
   useMarkdownStyles: PropTypes.bool,
   newTabIndicator: PropTypes.bool,
+  forceNewTab: PropTypes.bool,
 }
 
 export default Anchor
