@@ -1,5 +1,5 @@
 ---
-title: Debugging the gatsby-plugin-google-gtag plugin for Google Analytics 4 with Gatsby
+title: Debugging gatsby-plugin-google-gtag for Google Analytics 4 with Gatsby
 date: 2021-09-01 02:30:00 +0400
 photo: gatsby.png
 tags:
@@ -17,7 +17,7 @@ the thing.
 I assume that you are already familiar with [Gatsby](https://www.gatsbyjs.com/).
 At the time of writing, I am using Gatsby `3.11.0`.
 
-You also need the Google Analytics 4 property. Look at this [article](https://support.google.com/analytics/answer/9744165)
+You also need the Google Analytics 4 property. Read this [article](https://support.google.com/analytics/answer/9744165)
 to add a Google Analytics 4 property to a site that already has analytics.
 
 ## Installation
@@ -63,7 +63,7 @@ module.exports = {
 ## Track a custom event
 
 I have an anchor component which checks the type of link and renders the
-appropriate anchor type for me. Blogs internal to the website use Gatsby's `Link`
+appropriate anchor type for me. Links internal to the website use Gatsby's `Link`
 component while outbound links use the `gatsby-plugin-google-gtag` plugin's
 `OutboundLink` component.
 
@@ -117,12 +117,11 @@ export default Anchor
 ```
 
 I have only added a track click event to my project (because I am not that creative
-to come up with anything else to track :unamused: but that's probably a good thing!)
-in a function within the component.
+to come up with anything else to track :unamused: but that's probably a good thing!).
 
 ```js
 const trackOnClick = (data) => {
-  // guard against SSR && make sure that the gtag exists globally
+  // Guard against SSR && make sure that the gtag exists globally
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", "click", data)
   }
@@ -134,12 +133,12 @@ const trackOnClick = (data) => {
 It didn't work :pensive: so I went through a few things.
 
 > Please [let me know](mailto:clarice@bouwer.dev) if you experience this issue and
-> have a different solution.
+> have found a different solution.
 
-### Server from the production server
+### Serve from the production server
 
 - Manually clean your `.cache` directory. This isn't always necessary but it is a good precaution
-  to take and can save you from a few frustrations. The cache goes stale and references get outdated.
+  to take and can mitigate frustration. The cache goes stale and references get outdated.
 - Build your site. It optimizes and packages up the site using its config, data, and code
   to compile a production-ready set of static HTML pages that will later get rehydrated
   into a React application.
@@ -149,13 +148,18 @@ It didn't work :pensive: so I went through a few things.
 gatsby clean && gatsby build && gatsby serve
 ```
 
-If you do not have the Gatsby CLI globally installed then you could run your commands using what
-you have configured in your `package.json` config by running `npm` or `yarn`.
+If you do not have the Gatsby CLI globally installed then you should run your commands using what
+you have configured in your `package.json` config by running `npm` or `yarn`. This will run the
+executable available within the `/node_modules/` directory.
 
-### Do not honor the respectDNT option when testing
+### Do not honor the respectDNT option
 
 DNT stands for Do Not Track. This feature will cause the `window.gtag` to be `undefined` if it is
 enabled so set it to `false`. Check out the [Chrome browser setting](https://support.google.com/chrome/answer/2790761).
+
+I had this set to false using an environment variable `javascript±HONOR_DNT=false` and
+`javascript±respectDNT: process.env.HONOR_DNT || true` but it didn't work :cry:. I haven't yet fully investigated
+why.
 
 > It is probably wise to enable this in production.
 
@@ -165,8 +169,8 @@ An ad block will block all tracking scripts. Be sure to disable it.
 
 ## Testing
 
-While I was debugging I tested each scenario. I'd type id `window.gtag` in the
-console expecting to see a function instead of `undefined`.
+While I was debugging I tested scenario after scenario to see which one was the bad sheep.
+I'd type id `window.gtag` in the console expecting to see a function instead of `undefined`.
 
 Once it was working I inspected the Network tab and noticed that requests were
 being made to `https://www.google-analytics.com/g/collect` :tada:
