@@ -1,4 +1,5 @@
 ---
+featured: true
 title: How To Craft Your Changes Into Small Atomic Commits Using Git
 date: 2019-01-15 22:30:00 +0200
 photo: git.png

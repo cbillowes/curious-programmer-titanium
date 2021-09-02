@@ -1,4 +1,5 @@
 ---
+featured: true
 title: Working With Git Remotes
 date: 2019-01-29 04:30:00 +0200
 photo: git.png

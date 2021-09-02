@@ -1,4 +1,5 @@
 ---
+featured: true
 title: The importance of Git history
 date: 2016-05-14 21:04:29 +0200
 photo: git.png

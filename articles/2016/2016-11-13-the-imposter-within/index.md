@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "The imposter within"
 cover: "https://picsum.photos/1600/800/?image=680"
 date: 2016-11-13 11:23:10 +0200
