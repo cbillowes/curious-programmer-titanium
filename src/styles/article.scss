@@ -170,4 +170,19 @@
       top: 0;
     }
   }
+  code, pre {
+    /*
+    Unnecessary scrollbars appear for inline-block
+    https://stackoverflow.com/questions/29592010/unnecessary-scrollbars-appear-for-inline-block
+    */
+    overflow-x: scroll;
+    max-width: 48rem;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+  }
+
+  pre {
+    width: 100%;
+  }
 }
