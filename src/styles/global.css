@@ -61,3 +61,15 @@ html.dark, html.light {
   background-color: var(--color-1);
   color: var(--color-1-script);
 }
+
+.icon-in-a-card path {
+  stroke: var(--inverse);
+  stroke-width: 1;
+}
+
+.expansion-button-expanded:hover {
+  border-bottom-color: var(--color-1-alternative) !important;
+}
+.expansion-button-hidden:hover {
+  border-top-color: var(--color-1-alternative) !important;
+}
