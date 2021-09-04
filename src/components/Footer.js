@@ -41,7 +41,7 @@ const BottomAnchor = (props) => (
 const Footer = ({ toggler }) => (
   <footer className="relative">
     <Blocks />
-    <div className="mx-auto md:max-w-screen-md md:flex md:flex-row-reverse md:justify-between md:align-baseline py-12 leading-loose">
+    <div className="mx-auto md:max-w-screen-md md:flex md:flex-row-reverse md:justify-between md:align-baseline py-12 leading-loose font-alt-sans">
       <div className="absolute right-2 pt-1 md:relative">{toggler}</div>
       <div className="px-8 pb-10">
         <p>
