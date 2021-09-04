@@ -171,6 +171,15 @@
       top: 0;
     }
   }
+  code {
+    display: inline-block;
+    &::before {
+      content: "";
+      margin-top: 23px;
+      display: inline-block;
+    }
+  }
+
   code, pre {
     /*
     Unnecessary scrollbars appear for inline-block
