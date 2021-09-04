@@ -131,6 +131,10 @@ Component["Mauritius"] = (props) => (
   require("./mauritius").default(props)
 )
 
+Component["PagespeedScore"] = (props) => (
+  require("./pagespeed-score").default(props)
+)
+
 Component["PensiveWomanWithRain"] = (props) => (
   require("./pensive-woman-with-rain").default(props)
 )
@@ -139,6 +143,9 @@ Component["PeopleAtACafeteria"] = (props) => (
   require("./people-at-a-cafeteria").default(props)
 )
 
+Component["PinkMac"] = (props) => (
+  require("./pink-mac").default(props)
+)
 
 Component["PrettyGitGraph"] = (props) => (
   require("./pretty-git-graph").default(props)
