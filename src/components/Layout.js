@@ -24,10 +24,10 @@ const Toggler = ({ colorMode, setColorMode }) => {
       onClick={handleThemeToggle}
       className="hover:text-color-2 hover:animate-wiggle animate"
     >
-      <span className="dark-button">
+      <span className="dark-button" title="Dark mode" aria-label="Dark mode">
         <MdBrightness2 />
       </span>
-      <span className="light-button">
+      <span className="light-button" title="Light mode" aria-label="Light mode">
         <MdWbSunny />
       </span>
     </button>
@@ -68,7 +68,7 @@ export const Layout = ({ meta, children }) => {
             <Toggler colorMode={colorMode} setColorMode={setColorMode} />
           </div>
           <div className="mr-4 pt-1 inline-block">
-            <Anchor to="/rss.xml" forceNewTab={true}>
+            <Anchor to="/rss.xml" forceNewTab={true} title="RSS Feed">
               <FiRss />
             </Anchor>
           </div>

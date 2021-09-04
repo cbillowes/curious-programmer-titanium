@@ -14,6 +14,8 @@ const CloseIcon = () => {
 export const SearchIcon = ({ show, toggle }) => {
   return (
     <div
+      title="Search"
+      aria-label="Search"
       onClick={toggle}
       className="cursor-pointer hover:text-color-2 hover:animate-wiggle animate"
     >
