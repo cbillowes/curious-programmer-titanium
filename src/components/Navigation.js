@@ -6,9 +6,9 @@ import Anchor from "./Anchor"
 const Logo = () => {
   return (
     <Anchor to="/" title="Home page">
-      <div className="text-2xl -mt-1">
+      <div className="text-2xl -mt-1 font-alt-sans">
         <span className="mr-2">{`{`}</span>
-        <span className="mr-2">curious</span>
+        <span className="mr-2 font-light">curious</span>
         <span className="font-bold">programmer</span>
         <span className="ml-2">{`}`}</span>
       </div>

@@ -35,7 +35,7 @@ const Preview = ({
             : "xl:text-right xl:border-r xl:pr-8"
         }`}
       >
-        <h2 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1">
+        <h2 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1 font-alt-sans">
           <Anchor to={slug} title={title}>
             {title}
           </Anchor>

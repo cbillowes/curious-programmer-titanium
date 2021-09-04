@@ -4,9 +4,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Open Sans", "sans-serif"],
-        mono: ["Courier Prime", "mono"],
+        sans: ["Manrope", "cursive", "sans-serif"],
+        mono: ["Fira Code", "mono"],
         cursive: ["Handlee", "cursive"],
+        "alt-sans": ["Open Sans", "sans-serif"],
       },
       borderColor: {
         "search-neutral-1": "var(--search-neutral-1)",

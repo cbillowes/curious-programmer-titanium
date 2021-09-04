@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
         route: "/",
       }}
     >
-      <div className="relative">
+      <div className="relative font-alt-sans">
         <div>
           <StaticImage
             src="../images/profile.jpg"
@@ -101,7 +101,7 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
 
-      <div className="lg:hidden p-4">
+      <div className="lg:hidden p-4 font-alt-sans">
         <div className="leading-relaxed text-center">
           <p className="text-lg md:text-2xl text-center">
             I&apos;m <span className="font-semibold">Clarice</span> Bouwer, a
