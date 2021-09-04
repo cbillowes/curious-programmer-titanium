@@ -64,7 +64,7 @@ const Preview = ({
             to={slug}
             title={slug}
           >
-            Read more
+            Full article
           </Anchor>
           <Tags tags={tags} />
         </div>
