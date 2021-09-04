@@ -43,6 +43,7 @@ const Credit = ({ componentName, source, link, text }) => {
       className="bg-black text-gray-300 py-1 px-2 pl-6 rounded absolute bottom-2 left-2 text-sm"
     >
       <img
+        alt={creditSource}
         className="filter invert w-3 absolute left-2 top-2"
         src={creditSource === "unsplash" ? UnsplashLogo : DownloadLogo}
       />
