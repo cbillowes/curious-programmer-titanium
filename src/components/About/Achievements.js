@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Kebab from "../Kebab"
 import { Cards } from "../Card"
-import { achievements } from "../../common/Achievements"
+import { achievements } from "../../common/achievements"
 
 const Achievements = () => {
   const [visible, toggleVisibility] = useState(false)
