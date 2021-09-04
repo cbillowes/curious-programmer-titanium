@@ -1,7 +1,10 @@
 ---
 title: A custom alias for a pretty Git log with a graph
 date: 2021-09-02 18:00:00 +0400
-photo: git.png
+photo: pretty-git-graph.png
+credit: Slipp D. Thompson
+creditSource: StackOverflow
+creditLink: https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
 tags:
   - Technical
   - Git

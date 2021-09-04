@@ -135,6 +135,11 @@ Component["PeopleAtACafeteria"] = (props) => (
   require("./people-at-a-cafeteria").default(props)
 )
 
+
+Component["PrettyGitGraph"] = (props) => (
+  require("./pretty-git-graph").default(props)
+)
+
 Component["TwoPeoplePlanningAtATable"] = (props) => (
   require("./two-people-planning-at-a-table").default(props)
 )
