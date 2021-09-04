@@ -26,10 +26,10 @@ const Intro = () => {
             src="../../images/avatar.png"
             alt="My avatar"
             quality={50}
+            width={260}
+            height={260}
             style={{
               borderRadius: "50%",
-              width: "300px",
-              height: "300px",
             }}
           />
           <div
