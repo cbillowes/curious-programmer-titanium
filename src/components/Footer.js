@@ -69,6 +69,9 @@ const Footer = ({ toggler }) => (
           <BottomAnchor to="/community" title="Community guidelines">
             Community guidelines
           </BottomAnchor>
+          <BottomAnchor to="/about" title="More about me">
+            About me
+          </BottomAnchor>
           <BottomAnchor
             to="https://github.com/cbillowes/curious-programmer-titanium"
             title="Source code on GitHub"
