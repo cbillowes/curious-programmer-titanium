@@ -21,7 +21,7 @@ const Attribute = ({
   }, [active])
 
   return (
-    <div className="m-4 z-20">
+    <div className="m-4">
       <div
         className={`cursor-pointer border-b-4 py-2 px-4 ${hoverBorder} ${
           expanded ? border : ""
@@ -35,7 +35,7 @@ const Attribute = ({
       </div>
       {expanded && (
         <div
-          className={`z-10 ${bg} ${text} absolute py-2 px-3 text-sm mt-2 rounded-md shadow-sm max-w-xs border-2 border-default`}
+          className={`z-20 ${bg} ${text} absolute py-2 px-3 text-sm mt-2 rounded-md shadow-sm max-w-xs border-2 border-default`}
         >
           <div
             className={`border-8 ${border}`}
