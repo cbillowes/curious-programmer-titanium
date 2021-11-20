@@ -27,6 +27,10 @@ Component["Cisco"] = (props) => (
   require("./cisco").default(props)
 )
 
+Component["ClojureTailwindcss"] = (props) => (
+  require("./clojure-tailwindcss").default(props)
+)
+
 Component["Clojure"] = (props) => (
   require("./clojure").default(props)
 )
