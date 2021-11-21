@@ -8,6 +8,8 @@ creditSource: wikipedia
 tags:
   - Technical
   - ClojureScript
+  - Clojure CLI
+  - Reagent
   - npm
 ---
 
