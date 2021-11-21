@@ -1,207 +1,285 @@
 ---
-title: How can I use Tailwind CSS in my ClojureScript web app using the Clojure CLI tools?
-date: 2021-11-17 05:00 +0400
-photo: clojure.jpg
-credit: Tom & Rich Hickey
-creditLink: https://en.wikipedia.org/wiki/Clojure
-creditSource: wikipedia
+title: How can I use Tailwind in my ClojureScript web app?
+date: 2021-11-20 05:00 +0400
+photo: clojure-tailwindcss.jpg
 tags:
   - Technical
   - ClojureScript
+  - Clojure CLI
   - Tailwind CSS
 ---
 
-The goal of this guide is to integrate [Tailwind CSS][tailwindcss.com] into a ClojureScript web app using the Clojure CLI tools.
-The assumption is that you are already familiar with Tailwind CSS and know how to
-[create][create-cljs-project] a new ClojureScript project.
-
-## Version of dependencies used in this guide
-
-| Dependency      |  Version |
-|-----------------|----------|
-| ClojureScript   | 1.10.879 |
-| Node            |  16.13.0 |
-| npm/npx         |    8.1.3 |
-| Webpack         |   5.64.1 |
-| Webpack-cli     |    4.9.1 |
-| Figwheel-Main   |   0.2.15 |
-| 🟢 Tailwind CSS |   2.2.19 |
-| 🟢 PostCSS      |   8.3.11 |
-| 🟢 Autprefixer  |   10.4.0 |
-
-
-## Get started
-
-### Create a ClojureScript project
-
-We are going to add to an existing ClojureScript project with npm.
-[Learn][cljs-from-scratch] how to create one from scratch.
-
-### Install Tailwind CSS
-
-> Note that you need Node.js 12.13.0 or higher to proceed.
-
-1. I followed the Tailwind CSS [installation guide][tailwindcss-install] as a PostCSS plugin.
-
-1. I used the Tailwind CSS PostCSS plugin [guide][postcss-plugin-guide].
-
-   ```bash
-   npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
-   ```
-
-1. Create a bare bones PostCSS config file `postcss.config.js`.
-
-   ```javascript
-   module.exports = {
-     plugins: {
-       tailwindcss: {},
-       autoprefixer: {},
-     }
-   }
-   ```
-
-1. Initialize Tailwind CSS configuration. Generates `tailwind.config.js`. Learn more about [configuring][configure-tailwind].
-
-   ```bash
-   npx tailwindcss init
-   ```
-
-   ```javascript
-   module.exports = {
-     purge: [],
-     darkMode: false, // or 'media' or 'class'
-     theme: {
-       extend: {},
-     },
-     variants: {
-       extend: {},
-     },
-     plugins: [],
-   }
-   ```
-
-1. Update CSS in `resources/public/style.css` to include received
-
-   ```css
-   ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Install React using Reagent
-
-1. Add the following to your `:deps` key in `deps.edn`
-
-   ```clojure
-   ...
-   ;; A minimalistic ClojureScript interface to React.js
-   ;; https://github.com/reagent-project/reagent
-   reagent/reagent           {:mvn/version "1.1.0"}   ;; React-based framework
-
-   ;; Facilities for async programming and communication in Clojure
-   ;; https://github.com/clojure/core.async
-   org.clojure/core.async    {:mvn/version "1.4.627"}
-
-   ;; Pure Clojure/Script logging library
-   ;; https://github.com/ptaoussanis/timbre
-   com.taoensso/timbre       {:mvn/version "5.1.2"}
-   ...
-   ```
-
-1. We are now introduced to [CLJSJS][cljsjs] which we will use to install React.
-   Packages can be found on the [CLJSJS packages][cljsjs-packages] repository on Github
-   which is described as "Javascript libraries packaged up with Google Closure externs".
-
-   Add the following to your `:deps` key in `deps.edn`
-
-   ```clojure
-   ;; A Javascript library for building user interfaces
-   ;; http://facebook.github.io/react/
-   cljsjs/react              {:mvn/version "17.0.2-0"}
-
-   ;; A Javascript library for building user interfaces
-   ;; http://facebook.github.io/react/
-   cljsjs/react-dom          {:mvn/version "17.0.2-0"}
-   ```
-
-## Update core app component
-
-```clojure
-(ns ^:figwheel-hooks leads.app
-  (:require [reagent.core :as r]))
-
-
-(defn app-component []
-  [:div
-   [:h1 "Example App!"]
-   [:h2 "Using hiccup, reagent and stuff!"]])
-
-
-(defn mount [component]
-  (r/render-component [component] (.getElementById js/document "app")))
-
-
-(defn reload! []
-  (mount app-component))
-
-
-(defn app! []
-  (mount app-component))
-
-```
-
-## Resources
-
-
-
-
-
-
-
-
-[tailwindcss.com]: https://tailwindcss.com/
-[tailwindcss-install]: https://tailwindcss.com/docs/installation#installing-tailwind-css-as-a-post-css-plugin
-[create-cljs-project]: /blog/how-can-i-create-a-clojure-script-web-app-from-scratch/
-[postcss-plugin-guide]: https://tailwindcss.com/docs/installation#installing-tailwind-css-as-a-post-css-plugin
-[configure-tailwind]: https://tailwindcss.com/docs/configuration
-[cljsjs]: http://cljsjs.github.io/
-[cljsjs-packages]: https://github.com/cljsjs/packages
-
-
-[cljs-from-scratch]: /blog/how-do-i-create-a-clojure-script-web-app-from-scratch-that-uses-npm/
-
----
-
-https://figwheel.org/docs/classpaths.html
-The Classpath as a search path
+The goal of this guide is to create a ClojureScript web application with Clojure CLI
+and integrate with Tailwind CSS. Here's a shadow-cljs [guide][shadow-cljs-tailwindcss] by Jacek Schae.
+
+There are a few assumptions and they are that you are already familiar with
+
+- [Node.js][nodejs.org]
+- [npm][npmjs.com]
+- [ClojureScript][clojurescript.org]
+- [Clojure CLI][cli-guide]
+- [Webpack][webpack.js.org]
+- [Tailwind][tailwindcss.com]
+
+## Versions of dependencies used in this guide
+
+Below are a list of versions of dependencies used in this guide
+so that you can follow along without experiencing potential breaking changes
+when upgrading to the latest dependencies.
+
+> 🟢 denotes dependencies specific to this guide. The others were covered in
+> my previous [guide][cljs-app-from-scratch-guide] where you create a
+> ClojureScript web app from scratch with Reagent and npm.
+
+| Dependency        | Version     |
+|-------------------|-------------|
+| Clojure           | 1.10.3.1020 |
+| ClojureScript     |    1.10.879 |
+| Node              |     16.13.0 |
+| npm/npx           |       8.1.3 |
+| Webpack           |      5.64.1 |
+| Webpack-cli       |       4.9.1 |
+| Figwheel-Main     |      0.2.15 |
+| 🟢 Tailwind       |      2.2.19 |
+| 🟢 PostCSS        |      8.3.11 |
+| 🟢 PostCSS CLI    |       9.0.2 |
+| 🟢 PostCSS Import |      14.0.2 |
+| 🟢 Autprefixer    |      10.4.0 |
+| 🟢 Cross Env      |       7.0.3 |
+| 🟢 npm run all    |       4.1.5 |
+
+## Getting started
+
+The code in this guide will be based on my previous [guide][cljs-app-from-scratch-guide].
+To follow along you can either:
+
+1. Use the [guide][cljs-app-from-scratch-guide].
+
+    ```bash
+    mkdir clj-app-with-tailwind && cd clj-app-with-tailwind
+    ```
+
+1. Or use the [template][cljs-app-from-scratch-template] on GitHub.
+   Click on the green **Use this template** button.
+   Choose a snazzy name for your project. If you get stuck you can use
+   `clj-app-with-tailwind`.
+   Clone it.
+
+### Generated files
+
+If you notice any files or directories that get generated by your
+IDE or extensions that you use then you can safely ignore them
+by adding them to your `.gitignore` file.
+Eg. `.clj-kondo` and `.lsp`
+
+### Command line tools
+
+In this tutorial we are going to leverage npm scripts.
+There are a few CLI tools that we will need to install in order to
+make our scripts work.
 
 ```bash
-❯ clj -Spath |  sed -e 's/:/\'$'\n/g' | head
-src
-resources
-target
-tests
-/Users/clarice/.m2/repository/cljsjs/react/17.0.2-0/react-17.0.2-0.jar
-/Users/clarice/.m2/repository/cljsjs/react-dom/17.0.2-0/react-dom-17.0.2-0.jar
-/Users/clarice/.m2/repository/com/bhauman/figwheel-main/0.2.15/figwheel-main-0.2.15.jar
-/Users/clarice/.m2/repository/com/bhauman/rebel-readline-cljs/0.1.4/rebel-readline-cljs-0.1.4.jar
-/Users/clarice/.m2/repository/com/taoensso/timbre/5.1.2/timbre-5.1.2.jar
-/Users/clarice/.m2/repository/org/clojure/clojure/1.10.3/clojure-1.10.3.jar
+npm install --save-dev npm-run-all@4.1.5 cross-env@7.0.3 postcss-cli@9.0.2
 ```
+
+1. [npm-run-all][npm-run-all] will run multiple scripts in
+   parallel. We'll be generating Tailwind's CSS file and running Figwheel
+   both with hot reloading.
+
+1. [cross-env][cross-env] will set environment variables that we will
+   use in our run scripts.
+
+1. [postcss-cli][postcss-cli] will run PostCSS which will process and
+   generate our Tailwind CSS file that we will reference in our app.
+
+### Running the project
+
+Let's start by creating our npm run scripts. For now we only need one.
+We are taking this route because things are going to get more
+complicated as we do more later on.
+
+```javascript
+// package.json
+"scripts": {
+  "develop": "clj -M:dev"
+},
+```
+
+Run the script. It will do exactly the same as if we
+manually entered `clj -M:dev`.
+
+```bash
+npm run develop
+```
+
+## Installing Tailwind
+
+### Installing dependencies
+
+I followed the instructions to [install][tailwind.com-install] Tailwind
+as a PostCSS plugin.
+
+```bash
+npm install --save-dev tailwindcss@2.2.19 postcss@8.3.11 postcss-import@14.0.2 autoprefixer@10.4.0
+```
+
+1. [PostCSS][postcss] is a tool for transforming CSS with JavaScript.
+1. [PostCSS Import][postcss-import] is a PostCSS plugin to transform
+   `@import` rules by inlining content.
+1. [Autoprefixer][autoprefixer] is a CSS post-processor that
+   automatically adds vendor-prefixed CSS properties based on the
+   browser capabilities.
+
+### Preprocessing
+
+The Tailwind [guide][tailwind.com-preprocessing] suggests that you should
+highly consider relying on other PostCSS plugins to add the preprocessor
+features you use instead of using a separate preprocessor.
+
+Let's configure the basic ones.
+Create a `postcss.config.js` file in your project root directory.
+
+```javascript
+// postcss.config.js
+module.exports = {
+  plugins: [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+  ]
+}
+```
+
+### Creating your configuration file
+
+Create a configuration file if you want to customize Tailwind.
+
+```bash
+npx tailwindcss init
+```
+
+```
+// tailwind.config.js
+module.exports = {
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {},
+  plugins: [],
+}
+```
+
+### Including Tailwind in your CSS
+
+Create a new CSS file at `src/css/tailwind.css` and put the following in it:
+
+```css
+/* src/css/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+> Find out [more][tailwindcss.com-css] about including Tailwind in your CSS.
+
+> **Note about production**\
+> Remember to [purge][tailwindcss.com-purge] when building for production,
+> so that it will remove any unused classes for the smallest file size.
+
+## Hot reloading
+
+### Updating the link to the CSS file
+
+We are going to generate a new CSS file based on our Tailwind configuration.
+
+> In this guide we are going to output it straight to our dev
+> target directory: `./target/public/cljs-out/dev/style.css`
+> In upcoming guides we will learn how to develop for different
+> environments.
+
+We will need to reference this file in our `index.html` file
+which will now look like this:
+
+```html
+<!-- resources/public/index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Example Application</title>
+    <!--
+      The new CSS file that will be generated in
+      👇 `./target/public/cljs-out/dev/style.css`
+    -->
+    <link rel="stylesheet" href="./cljs-out/dev/style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <!--
+         Hardcoded Development Webpack Bundled JavaScript.
+         Place the ClojureScript script tag as the last tag in the body.
+         This is the convention for Google Closure compiled projects.
+         https://figwheel.org/docs/your_own_page.html
+    -->
+    <script type="text/javascript" src="./cljs-out/dev/main_bundle.js"></script>
+  </body>
+</html>
+```
+
+### Updating the npm run scripts
+
+Create two watch scripts to generate CSS and launch our Figwheel server.
+The develop script will run both of these scripts in parallel.
+
+```javascript
+// package.json
+"scripts": {
+  "postcss:watch": "cross-env TAILWIND_MODE=watch postcss src/css/tailwind.css -o ./target/public/cljs-out/dev/style.css --verbose -w",
+  "figwheel:watch": "clj -M:dev",
+  "develop": "run-p -l *:watch"
+},
+```
+
+## Testing the integration
+
+Open `src/example_app/core.cljs` and change the `app` function as follows:
+
+```clojure
+(defn app []
+  [:div
+   [:h1.bg-red-300 "I am Tailwind!"]])
+```
+
+Run `npm run develop`. Your app will still open on port 9500.
+http://localhost:9500.
+http://localhost:9500/cljs-out/dev/style.css will be generated.
+
+Your heading should be tiny with a background color a shade of red.
+
+
+[nodejs.org]: https://nodejs.org/
+[npmjs.com]: https://www.npmjs.com/
+[clojurescript.org]: https://clojurescript.org/
+[cli-guide]: https://clojure.org/guides/deps_and_cli
+[webpack.js.org]: https://webpack.js.org/
+[tailwindcss.com]: https://tailwindcss.com/
+
+[tailwind.com-install]: https://tailwindcss.com/docs/installation#installing-tailwind-css-as-a-post-css-plugin
+[tailwind.com-preprocessing]: https://tailwindcss.com/docs/using-with-preprocessors
+[tailwindcss.com-css]: https://tailwindcss.com/docs/installation#include-tailwind-in-your-css
+[tailwindcss.com-purge]: https://tailwindcss.com/docs/installation#building-your-css
+
+[npm-run-all]: https://www.npmjs.com/package/npm-run-all
+[cross-env]: https://www.npmjs.com/package/cross-env
+[postcss]: https://postcss.org/
+[postcss-cli]: https://www.npmjs.com/package/postcss-cli
+[postcss-import]: https://github.com/postcss/postcss-import
+[autoprefixer]: https://github.com/postcss/autoprefixer
+
+[shadow-cljs-tailwindcss]: https://github.com/jacekschae/shadow-cljs-tailwindcss
+[cljs-app-from-scratch-guide]: /blog/how-can-i-create-a-clojure-script-web-app-from-scratch-with-reagent-and-npm/
+[cljs-app-from-scratch-template]: https://github.com/cbillowes/cljs-app-from-scratch
+
