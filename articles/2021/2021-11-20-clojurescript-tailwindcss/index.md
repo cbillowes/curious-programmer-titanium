@@ -22,6 +22,9 @@ There are a few assumptions and they are that you are already familiar with
 - [Webpack][webpack.js.org]
 - [Tailwind][tailwindcss.com]
 
+> You can use the [template][cljs-app-with-tailwindcss] on GitHub
+> if you want the complete solution.
+
 ## Versions of dependencies used in this guide
 
 Below are a list of versions of dependencies used in this guide
@@ -310,4 +313,4 @@ Open `src/example_app/core.cljs` and change the `app` function as follows:
 [shadow-cljs-tailwindcss]: https://github.com/jacekschae/shadow-cljs-tailwindcss
 [cljs-app-from-scratch-guide]: /blog/how-can-i-create-a-clojure-script-web-app-from-scratch-with-reagent-and-npm/
 [cljs-app-from-scratch-template]: https://github.com/cbillowes/cljs-app-from-scratch
-
+[cljs-app-with-tailwindcss-template]: https://github.com/cbillowes/cljs-app-with-tailwindcss
