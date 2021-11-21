@@ -247,11 +247,7 @@ Entry point to the ClojureScript app.
    [:h1 "Example application"]])
 
 
-(defn mount []
-  (r.dom/render [app] (js/document.getElementById "app")))
-
-
-(defonce start-up (do (mount) true))
+(r.dom/render [app] (js/document.getElementById "app"))
 
 ```
 
