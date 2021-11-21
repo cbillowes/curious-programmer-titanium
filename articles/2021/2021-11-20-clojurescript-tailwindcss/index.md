@@ -10,14 +10,15 @@ tags:
 ---
 
 The goal of this guide is to create a ClojureScript web application with Clojure CLI
-and integrate with Tailwind CSS. Here's a shadow-cljs [guide][shadow-cljs-tailwindcss] by Jacek Schae.
+and integrate with Tailwind CSS. If you are looking to create a shadow-cljs
+project then you can follow this [guide][shadow-cljs-tailwindcss] by Jacek Schae.
 
 There are a few assumptions and they are that you are already familiar with
 
 - [Node.js][nodejs.org]
 - [npm][npmjs.com]
-- [ClojureScript][clojurescript.org]
 - [Clojure CLI][cli-guide]
+- [ClojureScript][clojurescript.org]
 - [Webpack][webpack.js.org]
 - [Tailwind][tailwindcss.com]
 
@@ -27,10 +28,10 @@ Below are a list of versions of dependencies used in this guide
 so that you can follow along without experiencing potential breaking changes
 when upgrading to the latest dependencies.
 
-> 🟢 denotes dependencies specific to this guide. The others were covered in
-> my previous [guide][cljs-app-from-scratch-guide] where you create a
-> ClojureScript web app from scratch with Reagent and npm.
+These are dependencies covered in the previous [guide][cljs-app-from-scratch-guide]
+where we created a ClojureScript web app from scratch with Reagent and npm.
 
+```
 | Dependency        | Version     |
 |-------------------|-------------|
 | Clojure           | 1.10.3.1020 |
@@ -40,13 +41,21 @@ when upgrading to the latest dependencies.
 | Webpack           |      5.64.1 |
 | Webpack-cli       |       4.9.1 |
 | Figwheel-Main     |      0.2.15 |
-| 🟢 Tailwind       |      2.2.19 |
-| 🟢 PostCSS        |      8.3.11 |
-| 🟢 PostCSS CLI    |       9.0.2 |
-| 🟢 PostCSS Import |      14.0.2 |
-| 🟢 Autprefixer    |      10.4.0 |
-| 🟢 Cross Env      |       7.0.3 |
-| 🟢 npm run all    |       4.1.5 |
+```
+
+These dependencies are covered in this guide.
+
+```
+| Dependency        | Version     |
+|-------------------|-------------|
+| Tailwind CSS      |      2.2.19 |
+| PostCSS           |      8.3.11 |
+| PostCSS CLI       |       9.0.2 |
+| PostCSS Import    |      14.0.2 |
+| Autprefixer       |      10.4.0 |
+| Cross Env         |       7.0.3 |
+| npm run all       |       4.1.5 |
+```
 
 ## Getting started
 
@@ -171,6 +180,10 @@ module.exports = {
 }
 ```
 
+> **Note about production**\
+> Remember to [purge][tailwindcss.com-purge] when building for production,
+> so that it will remove any unused classes for the smallest file size.
+
 ### Including Tailwind in your CSS
 
 Create a new CSS file at `src/css/tailwind.css` and put the following in it:
@@ -183,10 +196,6 @@ Create a new CSS file at `src/css/tailwind.css` and put the following in it:
 ```
 
 > Find out [more][tailwindcss.com-css] about including Tailwind in your CSS.
-
-> **Note about production**\
-> Remember to [purge][tailwindcss.com-purge] when building for production,
-> so that it will remove any unused classes for the smallest file size.
 
 ## Hot reloading
 
@@ -216,7 +225,7 @@ which will now look like this:
     -->
     <link rel="stylesheet" href="./cljs-out/dev/style.css" />
   </head>
-  <body>
+  <body class="bg-gray-900">
     <div id="app"></div>
     <!--
          Hardcoded Development Webpack Bundled JavaScript.
@@ -248,16 +257,42 @@ The develop script will run both of these scripts in parallel.
 Open `src/example_app/core.cljs` and change the `app` function as follows:
 
 ```clojure
+(ns example-app.core
+  (:require [reagent.dom :as r.dom]))
+
+
+(defn a [to text]
+  [:a.font-bold.text-yellow-300.hover:text-pink-600 {:href to} text])
+
+
 (defn app []
   [:div
-   [:h1.bg-red-300 "I am Tailwind!"]])
+   [:div.p-8.max-w-full
+    [:div.rounded-lg.bg-gray-800.text-white.shadow-xs.py-24.px-4.text-center
+     [:div.text-3xl.lg:text-9xl
+      [:span "Hello "]
+      [:span.font-extrabold.text-transparent.bg-clip-text.bg-gradient-to-r.from-green-400.to-blue-500.font-mono "Tailwind!"]
+      [:span " ✌️"]]
+     [:div.text-lg.md:text-xl.lg:text-2xl.mt-8.text-gray-400 "Rapidly build modern websites without ever leaving your ClojureScript."]
+     [:div.text-lg.md:text-xl.lg:text-2xl.mt-4.text-gray-400
+      [:span "'( "]
+      [a "https://tailwindcss.com/" "tailwindcss.com"]
+      [:span " ... "]
+      [a "https://clojurescript.org/" "clojurescript.org"]
+      [:span " )"]]]]
+   [:div.text-white.text-center.opacity-70.text-md
+    [:p "A demo by " [a "https://clarice.bouwer.dev" "Clarice Bouwer"] " at curiousprogrammer.dev"]]
+   [::div.text-white.text-center.opacity-50.text-sm.mt-5
+    [:span [a "https://benborgers.com/posts/tailwind-gradient-text" "Text gradients"] " by benborgers.com"]]])
+
+
+(r.dom/render [app] (js/document.getElementById "app"))
 ```
 
-Run `npm run develop`. Your app will still open on port 9500.
-http://localhost:9500.
-http://localhost:9500/cljs-out/dev/style.css will be generated.
-
-Your heading should be tiny with a background color a shade of red.
+- Run `npm run develop`.
+- Your app will still open at http://localhost:9500.
+- http://localhost:9500/cljs-out/dev/style.css will be generated.
+- You should see a **Hello Tailwind!** ✌️ banner with some text on the page.
 
 
 [nodejs.org]: https://nodejs.org/
