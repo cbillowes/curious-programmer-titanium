@@ -319,12 +319,22 @@ User level aliases, dependency management and Clojure CLI configuration for deps
 ### Ignore more files
 
 Add the following to your `.gitignore` file.
+
 ```
+# npm dependencies
+node_modules
+
 # Cached classpath and the runtime basis files
 .cpcache
 
 # Output of the ClojureScript compiler
 target
+
+# https://clojure-lsp.io/settings/
+.lsp
+
+# https://github.com/clj-kondo/clj-kondo
+.clj-kondo
 ```
 
 ## Run the web app
